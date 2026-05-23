@@ -1,0 +1,76 @@
+import type { Metadata } from "next";
+import Hero from "@/components/Hero";
+import CTABanner from "@/components/CTABanner";
+import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Penetration Testing & Security Audits | Audcomp",
+  description:
+    "Audcomp conducts manual and automated penetration testing with 4 tests per year and 48-hour reporting. Find your vulnerabilities before attackers do.",
+};
+
+export default function PenetrationTestingPage() {
+  return (
+    <>
+      <Hero
+        title="Penetration Testing & Security Audits"
+        subtitle="Find your vulnerabilities before attackers do — Audcomp's pen testing service delivers thorough, actionable results in 48 hours."
+        ctaText="Schedule a Pen Test"
+        ctaHref="/contact"
+        bgColor="dark"
+      />
+
+      <section className="bg-white py-20 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">Test Your Defenses Before Attackers Do</h2>
+          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+            Penetration testing simulates real-world cyberattacks against your environment to identify vulnerabilities before malicious actors can exploit them. Unlike vulnerability scans that only flag known issues, Audcomp's penetration testing combines automated tooling with manual testing by experienced security professionals.
+          </p>
+          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+            Our pen testing program includes up to 4 tests per year — ensuring your security posture is validated continuously as your environment evolves. Every test delivers a detailed report within 48 hours, including executive summary, technical findings, risk ratings, and remediation guidance.
+          </p>
+          <p className="text-gray-600 text-lg leading-relaxed">
+            Audcomp also offers comprehensive security audits that evaluate your policies, procedures, and technical controls against industry frameworks like NIST, CIS, and SOC 2.
+          </p>
+          <div className="mt-6">
+            <Link href="/penetration-testing-service" className="inline-flex items-center gap-2 text-[#0056a8] font-semibold hover:underline">
+              View our dedicated Penetration Testing Service
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-gray-50 py-20 px-4">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-12 text-center">Testing Scope & Approach</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {[
+              { icon: "🌐", title: "External Network Testing", desc: "Simulated attacks against your internet-facing infrastructure — web apps, email, VPN, and exposed services." },
+              { icon: "🏢", title: "Internal Network Testing", desc: "Insider threat simulation and lateral movement testing within your network perimeter." },
+              { icon: "🌍", title: "Web Application Testing", desc: "OWASP Top 10 and beyond — comprehensive testing of your web applications and APIs." },
+              { icon: "📱", title: "Phishing Simulations", desc: "Targeted phishing campaigns to test your employees' security awareness and response." },
+              { icon: "☁️", title: "Cloud Configuration Review", desc: "Microsoft Azure and M365 configuration audits to identify common cloud security misconfigurations." },
+              { icon: "📋", title: "48-Hour Reporting", desc: "Every engagement concludes with a detailed report including executive summary and prioritized remediations." },
+            ].map((f) => (
+              <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6 flex gap-4">
+                <div className="text-3xl">{f.icon}</div>
+                <div>
+                  <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <CTABanner
+        title="Know Where You Stand Before an Attacker Does"
+        subtitle="Schedule a penetration test with Audcomp's security team and get results in 48 hours."
+      />
+    </>
+  );
+}

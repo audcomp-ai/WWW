@@ -1,0 +1,64 @@
+import type { Metadata } from "next";
+import Hero from "@/components/Hero";
+import CTABanner from "@/components/CTABanner";
+
+export const metadata: Metadata = {
+  title: "Device as a Service (DaaS) | Audcomp — Subscription Hardware Management",
+  description:
+    "Audcomp's Device as a Service (DaaS) provides fully managed hardware and software on a per-user subscription model. Scalable, predictable, and hassle-free.",
+};
+
+export default function DaaSPage() {
+  return (
+    <>
+      <Hero
+        title="Device as a Service (DaaS)"
+        subtitle="Fully managed hardware and software on a simple per-user subscription — so you can scale your workforce without the IT headache."
+        ctaText="Get a DaaS Quote"
+        ctaHref="/contact"
+      />
+
+      <section className="bg-white py-20 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">Eliminate Hardware Complexity</h2>
+          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+            Device as a Service (DaaS) from Audcomp replaces the traditional hardware procurement and management model with a simple, scalable subscription. Instead of capital expenditure on hardware followed by years of internal management, DaaS puts Audcomp in charge of the full device lifecycle on your behalf.
+          </p>
+          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+            Every device arrives configured, secured, and ready to deploy. When a team member leaves, their device is recovered, wiped, and redeployed. When a device fails, it's replaced — with minimal disruption and no surprise costs.
+          </p>
+          <p className="text-gray-600 text-lg leading-relaxed">
+            DaaS works for organizations of all sizes. Whether you're onboarding five new employees or standing up a new office, Audcomp's DaaS program scales with you.
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-gray-50 py-20 px-4">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-12 text-center">What DaaS Includes</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { icon: "💻", title: "Hardware Procurement", desc: "We source and procure the right devices for each role at competitive manufacturer pricing." },
+              { icon: "⚙️", title: "Configuration & Imaging", desc: "Every device arrives pre-configured with your software, policies, and security settings." },
+              { icon: "🔒", title: "Security Management", desc: "Endpoint protection, encryption, and MDM enrollment included on every device." },
+              { icon: "🔄", title: "Lifecycle Management", desc: "Refresh cycles, trade-ins, and end-of-life disposal handled entirely by Audcomp." },
+              { icon: "🛠️", title: "Break-Fix Support", desc: "Hardware failures are addressed rapidly — with loaner devices available to minimize disruption." },
+              { icon: "📊", title: "Asset Tracking & Reporting", desc: "Complete visibility into your device fleet with real-time asset inventory and reporting." },
+            ].map((f) => (
+              <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6">
+                <div className="text-3xl mb-3">{f.icon}</div>
+                <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <CTABanner
+        title="Ready to Simplify Your Device Management?"
+        subtitle="Talk to Audcomp about a DaaS subscription tailored to your team size and requirements."
+      />
+    </>
+  );
+}

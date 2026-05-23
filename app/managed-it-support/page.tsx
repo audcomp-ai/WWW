@@ -1,0 +1,63 @@
+import type { Metadata } from "next";
+import Hero from "@/components/Hero";
+import CTABanner from "@/components/CTABanner";
+
+export const metadata: Metadata = {
+  title: "Managed IT Support | Audcomp — 24/7 Canadian Engineers",
+  description:
+    "Audcomp's Managed IT Support provides end-user support, network management, and infrastructure monitoring with 100% Canadian engineers and 24/7 coverage.",
+};
+
+const features = [
+  { icon: "🖥️", title: "End-User Support", desc: "Responsive support for every member of your team — from password resets to complex workstation issues." },
+  { icon: "🌐", title: "Network Management", desc: "Proactive monitoring, configuration, and maintenance of your entire network infrastructure." },
+  { icon: "⚙️", title: "Infrastructure Management", desc: "Server, storage, and virtualization management to keep your core systems running optimally." },
+  { icon: "📊", title: "24/7 Monitoring", desc: "Round-the-clock monitoring with automated alerting ensures issues are caught before they cause downtime." },
+  { icon: "🔄", title: "Patch Management", desc: "Automated patch deployment keeps your systems current, secure, and compliant." },
+  { icon: "📋", title: "Reporting & Reviews", desc: "Regular reporting and strategic reviews keep you informed and ahead of your IT roadmap." },
+];
+
+export default function ManagedITSupportPage() {
+  return (
+    <>
+      <Hero
+        title="Managed IT Support"
+        subtitle="End-user support, network management, and 24/7 monitoring — delivered by 100% Canadian engineers who know your environment."
+        ctaText="Get Started"
+        ctaHref="/contact"
+      />
+
+      <section className="bg-white py-20 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">IT Support That Never Sleeps</h2>
+          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+            Audcomp's Managed IT Support program provides the full spectrum of day-to-day IT management your business needs. Our engineers become an extension of your team — deeply familiar with your environment, your users, and your business goals.
+          </p>
+          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+            Unlike break-fix providers that only show up when something is already broken, Audcomp's managed support is fundamentally proactive. We monitor your infrastructure continuously, resolve potential issues before they escalate, and keep your systems patched and optimized.
+          </p>
+          <p className="text-gray-600 text-lg leading-relaxed">
+            Every Audcomp engineer is based in Canada. Your data, your support calls, and your account management never leave Canadian hands.
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-gray-50 py-20 px-4">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-12 text-center">What's Included</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {features.map((f) => (
+              <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6">
+                <div className="text-3xl mb-3">{f.icon}</div>
+                <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <CTABanner />
+    </>
+  );
+}
