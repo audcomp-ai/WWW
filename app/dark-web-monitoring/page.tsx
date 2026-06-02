@@ -21,8 +21,7 @@ export default function DarkWebMonitoringPage() {
 
       <section className="bg-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-[#e8f0fe] border border-blue-200 rounded-xl p-6 mb-10 flex gap-4 items-start">
-            <div className="text-3xl">💡</div>
+          <div className="bg-[#e8f0fe] border border-blue-200 rounded-xl p-6 mb-10">
             <div>
               <p className="font-semibold text-[#1a1a2e] mb-1">Starting at just $99/month</p>
               <p className="text-gray-600 text-sm">Dark web monitoring for your organization's domains, emails, and credentials — one of the highest-ROI security controls available.</p>
@@ -47,15 +46,14 @@ export default function DarkWebMonitoringPage() {
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-12 text-center">What We Monitor</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: "📧", title: "Email Credentials", desc: "Stolen email and password combinations associated with your corporate domains." },
-              { icon: "🔑", title: "Corporate Passwords", desc: "Hashed and plaintext passwords linked to your organization's accounts." },
-              { icon: "💳", title: "Financial Data", desc: "Credit card and banking credentials associated with your employees or organization." },
-              { icon: "👤", title: "Employee PII", desc: "Personal information including names, addresses, and ID numbers that could enable targeted attacks." },
-              { icon: "🔐", title: "API Keys & Tokens", desc: "Exposed API keys and access tokens that could provide direct system access." },
-              { icon: "🌐", title: "Domain Mentions", desc: "Mentions of your domain on criminal forums that may indicate targeted threat activity." },
+              { title: "Email Credentials", desc: "Stolen email and password combinations associated with your corporate domains." },
+              { title: "Corporate Passwords", desc: "Hashed and plaintext passwords linked to your organization's accounts." },
+              { title: "Financial Data", desc: "Credit card and banking credentials associated with your employees or organization." },
+              { title: "Employee PII", desc: "Personal information including names, addresses, and ID numbers that could enable targeted attacks." },
+              { title: "API Keys & Tokens", desc: "Exposed API keys and access tokens that could provide direct system access." },
+              { title: "Domain Mentions", desc: "Mentions of your domain on criminal forums that may indicate targeted threat activity." },
             ].map((f) => (
               <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6">
-                <div className="text-3xl mb-3">{f.icon}</div>
                 <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
               </div>

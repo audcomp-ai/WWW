@@ -50,17 +50,14 @@ export default function PenetrationTestingServicePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
-              { icon: "🔓", title: "Manual Exploitation", desc: "Certified testers attempt real-world exploitation beyond what automated scanners detect." },
-              { icon: "🤖", title: "Automated Scanning", desc: "Comprehensive vulnerability scanning across your entire attack surface." },
-              { icon: "📊", title: "Executive & Technical Reports", desc: "Dual-layer reporting for leadership and technical teams — both complete within 48 hours." },
-              { icon: "✅", title: "Remediation Validation", desc: "Re-test critical findings after remediation to confirm vulnerabilities are closed." },
+              { title: "Manual Exploitation", desc: "Certified testers attempt real-world exploitation beyond what automated scanners detect." },
+              { title: "Automated Scanning", desc: "Comprehensive vulnerability scanning across your entire attack surface." },
+              { title: "Executive & Technical Reports", desc: "Dual-layer reporting for leadership and technical teams — both complete within 48 hours." },
+              { title: "Remediation Validation", desc: "Re-test critical findings after remediation to confirm vulnerabilities are closed." },
             ].map((f) => (
-              <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6 flex gap-4">
-                <div className="text-3xl">{f.icon}</div>
-                <div>
-                  <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
-                </div>
+              <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6">
+                <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
               </div>
             ))}
           </div>

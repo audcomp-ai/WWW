@@ -39,15 +39,14 @@ export default function ManagedFirewallPage() {
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-12 text-center">Managed Firewall Services</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: "👁️", title: "24/7 Monitoring", desc: "Continuous monitoring of firewall logs, alerts, and traffic anomalies with immediate escalation." },
-              { icon: "📋", title: "Rule Management", desc: "Regular review and cleanup of firewall rules to ensure they remain appropriate and effective." },
-              { icon: "🔄", title: "Firmware & Patch Management", desc: "Timely application of firmware updates and security patches to address known vulnerabilities." },
-              { icon: "🌐", title: "Threat Intelligence Integration", desc: "Real-time threat feeds keep your firewall rules updated against emerging threat actors and IPs." },
-              { icon: "🔍", title: "Traffic Analysis", desc: "Analysis of network traffic patterns to identify anomalies and potential threats." },
-              { icon: "📊", title: "Monthly Reporting", desc: "Regular reports on firewall activity, blocked threats, and rule changes." },
+              { title: "24/7 Monitoring", desc: "Continuous monitoring of firewall logs, alerts, and traffic anomalies with immediate escalation." },
+              { title: "Rule Management", desc: "Regular review and cleanup of firewall rules to ensure they remain appropriate and effective." },
+              { title: "Firmware & Patch Management", desc: "Timely application of firmware updates and security patches to address known vulnerabilities." },
+              { title: "Threat Intelligence Integration", desc: "Real-time threat feeds keep your firewall rules updated against emerging threat actors and IPs." },
+              { title: "Traffic Analysis", desc: "Analysis of network traffic patterns to identify anomalies and potential threats." },
+              { title: "Monthly Reporting", desc: "Regular reports on firewall activity, blocked threats, and rule changes." },
             ].map((f) => (
               <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6">
-                <div className="text-3xl mb-3">{f.icon}</div>
                 <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
               </div>

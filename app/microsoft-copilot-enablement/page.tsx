@@ -88,18 +88,15 @@ export default function MicrosoftCopilotPage() {
           <h2 className="text-2xl font-bold text-[#1a1a2e] mb-8 text-center">What Copilot Can Do for Your Team</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { icon: "📝", app: "Word", desc: "Draft, summarize, and rewrite documents in seconds." },
-              { icon: "📊", app: "Excel", desc: "Analyze data, generate formulas, and create visualizations." },
-              { icon: "📧", app: "Outlook", desc: "Summarize email threads and draft responses." },
-              { icon: "💬", app: "Teams", desc: "Recap meetings, extract action items, and catch up instantly." },
-              { icon: "🎨", app: "PowerPoint", desc: "Generate presentations from documents or prompts." },
-              { icon: "🔍", app: "Microsoft 365", desc: "Find information across all your Microsoft 365 content." },
+              { app: "Word", desc: "Draft, summarize, and rewrite documents in seconds." },
+              { app: "Excel", desc: "Analyze data, generate formulas, and create visualizations." },
+              { app: "Outlook", desc: "Summarize email threads and draft responses." },
+              { app: "Teams", desc: "Recap meetings, extract action items, and catch up instantly." },
+              { app: "PowerPoint", desc: "Generate presentations from documents or prompts." },
+              { app: "Microsoft 365", desc: "Find information across all your Microsoft 365 content." },
             ].map((f) => (
               <div key={f.app} className="bg-white rounded-xl p-4 border border-blue-100">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-2xl">{f.icon}</span>
-                  <span className="font-semibold text-[#0056a8] text-sm">{f.app}</span>
-                </div>
+                <p className="font-semibold text-[#0056a8] text-sm mb-2">{f.app}</p>
                 <p className="text-xs text-gray-600">{f.desc}</p>
               </div>
             ))}

@@ -38,19 +38,16 @@ export default function VirtualCIOPage() {
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-12 text-center">What Your vCIO Does</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
-              { icon: "🗺️", title: "IT Roadmap Planning", desc: "A documented, prioritized IT roadmap aligned to your business goals — reviewed and updated regularly." },
-              { icon: "📊", title: "Quarterly Business Reviews", desc: "Regular strategic reviews to assess performance, plan for growth, and align IT with business direction." },
-              { icon: "💰", title: "Budget Planning", desc: "Forecast technology spend accurately and prioritize investments that deliver measurable ROI." },
-              { icon: "🔒", title: "Security Governance", desc: "Ensure your security posture meets regulatory requirements and protects the organization from liability." },
-              { icon: "🤝", title: "Vendor Management", desc: "Evaluate and manage technology vendor relationships on your behalf — cutting through sales noise." },
-              { icon: "⚡", title: "Technology Evaluation", desc: "Assess emerging technologies and their applicability to your business — before your competitors do." },
+              { title: "IT Roadmap Planning", desc: "A documented, prioritized IT roadmap aligned to your business goals — reviewed and updated regularly." },
+              { title: "Quarterly Business Reviews", desc: "Regular strategic reviews to assess performance, plan for growth, and align IT with business direction." },
+              { title: "Budget Planning", desc: "Forecast technology spend accurately and prioritize investments that deliver measurable ROI." },
+              { title: "Security Governance", desc: "Ensure your security posture meets regulatory requirements and protects the organization from liability." },
+              { title: "Vendor Management", desc: "Evaluate and manage technology vendor relationships on your behalf — cutting through sales noise." },
+              { title: "Technology Evaluation", desc: "Assess emerging technologies and their applicability to your business — before your competitors do." },
             ].map((f) => (
-              <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6 flex gap-4">
-                <div className="text-3xl">{f.icon}</div>
-                <div>
-                  <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
-                </div>
+              <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6">
+                <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
               </div>
             ))}
           </div>

@@ -38,19 +38,16 @@ export default function ImplementationMigrationPage() {
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-12 text-center">Implementation Services</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
-              { icon: "🖥️", title: "Server & Storage Deployment", desc: "Physical and virtual server deployment, storage area network configuration, and hypervisor setup." },
-              { icon: "☁️", title: "Cloud Migration", desc: "Phased cloud migrations to Azure, Microsoft 365, or hybrid environments — with zero data loss." },
-              { icon: "📡", title: "WiFi Design & Deployment", desc: "Enterprise wireless network design, site surveys, access point deployment, and optimization." },
-              { icon: "💾", title: "Data Migration", desc: "Structured data migration between platforms — from on-premise to cloud, or system to system." },
-              { icon: "🔄", title: "System Refresh", desc: "Hardware refresh projects replacing aging infrastructure with minimal disruption to operations." },
-              { icon: "🏢", title: "Office Relocations", desc: "Complete IT infrastructure planning and execution for office moves and new site buildouts." },
+              { title: "Server & Storage Deployment", desc: "Physical and virtual server deployment, storage area network configuration, and hypervisor setup." },
+              { title: "Cloud Migration", desc: "Phased cloud migrations to Azure, Microsoft 365, or hybrid environments — with zero data loss." },
+              { title: "WiFi Design & Deployment", desc: "Enterprise wireless network design, site surveys, access point deployment, and optimization." },
+              { title: "Data Migration", desc: "Structured data migration between platforms — from on-premise to cloud, or system to system." },
+              { title: "System Refresh", desc: "Hardware refresh projects replacing aging infrastructure with minimal disruption to operations." },
+              { title: "Office Relocations", desc: "Complete IT infrastructure planning and execution for office moves and new site buildouts." },
             ].map((f) => (
-              <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6 flex gap-4">
-                <div className="text-3xl">{f.icon}</div>
-                <div>
-                  <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
-                </div>
+              <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6">
+                <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
               </div>
             ))}
           </div>

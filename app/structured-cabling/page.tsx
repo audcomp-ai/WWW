@@ -38,15 +38,14 @@ export default function StructuredCablingPage() {
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-12 text-center">Cabling Services</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: "📐", title: "Network Design", desc: "Structured cabling system design including cable runs, patch panel layouts, and IDF/MDF locations." },
-              { icon: "🔌", title: "Cat6 / Cat6A Installation", desc: "High-performance copper cabling supporting 10Gbps and beyond for future-ready networks." },
-              { icon: "💡", title: "Fiber Optic Installation", desc: "Single-mode and multi-mode fiber for backbone runs, inter-building connections, and high-density environments." },
-              { icon: "🗄️", title: "Patch Panel & Rack Setup", desc: "Clean, labeled patch panels and structured rack builds that are easy to manage and expand." },
-              { icon: "✅", title: "Cable Testing & Certification", desc: "Every run is tested and certified — complete test documentation provided at project completion." },
-              { icon: "📋", title: "As-Built Documentation", desc: "Detailed as-built drawings and cable schedules so your network is fully documented for the future." },
+              { title: "Network Design", desc: "Structured cabling system design including cable runs, patch panel layouts, and IDF/MDF locations." },
+              { title: "Cat6 / Cat6A Installation", desc: "High-performance copper cabling supporting 10Gbps and beyond for future-ready networks." },
+              { title: "Fiber Optic Installation", desc: "Single-mode and multi-mode fiber for backbone runs, inter-building connections, and high-density environments." },
+              { title: "Patch Panel & Rack Setup", desc: "Clean, labeled patch panels and structured rack builds that are easy to manage and expand." },
+              { title: "Cable Testing & Certification", desc: "Every run is tested and certified — complete test documentation provided at project completion." },
+              { title: "As-Built Documentation", desc: "Detailed as-built drawings and cable schedules so your network is fully documented for the future." },
             ].map((f) => (
               <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6">
-                <div className="text-3xl mb-3">{f.icon}</div>
                 <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
               </div>

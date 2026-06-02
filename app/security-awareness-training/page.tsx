@@ -39,19 +39,16 @@ export default function SecurityAwarenessTrainingPage() {
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-12 text-center">Program Components</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
-              { icon: "🎓", title: "Instructor-Led Training", desc: "Live training sessions led by Audcomp's cybersecurity professionals — practical, relevant, and engaging." },
-              { icon: "🎣", title: "Phishing Simulations", desc: "Simulated phishing campaigns that test employee awareness and identify who needs additional coaching." },
-              { icon: "📱", title: "Micro-Learning Modules", desc: "Short, targeted modules on specific threats — delivered regularly to maintain awareness over time." },
-              { icon: "📊", title: "Progress Reporting", desc: "Track improvement in click rates, reporting rates, and overall security culture across your organization." },
-              { icon: "🎯", title: "Role-Based Training", desc: "Tailored content for executives, finance teams, IT staff, and general employees — focused on their specific risks." },
-              { icon: "🔒", title: "Policy & Compliance", desc: "Training aligned to your security policies and regulatory requirements (PIPEDA, HIPAA, etc.)." },
+              { title: "Instructor-Led Training", desc: "Live training sessions led by Audcomp's cybersecurity professionals — practical, relevant, and engaging." },
+              { title: "Phishing Simulations", desc: "Simulated phishing campaigns that test employee awareness and identify who needs additional coaching." },
+              { title: "Micro-Learning Modules", desc: "Short, targeted modules on specific threats — delivered regularly to maintain awareness over time." },
+              { title: "Progress Reporting", desc: "Track improvement in click rates, reporting rates, and overall security culture across your organization." },
+              { title: "Role-Based Training", desc: "Tailored content for executives, finance teams, IT staff, and general employees — focused on their specific risks." },
+              { title: "Policy & Compliance", desc: "Training aligned to your security policies and regulatory requirements (PIPEDA, HIPAA, etc.)." },
             ].map((f) => (
-              <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6 flex gap-4">
-                <div className="text-3xl">{f.icon}</div>
-                <div>
-                  <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
-                </div>
+              <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6">
+                <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
               </div>
             ))}
           </div>

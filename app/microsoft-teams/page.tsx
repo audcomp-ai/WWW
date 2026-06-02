@@ -38,19 +38,16 @@ export default function MicrosoftTeamsPage() {
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-12 text-center">Teams Services</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
-              { icon: "🚀", title: "Teams Deployment", desc: "Tenant configuration, team and channel creation, and governance policy setup." },
-              { icon: "📁", title: "SharePoint Integration", desc: "Connect Teams channels to SharePoint document libraries for seamless file management." },
-              { icon: "☁️", title: "OneDrive Configuration", desc: "Personal file storage integrated with Teams for easy sharing and collaboration." },
-              { icon: "📞", title: "Teams Phone", desc: "Replace your traditional phone system with Microsoft Teams Phone — fully configured and managed." },
-              { icon: "🎥", title: "Meeting Rooms", desc: "Teams Rooms hardware and software configuration for productive in-person and hybrid meetings." },
-              { icon: "🎓", title: "End-User Training", desc: "Practical, role-specific training that drives adoption and reduces shadow IT." },
+              { title: "Teams Deployment", desc: "Tenant configuration, team and channel creation, and governance policy setup." },
+              { title: "SharePoint Integration", desc: "Connect Teams channels to SharePoint document libraries for seamless file management." },
+              { title: "OneDrive Configuration", desc: "Personal file storage integrated with Teams for easy sharing and collaboration." },
+              { title: "Teams Phone", desc: "Replace your traditional phone system with Microsoft Teams Phone — fully configured and managed." },
+              { title: "Meeting Rooms", desc: "Teams Rooms hardware and software configuration for productive in-person and hybrid meetings." },
+              { title: "End-User Training", desc: "Practical, role-specific training that drives adoption and reduces shadow IT." },
             ].map((f) => (
-              <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6 flex gap-4">
-                <div className="text-3xl">{f.icon}</div>
-                <div>
-                  <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
-                </div>
+              <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6">
+                <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
               </div>
             ))}
           </div>

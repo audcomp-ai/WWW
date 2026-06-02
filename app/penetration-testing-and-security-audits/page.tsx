@@ -48,19 +48,16 @@ export default function PenetrationTestingPage() {
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-12 text-center">Testing Scope & Approach</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
-              { icon: "🌐", title: "External Network Testing", desc: "Simulated attacks against your internet-facing infrastructure — web apps, email, VPN, and exposed services." },
-              { icon: "🏢", title: "Internal Network Testing", desc: "Insider threat simulation and lateral movement testing within your network perimeter." },
-              { icon: "🌍", title: "Web Application Testing", desc: "OWASP Top 10 and beyond — comprehensive testing of your web applications and APIs." },
-              { icon: "📱", title: "Phishing Simulations", desc: "Targeted phishing campaigns to test your employees' security awareness and response." },
-              { icon: "☁️", title: "Cloud Configuration Review", desc: "Microsoft Azure and M365 configuration audits to identify common cloud security misconfigurations." },
-              { icon: "📋", title: "48-Hour Reporting", desc: "Every engagement concludes with a detailed report including executive summary and prioritized remediations." },
+              { title: "External Network Testing", desc: "Simulated attacks against your internet-facing infrastructure — web apps, email, VPN, and exposed services." },
+              { title: "Internal Network Testing", desc: "Insider threat simulation and lateral movement testing within your network perimeter." },
+              { title: "Web Application Testing", desc: "OWASP Top 10 and beyond — comprehensive testing of your web applications and APIs." },
+              { title: "Phishing Simulations", desc: "Targeted phishing campaigns to test your employees' security awareness and response." },
+              { title: "Cloud Configuration Review", desc: "Microsoft Azure and M365 configuration audits to identify common cloud security misconfigurations." },
+              { title: "48-Hour Reporting", desc: "Every engagement concludes with a detailed report including executive summary and prioritized remediations." },
             ].map((f) => (
-              <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6 flex gap-4">
-                <div className="text-3xl">{f.icon}</div>
-                <div>
-                  <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
-                </div>
+              <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6">
+                <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
               </div>
             ))}
           </div>

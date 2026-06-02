@@ -3,7 +3,7 @@ import Hero from "@/components/Hero";
 import CTABanner from "@/components/CTABanner";
 
 export const metadata: Metadata = {
-  title: "Our Story | Audcomp — 39 Years of IT Excellence in Canada",
+  title: "Our Story | Audcomp — 40 Years of IT Excellence in Canada",
   description:
     "From a university startup in 1986 to the largest MSP in Hamilton and Ancaster. The story of Audcomp and our commitment to Canadian businesses.",
 };
@@ -103,38 +103,31 @@ export default function OurStoryPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                icon: "🤝",
                 title: "Partnership",
                 desc: "We build long-term relationships, not transactional interactions. Your success is our success.",
               },
               {
-                icon: "🇨🇦",
                 title: "Canadian First",
                 desc: "100% Canadian engineers. 100% Canadian data centers. Your data stays on Canadian soil.",
               },
               {
-                icon: "⚡",
                 title: "Proactive",
                 desc: "We monitor, maintain, and optimize before problems occur — not after.",
               },
               {
-                icon: "🎯",
                 title: "Accountability",
                 desc: "We own outcomes, not just deliverables. When something goes wrong, we make it right.",
               },
               {
-                icon: "🔒",
                 title: "Security First",
                 desc: "Cyber security isn't a product we sell — it's a principle we build every solution around.",
               },
               {
-                icon: "🌱",
                 title: "Continuous Growth",
                 desc: "Technology never stands still, and neither do we. We invest constantly in skills and certifications.",
               },
             ].map((v) => (
               <div key={v.title} className="text-center p-6">
-                <div className="text-4xl mb-4">{v.icon}</div>
                 <h3 className="text-lg font-semibold text-[#1a1a2e] mb-2">{v.title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{v.desc}</p>
               </div>

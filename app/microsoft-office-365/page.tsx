@@ -35,19 +35,16 @@ export default function Office365Page() {
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-12 text-center">Microsoft 365 Services</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
-              { icon: "🚀", title: "Deployment & Setup", desc: "Tenant creation, licensing, user provisioning, and configuration tailored to your organization." },
-              { icon: "🔄", title: "Email Migration", desc: "Migrate from on-premise Exchange, Google, or other platforms with zero downtime." },
-              { icon: "🔒", title: "Security Hardening", desc: "MFA, conditional access, spam filtering, and advanced threat protection enabled from day one." },
-              { icon: "📁", title: "SharePoint & OneDrive", desc: "Document management, team sites, and cloud storage configured for your workflow." },
-              { icon: "👤", title: "User Management", desc: "Ongoing user provisioning, license management, and access control." },
-              { icon: "🎓", title: "End-User Training", desc: "Help your team get the most out of Microsoft 365 with practical, role-specific training." },
+              { title: "Deployment & Setup", desc: "Tenant creation, licensing, user provisioning, and configuration tailored to your organization." },
+              { title: "Email Migration", desc: "Migrate from on-premise Exchange, Google, or other platforms with zero downtime." },
+              { title: "Security Hardening", desc: "MFA, conditional access, spam filtering, and advanced threat protection enabled from day one." },
+              { title: "SharePoint & OneDrive", desc: "Document management, team sites, and cloud storage configured for your workflow." },
+              { title: "User Management", desc: "Ongoing user provisioning, license management, and access control." },
+              { title: "End-User Training", desc: "Help your team get the most out of Microsoft 365 with practical, role-specific training." },
             ].map((f) => (
-              <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6 flex gap-4">
-                <div className="text-3xl">{f.icon}</div>
-                <div>
-                  <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
-                </div>
+              <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6">
+                <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
               </div>
             ))}
           </div>

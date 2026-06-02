@@ -7,6 +7,8 @@ interface HeroProps {
   ctaHref?: string;
   secondaryCtaText?: string;
   secondaryCtaHref?: string;
+  variant?: "dark" | "light";
+  /** @deprecated use variant instead */
   bgColor?: "blue" | "dark" | "light";
 }
 
@@ -17,28 +19,38 @@ export default function Hero({
   ctaHref,
   secondaryCtaText,
   secondaryCtaHref,
-  bgColor = "blue",
+  variant,
+  bgColor,
 }: HeroProps) {
-  const bgClass =
-    bgColor === "blue"
-      ? "bg-[#0056a8]"
-      : bgColor === "dark"
-      ? "bg-[#1a1a2e]"
-      : "bg-[#e8f0fe]";
+  // Resolve variant: new `variant` prop takes priority, then fall back to legacy `bgColor`
+  const resolved: "dark" | "light" =
+    variant === "light"
+      ? "light"
+      : variant === "dark"
+      ? "dark"
+      : bgColor === "light"
+      ? "light"
+      : "dark"; // blue and dark both map to dark navy
 
-  const textClass =
-    bgColor === "light" ? "text-[#1a1a2e]" : "text-white";
-
-  const subtitleClass =
-    bgColor === "light" ? "text-gray-600" : "text-blue-100";
+  const isDark = resolved === "dark";
 
   return (
-    <section className={`${bgClass} ${textClass} py-20 px-4`}>
-      <div className="max-w-4xl mx-auto text-center">
-        <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-6">
+    <section
+      className={`${isDark ? "bg-[#181E2C]" : "bg-white"} py-32 md:py-40 px-4`}
+    >
+      <div className="max-w-6xl mx-auto text-center">
+        <h1
+          className={`text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-none mb-8 ${
+            isDark ? "text-white" : "text-foreground"
+          }`}
+        >
           {title}
         </h1>
-        <p className={`text-lg sm:text-xl ${subtitleClass} mb-8 max-w-2xl mx-auto leading-relaxed`}>
+        <p
+          className={`text-xl leading-relaxed mb-10 max-w-2xl mx-auto ${
+            isDark ? "text-gray-400" : "text-muted-foreground"
+          }`}
+        >
           {subtitle}
         </p>
         {(ctaText || secondaryCtaText) && (
@@ -46,11 +58,7 @@ export default function Hero({
             {ctaText && ctaHref && (
               <Link
                 href={ctaHref}
-                className={`px-8 py-3 rounded-md font-semibold text-sm transition-colors ${
-                  bgColor === "light"
-                    ? "bg-[#0056a8] text-white hover:bg-[#003d7a]"
-                    : "bg-white text-[#0056a8] hover:bg-gray-100"
-                }`}
+                className="bg-primary text-white font-semibold px-8 py-4 rounded-full hover:brightness-110 transition-all shadow-md"
               >
                 {ctaText}
               </Link>
@@ -58,10 +66,10 @@ export default function Hero({
             {secondaryCtaText && secondaryCtaHref && (
               <Link
                 href={secondaryCtaHref}
-                className={`px-8 py-3 rounded-md font-semibold text-sm border-2 transition-colors ${
-                  bgColor === "light"
-                    ? "border-[#0056a8] text-[#0056a8] hover:bg-[#0056a8] hover:text-white"
-                    : "border-white text-white hover:bg-white hover:text-[#0056a8]"
+                className={`font-semibold px-8 py-4 rounded-full border-2 transition-all ${
+                  isDark
+                    ? "border-white text-white hover:bg-white hover:text-[#181E2C]"
+                    : "border-[#181E2C] text-[#181E2C] hover:bg-[#181E2C] hover:text-white"
                 }`}
               >
                 {secondaryCtaText}

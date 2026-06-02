@@ -35,15 +35,14 @@ export default function MicrosoftAzurePage() {
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-12 text-center">Azure Services</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: "📋", title: "Cloud Readiness Assessment", desc: "Evaluate your current workloads and infrastructure to plan the optimal Azure migration path." },
-              { icon: "🏗️", title: "Architecture Design", desc: "Custom Azure architecture tailored to your performance, security, and compliance requirements." },
-              { icon: "🔄", title: "Server & Workload Migration", desc: "Lift-and-shift or modernize workloads to Azure with minimal disruption to operations." },
-              { icon: "🔒", title: "Azure Security Configuration", desc: "Identity management, network security, Azure Defender, and compliance controls." },
-              { icon: "📊", title: "Azure Monitor & Management", desc: "Continuous monitoring, cost optimization, and performance tuning of your Azure environment." },
-              { icon: "💾", title: "Azure Backup & DR", desc: "Azure Site Recovery and backup services for business continuity across your cloud workloads." },
+              { title: "Cloud Readiness Assessment", desc: "Evaluate your current workloads and infrastructure to plan the optimal Azure migration path." },
+              { title: "Architecture Design", desc: "Custom Azure architecture tailored to your performance, security, and compliance requirements." },
+              { title: "Server & Workload Migration", desc: "Lift-and-shift or modernize workloads to Azure with minimal disruption to operations." },
+              { title: "Azure Security Configuration", desc: "Identity management, network security, Azure Defender, and compliance controls." },
+              { title: "Azure Monitor & Management", desc: "Continuous monitoring, cost optimization, and performance tuning of your Azure environment." },
+              { title: "Azure Backup & DR", desc: "Azure Site Recovery and backup services for business continuity across your cloud workloads." },
             ].map((f) => (
               <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6">
-                <div className="text-3xl mb-3">{f.icon}</div>
                 <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
               </div>

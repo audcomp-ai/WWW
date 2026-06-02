@@ -11,28 +11,28 @@ export const metadata: Metadata = {
 
 const subServices = [
   {
-    icon: "👔",
     title: "Virtual CIO (vCIO)",
     description: "A strategic IT partner who provides executive-level technology guidance, quarterly reviews, and IT roadmap planning.",
     href: "/virtual-cio",
+    category: "Professional",
   },
   {
-    icon: "📐",
     title: "IT Consulting & Design",
     description: "Technical assessments, risk identification, architecture design, and training tailored to your business needs.",
     href: "/consulting-design",
+    category: "Professional",
   },
   {
-    icon: "🚀",
     title: "Implementation & Migration",
     description: "Server and storage deployment, WiFi design, data migration, and complex IT project delivery.",
     href: "/implementation-migration",
+    category: "Professional",
   },
   {
-    icon: "🔌",
     title: "Structured Cabling",
     description: "Network infrastructure design and installation — the physical foundation of a reliable, high-performance network.",
     href: "/structured-cabling",
+    category: "Professional",
   },
 ];
 
@@ -46,22 +46,22 @@ export default function ProfessionalServicesPage() {
         ctaHref="/contact"
       />
 
-      <section className="bg-white py-20 px-4">
+      <section className="bg-background py-20 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">IT Expertise When You Need It Most</h2>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <h2 className="text-3xl font-bold text-foreground mb-6">IT Expertise When You Need It Most</h2>
+          <p className="text-muted-foreground text-lg leading-relaxed mb-6">
             Not every IT challenge fits neatly into a managed services contract. Sometimes you need a strategic advisor to help set your IT direction. Sometimes you need a skilled team to execute a complex migration. Sometimes you need physical infrastructure built right.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-muted-foreground text-lg leading-relaxed mb-6">
             Audcomp's Professional Services practice addresses all of these needs — with senior engineers and consultants who bring nearly four decades of experience to every engagement. Whether it's a discrete project or an ongoing strategic relationship, we deliver with the same professionalism and accountability that defines everything we do.
           </p>
         </div>
       </section>
 
-      <section className="bg-gray-50 py-20 px-4">
+      <section className="bg-muted py-20 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-4 text-center">Professional Services</h2>
-          <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold text-foreground mb-4 text-center">Professional Services</h2>
+          <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
             From strategy to execution — Audcomp's professional services span the full IT lifecycle.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -72,22 +72,21 @@ export default function ProfessionalServicesPage() {
         </div>
       </section>
 
-      <section className="bg-white py-20 px-4">
+      <section className="bg-background py-20 px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-12 text-center">Why Audcomp Professional Services?</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-12 text-center">Why Audcomp Professional Services?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: "🎓", title: "Senior Expertise", desc: "Our professional services team includes senior architects and consultants with decades of experience." },
-              { icon: "📊", title: "Proven Methodology", desc: "Structured project delivery with clear milestones, documentation, and accountability." },
-              { icon: "🔗", title: "Integrated Approach", desc: "Professional services connect seamlessly with our managed services for ongoing support post-delivery." },
-              { icon: "🏭", title: "Industry Knowledge", desc: "Deep experience across healthcare, municipalities, manufacturing, and enterprise environments." },
-              { icon: "🇨🇦", title: "Local Delivery", desc: "On-site presence in Hamilton, Ancaster, and across southern Ontario when you need it." },
-              { icon: "✅", title: "Outcome Focused", desc: "We're measured on results — successful projects delivered on time and on budget." },
+              { title: "Senior Expertise", desc: "Our professional services team includes senior architects and consultants with decades of experience." },
+              { title: "Proven Methodology", desc: "Structured project delivery with clear milestones, documentation, and accountability." },
+              { title: "Integrated Approach", desc: "Professional services connect seamlessly with our managed services for ongoing support post-delivery." },
+              { title: "Industry Knowledge", desc: "Deep experience across healthcare, municipalities, manufacturing, and enterprise environments." },
+              { title: "Local Delivery", desc: "On-site presence in Hamilton, Ancaster, and across southern Ontario when you need it." },
+              { title: "Outcome Focused", desc: "We're measured on results — successful projects delivered on time and on budget." },
             ].map((f) => (
-              <div key={f.title} className="bg-[#e8f0fe] rounded-xl p-6">
-                <div className="text-3xl mb-3">{f.icon}</div>
-                <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
+              <div key={f.title} className="bg-card border border-border rounded-2xl p-6">
+                <h3 className="font-semibold text-foreground mb-2">{f.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
               </div>
             ))}
           </div>

@@ -52,28 +52,21 @@ const serviceCategories = [
       { label: "Structured Cabling", href: "/structured-cabling" },
     ],
   },
-  {
-    label: "AI Services",
-    href: "/ai-services",
-    items: [
-      { label: "AI Services", href: "/ai-services" },
-      { label: "Microsoft Copilot Enablement", href: "/microsoft-copilot-enablement" },
-    ],
-  },
 ];
 
 export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [activeCat, setActiveCat] = useState(0);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
   return (
-    <header className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header className="bg-[#181E2C] sticky top-0 z-50">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <span className="text-2xl font-bold text-[#0056a8]">Audcomp</span>
+          <Link href="/" className="flex items-center">
+            <img src="/audcomp-logo.png" alt="Audcomp" className="h-8 w-auto" />
           </Link>
 
           {/* Desktop Nav */}
@@ -84,7 +77,7 @@ export default function Nav() {
               onMouseEnter={() => setServicesOpen(true)}
               onMouseLeave={() => setServicesOpen(false)}
             >
-              <button className="flex items-center gap-1 text-sm font-medium text-gray-700 hover:text-[#0056a8] transition-colors py-2">
+              <button className="flex items-center gap-1 text-sm font-medium text-gray-300 hover:text-primary transition-colors py-2">
                 Services
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -92,18 +85,18 @@ export default function Nav() {
               </button>
 
               {servicesOpen && (
-                <div className="absolute left-0 top-full w-[640px] bg-white border border-gray-200 shadow-xl rounded-lg overflow-hidden">
+                <div className="absolute left-0 top-full w-[600px] bg-card border border-border shadow-xl rounded-2xl overflow-hidden mt-1">
                   <div className="flex">
                     {/* Category tabs */}
-                    <div className="w-48 bg-[#e8f0fe] p-2 flex flex-col gap-1">
+                    <div className="w-44 bg-muted p-2 flex flex-col gap-1">
                       {serviceCategories.map((cat, i) => (
                         <button
                           key={cat.label}
                           onMouseEnter={() => setActiveCat(i)}
-                          className={`text-left px-3 py-2 rounded text-sm font-medium transition-colors ${
+                          className={`text-left px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                             activeCat === i
-                              ? "bg-[#0056a8] text-white"
-                              : "text-gray-700 hover:bg-[#0056a8]/10"
+                              ? "bg-primary text-white"
+                              : "text-foreground hover:bg-gray-200"
                           }`}
                         >
                           {cat.label}
@@ -112,7 +105,7 @@ export default function Nav() {
                     </div>
                     {/* Sub-items */}
                     <div className="flex-1 p-4">
-                      <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">
+                      <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">
                         {serviceCategories[activeCat].label}
                       </p>
                       <div className="flex flex-col gap-1">
@@ -120,7 +113,7 @@ export default function Nav() {
                           <Link
                             key={item.href}
                             href={item.href}
-                            className="text-sm text-gray-700 hover:text-[#0056a8] hover:bg-[#e8f0fe] px-3 py-2 rounded transition-colors"
+                            className="text-sm text-foreground hover:text-primary hover:bg-muted px-3 py-2 rounded-lg transition-colors"
                             onClick={() => setServicesOpen(false)}
                           >
                             {item.label}
@@ -133,26 +126,29 @@ export default function Nav() {
               )}
             </div>
 
-            <Link href="/about" className="text-sm font-medium text-gray-700 hover:text-[#0056a8] transition-colors">
+            <Link href="/ai-services" className="text-sm font-medium text-gray-300 hover:text-primary transition-colors">
+              AI Services
+            </Link>
+            <Link href="/about" className="text-sm font-medium text-gray-300 hover:text-primary transition-colors">
               About
             </Link>
-            <Link href="/partners" className="text-sm font-medium text-gray-700 hover:text-[#0056a8] transition-colors">
+            <Link href="/partners" className="text-sm font-medium text-gray-300 hover:text-primary transition-colors">
               Partners
             </Link>
-            <Link href="/careers" className="text-sm font-medium text-gray-700 hover:text-[#0056a8] transition-colors">
+            <Link href="/careers" className="text-sm font-medium text-gray-300 hover:text-primary transition-colors">
               Careers
             </Link>
 
             <a
               href="tel:9053041775"
-              className="text-sm font-medium text-gray-500 hover:text-[#0056a8] transition-colors"
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
             >
               905-304-1775
             </a>
 
             <Link
               href="/contact"
-              className="bg-[#0056a8] text-white text-sm font-medium px-4 py-2 rounded-md hover:bg-[#003d7a] transition-colors"
+              className="bg-primary text-white text-sm font-semibold px-6 py-2 rounded-full hover:brightness-110 transition-all shadow-sm"
             >
               Contact Us
             </Link>
@@ -160,7 +156,7 @@ export default function Nav() {
 
           {/* Mobile hamburger */}
           <button
-            className="lg:hidden p-2 rounded-md text-gray-600 hover:text-[#0056a8]"
+            className="lg:hidden p-2 rounded-md text-gray-400 hover:text-primary"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
@@ -179,25 +175,43 @@ export default function Nav() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-200 px-4 py-4 flex flex-col gap-3">
-          <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mt-2">Services</p>
-          {serviceCategories.map((cat) => (
-            <div key={cat.label}>
-              <p className="text-sm font-semibold text-[#0056a8] mb-1">{cat.label}</p>
-              {cat.items.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="block text-sm text-gray-600 py-1 pl-3 hover:text-[#0056a8]"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  {item.label}
-                </Link>
+        <div className="lg:hidden bg-[#181E2C] border-t border-white/10 px-4 py-4 flex flex-col gap-3">
+          {/* Services accordion */}
+          <button
+            className="flex items-center justify-between text-sm font-semibold text-gray-300 py-1"
+            onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+          >
+            Services
+            <svg
+              className={`w-4 h-4 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`}
+              fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          {mobileServicesOpen && (
+            <div className="pl-3 flex flex-col gap-3">
+              {serviceCategories.map((cat) => (
+                <div key={cat.label}>
+                  <p className="text-xs font-semibold text-primary uppercase tracking-wider mb-1">{cat.label}</p>
+                  {cat.items.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="block text-sm text-gray-500 py-1 pl-2 hover:text-primary"
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
               ))}
             </div>
-          ))}
-          <div className="border-t border-gray-200 pt-3 flex flex-col gap-2">
+          )}
+
+          <div className="border-t border-white/10 pt-3 flex flex-col gap-2">
             {[
+              { label: "AI Services", href: "/ai-services" },
               { label: "About", href: "/about" },
               { label: "Partners", href: "/partners" },
               { label: "Careers", href: "/careers" },
@@ -205,7 +219,7 @@ export default function Nav() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-gray-700"
+                className="text-sm font-medium text-gray-300 hover:text-primary transition-colors"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
@@ -216,7 +230,7 @@ export default function Nav() {
             </a>
             <Link
               href="/contact"
-              className="bg-[#0056a8] text-white text-sm font-medium px-4 py-2 rounded-md text-center hover:bg-[#003d7a] transition-colors"
+              className="bg-primary text-white text-sm font-semibold px-6 py-3 rounded-full text-center hover:brightness-110 transition-all"
               onClick={() => setMobileOpen(false)}
             >
               Contact Us

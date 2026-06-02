@@ -41,19 +41,16 @@ export default function EndpointProtectionPage() {
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-12 text-center">AGS Protection Layers</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
-              { icon: "🖥️", title: "Endpoint Threat Detection", desc: "Next-generation AV with behavioral AI detects fileless malware, ransomware, and zero-day threats in real time." },
-              { icon: "📊", title: "Real-Time Monitoring", desc: "Continuous endpoint visibility with automated alerting and escalation to Audcomp's security team." },
-              { icon: "📧", title: "Email Protection", desc: "Advanced email filtering, phishing detection, link scanning, and attachment sandboxing integrated with Microsoft 365." },
-              { icon: "💼", title: "Office Protection", desc: "Macro and script execution controls, document sandboxing, and exploit prevention for Microsoft Office." },
-              { icon: "🔄", title: "Automated Response", desc: "Threats are contained automatically — isolating infected endpoints to prevent lateral movement." },
-              { icon: "📋", title: "Security Reporting", desc: "Regular security reports and dashboards keep you informed on your organization's threat exposure." },
+              { title: "Endpoint Threat Detection", desc: "Next-generation AV with behavioral AI detects fileless malware, ransomware, and zero-day threats in real time." },
+              { title: "Real-Time Monitoring", desc: "Continuous endpoint visibility with automated alerting and escalation to Audcomp's security team." },
+              { title: "Email Protection", desc: "Advanced email filtering, phishing detection, link scanning, and attachment sandboxing integrated with Microsoft 365." },
+              { title: "Office Protection", desc: "Macro and script execution controls, document sandboxing, and exploit prevention for Microsoft Office." },
+              { title: "Automated Response", desc: "Threats are contained automatically — isolating infected endpoints to prevent lateral movement." },
+              { title: "Security Reporting", desc: "Regular security reports and dashboards keep you informed on your organization's threat exposure." },
             ].map((f) => (
-              <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6 flex gap-4">
-                <div className="text-3xl">{f.icon}</div>
-                <div>
-                  <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
-                </div>
+              <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6">
+                <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
               </div>
             ))}
           </div>

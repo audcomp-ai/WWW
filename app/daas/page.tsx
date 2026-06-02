@@ -38,15 +38,14 @@ export default function DaaSPage() {
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-12 text-center">What DaaS Includes</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: "💻", title: "Hardware Procurement", desc: "We source and procure the right devices for each role at competitive manufacturer pricing." },
-              { icon: "⚙️", title: "Configuration & Imaging", desc: "Every device arrives pre-configured with your software, policies, and security settings." },
-              { icon: "🔒", title: "Security Management", desc: "Endpoint protection, encryption, and MDM enrollment included on every device." },
-              { icon: "🔄", title: "Lifecycle Management", desc: "Refresh cycles, trade-ins, and end-of-life disposal handled entirely by Audcomp." },
-              { icon: "🛠️", title: "Break-Fix Support", desc: "Hardware failures are addressed rapidly — with loaner devices available to minimize disruption." },
-              { icon: "📊", title: "Asset Tracking & Reporting", desc: "Complete visibility into your device fleet with real-time asset inventory and reporting." },
+              { title: "Hardware Procurement", desc: "We source and procure the right devices for each role at competitive manufacturer pricing." },
+              { title: "Configuration & Imaging", desc: "Every device arrives pre-configured with your software, policies, and security settings." },
+              { title: "Security Management", desc: "Endpoint protection, encryption, and MDM enrollment included on every device." },
+              { title: "Lifecycle Management", desc: "Refresh cycles, trade-ins, and end-of-life disposal handled entirely by Audcomp." },
+              { title: "Break-Fix Support", desc: "Hardware failures are addressed rapidly — with loaner devices available to minimize disruption." },
+              { title: "Asset Tracking & Reporting", desc: "Complete visibility into your device fleet with real-time asset inventory and reporting." },
             ].map((f) => (
               <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6">
-                <div className="text-3xl mb-3">{f.icon}</div>
                 <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
               </div>

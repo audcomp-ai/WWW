@@ -9,12 +9,12 @@ export const metadata: Metadata = {
 };
 
 const features = [
-  { icon: "🖥️", title: "End-User Support", desc: "Responsive support for every member of your team — from password resets to complex workstation issues." },
-  { icon: "🌐", title: "Network Management", desc: "Proactive monitoring, configuration, and maintenance of your entire network infrastructure." },
-  { icon: "⚙️", title: "Infrastructure Management", desc: "Server, storage, and virtualization management to keep your core systems running optimally." },
-  { icon: "📊", title: "24/7 Monitoring", desc: "Round-the-clock monitoring with automated alerting ensures issues are caught before they cause downtime." },
-  { icon: "🔄", title: "Patch Management", desc: "Automated patch deployment keeps your systems current, secure, and compliant." },
-  { icon: "📋", title: "Reporting & Reviews", desc: "Regular reporting and strategic reviews keep you informed and ahead of your IT roadmap." },
+  { title: "End-User Support", desc: "Responsive support for every member of your team — from password resets to complex workstation issues." },
+  { title: "Network Management", desc: "Proactive monitoring, configuration, and maintenance of your entire network infrastructure." },
+  { title: "Infrastructure Management", desc: "Server, storage, and virtualization management to keep your core systems running optimally." },
+  { title: "24/7 Monitoring", desc: "Round-the-clock monitoring with automated alerting ensures issues are caught before they cause downtime." },
+  { title: "Patch Management", desc: "Automated patch deployment keeps your systems current, secure, and compliant." },
+  { title: "Reporting & Reviews", desc: "Regular reporting and strategic reviews keep you informed and ahead of your IT roadmap." },
 ];
 
 export default function ManagedITSupportPage() {
@@ -48,7 +48,6 @@ export default function ManagedITSupportPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((f) => (
               <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6">
-                <div className="text-3xl mb-3">{f.icon}</div>
                 <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
               </div>

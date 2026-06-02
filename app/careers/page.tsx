@@ -9,12 +9,12 @@ export const metadata: Metadata = {
 };
 
 const benefits = [
-  { icon: "📈", title: "Career Growth", desc: "Training, certifications, and advancement paths for every role." },
-  { icon: "🇨🇦", title: "Canadian Company", desc: "Work for a proudly Canadian organization with local leadership." },
-  { icon: "🤝", title: "Team Culture", desc: "A collaborative, supportive team that values every member." },
-  { icon: "🎓", title: "Continuous Learning", desc: "Vendor-sponsored training and conference opportunities." },
-  { icon: "🏥", title: "Benefits Package", desc: "Competitive salary, health benefits, and paid time off." },
-  { icon: "🌟", title: "Make an Impact", desc: "Work with clients across healthcare, government, and enterprise." },
+  { title: "Career Growth", desc: "Training, certifications, and advancement paths for every role." },
+  { title: "Canadian Company", desc: "Work for a proudly Canadian organization with local leadership." },
+  { title: "Team Culture", desc: "A collaborative, supportive team that values every member." },
+  { title: "Continuous Learning", desc: "Vendor-sponsored training and conference opportunities." },
+  { title: "Benefits Package", desc: "Competitive salary, health benefits, and paid time off." },
+  { title: "Make an Impact", desc: "Work with clients across healthcare, government, and enterprise." },
 ];
 
 export default function CareersPage() {
@@ -39,7 +39,6 @@ export default function CareersPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {benefits.map((b) => (
               <div key={b.title} className="bg-[#e8f0fe] rounded-xl p-6">
-                <div className="text-3xl mb-3">{b.icon}</div>
                 <h3 className="font-semibold text-[#1a1a2e] mb-2">{b.title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{b.desc}</p>
               </div>

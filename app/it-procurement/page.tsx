@@ -13,7 +13,7 @@ export default function ITProcurementPage() {
     <>
       <Hero
         title="IT Procurement"
-        subtitle="The right technology at the best value — sourced through Tier 1 and Tier 2 manufacturer partnerships built over 39 years."
+        subtitle="The right technology at the best value — sourced through Tier 1 and Tier 2 manufacturer partnerships built over 40 years."
         ctaText="Request a Quote"
         ctaHref="/contact"
       />
@@ -38,15 +38,14 @@ export default function ITProcurementPage() {
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-12 text-center">What We Procure</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: "🖥️", title: "Servers & Storage", desc: "Rack-mount, tower, and blade servers from leading manufacturers, plus SAN/NAS storage solutions." },
-              { icon: "💻", title: "Client Systems", desc: "Desktops, laptops, workstations, and thin clients for every user type and budget." },
-              { icon: "🌐", title: "Networking", desc: "Switches, routers, firewalls, and wireless access points from Cisco, Fortinet, and others." },
-              { icon: "🖨️", title: "Peripherals", desc: "Monitors, printers, scanners, docking stations, and accessories." },
-              { icon: "📱", title: "Mobile Devices", desc: "Smartphones, tablets, and mobile accessories for field and remote teams." },
-              { icon: "💾", title: "Software Licensing", desc: "Microsoft, Adobe, and hundreds of other titles with volume licensing options." },
+              { title: "Servers & Storage", desc: "Rack-mount, tower, and blade servers from leading manufacturers, plus SAN/NAS storage solutions." },
+              { title: "Client Systems", desc: "Desktops, laptops, workstations, and thin clients for every user type and budget." },
+              { title: "Networking", desc: "Switches, routers, firewalls, and wireless access points from Cisco, Fortinet, and others." },
+              { title: "Peripherals", desc: "Monitors, printers, scanners, docking stations, and accessories." },
+              { title: "Mobile Devices", desc: "Smartphones, tablets, and mobile accessories for field and remote teams." },
+              { title: "Software Licensing", desc: "Microsoft, Adobe, and hundreds of other titles with volume licensing options." },
             ].map((f) => (
               <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6">
-                <div className="text-3xl mb-3">{f.icon}</div>
                 <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
               </div>
@@ -58,8 +57,7 @@ export default function ITProcurementPage() {
       {/* Try & Buy */}
       <section className="bg-[#e8f0fe] py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="text-4xl mb-4">🔬</div>
-          <h2 className="text-2xl font-bold text-[#1a1a2e] mb-4">Our "Try and Buy" Demo Program</h2>
+          <h2 className="text-2xl font-bold text-[#1a1a2e] mb-4">Our &quot;Try and Buy&quot; Demo Program</h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             Evaluate hardware in your own environment before you commit. Our exclusive Try and Buy program lets you test servers, networking equipment, and workstations with your actual workloads — eliminating guesswork from every procurement decision.
           </p>

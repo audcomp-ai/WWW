@@ -38,19 +38,16 @@ export default function HybridCloudPage() {
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-12 text-center">Hybrid Cloud Services</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
-              { icon: "🗺️", title: "Hybrid Cloud Strategy", desc: "Workload assessment and strategy design to determine what stays on-premise and what moves to the cloud." },
-              { icon: "🔗", title: "Connectivity & Integration", desc: "VPN, ExpressRoute, and Azure Arc configurations that unify your environments." },
-              { icon: "🔒", title: "Unified Security", desc: "Consistent identity management, access control, and security policies across on-premise and cloud." },
-              { icon: "📊", title: "Centralized Management", desc: "A single pane of glass for monitoring, managing, and reporting across your entire hybrid environment." },
-              { icon: "🔄", title: "Workload Migration", desc: "Phased, low-risk workload migration strategies that minimize disruption." },
-              { icon: "💰", title: "Cost Management", desc: "Optimize cloud spend and on-premise investment to achieve the best total cost of ownership." },
+              { title: "Hybrid Cloud Strategy", desc: "Workload assessment and strategy design to determine what stays on-premise and what moves to the cloud." },
+              { title: "Connectivity & Integration", desc: "VPN, ExpressRoute, and Azure Arc configurations that unify your environments." },
+              { title: "Unified Security", desc: "Consistent identity management, access control, and security policies across on-premise and cloud." },
+              { title: "Centralized Management", desc: "A single pane of glass for monitoring, managing, and reporting across your entire hybrid environment." },
+              { title: "Workload Migration", desc: "Phased, low-risk workload migration strategies that minimize disruption." },
+              { title: "Cost Management", desc: "Optimize cloud spend and on-premise investment to achieve the best total cost of ownership." },
             ].map((f) => (
-              <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6 flex gap-4">
-                <div className="text-3xl">{f.icon}</div>
-                <div>
-                  <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
-                </div>
+              <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6">
+                <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
               </div>
             ))}
           </div>

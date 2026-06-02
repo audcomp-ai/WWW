@@ -38,15 +38,14 @@ export default function ConsultingDesignPage() {
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-12 text-center">Consulting & Design Services</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: "🔎", title: "Technical Assessment", desc: "Comprehensive review of your current IT environment — infrastructure, security, processes, and costs." },
-              { icon: "⚠️", title: "Risk Identification", desc: "Identify technical, security, and operational risks before they become incidents." },
-              { icon: "📐", title: "Solution Architecture", desc: "Custom technology architectures designed for your specific requirements and constraints." },
-              { icon: "🗺️", title: "IT Roadmap Development", desc: "A prioritized, budgeted IT roadmap that aligns technology investment with business goals." },
-              { icon: "🎓", title: "Technical Training", desc: "Staff training on new technologies, processes, and best practices." },
-              { icon: "📋", title: "Vendor Assessment", desc: "Evaluate vendor proposals and technology options independently — without the sales bias." },
+              { title: "Technical Assessment", desc: "Comprehensive review of your current IT environment — infrastructure, security, processes, and costs." },
+              { title: "Risk Identification", desc: "Identify technical, security, and operational risks before they become incidents." },
+              { title: "Solution Architecture", desc: "Custom technology architectures designed for your specific requirements and constraints." },
+              { title: "IT Roadmap Development", desc: "A prioritized, budgeted IT roadmap that aligns technology investment with business goals." },
+              { title: "Technical Training", desc: "Staff training on new technologies, processes, and best practices." },
+              { title: "Vendor Assessment", desc: "Evaluate vendor proposals and technology options independently — without the sales bias." },
             ].map((f) => (
               <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6">
-                <div className="text-3xl mb-3">{f.icon}</div>
                 <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
               </div>

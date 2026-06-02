@@ -60,56 +60,56 @@ export default function CaseStudyPage() {
       />
 
       {/* Outcomes bar */}
-      <section className="bg-[#0056a8] py-10">
+      <section className="bg-[#181E2C] py-10">
         <div className="max-w-5xl mx-auto px-4 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
           {outcomes.map((o) => (
             <div key={o.label}>
               <p className="text-3xl font-bold text-white">{o.value}</p>
-              <p className="text-sm text-blue-200 mt-1">{o.label}</p>
+              <p className="text-sm text-gray-400 mt-1">{o.label}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Background */}
-      <section className="bg-white py-20 px-4">
+      <section className="bg-background py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center gap-3 mb-6">
-            <span className="bg-red-100 text-red-700 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+            <span className="bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider border border-primary/20">
               Cyber Incident Response
             </span>
-            <span className="bg-[#e8f0fe] text-[#0056a8] text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+            <span className="bg-card text-muted-foreground text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider border border-border">
               Healthcare — Public Sector
             </span>
           </div>
-          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">Background</h2>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <h2 className="text-3xl font-bold text-foreground mb-6">Background</h2>
+          <p className="text-muted-foreground text-lg leading-relaxed mb-6">
             In 2024, a public-sector healthcare organization that had partnered with Audcomp for over a decade suffered a sophisticated cyberattack. The attack crippled internal operations, blocked access to critical patient systems, and threatened to paralyze the organization indefinitely.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-muted-foreground text-lg leading-relaxed mb-6">
             With patient care at risk and regulatory obligations looming, the organization turned to Audcomp for immediate incident response. What followed was a rapid, methodical recovery that became a model for cyber resilience in Canadian healthcare.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed">
+          <p className="text-muted-foreground text-lg leading-relaxed">
             Because Audcomp had been the organization's primary IT provider for over a decade, our engineers had deep familiarity with the environment — which proved critical in compressing the recovery timeline from weeks to days.
           </p>
         </div>
       </section>
 
       {/* Response Steps */}
-      <section className="bg-gray-50 py-20 px-4">
+      <section className="bg-muted py-20 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-12 text-center">
+          <h2 className="text-3xl font-bold text-foreground mb-12 text-center">
             The Audcomp Response
           </h2>
           <div className="flex flex-col gap-6">
             {steps.map((s) => (
-              <div key={s.step} className="flex gap-6 items-start bg-white rounded-xl border border-gray-200 p-6">
-                <div className="shrink-0 w-12 h-12 rounded-full bg-[#0056a8] flex items-center justify-center text-white font-bold text-sm">
+              <div key={s.step} className="flex gap-6 items-start bg-card rounded-2xl border border-border p-6">
+                <div className="shrink-0 w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold text-sm">
                   {s.step}
                 </div>
                 <div>
-                  <h3 className="font-semibold text-[#1a1a2e] mb-2">{s.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{s.desc}</p>
+                  <h3 className="font-semibold text-foreground mb-2">{s.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
                 </div>
               </div>
             ))}
@@ -118,9 +118,9 @@ export default function CaseStudyPage() {
       </section>
 
       {/* Results */}
-      <section className="bg-[#e8f0fe] py-20 px-4">
+      <section className="bg-background py-20 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">Results</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-6">Results</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
             {[
               "100% operational recovery achieved within two weeks of the initial incident",
@@ -131,18 +131,18 @@ export default function CaseStudyPage() {
               "Staff trained and tested with regular phishing simulations",
             ].map((r) => (
               <div key={r} className="flex gap-3 items-start">
-                <span className="text-[#0056a8] text-xl mt-0.5">✓</span>
-                <p className="text-gray-700 text-sm leading-relaxed">{r}</p>
+                <span className="text-primary text-xl mt-0.5">✓</span>
+                <p className="text-foreground text-sm leading-relaxed">{r}</p>
               </div>
             ))}
           </div>
-          <blockquote className="bg-white rounded-xl border border-blue-100 p-8 shadow-sm">
-            <p className="text-4xl text-[#0056a8] leading-none mb-4">&ldquo;</p>
-            <p className="text-gray-700 italic text-lg leading-relaxed mb-4">
+          <blockquote className="bg-card rounded-2xl border border-border p-8 shadow-sm">
+            <p className="text-4xl text-primary leading-none mb-4">&ldquo;</p>
+            <p className="text-foreground italic text-lg leading-relaxed mb-4">
               Having Audcomp as our IT partner for over a decade made all the difference. They knew our environment, they moved fast, and they got us back. We&apos;re more secure today than we were before the attack.
             </p>
-            <p className="font-semibold text-[#1a1a2e]">Healthcare IT Director</p>
-            <p className="text-sm text-gray-500">Public Sector Organization, Ontario</p>
+            <p className="font-semibold text-foreground">Healthcare IT Director</p>
+            <p className="text-sm text-muted-foreground">Public Sector Organization, Ontario</p>
           </blockquote>
         </div>
       </section>

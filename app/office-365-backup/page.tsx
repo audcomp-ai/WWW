@@ -35,15 +35,14 @@ export default function Office365BackupPage() {
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-12 text-center">What's Protected</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: "📧", title: "Exchange Online", desc: "Mailboxes, calendars, contacts, and tasks — protected and recoverable at the item level." },
-              { icon: "📁", title: "SharePoint Online", desc: "Team sites, document libraries, and list data protected with full version history." },
-              { icon: "☁️", title: "OneDrive for Business", desc: "Personal cloud storage protected against accidental deletion and ransomware." },
-              { icon: "💬", title: "Microsoft Teams", desc: "Teams channel conversations, files, and meeting data preserved and recoverable." },
-              { icon: "🔒", title: "Military-Grade Encryption", desc: "AES-256 encryption in transit and at rest — stored in Canadian data centers." },
-              { icon: "🗓️", title: "Flexible Retention", desc: "Configurable retention periods from 30 days to the lifetime of your account." },
+              { title: "Exchange Online", desc: "Mailboxes, calendars, contacts, and tasks — protected and recoverable at the item level." },
+              { title: "SharePoint Online", desc: "Team sites, document libraries, and list data protected with full version history." },
+              { title: "OneDrive for Business", desc: "Personal cloud storage protected against accidental deletion and ransomware." },
+              { title: "Microsoft Teams", desc: "Teams channel conversations, files, and meeting data preserved and recoverable." },
+              { title: "Military-Grade Encryption", desc: "AES-256 encryption in transit and at rest — stored in Canadian data centers." },
+              { title: "Flexible Retention", desc: "Configurable retention periods from 30 days to the lifetime of your account." },
             ].map((f) => (
               <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6">
-                <div className="text-3xl mb-3">{f.icon}</div>
                 <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
               </div>

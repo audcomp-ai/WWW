@@ -54,19 +54,16 @@ export default function BackupDisasterRecoveryPage() {
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-10 text-center">Key Features</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
-              { icon: "🔒", title: "Military-Grade Encryption", desc: "AES-256 encryption protects your data both in transit and at rest." },
-              { icon: "⚡", title: "5x Faster Recovery", desc: "Our recovery technology gets you back online faster than traditional backup solutions." },
-              { icon: "🔄", title: "Continuous Automated Backups", desc: "Backups run automatically and continuously — no manual intervention required." },
-              { icon: "🗓️", title: "Up to 7-Year Retention", desc: "Flexible retention policies from 30 days to 7 years to meet your compliance needs." },
-              { icon: "☁️", title: "Cloud-Based Infrastructure", desc: "Redundant Canadian cloud infrastructure eliminates the risk of local hardware failure." },
-              { icon: "📊", title: "Recovery Testing & Reporting", desc: "Regular recovery tests and detailed reports verify your backup integrity." },
+              { title: "Military-Grade Encryption", desc: "AES-256 encryption protects your data both in transit and at rest." },
+              { title: "5x Faster Recovery", desc: "Our recovery technology gets you back online faster than traditional backup solutions." },
+              { title: "Continuous Automated Backups", desc: "Backups run automatically and continuously — no manual intervention required." },
+              { title: "Up to 7-Year Retention", desc: "Flexible retention policies from 30 days to 7 years to meet your compliance needs." },
+              { title: "Cloud-Based Infrastructure", desc: "Redundant Canadian cloud infrastructure eliminates the risk of local hardware failure." },
+              { title: "Recovery Testing & Reporting", desc: "Regular recovery tests and detailed reports verify your backup integrity." },
             ].map((f) => (
-              <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6 flex gap-4">
-                <div className="text-3xl">{f.icon}</div>
-                <div>
-                  <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
-                </div>
+              <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6">
+                <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
               </div>
             ))}
           </div>

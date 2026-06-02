@@ -9,14 +9,14 @@ export const metadata: Metadata = {
 };
 
 const partners = [
-  { name: "Microsoft", category: "Cloud & Productivity", icon: "🪟" },
-  { name: "Dell Technologies", category: "Hardware & Infrastructure", icon: "💻" },
-  { name: "HP", category: "Client Systems & Printing", icon: "🖨️" },
-  { name: "Cisco", category: "Networking & Security", icon: "🌐" },
-  { name: "Lenovo", category: "Client Systems", icon: "🖥️" },
-  { name: "Fortinet", category: "Cyber Security", icon: "🔒" },
-  { name: "Veeam", category: "Backup & Recovery", icon: "💾" },
-  { name: "VMware", category: "Virtualization & Cloud", icon: "☁️" },
+  { name: "Microsoft", category: "Cloud & Productivity" },
+  { name: "Dell Technologies", category: "Hardware & Infrastructure" },
+  { name: "HP", category: "Client Systems & Printing" },
+  { name: "Cisco", category: "Networking & Security" },
+  { name: "Lenovo", category: "Client Systems" },
+  { name: "Fortinet", category: "Cyber Security" },
+  { name: "Veeam", category: "Backup & Recovery" },
+  { name: "VMware", category: "Virtualization & Cloud" },
 ];
 
 export default function PartnersPage() {
@@ -54,7 +54,6 @@ export default function PartnersPage() {
                 key={p.name}
                 className="bg-white rounded-xl border border-gray-200 p-6 text-center hover:border-[#0056a8] hover:shadow-md transition-all"
               >
-                <div className="text-4xl mb-3">{p.icon}</div>
                 <p className="font-semibold text-[#1a1a2e] mb-1">{p.name}</p>
                 <p className="text-xs text-gray-500">{p.category}</p>
               </div>
@@ -72,38 +71,31 @@ export default function PartnersPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                icon: "💰",
                 title: "Competitive Pricing",
                 desc: "Direct manufacturer relationships unlock preferential pricing unavailable through retail channels.",
               },
               {
-                icon: "🔬",
                 title: "Try & Buy Program",
                 desc: 'Evaluate hardware in your environment before committing — our exclusive "Try and Buy" demo program reduces procurement risk.',
               },
               {
-                icon: "⚡",
                 title: "Priority Support",
                 desc: "Certified partnership status gives Audcomp direct escalation paths to manufacturer engineering teams.",
               },
               {
-                icon: "🎓",
                 title: "Certified Expertise",
                 desc: "Our engineers hold certifications across all partner platforms, ensuring solutions are implemented correctly.",
               },
               {
-                icon: "🔄",
                 title: "Lifecycle Management",
                 desc: "From procurement through end-of-life, Audcomp manages your hardware and software assets throughout their lifecycle.",
               },
               {
-                icon: "🌐",
                 title: "Broadest Selection",
                 desc: "Access to servers, client systems, networking, storage, and peripherals from the industry's leading brands.",
               },
             ].map((b) => (
               <div key={b.title} className="bg-[#e8f0fe] rounded-xl p-6">
-                <div className="text-3xl mb-3">{b.icon}</div>
                 <h3 className="font-semibold text-[#1a1a2e] mb-2">{b.title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{b.desc}</p>
               </div>

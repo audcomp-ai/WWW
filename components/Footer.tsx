@@ -36,13 +36,13 @@ const professionalLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1a1a2e] text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <footer className="bg-[#181E2C] text-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="text-2xl font-bold text-white">
-              Audcomp
+            <Link href="/">
+              <img src="/audcomp-logo.png" alt="Audcomp" className="h-10 w-auto" />
             </Link>
             <p className="mt-3 text-sm text-gray-400 leading-relaxed">
               Trusted IT Consulting Services in Canada. Serving businesses across Hamilton, Ancaster, and beyond since 1986.
@@ -50,7 +50,7 @@ export default function Footer() {
             <div className="mt-4 text-sm text-gray-400">
               <p>611 Tradewind Drive, Suite 100</p>
               <p>Ancaster, Ontario</p>
-              <a href="tel:9053041775" className="block mt-1 text-[#e8f0fe] hover:text-white transition-colors">
+              <a href="tel:9053041775" className="block mt-1 text-gray-300 hover:text-white transition-colors">
                 905-304-1775
               </a>
             </div>
@@ -104,7 +104,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Professional */}
+          {/* Professional + AI */}
           <div>
             <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
               Professional Services
@@ -121,7 +121,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-700 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="border-t border-border/30 mt-14 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-gray-500">
             &copy; 2024 Audcomp. All rights reserved.
           </p>

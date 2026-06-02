@@ -41,15 +41,14 @@ export default function SOCMDRPage() {
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-12 text-center">SOC & MDR Capabilities</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: "👁️", title: "24/7 Threat Monitoring", desc: "Continuous visibility across your endpoints, network, and cloud environment — day and night." },
-              { icon: "🔍", title: "Threat Hunting", desc: "Proactive search for hidden threats that evade automated detection — conducted by experienced analysts." },
-              { icon: "⚡", title: "Incident Response", desc: "Rapid containment and remediation when a threat is confirmed — with documented playbooks and forensic analysis." },
-              { icon: "📊", title: "SIEM & Log Management", desc: "Centralized log collection and correlation across all systems for comprehensive security visibility." },
-              { icon: "🚨", title: "Alert Triage & Analysis", desc: "Every alert is reviewed by a human analyst — eliminating false positive fatigue for your team." },
-              { icon: "📋", title: "Security Reporting", desc: "Monthly SOC reports with threat summaries, KPIs, and remediation recommendations." },
+              { title: "24/7 Threat Monitoring", desc: "Continuous visibility across your endpoints, network, and cloud environment — day and night." },
+              { title: "Threat Hunting", desc: "Proactive search for hidden threats that evade automated detection — conducted by experienced analysts." },
+              { title: "Incident Response", desc: "Rapid containment and remediation when a threat is confirmed — with documented playbooks and forensic analysis." },
+              { title: "SIEM & Log Management", desc: "Centralized log collection and correlation across all systems for comprehensive security visibility." },
+              { title: "Alert Triage & Analysis", desc: "Every alert is reviewed by a human analyst — eliminating false positive fatigue for your team." },
+              { title: "Security Reporting", desc: "Monthly SOC reports with threat summaries, KPIs, and remediation recommendations." },
             ].map((f) => (
               <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6">
-                <div className="text-3xl mb-3">{f.icon}</div>
                 <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
               </div>

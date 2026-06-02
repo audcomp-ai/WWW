@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Hero from "@/components/Hero";
+import HeroCarousel from "@/components/HeroCarousel";
 import ServiceCard from "@/components/ServiceCard";
 import CTABanner from "@/components/CTABanner";
+import CountUp from "@/components/CountUp";
 
 export const metadata: Metadata = {
   title: "Audcomp | Trusted IT Consulting Services in Canada",
@@ -12,46 +13,46 @@ export const metadata: Metadata = {
 
 const services = [
   {
-    icon: "🖥️",
     title: "Managed IT Services",
     description:
       "End-user support, network monitoring, and infrastructure management with 100% Canadian engineers and 24/7 coverage.",
     href: "/managed-it-services",
+    category: "Managed IT",
   },
   {
-    icon: "☁️",
     title: "Cloud Solutions",
     description:
       "Microsoft 365, Azure, hybrid cloud, and Teams deployment — fully managed and tailored to your business needs.",
     href: "/cloud-solutions",
+    category: "Cloud",
   },
   {
-    icon: "🔒",
     title: "Cyber Security",
     description:
       "Endpoint protection, SOC & MDR, penetration testing, dark web monitoring, and security awareness training.",
     href: "/security-services",
+    category: "Security",
   },
   {
-    icon: "💼",
     title: "Professional Services",
     description:
       "Virtual CIO, IT consulting and design, implementation, migration, and structured cabling expertise.",
     href: "/professional-services",
+    category: "Professional",
   },
   {
-    icon: "🤖",
     title: "AI Services",
     description:
       "Microsoft Copilot enablement, AI readiness assessments, data governance, and tailored AI roadmaps.",
     href: "/ai-services",
+    category: "AI",
   },
   {
-    icon: "🛒",
     title: "IT Procurement",
     description:
       "Tier 1 and Tier 2 manufacturer partnerships, \"Try and Buy\" demo program, and full hardware lifecycle support.",
     href: "/it-procurement",
+    category: "Managed IT",
   },
 ];
 
@@ -76,45 +77,54 @@ const testimonials = [
   },
 ];
 
-const stats = [
-  { value: "39+", label: "Years in Business" },
-  { value: "Top 25", label: "CDN Solutions Provider" },
-  { value: "100%", label: "Canadian Engineers & Data Centers" },
-  { value: "24/7", label: "Monitoring & Support" },
+const verticals = [
+  "Healthcare",
+  "Municipalities",
+  "Universities",
+  "Manufacturing",
+  "Enterprise",
+  "SMB",
 ];
 
 export default function Home() {
   return (
     <>
-      <Hero
-        title="Trusted IT Consulting Services in Canada"
-        subtitle="39+ years empowering businesses across Hamilton, Ancaster, and beyond. Your IT partner — not just your provider."
-        ctaText="Get a Free Assessment"
-        ctaHref="/contact"
-        secondaryCtaText="View Our Services"
-        secondaryCtaHref="/managed-it-services"
-      />
+      <HeroCarousel />
 
       {/* Stats Bar */}
-      <section className="bg-[#003d7a] py-8">
-        <div className="max-w-5xl mx-auto px-4 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
-          {stats.map((stat) => (
-            <div key={stat.label}>
-              <p className="text-3xl font-bold text-white">{stat.value}</p>
-              <p className="text-sm text-blue-200 mt-1">{stat.label}</p>
-            </div>
-          ))}
+      <section className="bg-card border-b border-border py-14 px-4">
+        <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
+          <div>
+            <p className="text-4xl font-bold text-foreground">
+              <CountUp end={40} suffix="+" />
+            </p>
+            <p className="text-sm text-muted-foreground mt-2">Years in Business</p>
+          </div>
+          <div>
+            <p className="text-4xl font-bold text-foreground">Top 25</p>
+            <p className="text-sm text-muted-foreground mt-2">CDN Solutions Provider</p>
+          </div>
+          <div>
+            <p className="text-4xl font-bold text-foreground">
+              <CountUp end={100} suffix="%" />
+            </p>
+            <p className="text-sm text-muted-foreground mt-2">Canadian Engineers &amp; Data Centers</p>
+          </div>
+          <div>
+            <p className="text-4xl font-bold text-foreground">24/7</p>
+            <p className="text-sm text-muted-foreground mt-2">Monitoring &amp; Support</p>
+          </div>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="bg-gray-50 py-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-[#1a1a2e] mb-4">
+      <section className="bg-muted py-24 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 tracking-tight">
               Comprehensive IT Solutions
             </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
               From day-to-day support to strategic planning, Audcomp delivers tailored IT solutions for businesses of all sizes.
             </p>
           </div>
@@ -127,21 +137,21 @@ export default function Home() {
       </section>
 
       {/* Mission Section */}
-      <section className="bg-white py-20 px-4">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section className="bg-card py-24 px-4">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">
+            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6 tracking-tight leading-tight">
               More Than a Service Provider. Your Partner.
             </h2>
-            <p className="text-gray-600 leading-relaxed mb-6">
+            <p className="text-muted-foreground leading-relaxed mb-6 text-lg">
               Our mission is to empower businesses to operate confidently and more efficiently by providing tailored IT solutions. Our team of dedicated professionals is committed to developing and implementing reliable, cost-effective solutions for businesses of all sizes — no matter the scope of the need.
             </p>
-            <p className="text-gray-600 leading-relaxed mb-8">
+            <p className="text-muted-foreground leading-relaxed mb-10 text-lg">
               Founded in 1986 at McMaster University by Gary Sohal, Audcomp has grown to become the largest MSP in the Hamilton/Ancaster region and has ranked in the top 25 of CDN&apos;s Top 100 Solutions Providers for over a decade.
             </p>
             <Link
               href="/our-story"
-              className="inline-flex items-center gap-2 text-[#0056a8] font-semibold hover:underline"
+              className="inline-flex items-center gap-2 text-primary font-semibold hover:underline"
             >
               Our Story
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -150,20 +160,12 @@ export default function Home() {
             </Link>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            {[
-              { icon: "🏥", label: "Healthcare" },
-              { icon: "🏛️", label: "Municipalities" },
-              { icon: "🎓", label: "Universities" },
-              { icon: "🏭", label: "Manufacturing" },
-              { icon: "🏢", label: "Enterprise" },
-              { icon: "💼", label: "SMB" },
-            ].map((v) => (
+            {verticals.map((label) => (
               <div
-                key={v.label}
-                className="bg-[#e8f0fe] rounded-xl p-5 text-center"
+                key={label}
+                className="bg-muted border border-border rounded-xl p-4 text-center hover:shadow-md transition-all"
               >
-                <div className="text-3xl mb-2">{v.icon}</div>
-                <p className="text-sm font-semibold text-[#1a1a2e]">{v.label}</p>
+                <p className="font-medium text-foreground">{label}</p>
               </div>
             ))}
           </div>
@@ -171,13 +173,13 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="bg-gray-50 py-20 px-4">
+      <section className="bg-muted py-24 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-[#1a1a2e] mb-4">
+          <div className="text-center mb-14">
+            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 tracking-tight">
               What Our Clients Say
             </h2>
-            <p className="text-gray-600 text-lg">
+            <p className="text-muted-foreground text-lg">
               Trusted by businesses across the Hamilton region and beyond.
             </p>
           </div>
@@ -185,13 +187,13 @@ export default function Home() {
             {testimonials.map((t) => (
               <div
                 key={t.name}
-                className="bg-white rounded-xl p-8 border border-gray-200 shadow-sm"
+                className="bg-card rounded-2xl p-8 border border-border shadow-sm hover:shadow-lg transition-all duration-200"
               >
-                <div className="text-[#0056a8] text-4xl leading-none mb-4">&ldquo;</div>
-                <p className="text-gray-700 leading-relaxed mb-6 text-sm">{t.quote}</p>
+                <div className="text-primary text-5xl leading-none font-serif mb-4">&ldquo;</div>
+                <p className="text-muted-foreground leading-relaxed mb-6">{t.quote}</p>
                 <div>
-                  <p className="font-semibold text-[#1a1a2e]">{t.name}</p>
-                  <p className="text-sm text-gray-500">{t.title}</p>
+                  <p className="font-bold text-foreground">{t.name}</p>
+                  <p className="text-sm text-muted-foreground">{t.title}</p>
                 </div>
               </div>
             ))}
@@ -199,24 +201,23 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Case Study Teaser */}
-      <section className="bg-[#1a1a2e] py-16 px-4">
-        <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8">
-          <div className="text-5xl">📋</div>
+      {/* Case Study Callout */}
+      <section className="bg-[#181E2C] py-24 px-4">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
           <div className="flex-1">
-            <p className="text-blue-300 text-sm font-semibold uppercase tracking-wider mb-2">
+            <span className="inline-block bg-primary text-white text-xs font-bold uppercase tracking-widest px-4 py-1 rounded-full mb-4">
               Case Study
-            </p>
-            <h3 className="text-2xl font-bold text-white mb-3">
+            </span>
+            <h3 className="text-3xl font-bold text-white mb-3">
               Healthcare Cybersecurity Recovery
             </h3>
-            <p className="text-gray-400 leading-relaxed">
+            <p className="text-gray-400 leading-relaxed text-lg">
               A public-sector healthcare organization hit by a cyberattack in 2024 was fully operational within two weeks — critical services restored within two business days — thanks to Audcomp&apos;s rapid incident response.
             </p>
           </div>
           <Link
             href="/case-study"
-            className="shrink-0 bg-[#0056a8] text-white font-semibold px-6 py-3 rounded-md hover:bg-[#003d7a] transition-colors"
+            className="shrink-0 bg-primary text-white font-semibold px-8 py-4 rounded-full hover:brightness-110 transition-all shadow-md"
           >
             Read the Case Study
           </Link>

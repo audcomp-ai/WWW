@@ -11,40 +11,40 @@ export const metadata: Metadata = {
 
 const subServices = [
   {
-    icon: "🛡️",
     title: "Endpoint Protection (AGS)",
     description: "Advanced threat detection, real-time monitoring, Office Protection, and Email Protection under Audcomp Guarded Services.",
     href: "/end-point-protection",
+    category: "Security",
   },
   {
-    icon: "🔍",
     title: "SOC & MDR",
     description: "24/7 Security Operations Centre with managed detection and response, incident response, and threat hunting.",
     href: "/security-operations-centre-and-mdr",
+    category: "Security",
   },
   {
-    icon: "🔓",
     title: "Penetration Testing",
     description: "Manual and automated penetration testing with 4 tests per year and 48-hour reporting turnaround.",
     href: "/penetration-testing-and-security-audits",
+    category: "Security",
   },
   {
-    icon: "🔥",
     title: "Managed Firewall",
     description: "24/7 firewall monitoring, maintenance, rule management, and threat intelligence integration.",
     href: "/managed-firewall",
+    category: "Security",
   },
   {
-    icon: "🎓",
     title: "Security Awareness Training",
     description: "Phishing resistance training led by cybersecurity professionals — your last line of defense.",
     href: "/security-awareness-training",
+    category: "Security",
   },
   {
-    icon: "🌐",
     title: "Dark Web Monitoring",
     description: "Proactive dark web threat intelligence to detect stolen credentials before attackers can use them. From $99/mo.",
     href: "/dark-web-monitoring",
+    category: "Security",
   },
 ];
 
@@ -59,25 +59,25 @@ export default function SecurityServicesPage() {
         bgColor="dark"
       />
 
-      <section className="bg-white py-20 px-4">
+      <section className="bg-background py-20 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">Security Is Not Optional</h2>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <h2 className="text-3xl font-bold text-foreground mb-6">Security Is Not Optional</h2>
+          <p className="text-muted-foreground text-lg leading-relaxed mb-6">
             Cyberattacks on Canadian businesses have increased dramatically over the past five years. Ransomware, business email compromise, and supply chain attacks are no longer rare — they're inevitable for organizations that aren't prepared. The question isn't whether your organization will be targeted; it's whether you'll be ready.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-muted-foreground text-lg leading-relaxed mb-6">
             Audcomp's cybersecurity practice builds layered defenses around your organization — from the endpoint to the network perimeter, from user behavior to 24/7 threat monitoring. Our Security Operations Centre (SOC) provides round-the-clock visibility and rapid incident response.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed">
+          <p className="text-muted-foreground text-lg leading-relaxed">
             We have firsthand experience recovering organizations from cyberattacks. We'd rather help you never need that service.
           </p>
         </div>
       </section>
 
-      <section className="bg-gray-50 py-20 px-4">
+      <section className="bg-muted py-20 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-4 text-center">Our Security Services</h2>
-          <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold text-foreground mb-4 text-center">Our Security Services</h2>
+          <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
             A complete cybersecurity program — built in layers, managed continuously.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -89,7 +89,7 @@ export default function SecurityServicesPage() {
       </section>
 
       {/* Threat landscape */}
-      <section className="bg-[#1a1a2e] py-20 px-4">
+      <section className="bg-[#181E2C] py-20 px-4">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-white mb-12">The Threat Landscape is Real</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
@@ -98,7 +98,7 @@ export default function SecurityServicesPage() {
               { stat: "$4.5M", desc: "average cost of a data breach in Canada" },
               { stat: "60%", desc: "of SMBs close within 6 months of a major cyberattack" },
             ].map((item) => (
-              <div key={item.stat} className="bg-[#0056a8]/20 rounded-xl p-8 border border-[#0056a8]/30">
+              <div key={item.stat} className="bg-primary/20 rounded-xl p-8 border border-primary/30">
                 <p className="text-4xl font-bold text-white mb-3">{item.stat}</p>
                 <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
               </div>

@@ -35,19 +35,16 @@ export default function HelpDeskPage() {
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-12 text-center">Help Desk Capabilities</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
-              { icon: "📞", title: "Multi-Channel Support", desc: "Reach us by phone, email, or our support portal — whichever works best for your team." },
-              { icon: "💻", title: "Hardware Diagnostics", desc: "Remote and on-site diagnosis of workstations, laptops, printers, and peripheral devices." },
-              { icon: "🛠️", title: "Software Troubleshooting", desc: "Application errors, OS issues, driver conflicts, and configuration problems resolved quickly." },
-              { icon: "🦠", title: "Malware & Ransomware Removal", desc: "Spyware, ransomware, and malware removal with full post-incident remediation." },
-              { icon: "👤", title: "User Account Management", desc: "Password resets, account provisioning, access rights, and Active Directory management." },
-              { icon: "🏢", title: "On-Site Dispatch", desc: "When remote support isn't enough, our engineers come to you — across the Hamilton and Ancaster region." },
+              { title: "Multi-Channel Support", desc: "Reach us by phone, email, or our support portal — whichever works best for your team." },
+              { title: "Hardware Diagnostics", desc: "Remote and on-site diagnosis of workstations, laptops, printers, and peripheral devices." },
+              { title: "Software Troubleshooting", desc: "Application errors, OS issues, driver conflicts, and configuration problems resolved quickly." },
+              { title: "Malware & Ransomware Removal", desc: "Spyware, ransomware, and malware removal with full post-incident remediation." },
+              { title: "User Account Management", desc: "Password resets, account provisioning, access rights, and Active Directory management." },
+              { title: "On-Site Dispatch", desc: "When remote support isn't enough, our engineers come to you — across the Hamilton and Ancaster region." },
             ].map((f) => (
-              <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6 flex gap-4">
-                <div className="text-3xl">{f.icon}</div>
-                <div>
-                  <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
-                </div>
+              <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6">
+                <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
               </div>
             ))}
           </div>
