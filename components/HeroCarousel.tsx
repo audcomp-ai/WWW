@@ -108,7 +108,13 @@ export default function HeroCarousel() {
           active === 0 ? "opacity-100 z-10" : "opacity-0 z-0"
         }`}
       >
-        <div className="absolute inset-0 bg-[#181E2C]" />
+        {/* Background image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/hero-datacenter.jpeg')" }}
+        />
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30" />
         <div className="relative z-10 min-h-[85vh] flex items-center px-6 md:px-12">
           <div className="max-w-6xl mx-auto w-full">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight">
