@@ -47,9 +47,12 @@ export default function CloudSolutionsPage() {
     <>
       <Hero
         title="Cloud Solutions"
-        subtitle="Enterprise-grade cloud infrastructure for Canadian businesses — deployed, managed, and secured by Audcomp."
-        ctaText="Get a Cloud Assessment"
+        subtitle="Empower your business with scalable, secure, and modern cloud infrastructure. Move faster and work from anywhere."
+        ctaText="Explore Cloud Options"
         ctaHref="/contact"
+        secondaryCtaText="Call 905-304-1775"
+        secondaryCtaHref="tel:9053041775"
+        backgroundImage="/images/cloud_solutions_hero.png"
       />
 
       <section className="bg-background py-20 px-4">

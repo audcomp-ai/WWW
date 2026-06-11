@@ -57,6 +57,7 @@ export default function CaseStudyPage() {
         bgColor="dark"
         ctaText="Talk to Our Security Team"
         ctaHref="/contact"
+        backgroundImage="/images/professional_services_hero.png"
       />
 
       {/* Outcomes bar */}

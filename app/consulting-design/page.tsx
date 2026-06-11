@@ -16,6 +16,7 @@ export default function ConsultingDesignPage() {
         subtitle="Expert assessments, solution architecture, and risk management — Audcomp's consulting team helps you make confident IT decisions."
         ctaText="Schedule a Consultation"
         ctaHref="/contact"
+        backgroundImage="/images/professional_services_hero.png"
       />
 
       <section className="bg-white py-20 px-4">

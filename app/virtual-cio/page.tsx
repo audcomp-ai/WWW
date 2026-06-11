@@ -16,6 +16,7 @@ export default function VirtualCIOPage() {
         subtitle="Executive-level IT strategy for businesses that need a technology leader — without the cost of a full-time C-suite hire."
         ctaText="Meet Your vCIO"
         ctaHref="/contact"
+        backgroundImage="/images/professional_services_hero.png"
       />
 
       <section className="bg-white py-20 px-4">

@@ -25,6 +25,7 @@ export default function CareersPage() {
         subtitle="We're always looking for talented, passionate IT professionals who want to make a real difference for Canadian businesses."
         ctaText="View Open Positions"
         ctaHref="#openings"
+        backgroundImage="/images/professional_services_hero.png"
       />
 
       {/* Why Work Here */}

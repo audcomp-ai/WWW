@@ -52,6 +52,7 @@ export default function ManagedITServicesPage() {
         ctaHref="/contact"
         secondaryCtaText="Call 905-304-1775"
         secondaryCtaHref="tel:9053041775"
+        backgroundImage="/images/managed_it_hero.png"
       />
 
       {/* Overview */}

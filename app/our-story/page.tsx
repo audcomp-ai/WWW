@@ -49,6 +49,7 @@ export default function OurStoryPage() {
         subtitle="Nearly four decades of helping Canadian businesses thrive through technology."
         ctaText="Meet Our Team"
         ctaHref="/about"
+        backgroundImage="/images/professional_services_hero.png"
       />
 
       {/* Founder Section */}

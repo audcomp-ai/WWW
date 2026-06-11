@@ -10,6 +10,7 @@ interface HeroProps {
   variant?: "dark" | "light";
   /** @deprecated use variant instead */
   bgColor?: "blue" | "dark" | "light";
+  backgroundImage?: string;
 }
 
 export default function Hero({
@@ -21,6 +22,7 @@ export default function Hero({
   secondaryCtaHref,
   variant,
   bgColor,
+  backgroundImage,
 }: HeroProps) {
   // Resolve variant: new `variant` prop takes priority, then fall back to legacy `bgColor`
   const resolved: "dark" | "light" =
@@ -32,13 +34,17 @@ export default function Hero({
       ? "light"
       : "dark"; // blue and dark both map to dark navy
 
-  const isDark = resolved === "dark";
+  const isDark = resolved === "dark" || !!backgroundImage;
 
   return (
     <section
-      className={`${isDark ? "bg-[#181E2C]" : "bg-white"} py-32 md:py-40 px-4`}
+      className={`relative ${!backgroundImage && isDark ? "bg-[#181E2C]" : !backgroundImage ? "bg-white" : ""} py-32 md:py-40 px-4`}
+      style={backgroundImage ? { backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' } : undefined}
     >
-      <div className="max-w-6xl mx-auto text-center">
+      {backgroundImage && (
+        <div className="absolute inset-0 bg-[#181E2C]/80 z-0"></div>
+      )}
+      <div className="relative max-w-6xl mx-auto text-center z-10">
         <h1
           className={`text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-none mb-8 ${
             isDark ? "text-white" : "text-foreground"

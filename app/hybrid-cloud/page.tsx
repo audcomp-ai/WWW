@@ -16,6 +16,7 @@ export default function HybridCloudPage() {
         subtitle="The best of both worlds — on-premise control and cloud flexibility, seamlessly integrated by Audcomp's cloud architects."
         ctaText="Plan Your Hybrid Cloud"
         ctaHref="/contact"
+        backgroundImage="/images/cloud_solutions_hero.png"
       />
 
       <section className="bg-white py-20 px-4">

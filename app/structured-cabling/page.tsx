@@ -16,6 +16,7 @@ export default function StructuredCablingPage() {
         subtitle="A reliable network starts with solid physical infrastructure. Audcomp designs and installs structured cabling systems built to last."
         ctaText="Get a Cabling Assessment"
         ctaHref="/contact"
+        backgroundImage="/images/professional_services_hero.png"
       />
 
       <section className="bg-white py-20 px-4">

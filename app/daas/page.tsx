@@ -16,6 +16,7 @@ export default function DaaSPage() {
         subtitle="Fully managed hardware and software on a simple per-user subscription — so you can scale your workforce without the IT headache."
         ctaText="Get a DaaS Quote"
         ctaHref="/contact"
+        backgroundImage="/images/managed_it_hero.png"
       />
 
       <section className="bg-white py-20 px-4">

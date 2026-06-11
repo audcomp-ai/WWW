@@ -16,6 +16,7 @@ export default function ITProcurementPage() {
         subtitle="The right technology at the best value — sourced through Tier 1 and Tier 2 manufacturer partnerships built over 40 years."
         ctaText="Request a Quote"
         ctaHref="/contact"
+        backgroundImage="/images/managed_it_hero.png"
       />
 
       <section className="bg-white py-20 px-4">

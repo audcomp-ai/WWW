@@ -16,6 +16,7 @@ export default function EventsPage() {
         subtitle="Join Audcomp at upcoming IT education events, security seminars, and community programs across Ontario."
         ctaText="Contact Us to Learn More"
         ctaHref="/contact"
+        backgroundImage="/images/professional_services_hero.png"
       />
 
       <section className="bg-white py-20 px-4">

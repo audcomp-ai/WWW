@@ -16,6 +16,7 @@ export default function Office365BackupPage() {
         subtitle="Microsoft doesn't back up your Microsoft 365 data. Audcomp does — with military-grade protection and up to 5x faster recovery."
         ctaText="Protect Your M365 Data"
         ctaHref="/contact"
+        backgroundImage="/images/cloud_solutions_hero.png"
       />
 
       <section className="bg-white py-20 px-4">

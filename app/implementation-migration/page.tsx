@@ -16,6 +16,7 @@ export default function ImplementationMigrationPage() {
         subtitle="Complex IT projects, delivered on time and on budget — Audcomp's implementation team has the experience to execute without disruption."
         ctaText="Plan Your Project"
         ctaHref="/contact"
+        backgroundImage="/images/professional_services_hero.png"
       />
 
       <section className="bg-white py-20 px-4">

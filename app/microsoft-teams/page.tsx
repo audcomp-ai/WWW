@@ -16,6 +16,7 @@ export default function MicrosoftTeamsPage() {
         subtitle="Transform how your team communicates and collaborates — with a Teams deployment configured and managed by Audcomp."
         ctaText="Get Started with Teams"
         ctaHref="/contact"
+        backgroundImage="/images/cloud_solutions_hero.png"
       />
 
       <section className="bg-white py-20 px-4">

@@ -25,6 +25,7 @@ export default function ManagedITSupportPage() {
         subtitle="End-user support, network management, and 24/7 monitoring — delivered by 100% Canadian engineers who know your environment."
         ctaText="Get Started"
         ctaHref="/contact"
+        backgroundImage="/images/managed_it_hero.png"
       />
 
       <section className="bg-white py-20 px-4">

@@ -26,6 +26,7 @@ export default function ContactPage() {
         title="Get in Touch"
         subtitle="Our team is ready to help. Tell us about your IT needs and we'll respond within one business day."
         variant="dark"
+        backgroundImage="/images/professional_services_hero.png"
       />
 
       <section className="bg-muted py-20 px-4">

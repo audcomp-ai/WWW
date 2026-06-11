@@ -16,6 +16,7 @@ export default function Office365Page() {
         subtitle="From deployment to daily management — Audcomp ensures your Microsoft 365 environment runs securely and at full potential."
         ctaText="Get Started with M365"
         ctaHref="/contact"
+        backgroundImage="/images/cloud_solutions_hero.png"
       />
 
       <section className="bg-white py-20 px-4">

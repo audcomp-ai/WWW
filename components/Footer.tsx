@@ -36,21 +36,21 @@ const professionalLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#181E2C] text-white">
+    <footer className="bg-[#000000] border-t border-white/[0.08]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/">
-              <img src="/audcomp-logo.png" alt="Audcomp" className="h-10 w-auto" />
+              <img src="/audcomp-logo.png" alt="Audcomp" className="h-8 w-auto" />
             </Link>
-            <p className="mt-3 text-sm text-gray-400 leading-relaxed">
+            <p className="mt-4 text-sm text-white/35 leading-relaxed">
               Trusted IT Consulting Services in Canada. Serving businesses across Hamilton, Ancaster, and beyond since 1986.
             </p>
-            <div className="mt-4 text-sm text-gray-400">
+            <div className="mt-5 text-sm text-white/35">
               <p>611 Tradewind Drive, Suite 100</p>
               <p>Ancaster, Ontario</p>
-              <a href="tel:9053041775" className="block mt-1 text-gray-300 hover:text-white transition-colors">
+              <a href="tel:9053041775" className="block mt-2 text-white/50 hover:text-white transition-colors duration-200">
                 905-304-1775
               </a>
             </div>
@@ -58,13 +58,13 @@ export default function Footer() {
 
           {/* Managed IT */}
           <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+            <h3 className="text-xs font-semibold text-white/30 uppercase tracking-widest mb-4">
               Managed IT
             </h3>
-            <ul className="flex flex-col gap-2">
+            <ul className="flex flex-col gap-2.5">
               {managedItLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-gray-400 hover:text-white transition-colors">
+                  <Link href={link.href} className="text-sm text-white/40 hover:text-white/80 transition-colors duration-200">
                     {link.label}
                   </Link>
                 </li>
@@ -74,13 +74,13 @@ export default function Footer() {
 
           {/* Cloud */}
           <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+            <h3 className="text-xs font-semibold text-white/30 uppercase tracking-widest mb-4">
               Cloud Solutions
             </h3>
-            <ul className="flex flex-col gap-2">
+            <ul className="flex flex-col gap-2.5">
               {cloudLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-gray-400 hover:text-white transition-colors">
+                  <Link href={link.href} className="text-sm text-white/40 hover:text-white/80 transition-colors duration-200">
                     {link.label}
                   </Link>
                 </li>
@@ -90,13 +90,13 @@ export default function Footer() {
 
           {/* Security */}
           <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+            <h3 className="text-xs font-semibold text-white/30 uppercase tracking-widest mb-4">
               Cyber Security
             </h3>
-            <ul className="flex flex-col gap-2">
+            <ul className="flex flex-col gap-2.5">
               {securityLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-gray-400 hover:text-white transition-colors">
+                  <Link href={link.href} className="text-sm text-white/40 hover:text-white/80 transition-colors duration-200">
                     {link.label}
                   </Link>
                 </li>
@@ -106,13 +106,13 @@ export default function Footer() {
 
           {/* Professional + AI */}
           <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+            <h3 className="text-xs font-semibold text-white/30 uppercase tracking-widest mb-4">
               Professional Services
             </h3>
-            <ul className="flex flex-col gap-2">
+            <ul className="flex flex-col gap-2.5">
               {professionalLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-gray-400 hover:text-white transition-colors">
+                  <Link href={link.href} className="text-sm text-white/40 hover:text-white/80 transition-colors duration-200">
                     {link.label}
                   </Link>
                 </li>
@@ -121,23 +121,21 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-border/30 mt-14 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-gray-500">
+        <div className="mt-16 pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-white/25">
             &copy; 2024 Audcomp. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <Link href="/about" className="text-sm text-gray-500 hover:text-white transition-colors">
-              About
-            </Link>
-            <Link href="/partners" className="text-sm text-gray-500 hover:text-white transition-colors">
-              Partners
-            </Link>
-            <Link href="/careers" className="text-sm text-gray-500 hover:text-white transition-colors">
-              Careers
-            </Link>
-            <Link href="/contact" className="text-sm text-gray-500 hover:text-white transition-colors">
-              Contact
-            </Link>
+            {[
+              { label: "About", href: "/about" },
+              { label: "Partners", href: "/partners" },
+              { label: "Careers", href: "/careers" },
+              { label: "Contact", href: "/contact" },
+            ].map((link) => (
+              <Link key={link.href} href={link.href} className="text-xs text-white/25 hover:text-white/60 transition-colors duration-200">
+                {link.label}
+              </Link>
+            ))}
           </div>
         </div>
       </div>

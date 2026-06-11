@@ -16,6 +16,7 @@ export default function MicrosoftCopilotPage() {
         subtitle="Unlock AI-powered productivity across your Microsoft 365 environment — Audcomp handles readiness, deployment, and adoption."
         ctaText="Start Your Copilot Journey"
         ctaHref="/contact"
+        backgroundImage="/images/ai_services_hero.png"
       />
 
       <section className="bg-white py-20 px-4">

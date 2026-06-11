@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Hero from "@/components/Hero";
+import AnimatedSecurityHero from "@/components/AnimatedSecurityHero";
 import ServiceCard from "@/components/ServiceCard";
 import CTABanner from "@/components/CTABanner";
 
@@ -51,13 +51,7 @@ const subServices = [
 export default function SecurityServicesPage() {
   return (
     <>
-      <Hero
-        title="Cyber Security Services"
-        subtitle="Comprehensive, layered cyber security for Canadian businesses — from endpoint to SOC, from awareness to response."
-        ctaText="Get a Security Assessment"
-        ctaHref="/contact"
-        bgColor="dark"
-      />
+      <AnimatedSecurityHero />
 
       <section className="bg-background py-20 px-4">
         <div className="max-w-4xl mx-auto">

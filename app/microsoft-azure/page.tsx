@@ -16,6 +16,7 @@ export default function MicrosoftAzurePage() {
         subtitle="Migrate to Azure with confidence — Audcomp's certified engineers plan, deploy, and manage your Azure infrastructure end to end."
         ctaText="Get an Azure Assessment"
         ctaHref="/contact"
+        backgroundImage="/images/cloud_solutions_hero.png"
       />
 
       <section className="bg-white py-20 px-4">

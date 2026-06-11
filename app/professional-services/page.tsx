@@ -44,6 +44,7 @@ export default function ProfessionalServicesPage() {
         subtitle="Strategic IT guidance, expert implementation, and physical infrastructure — Audcomp's professional services team delivers results that last."
         ctaText="Discuss Your Project"
         ctaHref="/contact"
+        backgroundImage="/images/professional_services_hero.png"
       />
 
       <section className="bg-background py-20 px-4">

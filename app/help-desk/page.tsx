@@ -16,6 +16,7 @@ export default function HelpDeskPage() {
         subtitle="When your team hits a tech wall, Audcomp's Help Desk is there — by phone, email, or on-site. Any time, any issue."
         ctaText="Contact Us"
         ctaHref="/contact"
+        backgroundImage="/images/managed_it_hero.png"
       />
 
       <section className="bg-white py-20 px-4">

@@ -16,6 +16,7 @@ export default function BackupDisasterRecoveryPage() {
         subtitle="Military-grade, cloud-based data protection — because data loss is not an option your business can afford."
         ctaText="Protect Your Data"
         ctaHref="/contact"
+        backgroundImage="/images/managed_it_hero.png"
       />
 
       <section className="bg-white py-20 px-4">

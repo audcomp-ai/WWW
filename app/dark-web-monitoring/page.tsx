@@ -17,6 +17,7 @@ export default function DarkWebMonitoringPage() {
         ctaText="Start Monitoring Now"
         ctaHref="/contact"
         bgColor="dark"
+        backgroundImage="/images/cyber_security_hero.png"
       />
 
       <section className="bg-white py-20 px-4">

@@ -17,6 +17,7 @@ export default function PenetrationTestingServicePage() {
         ctaText="Book Your First Test"
         ctaHref="/contact"
         bgColor="dark"
+        backgroundImage="/images/cyber_security_hero.png"
       />
 
       <section className="bg-white py-20 px-4">
