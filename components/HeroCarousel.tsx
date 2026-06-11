@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
 
 const slides = [
   {
@@ -46,7 +46,7 @@ const slides = [
   },
 ];
 
-const textVariants = {
+const textVariants: Variants = {
   enter: { opacity: 0, y: 20 },
   center: {
     opacity: 1,
@@ -60,7 +60,7 @@ const textVariants = {
   },
 };
 
-const badgeVariants = {
+const badgeVariants: Variants = {
   enter: { opacity: 0, scale: 0.92 },
   center: {
     opacity: 1,
