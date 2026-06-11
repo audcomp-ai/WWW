@@ -1,78 +1,45 @@
 @import "tailwindcss";
 
 :root {
-  --card: #ffffff;
-  --ring: #3b82f6;
-  --input: #e5e7eb;
-  --muted: #f9fafb;
-  --accent: #e0f2fe;
-  --border: #e5e7eb;
-  --radius: 0.375rem;
-  --chart-1: #3b82f6;
-  --chart-2: #2563eb;
-  --chart-3: #1d4ed8;
-  --chart-4: #1e40af;
-  --chart-5: #1e3a8a;
-  --popover: #ffffff;
-  --primary: #3b82f6;
-  --sidebar: #f9fafb;
-  --font-mono: JetBrains Mono, monospace;
-  --font-sans: Inter, sans-serif;
-  --secondary: #f3f4f6;
+  /* Light theme — navy + white + teal */
   --background: #ffffff;
-  --font-serif: Source Serif 4, serif;
-  --foreground: #333333;
+  --foreground: #0a2540;
+  --card: #ffffff;
+  --card-foreground: #0a2540;
+  --muted: #f0f7ff;
+  --muted-foreground: #4a6785;
+  --border: #dde8f5;
+  --input: #dde8f5;
+  --primary: #0071e3;
+  --primary-foreground: #ffffff;
+  --secondary: #f0f7ff;
+  --secondary-foreground: #0a2540;
+  --accent: #e0f2fe;
+  --accent-foreground: #0a2540;
   --destructive: #ef4444;
-  --sidebar-ring: #3b82f6;
+  --destructive-foreground: #ffffff;
+  --ring: #0071e3;
+  --radius: 1rem;
+  --popover: #ffffff;
+  --popover-foreground: #0a2540;
+  --sidebar: #f0f7ff;
+  --sidebar-foreground: #0a2540;
+  --sidebar-primary: #0071e3;
+  --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #e0f2fe;
-  --sidebar-border: #e5e7eb;
-  --card-foreground: #333333;
-  --sidebar-primary: #3b82f6;
-  --muted-foreground: #6b7280;
-  --accent-foreground: #1e3a8a;
-  --popover-foreground: #333333;
-  --primary-foreground: #ffffff;
-  --sidebar-foreground: #333333;
-  --secondary-foreground: #4b5563;
-  --destructive-foreground: #ffffff;
-  --sidebar-accent-foreground: #1e3a8a;
-  --sidebar-primary-foreground: #ffffff;
-}
-
-.dark {
-  --card: #262626;
-  --ring: #3b82f6;
-  --input: #404040;
-  --muted: #262626;
-  --accent: #1e3a8a;
-  --border: #404040;
-  --radius: 0.375rem;
-  --chart-1: #60a5fa;
-  --chart-2: #3b82f6;
-  --chart-3: #2563eb;
-  --chart-4: #1d4ed8;
-  --chart-5: #1e40af;
-  --popover: #262626;
-  --primary: #3b82f6;
-  --sidebar: #171717;
-  --secondary: #262626;
-  --background: #171717;
-  --foreground: #e5e5e5;
-  --destructive: #ef4444;
-  --sidebar-ring: #3b82f6;
-  --sidebar-accent: #1e3a8a;
-  --sidebar-border: #404040;
-  --card-foreground: #e5e5e5;
-  --sidebar-primary: #3b82f6;
-  --muted-foreground: #a3a3a3;
-  --accent-foreground: #bfdbfe;
-  --popover-foreground: #e5e5e5;
-  --primary-foreground: #ffffff;
-  --sidebar-foreground: #e5e5e5;
-  --secondary-foreground: #e5e5e5;
-  --destructive-foreground: #ffffff;
-  --sidebar-accent-foreground: #bfdbfe;
-  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent-foreground: #0a2540;
+  --sidebar-border: #dde8f5;
+  --sidebar-ring: #0071e3;
+  --chart-1: #0071e3;
+  --chart-2: #06b6d4;
+  --chart-3: #0ea5e9;
+  --chart-4: #38bdf8;
+  --chart-5: #0284c7;
+  /* Brand custom colors */
+  --navy: #071e3d;
+  --navy-mid: #0d2d55;
+  --teal: #06b6d4;
+  --sky: #38bdf8;
 }
 
 @theme inline {
@@ -109,18 +76,41 @@
   --color-destructive-foreground: var(--destructive-foreground);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --font-sans: var(--font-open-sans);
-  --font-heading: var(--font-arimo);
-  --font-mono: JetBrains Mono, monospace;
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  --font-heading: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "SF Mono", JetBrains Mono, monospace;
   --font-serif: Source Serif 4, serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-open-sans), Open Sans, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-arimo), Arimo, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Gradient text for dark sections */
+.text-gradient-dark {
+  background: linear-gradient(180deg, #ffffff 0%, #a8c8e8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

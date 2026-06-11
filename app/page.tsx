@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import HeroCarousel from "@/components/HeroCarousel";
+import { BlogCards } from "@/components/ui/cards";
+import TestimonialCard from "@/components/ui/testimonial-card";
 import ServiceCard from "@/components/ServiceCard";
 import CTABanner from "@/components/CTABanner";
 import CountUp from "@/components/CountUp";
+import { SectionAngle } from "@/components/SectionAngle";
+import { AnimatedSection, StaggeredSection, StaggeredItem } from "@/components/AnimatedSection";
 
 export const metadata: Metadata = {
   title: "Audcomp | Trusted IT Consulting Services in Canada",
@@ -60,30 +64,54 @@ const testimonials = [
   {
     quote:
       "Audcomp Managed Services has been a wonderful addition to our business operations. With the help of their team, and their proactive maintenance approach, we have seen the reliability, security, and performance of our network increase with each month.",
-    name: "Jeff",
-    title: "COO",
+    authorName: "Jeff",
+    authorTitle: "COO",
+    avatarUrl: "",
+    rating: 5,
   },
   {
     quote:
       "I am very impressed with the service I receive from Audcomp. Their commitment to excellence is evident in every product we've purchased, and their knowledgeable and friendly team ensures a seamless experience.",
-    name: "Jen",
-    title: "VP of Information Technology",
+    authorName: "Jen",
+    authorTitle: "VP of Information Technology",
+    avatarUrl: "",
+    rating: 5,
   },
   {
     quote:
       "We chose Audcomp as our partner for IT Managed Service back in 2018 and would recommend Audcomp to any business looking for a reliable and effective Managed Service Provider.",
-    name: "Kellie",
-    title: "President and CEO",
+    authorName: "Kellie",
+    authorTitle: "President and CEO",
+    avatarUrl: "",
+    rating: 5,
   },
 ];
 
 const verticals = [
-  "Healthcare",
-  "Municipalities",
-  "Universities",
-  "Manufacturing",
-  "Enterprise",
-  "SMB",
+  {
+    label: "Healthcare",
+    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop&q=80",
+  },
+  {
+    label: "Municipalities",
+    image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&h=400&fit=crop&q=80",
+  },
+  {
+    label: "Universities",
+    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&h=400&fit=crop&q=80",
+  },
+  {
+    label: "Manufacturing",
+    image: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600&h=400&fit=crop&q=80",
+  },
+  {
+    label: "Enterprise",
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop&q=80",
+  },
+  {
+    label: "Small & Medium Business",
+    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&h=400&fit=crop&q=80",
+  },
 ];
 
 export default function Home() {
@@ -91,138 +119,193 @@ export default function Home() {
     <>
       <HeroCarousel />
 
-      {/* Stats Bar */}
-      <section className="bg-card border-b border-border py-14 px-4">
-        <div className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
-          <div>
-            <p className="text-4xl font-bold text-foreground">
-              <CountUp end={40} suffix="+" />
-            </p>
-            <p className="text-sm text-muted-foreground mt-2">Years in Business</p>
-          </div>
-          <div>
-            <p className="text-4xl font-bold text-foreground">Top 25</p>
-            <p className="text-sm text-muted-foreground mt-2">CDN Solutions Provider</p>
-          </div>
-          <div>
-            <p className="text-4xl font-bold text-foreground">
-              <CountUp end={100} suffix="%" />
-            </p>
-            <p className="text-sm text-muted-foreground mt-2">Canadian Engineers &amp; Data Centers</p>
-          </div>
-          <div>
-            <p className="text-4xl font-bold text-foreground">24/7</p>
-            <p className="text-sm text-muted-foreground mt-2">Monitoring &amp; Support</p>
-          </div>
+      {/* Stats Bar — navy */}
+      <section className="relative bg-[#071e3d] py-16 px-4 overflow-hidden">
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="w-[800px] h-[200px] rounded-full opacity-10" style={{ background: "radial-gradient(ellipse, #06b6d4 0%, transparent 70%)" }} />
         </div>
+        <AnimatedSection>
+          <div className="relative max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
+            <div>
+              <p className="text-4xl font-bold text-white tracking-tight"><CountUp end={40} suffix="+" /></p>
+              <p className="text-xs text-white/40 mt-2 uppercase tracking-widest">Years in Business</p>
+            </div>
+            <div>
+              <p className="text-4xl font-bold text-white tracking-tight">Top 25</p>
+              <p className="text-xs text-white/40 mt-2 uppercase tracking-widest">CDN Solutions Provider</p>
+            </div>
+            <div>
+              <p className="text-4xl font-bold text-white tracking-tight"><CountUp end={100} suffix="%" /></p>
+              <p className="text-xs text-white/40 mt-2 uppercase tracking-widest">Canadian Engineers</p>
+            </div>
+            <div>
+              <p className="text-4xl font-bold text-white tracking-tight">24/7</p>
+              <p className="text-xs text-white/40 mt-2 uppercase tracking-widest">Monitoring & Support</p>
+            </div>
+          </div>
+        </AnimatedSection>
       </section>
 
-      {/* Services Grid */}
-      <section className="bg-muted py-24 px-4">
+      <SectionAngle from="#071e3d" to="#ffffff" flip={false} height={64} />
+
+      {/* Services Grid — white with light cards */}
+      <section className="bg-white py-24 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-14">
-            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 tracking-tight">
+          <AnimatedSection className="text-center mb-16">
+            <p className="text-xs font-semibold text-[#06b6d4] uppercase tracking-widest mb-4">Our Services</p>
+            <h2 className="text-4xl sm:text-5xl font-bold text-[#0a2540] mb-5 tracking-tight">
               Comprehensive IT Solutions
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
+            <p className="text-slate-500 text-lg max-w-2xl mx-auto leading-relaxed">
               From day-to-day support to strategic planning, Audcomp delivers tailored IT solutions for businesses of all sizes.
             </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          </AnimatedSection>
+          <StaggeredSection className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {services.map((service) => (
-              <ServiceCard key={service.href} {...service} />
+              <StaggeredItem key={service.href}>
+                <ServiceCard {...service} variant="light" />
+              </StaggeredItem>
             ))}
-          </div>
+          </StaggeredSection>
         </div>
       </section>
 
-      {/* Mission Section */}
-      <section className="bg-card py-24 px-4">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6 tracking-tight leading-tight">
-              More Than a Service Provider. Your Partner.
+      <SectionAngle from="#ffffff" to="#f0f7ff" flip={true} height={64} />
+
+      {/* Industries We Serve — light blue with real images */}
+      <section className="bg-[#f0f7ff] py-24 px-4">
+        <div className="max-w-6xl mx-auto">
+          <AnimatedSection className="text-center mb-16">
+            <p className="text-xs font-semibold text-[#0071e3] uppercase tracking-widest mb-4">Industries</p>
+            <h2 className="text-4xl sm:text-5xl font-bold text-[#0a2540] mb-5 tracking-tight">
+              Built for Your Sector
             </h2>
-            <p className="text-muted-foreground leading-relaxed mb-6 text-lg">
-              Our mission is to empower businesses to operate confidently and more efficiently by providing tailored IT solutions. Our team of dedicated professionals is committed to developing and implementing reliable, cost-effective solutions for businesses of all sizes — no matter the scope of the need.
+            <p className="text-slate-500 text-lg max-w-2xl mx-auto leading-relaxed">
+              Deep domain knowledge across six industries — so your IT strategy fits the way your business actually works.
             </p>
-            <p className="text-muted-foreground leading-relaxed mb-10 text-lg">
-              Founded in 1986 at McMaster University by Gary Sohal, Audcomp has grown to become the largest MSP in the Hamilton/Ancaster region and has ranked in the top 25 of CDN&apos;s Top 100 Solutions Providers for over a decade.
-            </p>
+          </AnimatedSection>
+
+          <StaggeredSection className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            {verticals.map((v) => (
+              <StaggeredItem key={v.label}>
+                <div className="group relative rounded-2xl overflow-hidden aspect-[4/3] cursor-default">
+                  <img
+                    src={v.image}
+                    alt={v.label}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#071e3d]/80 via-[#071e3d]/20 to-transparent" />
+                  <p className="absolute bottom-4 left-4 text-white font-semibold text-base tracking-tight">
+                    {v.label}
+                  </p>
+                </div>
+              </StaggeredItem>
+            ))}
+          </StaggeredSection>
+
+          <AnimatedSection className="text-center mt-12">
             <Link
-              href="/our-story"
-              className="inline-flex items-center gap-2 text-primary font-semibold hover:underline"
+              href="/about"
+              className="inline-flex items-center gap-1.5 text-sm text-[#0071e3] font-medium hover:underline"
             >
-              Our Story
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              Learn about our mission
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </Link>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            {verticals.map((label) => (
-              <div
-                key={label}
-                className="bg-muted border border-border rounded-xl p-4 text-center hover:shadow-md transition-all"
-              >
-                <p className="font-medium text-foreground">{label}</p>
-              </div>
-            ))}
-          </div>
+          </AnimatedSection>
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="bg-muted py-24 px-4">
+      <SectionAngle from="#f0f7ff" to="#071e3d" flip={false} height={64} />
+
+      {/* Testimonials — navy with dark glass cards */}
+      <section className="bg-[#071e3d] py-24 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-14">
-            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 tracking-tight">
+          <AnimatedSection className="text-center mb-16">
+            <p className="text-xs font-semibold text-[#06b6d4] uppercase tracking-widest mb-4">Client Stories</p>
+            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-5 tracking-tight">
               What Our Clients Say
             </h2>
-            <p className="text-muted-foreground text-lg">
+            <p className="text-white/45 text-base">
               Trusted by businesses across the Hamilton region and beyond.
             </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((t) => (
-              <div
-                key={t.name}
-                className="bg-card rounded-2xl p-8 border border-border shadow-sm hover:shadow-lg transition-all duration-200"
-              >
-                <div className="text-primary text-5xl leading-none font-serif mb-4">&ldquo;</div>
-                <p className="text-muted-foreground leading-relaxed mb-6">{t.quote}</p>
-                <div>
-                  <p className="font-bold text-foreground">{t.name}</p>
-                  <p className="text-sm text-muted-foreground">{t.title}</p>
-                </div>
-              </div>
+          </AnimatedSection>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {testimonials.map((t, index) => (
+              <TestimonialCard key={t.authorName} {...t} index={index} variant="dark" />
             ))}
           </div>
         </div>
       </section>
 
-      {/* Case Study Callout */}
-      <section className="bg-[#181E2C] py-24 px-4">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
-          <div className="flex-1">
-            <span className="inline-block bg-primary text-white text-xs font-bold uppercase tracking-widest px-4 py-1 rounded-full mb-4">
-              Case Study
-            </span>
-            <h3 className="text-3xl font-bold text-white mb-3">
-              Healthcare Cybersecurity Recovery
-            </h3>
-            <p className="text-gray-400 leading-relaxed text-lg">
-              A public-sector healthcare organization hit by a cyberattack in 2024 was fully operational within two weeks — critical services restored within two business days — thanks to Audcomp&apos;s rapid incident response.
-            </p>
+      <SectionAngle from="#071e3d" to="#ffffff" flip={true} height={64} />
+
+      {/* Case Study Callout — white, big image feature */}
+      <section className="bg-white py-24 px-4">
+        <AnimatedSection>
+          <div className="max-w-6xl mx-auto">
+            <div className="relative rounded-3xl overflow-hidden min-h-[420px] flex items-end" style={{ boxShadow: "0 20px 60px rgba(7,30,61,0.12)" }}>
+              {/* Background image */}
+              <img
+                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1400&h=700&auto=format&fit=crop&q=80"
+                alt="Healthcare Cybersecurity"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#071e3d]/92 via-[#071e3d]/70 to-[#071e3d]/20" />
+              {/* Content */}
+              <div className="relative z-10 p-10 sm:p-14 max-w-2xl">
+                <span className="inline-flex items-center gap-2 bg-[#06b6d4]/20 border border-[#06b6d4]/40 text-[#06b6d4] text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
+                  Case Study
+                </span>
+                <h3 className="text-3xl sm:text-4xl font-bold text-white mb-5 tracking-tight leading-tight">
+                  Healthcare Cybersecurity Recovery
+                </h3>
+                <p className="text-white/65 leading-relaxed text-base mb-8 max-w-md">
+                  A public-sector healthcare organization hit by a cyberattack in 2024 was fully operational within two weeks — critical services restored within two business days — thanks to Audcomp&apos;s rapid incident response.
+                </p>
+                <Link
+                  href="/case-study"
+                  className="inline-flex items-center gap-2 bg-white text-[#0a2540] font-semibold px-7 py-3 rounded-full transition-all duration-200 text-sm hover:bg-[#f0f7ff] hover:shadow-lg"
+                >
+                  Read the Case Study
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
           </div>
-          <Link
-            href="/case-study"
-            className="shrink-0 bg-primary text-white font-semibold px-8 py-4 rounded-full hover:brightness-110 transition-all shadow-md"
-          >
-            Read the Case Study
-          </Link>
+        </AnimatedSection>
+      </section>
+
+      <SectionAngle from="#ffffff" to="#f0f7ff" flip={false} height={64} />
+
+      {/* Latest Insights — light blue */}
+      <section className="bg-[#f0f7ff] py-24 px-4">
+        <div className="max-w-6xl mx-auto">
+          <AnimatedSection>
+            <BlogCards
+              title="Latest Insights"
+              subtitle="IT expertise and industry updates from the Audcomp team"
+            />
+          </AnimatedSection>
+          <AnimatedSection className="text-center mt-12">
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-1.5 text-sm text-[#0071e3] font-medium hover:underline"
+            >
+              View all articles
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </AnimatedSection>
         </div>
       </section>
+
+      <SectionAngle from="#f0f7ff" to="#071e3d" flip={true} height={64} />
 
       <CTABanner />
     </>
