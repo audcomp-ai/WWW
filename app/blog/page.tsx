@@ -13,32 +13,32 @@ const allPosts = [
   {
     title: "How Microsoft Copilot is Changing the Modern Workspace",
     category: "AI Services",
-    image: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&h=540&auto=format&fit=crop&q=80",
+    image: "/images/blog_copilot.png",
   },
   {
     title: "Zero Trust Architecture: No Longer Just for Enterprise",
     category: "Cyber Security",
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=540&auto=format&fit=crop&q=80",
+    image: "/images/cyber_security_hero.png",
   },
   {
     title: "Optimizing Your Cloud Spend with Azure Hybrid Benefits",
     category: "Cloud Solutions",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=540&auto=format&fit=crop&q=80",
+    image: "/images/cloud_solutions_hero.png",
   },
   {
     title: "The Case for Managed IT: Why In-House IT Falls Short",
     category: "Managed IT",
-    image: "https://images.unsplash.com/photo-1531973576160-7125cd663d86?w=800&h=540&auto=format&fit=crop&q=80",
+    image: "/images/managed_it_hero.png",
   },
   {
     title: "Ransomware in 2024: What Every Canadian Business Needs to Know",
     category: "Cyber Security",
-    image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=800&h=540&auto=format&fit=crop&q=80",
+    image: "/images/cyber_security_hero.png",
   },
   {
     title: "What is a Virtual CIO — and Does Your Business Need One?",
     category: "Professional Services",
-    image: "https://images.unsplash.com/photo-1573497491765-dccce02b29df?w=800&h=540&auto=format&fit=crop&q=80",
+    image: "/images/professional_services_hero.png",
   },
 ];
 

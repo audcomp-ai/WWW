@@ -20,17 +20,17 @@ const defaultCards: BlogCard[] = [
   {
     title: "How Microsoft Copilot is Changing the Modern Workspace",
     category: "AI Services",
-    image: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&h=540&auto=format&fit=crop&q=80",
+    image: "/images/blog_copilot.png",
   },
   {
     title: "Zero Trust Architecture: No Longer Just for Enterprise",
     category: "Cyber Security",
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=540&auto=format&fit=crop&q=80",
+    image: "/images/cyber_security_hero.png",
   },
   {
     title: "Optimizing Your Cloud Spend with Azure Hybrid Benefits",
     category: "Cloud Solutions",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=540&auto=format&fit=crop&q=80",
+    image: "/images/cloud_solutions_hero.png",
   },
 ];
 

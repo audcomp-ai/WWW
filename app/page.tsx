@@ -90,27 +90,27 @@ const testimonials = [
 const verticals = [
   {
     label: "Healthcare",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop&q=80",
+    image: "/images/ind_healthcare_1781220794136.png",
   },
   {
     label: "Municipalities",
-    image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&h=400&fit=crop&q=80",
+    image: "/images/ind_municipalities_1781220804489.png",
   },
   {
     label: "Universities",
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&h=400&fit=crop&q=80",
+    image: "/images/ind_universities_1781220814872.png",
   },
   {
     label: "Manufacturing",
-    image: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600&h=400&fit=crop&q=80",
+    image: "/images/ind_manufacturing_1781220830507.png",
   },
   {
     label: "Enterprise",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop&q=80",
+    image: "/images/ind_enterprise_1781220840854.png",
   },
   {
     label: "Small & Medium Business",
-    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&h=400&fit=crop&q=80",
+    image: "/images/ind_smb_1781220849628.png",
   },
 ];
 
