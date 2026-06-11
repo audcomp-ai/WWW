@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 
 const serviceCategories = [
@@ -57,9 +57,11 @@ const serviceCategories = [
 export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [aiOpen, setAiOpen] = useState(false);
   const [activeCat, setActiveCat] = useState(0);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const aiTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -146,9 +148,49 @@ export default function Nav() {
               )}
             </div>
 
-            <Link href="/ai-services" className="text-sm text-white/70 hover:text-white transition-colors duration-200">
-              AI Services
-            </Link>
+            {/* AI Services Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => {
+                if (aiTimeout.current) clearTimeout(aiTimeout.current);
+                setAiOpen(true);
+              }}
+              onMouseLeave={() => {
+                aiTimeout.current = setTimeout(() => setAiOpen(false), 120);
+              }}
+            >
+              <button className="flex items-center gap-1 text-sm text-white/70 hover:text-white transition-colors duration-200 py-2">
+                AI Services
+                <svg
+                  className={`w-3.5 h-3.5 transition-transform duration-200 ${aiOpen ? "rotate-180" : ""}`}
+                  fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {aiOpen && (
+                <div className="absolute left-0 top-full pt-3">
+                  <div className="w-52 bg-[#071e3d]/98 backdrop-blur-2xl border border-white/[0.12] shadow-2xl rounded-2xl overflow-hidden p-2 flex flex-col gap-0.5">
+                    <Link
+                      href="/ai-services"
+                      className="text-sm text-white/60 hover:text-white hover:bg-white/[0.06] px-3 py-2.5 rounded-lg transition-all duration-150 flex items-center gap-2"
+                      onClick={() => setAiOpen(false)}
+                    >
+                      <i className="fas fa-microchip w-4 text-center text-[#06b6d4]" />
+                      AI Services
+                    </Link>
+                    <Link
+                      href="/ai-services/agent-studio"
+                      className="text-sm text-white/60 hover:text-white hover:bg-white/[0.06] px-3 py-2.5 rounded-lg transition-all duration-150 flex items-center gap-2"
+                      onClick={() => setAiOpen(false)}
+                    >
+                      <i className="fas fa-robot w-4 text-center text-[#06b6d4]" />
+                      Agent Studio
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
             <Link href="/about" className="text-sm text-white/70 hover:text-white transition-colors duration-200">
               About
             </Link>
@@ -234,6 +276,7 @@ export default function Nav() {
           <div className="border-t border-white/[0.08] pt-3 flex flex-col gap-2">
             {[
               { label: "AI Services", href: "/ai-services" },
+              { label: "Agent Studio", href: "/ai-services/agent-studio" },
               { label: "About", href: "/about" },
               { label: "Partners", href: "/partners" },
               { label: "Careers", href: "/careers" },

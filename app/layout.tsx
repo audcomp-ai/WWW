@@ -33,6 +33,9 @@ export default function RootLayout({
       className={`${arimo.variable} ${openSans.variable} h-full antialiased`}
       data-scroll-behavior="smooth"
     >
+      <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossOrigin="anonymous" referrerPolicy="no-referrer" />
+      </head>
       <body className="min-h-full flex flex-col">
         <Nav />
         <main className="flex-1">{children}</main>

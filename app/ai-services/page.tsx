@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Hero from "@/components/Hero";
 import ServiceCard from "@/components/ServiceCard";
 import CTABanner from "@/components/CTABanner";
@@ -134,27 +135,76 @@ export default function AIServicesPage() {
 
       <SectionAngle from="#071e3d" to="#ffffff" flip={true} height={64} />
 
-      {/* AI Agents — WHITE with use cases */}
-      <section id="agents" className="bg-white py-24 px-4">
+      {/* Agent Studio Callout — WHITE */}
+      <section className="bg-white py-20 px-4">
+        <AnimatedSection>
+          <div className="max-w-6xl mx-auto">
+            <div className="relative rounded-3xl overflow-hidden" style={{ boxShadow: "0 20px 60px rgba(7,30,61,0.10)" }}>
+              <video
+                autoPlay muted loop playsInline preload="auto"
+                poster="/agent-hero-poster.png"
+                className="absolute inset-0 w-full h-full object-cover"
+              >
+                <source src="/agent-hero.mp4" type="video/mp4" />
+              </video>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#071e3d]/95 via-[#071e3d]/75 to-[#071e3d]/30" />
+              <div className="relative z-10 p-10 sm:p-14 max-w-2xl min-h-[380px] flex flex-col justify-center">
+                <span className="inline-flex items-center gap-2 bg-[#06b6d4]/20 border border-[#06b6d4]/40 text-[#06b6d4] text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full mb-6 w-fit">
+                  New · Agent Studio
+                </span>
+                <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tighter mb-5 leading-tight">
+                  Deploy a full AI<br />workforce in 48 hours.
+                </h2>
+                <p className="text-white/65 leading-relaxed text-base mb-8 max-w-md">
+                  Bookkeeper. SDR. Executive assistant. Paralegal. Receptionist. 19 pre-built specialists — Canadian-hosted, supervised by Wilfred, ready to work alongside your team.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <Link
+                    href="/ai-services/agent-studio"
+                    className="inline-flex items-center gap-2 bg-white text-[#0a2540] font-black px-7 py-3.5 rounded-full text-sm hover:bg-[#f0f7ff] hover:shadow-lg transition-all"
+                  >
+                    Explore Agent Studio
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-2 bg-[#0071e3] text-white font-black px-7 py-3.5 rounded-full text-sm hover:bg-[#0077ed] transition-all"
+                  >
+                    Book a free assessment
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </AnimatedSection>
+      </section>
+
+      <SectionAngle from="#ffffff" to="#071e3d" flip={false} height={64} />
+
+      {/* AI Agents — navy */}
+      <section id="agents" className="bg-[#071e3d] py-24 px-4">
         <div className="max-w-6xl mx-auto">
           <AnimatedSection className="mb-16">
             <p className="text-xs font-semibold text-[#06b6d4] uppercase tracking-widest mb-4">AI Agents</p>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
               <div>
-                <h2 className="text-4xl sm:text-5xl font-bold text-[#0a2540] mb-5 tracking-tight leading-tight">
-                  Agents That Work<br />Alongside Your Team
+                <h2 className="text-4xl sm:text-5xl font-bold text-white mb-5 tracking-tight leading-tight">
+                  IT-Specific Agents<br />for Your Team
                 </h2>
-                <p className="text-slate-500 text-lg leading-relaxed">
-                  AI agents are purpose-built software that can reason, take action, and complete multi-step tasks autonomously — without constant human input. Audcomp designs, deploys, and manages custom AI agents that plug into your existing Microsoft 365 environment and workflows.
+                <p className="text-white/55 text-lg leading-relaxed">
+                  Purpose-built agents for IT environments — scoped to your Microsoft 365 infrastructure, connected to your data sources, and governed by your security policies.
                 </p>
               </div>
               <div>
-                <p className="text-slate-500 text-base leading-relaxed mb-4">
-                  Unlike generic chatbots, Audcomp agents are scoped to your specific business processes, connected to your data sources, and governed by the security policies your organization already has in place.
+                <p className="text-white/45 text-base leading-relaxed mb-4">
+                  Unlike generic AI tools, Audcomp agents are designed specifically for IT workflows — help desk automation, security alert triage, compliance monitoring, and more.
                 </p>
-                <p className="text-slate-500 text-base leading-relaxed">
-                  Each agent deployment includes an AI readiness assessment, security review, pilot rollout, and ongoing managed monitoring — so your team can trust what it&apos;s working with.
-                </p>
+                <Link href="/ai-services/agent-studio" className="inline-flex items-center gap-1.5 text-sm text-[#06b6d4] font-semibold hover:underline">
+                  See all 19 agents in Agent Studio
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                </Link>
               </div>
             </div>
           </AnimatedSection>
@@ -162,10 +212,10 @@ export default function AIServicesPage() {
           <StaggeredSection className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {agentUseCases.map((uc) => (
               <StaggeredItem key={uc.title}>
-                <div className="rounded-2xl border border-slate-200 bg-white p-7 hover:border-blue-200 hover:shadow-md transition-all duration-300">
+                <div className="rounded-2xl border border-white/[0.1] bg-white/[0.05] p-7 hover:border-[#06b6d4]/30 hover:bg-white/[0.08] transition-all duration-300">
                   <div className="text-2xl mb-4">{uc.icon}</div>
-                  <h3 className="font-semibold text-[#0a2540] mb-2 text-base tracking-tight">{uc.title}</h3>
-                  <p className="text-sm text-slate-500 leading-relaxed">{uc.desc}</p>
+                  <h3 className="font-semibold text-white mb-2 text-base tracking-tight">{uc.title}</h3>
+                  <p className="text-sm text-white/50 leading-relaxed">{uc.desc}</p>
                 </div>
               </StaggeredItem>
             ))}
@@ -173,7 +223,7 @@ export default function AIServicesPage() {
         </div>
       </section>
 
-      <SectionAngle from="#ffffff" to="#071e3d" flip={false} height={64} />
+      <SectionAngle from="#071e3d" to="#ffffff" flip={true} height={64} />
 
       {/* Deployment Process — navy */}
       <section className="relative bg-[#071e3d] py-24 px-4 overflow-hidden">
