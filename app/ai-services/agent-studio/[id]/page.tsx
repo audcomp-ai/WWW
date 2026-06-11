@@ -31,7 +31,7 @@ export default async function AgentDetailPage({ params }: { params: Promise<{ id
 
   const badge =
     agent.tier === "junior" ? `Junior Series · ${agent.domain}` :
-    agent.tier === "realtor" ? "Industry Pack · Real Estate" :
+    agent.tier === "realtor" ? `Realtor Pack · ${agent.domain}` :
     agent.domain;
 
   const tagline = agent.tagline || agent.desc;

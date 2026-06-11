@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { workforce, juniors, realtorPack, type Agent } from "@/data/agents";
+import { workforce, juniors, type Agent } from "@/data/agents";
 import { SectionAngle } from "@/components/SectionAngle";
 
 export const metadata: Metadata = {
@@ -134,7 +134,6 @@ function WorksBadge({ text }: { text: string }) {
 export default function AgentStudioPage() {
   const quinn = workforce.find((a) => a.id === "quinn")!;
   const scout = juniors.find((a) => a.id === "scout")!;
-  const rex = realtorPack.find((a) => a.id === "rex")!;
 
   return (
     <div className="min-h-screen bg-[#071e3d] overflow-x-hidden pb-24">
@@ -154,9 +153,9 @@ export default function AgentStudioPage() {
         <div className="relative z-10 h-full max-w-7xl mx-auto px-6 lg:px-12 flex flex-col justify-end pb-20 lg:pb-28">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full mb-6 w-fit backdrop-blur">
             <span className="text-[10px] font-black px-1.5 py-0.5 rounded bg-[#0071e3] text-white uppercase tracking-widest">Studio Workspace</span>
-            <span className="text-xs font-bold text-slate-300 uppercase tracking-widest">Architecture Suite</span>
+            <span className="text-xs font-bold text-white uppercase tracking-widest">Architecture Suite</span>
           </div>
-          <h1 className="text-6xl lg:text-8xl font-black tracking-tighter text-gradient-studio mb-6 max-w-4xl leading-[0.95]">
+          <h1 className="text-6xl lg:text-8xl font-black tracking-tighter text-white mb-6 max-w-4xl leading-[0.95]">
             Agent <span className="italic">Studio.</span>
           </h1>
           <p className="text-slate-300 text-lg lg:text-2xl font-medium max-w-2xl mb-8 leading-relaxed">
@@ -308,7 +307,7 @@ export default function AgentStudioPage() {
           <div className="text-center mb-14">
             <span className="text-[10px] font-black uppercase tracking-[0.5em] text-orange-400 mb-6 block">Junior Series</span>
             <h2 className="text-4xl lg:text-6xl font-black tracking-tighter text-white mb-6 leading-tight">
-              Junior agents for the <span className="text-orange-400 italic">lighter lifts.</span>
+              Junior agents for the <span className="text-emerald-400 italic">lighter lifts.</span>
             </h2>
             <p className="text-slate-400 text-lg lg:text-xl font-medium max-w-3xl mx-auto leading-relaxed">
               Focused assistants trained on narrower workflows — ideal for supporting your senior specialists and your team on high-volume, repetitive tasks.
@@ -336,58 +335,11 @@ export default function AgentStudioPage() {
           <Marquee agents={juniors} />
         </section>
 
-        {/* ── INDUSTRY PACK · REAL ESTATE ── */}
-        <section className="mb-32">
-          <div className="text-center mb-12">
-            <span className="text-[10px] font-black uppercase tracking-[0.5em] text-[#06b6d4] mb-6 block">Industry Pack · Real Estate</span>
-            <h2 className="text-4xl lg:text-6xl font-black tracking-tighter text-gradient-studio mb-6 leading-tight">
-              The <span className="italic">Realtor Pack.</span>
-            </h2>
-            <p className="text-slate-400 text-lg lg:text-xl font-medium max-w-3xl mx-auto leading-relaxed">
-              Six specialists pre-configured for real estate teams — from listing to close to reputation — deployed together and run by Wilfred.
-            </p>
-          </div>
-          {/* Impact strip */}
-          <div className="bg-white/[0.06] border border-white/10 backdrop-blur-sm rounded-3xl p-6 lg:p-8 mb-10 flex flex-wrap items-center justify-center gap-x-12 gap-y-6 text-center">
-            {[
-              { stat: "108 hrs", label: "Saved per week" },
-              { stat: "2.7 FTE", label: "Roles replaced" },
-              { stat: "6 agents", label: "One deployment" },
-              { stat: "< 48 hrs", label: "To go live" },
-            ].map((s) => (
-              <div key={s.label}>
-                <div className="text-2xl lg:text-3xl font-black text-white tracking-tight">{s.stat}</div>
-                <div className="text-[10px] font-bold uppercase tracking-widest text-slate-500 mt-1">{s.label}</div>
-              </div>
-            ))}
-          </div>
-          <FeaturedAgent
-            a={rex}
-            tag="Featured · Real Estate"
-            blurb="Writes MLS and listing descriptions, manages photo uploads and go-live deadlines, and tracks price changes and open house dates — so nothing slips."
-            works={
-              <div className="flex flex-wrap items-center gap-3 mb-8">
-                <span className="text-[10px] font-black uppercase tracking-widest text-slate-500">Works with</span>
-                <WorksBadge text="MLS" /><WorksBadge text="REALTOR.ca" /><WorksBadge text="Listing Copy" />
-              </div>
-            }
-            stats={[
-              { v: "Listing-ready", l: "MLS copy" },
-              { v: "< 24 hrs", l: "To go live" },
-              { v: "24/7", l: "Deadline tracking" },
-            ]}
-          />
-          <div className="mb-8">
-            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-500 block text-center">Our Agent Pack for Realtors</span>
-          </div>
-          <Marquee agents={realtorPack} />
-        </section>
-
         {/* ── WHO HIRES WILFRED ── */}
         <section className="mb-32">
           <div className="text-center mb-16 max-w-4xl mx-auto">
             <span className="text-[10px] font-black uppercase tracking-[0.5em] text-[#06b6d4] mb-6 block">Who hires Wilfred</span>
-            <h2 className="text-4xl lg:text-6xl font-black tracking-tighter text-gradient-studio mb-6 leading-tight">
+            <h2 className="text-4xl lg:text-6xl font-black tracking-tighter text-white mb-6 leading-tight">
               If you have work that needs doing and a hire you can&apos;t justify yet —{" "}
               <span className="italic">Wilfred fills that gap.</span>
             </h2>
@@ -454,29 +406,6 @@ export default function AgentStudioPage() {
           </div>
         </section>
 
-        {/* Final CTA */}
-        <section className="mb-8">
-          <div className="bg-white/[0.06] border border-white/10 backdrop-blur-sm rounded-[3rem] shadow-2xl p-10 lg:p-16 text-center relative overflow-hidden">
-            <div className="absolute -bottom-24 -left-24 w-72 h-72 rounded-full opacity-20 pointer-events-none" style={{ background: "radial-gradient(ellipse, #0071e3 0%, transparent 70%)" }} />
-            <div className="relative">
-              <span className="text-[10px] font-black uppercase tracking-[0.5em] text-[#06b6d4] mb-6 block">Ready when you are</span>
-              <h2 className="text-4xl lg:text-6xl font-black tracking-tighter text-gradient-studio mb-6 leading-tight">
-                Tell Wilfred what you need.<br /><span className="italic">He&apos;ll build the team.</span>
-              </h2>
-              <p className="text-slate-400 text-lg font-medium max-w-2xl mx-auto mb-10">
-                Book a free assessment and we&apos;ll map the right specialists to your work — deployed, supervised, and Canadian-hosted, ready in 48 hours.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/contact" className="inline-flex items-center justify-center gap-3 bg-[#0071e3] text-white px-10 py-5 rounded-2xl font-black text-lg hover:shadow-2xl hover:shadow-[#0071e3]/30 transition-all group">
-                  Book a free assessment <i className="fas fa-arrow-right group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <Link href="/ai-services" className="inline-flex items-center justify-center gap-3 bg-white/5 border border-white/10 text-white px-10 py-5 rounded-2xl font-black text-lg hover:border-[#0071e3]/40 transition-all">
-                  Back to AI Services
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
       </div>
 
       {/* ── CANADIAN WEDGE ── */}
@@ -494,7 +423,7 @@ export default function AgentStudioPage() {
               Every other AI staffing platform routes your data through US servers. For regulated Canadian businesses — legal, healthcare, financial, dental, government, education — that&apos;s a non-starter. Wilfred is the only AI workforce conductor built end-to-end on Canadian soil.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-6 mb-16">
             {[
               {
                 label: "Data residency", value: "100% Canadian",
@@ -526,6 +455,28 @@ export default function AgentStudioPage() {
                 </ul>
               </div>
             ))}
+          </div>
+
+          {/* Final CTA — white */}
+          <div className="rounded-[3rem] bg-[#0a2540] shadow-2xl p-10 lg:p-16 text-center relative overflow-hidden">
+            <div className="absolute -bottom-24 -left-24 w-72 h-72 rounded-full opacity-20 pointer-events-none" style={{ background: "radial-gradient(ellipse, #0071e3 0%, transparent 70%)" }} />
+            <div className="relative">
+              <span className="text-[10px] font-black uppercase tracking-[0.5em] text-[#06b6d4] mb-6 block">Ready when you are</span>
+              <h2 className="text-4xl lg:text-6xl font-black tracking-tighter text-white mb-6 leading-tight">
+                Tell Wilfred what you need.<br /><span className="italic text-[#06b6d4]">He&apos;ll build the team.</span>
+              </h2>
+              <p className="text-slate-300 text-lg font-medium max-w-2xl mx-auto mb-10">
+                Book a free assessment and we&apos;ll map the right specialists to your work — deployed, supervised, and Canadian-hosted, ready in 48 hours.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/contact" className="inline-flex items-center justify-center gap-3 bg-[#0071e3] text-white px-10 py-5 rounded-2xl font-black text-lg hover:shadow-2xl hover:shadow-[#0071e3]/30 transition-all group">
+                  Book a free assessment <i className="fas fa-arrow-right group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <Link href="/ai-services" className="inline-flex items-center justify-center gap-3 bg-white/10 border border-white/20 text-white px-10 py-5 rounded-2xl font-black text-lg hover:border-[#0071e3]/60 transition-all">
+                  Back to AI Services
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
