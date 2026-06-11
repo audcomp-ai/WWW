@@ -239,9 +239,9 @@ export default function AgentStudioPage() {
                       </Link>
                     );
                   })}
-                  {/* Outer ring — juniors + realtors */}
-                  {[...juniors, ...realtorPack].map((a, i) => {
-                    const list = [...juniors, ...realtorPack];
+                  {/* Outer ring — juniors */}
+                  {juniors.map((a, i) => {
+                    const list = juniors;
                     const angle = (i / list.length) * 2 * Math.PI - Math.PI / 2 + Math.PI / list.length;
                     const r = 46;
                     const top = 50 + r * Math.sin(angle);
