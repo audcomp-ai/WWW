@@ -37,7 +37,7 @@ export default function FeaturedEvent() {
               </motion.span>
               
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">
-                Meet the Moment <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#06b6d4] to-[#0071e3]">2025</span>
+                Meet the Moment <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#06b6d4] to-[#0071e3]">2026</span>
               </h2>
               
               <p className="text-white/60 text-lg leading-relaxed mb-8 max-w-lg">
