@@ -51,7 +51,7 @@ export default function FeaturedEvent() {
                   </div>
                   <div>
                     <p className="text-xs text-white/40 uppercase tracking-wider font-semibold">Date</p>
-                    <p className="font-medium">October 15, 2025</p>
+                    <p className="font-medium">April 28, 2026</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 text-white/80">
