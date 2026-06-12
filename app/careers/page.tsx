@@ -67,7 +67,7 @@ export default function CareersPage() {
             {
               title: "IT Help Desk Technician",
               type: "Full-time",
-              location: "Ancaster, ON / Remote",
+              location: "Ancaster, ON",
               desc: "Provide Tier 1 and Tier 2 support via phone, email, and on-site visits. Strong troubleshooting skills and customer-first attitude required.",
             },
             {
@@ -79,7 +79,7 @@ export default function CareersPage() {
             {
               title: "Cloud Solutions Specialist",
               type: "Full-time",
-              location: "Ancaster, ON / Hybrid",
+              location: "Ancaster, ON",
               desc: "Lead Microsoft 365 and Azure migrations, deployments, and ongoing management for a growing book of managed clients.",
             },
           ].map((role) => (
