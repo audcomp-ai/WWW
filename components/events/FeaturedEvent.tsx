@@ -78,11 +78,16 @@ export default function FeaturedEvent() {
 
             <div className="relative hidden lg:block h-full min-h-[400px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
               <div className="absolute inset-0 bg-gradient-to-t from-[#071e3d] via-transparent to-transparent z-10"></div>
-              <img
-                src="/images/meet-the-moment.jpg"
-                alt="Meet the Moment at Hamilton Golf and Country Club"
-                className="absolute inset-0 w-full h-full object-cover transform hover:scale-105 transition-transform duration-1000"
-              />
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
+                className="absolute inset-0 w-full h-full object-cover"
+              >
+                <source src="/mtm2025.MP4" type="video/mp4" />
+              </video>
             </div>
           </div>
         </motion.div>
