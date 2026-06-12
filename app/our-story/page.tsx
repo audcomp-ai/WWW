@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import CTABanner from "@/components/CTABanner";
+import { SectionAngle } from "@/components/SectionAngle";
 
 export const metadata: Metadata = {
   title: "Our Story | Audcomp — 40 Years of IT Excellence in Canada",
@@ -52,6 +53,8 @@ export default function OurStoryPage() {
         backgroundImage="/images/professional_services_hero.png"
       />
 
+      <SectionAngle from="#071e3d" to="#ffffff" flip={false} height={64} />
+
       {/* Founder Section */}
       <section className="bg-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
@@ -69,6 +72,8 @@ export default function OurStoryPage() {
           </p>
         </div>
       </section>
+
+      <SectionAngle from="#ffffff" to="#e8f0fe" flip={true} height={64} />
 
       {/* Timeline */}
       <section className="bg-[#e8f0fe] py-20 px-4">
@@ -94,6 +99,8 @@ export default function OurStoryPage() {
           </div>
         </div>
       </section>
+
+      <SectionAngle from="#e8f0fe" to="#ffffff" flip={false} height={64} />
 
       {/* Values */}
       <section className="bg-white py-20 px-4">
@@ -136,6 +143,8 @@ export default function OurStoryPage() {
           </div>
         </div>
       </section>
+
+      <SectionAngle from="#ffffff" to="#071e3d" flip={true} height={64} />
 
       <CTABanner />
     </>

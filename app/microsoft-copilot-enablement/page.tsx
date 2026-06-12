@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import CTABanner from "@/components/CTABanner";
+import { SectionAngle } from "@/components/SectionAngle";
 
 export const metadata: Metadata = {
   title: "Microsoft Copilot Enablement | Audcomp — Copilot Deployment & Training",
@@ -19,6 +20,8 @@ export default function MicrosoftCopilotPage() {
         backgroundImage="/images/ai_services_hero.png"
       />
 
+      <SectionAngle from="#071e3d" to="#ffffff" flip={false} height={64} />
+
       <section className="bg-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">Microsoft Copilot, Done Right</h2>
@@ -33,6 +36,8 @@ export default function MicrosoftCopilotPage() {
           </p>
         </div>
       </section>
+
+      <SectionAngle from="#ffffff" to="#f9fafb" flip={true} height={64} />
 
       <section className="bg-gray-50 py-20 px-4">
         <div className="max-w-5xl mx-auto">
@@ -84,6 +89,8 @@ export default function MicrosoftCopilotPage() {
         </div>
       </section>
 
+      <SectionAngle from="#f9fafb" to="#e8f0fe" flip={false} height={64} />
+
       <section className="bg-[#e8f0fe] py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-2xl font-bold text-[#1a1a2e] mb-8 text-center">What Copilot Can Do for Your Team</h2>
@@ -104,6 +111,8 @@ export default function MicrosoftCopilotPage() {
           </div>
         </div>
       </section>
+
+      <SectionAngle from="#e8f0fe" to="#071e3d" flip={true} height={64} />
 
       <CTABanner
         title="Ready to Bring AI into Your Microsoft 365 Environment?"

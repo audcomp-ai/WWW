@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import ServiceCard from "@/components/ServiceCard";
 import CTABanner from "@/components/CTABanner";
+import { SectionAngle } from "@/components/SectionAngle";
 
 export const metadata: Metadata = {
   title: "Cloud Solutions | Audcomp — Microsoft Cloud Partner in Canada",
@@ -55,6 +56,8 @@ export default function CloudSolutionsPage() {
         backgroundImage="/images/cloud_solutions_hero.png"
       />
 
+      <SectionAngle from="#071e3d" to="#ffffff" flip={false} height={64} />
+
       <section className="bg-background py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-foreground mb-6">Cloud Without Compromise</h2>
@@ -66,6 +69,8 @@ export default function CloudSolutionsPage() {
           </p>
         </div>
       </section>
+
+      <SectionAngle from="#ffffff" to="#f0f7ff" flip={true} height={64} />
 
       <section className="bg-muted py-20 px-4">
         <div className="max-w-6xl mx-auto">
@@ -80,6 +85,8 @@ export default function CloudSolutionsPage() {
           </div>
         </div>
       </section>
+
+      <SectionAngle from="#f0f7ff" to="#ffffff" flip={false} height={64} />
 
       <section className="bg-background py-20 px-4">
         <div className="max-w-5xl mx-auto">
@@ -101,6 +108,8 @@ export default function CloudSolutionsPage() {
           </div>
         </div>
       </section>
+
+      <SectionAngle from="#ffffff" to="#071e3d" flip={true} height={64} />
 
       <CTABanner />
     </>

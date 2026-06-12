@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import CTABanner from "@/components/CTABanner";
+import { SectionAngle } from "@/components/SectionAngle";
 
 export const metadata: Metadata = {
   title: "SOC & MDR | Audcomp Security Operations Centre",
@@ -20,6 +21,8 @@ export default function SOCMDRPage() {
         backgroundImage="/images/cyber_security_hero.png"
       />
 
+      <SectionAngle from="#071e3d" to="#ffffff" flip={false} height={64} />
+
       <section className="bg-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">
@@ -36,6 +39,8 @@ export default function SOCMDRPage() {
           </p>
         </div>
       </section>
+
+      <SectionAngle from="#ffffff" to="#f9fafb" flip={true} height={64} />
 
       <section className="bg-gray-50 py-20 px-4">
         <div className="max-w-5xl mx-auto">
@@ -57,6 +62,8 @@ export default function SOCMDRPage() {
           </div>
         </div>
       </section>
+
+      <SectionAngle from="#f9fafb" to="#071e3d" flip={false} height={64} />
 
       <CTABanner
         title="Get 24/7 Security Coverage for Your Organization"

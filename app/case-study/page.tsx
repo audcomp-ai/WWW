@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import CTABanner from "@/components/CTABanner";
+import { SectionAngle } from "@/components/SectionAngle";
 
 export const metadata: Metadata = {
   title: "Healthcare Cybersecurity Recovery | Audcomp Case Study",
@@ -60,6 +61,8 @@ export default function CaseStudyPage() {
         backgroundImage="/images/professional_services_hero.png"
       />
 
+      <SectionAngle from="#071e3d" to="#181E2C" flip={false} height={64} />
+
       {/* Outcomes bar */}
       <section className="bg-[#181E2C] py-10">
         <div className="max-w-5xl mx-auto px-4 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
@@ -71,6 +74,8 @@ export default function CaseStudyPage() {
           ))}
         </div>
       </section>
+
+      <SectionAngle from="#181E2C" to="#ffffff" flip={true} height={64} />
 
       {/* Background */}
       <section className="bg-background py-20 px-4">
@@ -96,6 +101,8 @@ export default function CaseStudyPage() {
         </div>
       </section>
 
+      <SectionAngle from="#ffffff" to="#f0f7ff" flip={false} height={64} />
+
       {/* Response Steps */}
       <section className="bg-muted py-20 px-4">
         <div className="max-w-4xl mx-auto">
@@ -117,6 +124,8 @@ export default function CaseStudyPage() {
           </div>
         </div>
       </section>
+
+      <SectionAngle from="#f0f7ff" to="#ffffff" flip={true} height={64} />
 
       {/* Results */}
       <section className="bg-background py-20 px-4">
@@ -147,6 +156,8 @@ export default function CaseStudyPage() {
           </blockquote>
         </div>
       </section>
+
+      <SectionAngle from="#ffffff" to="#071e3d" flip={false} height={64} />
 
       <CTABanner
         title="Is Your Organization Prepared for a Cyberattack?"

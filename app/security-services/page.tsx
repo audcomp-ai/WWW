@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import AnimatedSecurityHero from "@/components/AnimatedSecurityHero";
 import ServiceCard from "@/components/ServiceCard";
 import CTABanner from "@/components/CTABanner";
+import { SectionAngle } from "@/components/SectionAngle";
 
 export const metadata: Metadata = {
   title: "Cyber Security Services | Audcomp — Canadian Cybersecurity Partner",
@@ -53,6 +54,8 @@ export default function SecurityServicesPage() {
     <>
       <AnimatedSecurityHero />
 
+      <SectionAngle from="#071e3d" to="#ffffff" flip={false} height={64} />
+
       <section className="bg-background py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-foreground mb-6">Security Is Not Optional</h2>
@@ -68,6 +71,8 @@ export default function SecurityServicesPage() {
         </div>
       </section>
 
+      <SectionAngle from="#ffffff" to="#f0f7ff" flip={true} height={64} />
+
       <section className="bg-muted py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-foreground mb-4 text-center">Our Security Services</h2>
@@ -81,6 +86,8 @@ export default function SecurityServicesPage() {
           </div>
         </div>
       </section>
+
+      <SectionAngle from="#f0f7ff" to="#181E2C" flip={false} height={64} />
 
       {/* Threat landscape */}
       <section className="bg-[#181E2C] py-20 px-4">
@@ -100,6 +107,8 @@ export default function SecurityServicesPage() {
           </div>
         </div>
       </section>
+
+      <SectionAngle from="#181E2C" to="#071e3d" flip={true} height={64} />
 
       <CTABanner
         title="Is Your Organization Prepared?"

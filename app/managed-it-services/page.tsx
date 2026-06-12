@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import ServiceCard from "@/components/ServiceCard";
 import CTABanner from "@/components/CTABanner";
+import { SectionAngle } from "@/components/SectionAngle";
 
 export const metadata: Metadata = {
   title: "Managed IT Services | Audcomp — Hamilton & Ancaster",
@@ -55,6 +56,8 @@ export default function ManagedITServicesPage() {
         backgroundImage="/images/managed_it_hero.png"
       />
 
+      <SectionAngle from="#071e3d" to="#ffffff" flip={false} height={64} />
+
       {/* Overview */}
       <section className="bg-background py-20 px-4">
         <div className="max-w-4xl mx-auto">
@@ -81,6 +84,8 @@ export default function ManagedITServicesPage() {
         </div>
       </section>
 
+      <SectionAngle from="#ffffff" to="#f0f7ff" flip={true} height={64} />
+
       {/* Sub-services */}
       <section className="bg-muted py-20 px-4">
         <div className="max-w-6xl mx-auto">
@@ -95,6 +100,8 @@ export default function ManagedITServicesPage() {
           </div>
         </div>
       </section>
+
+      <SectionAngle from="#f0f7ff" to="#ffffff" flip={false} height={64} />
 
       {/* Why Managed IT */}
       <section className="bg-background py-20 px-4">
@@ -117,6 +124,8 @@ export default function ManagedITServicesPage() {
           </div>
         </div>
       </section>
+
+      <SectionAngle from="#ffffff" to="#071e3d" flip={true} height={64} />
 
       <CTABanner />
     </>

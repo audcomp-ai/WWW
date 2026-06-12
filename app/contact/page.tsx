@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Hero from "@/components/Hero";
+import { SectionAngle } from "@/components/SectionAngle";
 
 export const metadata: Metadata = {
   title: "Contact Audcomp | IT Support in Hamilton, Burlington & Niagara",
@@ -28,6 +29,8 @@ export default function ContactPage() {
         variant="dark"
         backgroundImage="/images/professional_services_hero.png"
       />
+
+      <SectionAngle from="#071e3d" to="#f0f7ff" flip={false} height={64} />
 
       <section className="bg-muted py-20 px-4">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12">

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import CTABanner from "@/components/CTABanner";
+import { SectionAngle } from "@/components/SectionAngle";
 
 export const metadata: Metadata = {
   title: "Careers at Audcomp | IT Jobs in Hamilton & Ancaster",
@@ -28,6 +29,8 @@ export default function CareersPage() {
         backgroundImage="/images/professional_services_hero.png"
       />
 
+      <SectionAngle from="#071e3d" to="#ffffff" flip={false} height={64} />
+
       {/* Why Work Here */}
       <section className="bg-white py-20 px-4">
         <div className="max-w-5xl mx-auto">
@@ -47,6 +50,8 @@ export default function CareersPage() {
           </div>
         </div>
       </section>
+
+      <SectionAngle from="#ffffff" to="#f9fafb" flip={true} height={64} />
 
       {/* Open Positions */}
       <section id="openings" className="bg-gray-50 py-20 px-4">
@@ -108,6 +113,8 @@ export default function CareersPage() {
         </div>
       </section>
 
+      <SectionAngle from="#f9fafb" to="#1a1a2e" flip={false} height={64} />
+
       {/* General Application */}
       <section className="bg-[#1a1a2e] py-16 px-4">
         <div className="max-w-3xl mx-auto text-center">
@@ -123,6 +130,8 @@ export default function CareersPage() {
           </a>
         </div>
       </section>
+
+      <SectionAngle from="#1a1a2e" to="#071e3d" flip={true} height={64} />
 
       <CTABanner
         title="Questions About Working at Audcomp?"

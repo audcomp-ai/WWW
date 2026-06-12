@@ -90,6 +90,8 @@ export default function AIServicesPage() {
         backgroundImage="/images/ai_services_hero.png"
       />
 
+      <SectionAngle from="#071e3d" to="#ffffff" flip={false} height={64} />
+
       {/* Intro — WHITE */}
       <section className="bg-white py-32 px-4">
         <div className="max-w-4xl mx-auto">
