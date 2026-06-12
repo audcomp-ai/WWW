@@ -77,10 +77,10 @@ export default function CareersPage() {
               desc: "Monitor and respond to security incidents, conduct threat analysis, and support our SOC & MDR operations for Canadian clients.",
             },
             {
-              title: "Cloud Solutions Specialist",
+              title: "AI Solutions Specialist",
               type: "Full-time",
               location: "Ancaster, ON",
-              desc: "Lead Microsoft 365 and Azure migrations, deployments, and ongoing management for a growing book of managed clients.",
+              desc: "Design, deploy, and manage AI agent workflows for Canadian SMB clients. Experience with LLMs, automation platforms, and system integrations required. A background in IT support or managed services is a strong asset.",
             },
           ].map((role) => (
             <div
