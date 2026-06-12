@@ -200,6 +200,9 @@ export default function Nav() {
             <Link href="/careers" className="text-sm text-white/70 hover:text-white transition-colors duration-200">
               Careers
             </Link>
+            <Link href="/events" className="text-sm text-white/70 hover:text-white transition-colors duration-200">
+              Events
+            </Link>
             <Link href="/blog" className="text-sm text-white/70 hover:text-white transition-colors duration-200">
               Blog
             </Link>
@@ -280,6 +283,7 @@ export default function Nav() {
               { label: "About", href: "/about" },
               { label: "Partners", href: "/partners" },
               { label: "Careers", href: "/careers" },
+              { label: "Events", href: "/events" },
               { label: "Blog", href: "/blog" },
             ].map((link) => (
               <Link

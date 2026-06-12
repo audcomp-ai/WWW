@@ -1,103 +1,124 @@
 import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import CTABanner from "@/components/CTABanner";
+import { SectionAngle } from "@/components/SectionAngle";
+import { AnimatedSection, StaggeredSection, StaggeredItem } from "@/components/AnimatedSection";
+import FeaturedEvent from "@/components/events/FeaturedEvent";
+import HorizontalScrollGallery from "@/components/events/HorizontalScrollGallery";
+import { CalendarDays, Video, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Events | Audcomp IT Workshops & Webinars",
+  title: "Events & Webinars | Audcomp",
   description:
-    "Join Audcomp at upcoming IT workshops, security seminars, and industry events across the Hamilton and Ancaster region.",
+    "Join Audcomp at our upcoming events, including Meet the Moment, and explore our library of technical webinars and cyber security roundtables.",
 };
+
+const upcomingWebinars = [
+  {
+    id: "w1",
+    title: "Navigating Copilot for Microsoft 365",
+    date: "November 12, 2024",
+    time: "1:00 PM EST",
+    type: "Live Webinar",
+    desc: "Discover how to prepare your data environment and securely deploy Microsoft Copilot across your organization.",
+    href: "#",
+  },
+  {
+    id: "w2",
+    title: "The Zero Trust Journey",
+    date: "December 05, 2024",
+    time: "2:00 PM EST",
+    type: "Virtual Workshop",
+    desc: "A technical deep dive into implementing Zero Trust architecture using Fortinet and Microsoft Defender.",
+    href: "#",
+  },
+  {
+    id: "w3",
+    title: "State of Canadian Cyber Security 2025",
+    date: "January 18, 2025",
+    time: "11:00 AM EST",
+    type: "Panel Discussion",
+    desc: "Join our SOC experts as they discuss the emerging threat landscape and compliance requirements for Canadian businesses.",
+    href: "#",
+  },
+];
 
 export default function EventsPage() {
   return (
     <>
       <Hero
-        title="Events & Workshops"
-        subtitle="Join Audcomp at upcoming IT education events, security seminars, and community programs across Ontario."
-        ctaText="Contact Us to Learn More"
-        ctaHref="/contact"
-        backgroundImage="/images/professional_services_hero.png"
+        title="Audcomp Events"
+        subtitle="Connect with our engineers, partner vendors, and industry peers to discover the technology shaping the future of business."
+        variant="dark"
+        backgroundImage="/images/managed_it_hero.png"
       />
 
-      <section className="bg-white py-20 px-4">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">Upcoming Events</h2>
-          <p className="text-gray-600 text-lg mb-12">
-            We regularly host and participate in events that help businesses stay ahead of the technology curve. Check back often or contact us to be added to our event mailing list.
-          </p>
+      <FeaturedEvent />
 
-          {/* Upcoming events placeholder */}
-          <div className="flex flex-col gap-6 mb-16">
-            {[
-              {
-                date: "June 2026",
-                title: "Cybersecurity Awareness Breakfast Seminar",
-                type: "In-Person",
-                location: "Ancaster, ON",
-                desc: "A practical, jargon-free morning session covering the top cyber threats facing SMBs in 2026 and what you can do about them.",
-              },
-              {
-                date: "July 2026",
-                title: "Microsoft Copilot: AI Readiness for Your Business",
-                type: "Webinar",
-                location: "Online",
-                desc: "Learn how Microsoft Copilot can transform your team's productivity — and what it takes to deploy it safely and effectively.",
-              },
-              {
-                date: "September 2026",
-                title: "IT Leadership Roundtable",
-                type: "In-Person",
-                location: "Hamilton, ON",
-                desc: "An invite-only roundtable for IT leaders and business owners in the Hamilton region to discuss emerging technology challenges.",
-              },
-            ].map((event) => (
-              <div
-                key={event.title}
-                className="bg-white border border-gray-200 rounded-xl p-6 flex flex-col sm:flex-row gap-6 hover:border-[#0056a8] hover:shadow-sm transition-all"
-              >
-                <div className="shrink-0 w-28 h-20 bg-[#e8f0fe] rounded-lg flex flex-col items-center justify-center">
-                  <span className="text-xs font-semibold text-[#0056a8] uppercase">{event.date}</span>
-                </div>
-                <div className="flex-1">
-                  <div className="flex gap-2 mb-2">
-                    <span className="text-xs bg-[#0056a8] text-white px-2 py-0.5 rounded font-medium">{event.type}</span>
-                    <span className="text-xs text-gray-500">{event.location}</span>
+      <SectionAngle from="#071e3d" to="#f8fafc" flip={false} height={64} />
+
+      {/* Upcoming Webinars */}
+      <section className="bg-slate-50 py-24 px-4">
+        <div className="max-w-6xl mx-auto">
+          <AnimatedSection className="mb-16">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                <Video className="w-5 h-5 text-[#0071e3]" />
+              </div>
+              <p className="text-xs font-semibold text-[#0071e3] uppercase tracking-widest">Upcoming</p>
+            </div>
+            <h2 className="text-4xl font-bold text-[#0a2540] tracking-tight">
+              Virtual Events & Webinars
+            </h2>
+          </AnimatedSection>
+
+          <StaggeredSection className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {upcomingWebinars.map((webinar) => (
+              <StaggeredItem key={webinar.id}>
+                <div className="group relative bg-white border border-slate-200 rounded-2xl p-8 hover:shadow-[0_20px_40px_-15px_rgba(0,113,227,0.15)] hover:border-blue-200 transition-all duration-500 hover:-translate-y-2 h-full flex flex-col">
+                  
+                  <div className="flex justify-between items-start mb-6">
+                    <span className="inline-block px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-medium">
+                      {webinar.type}
+                    </span>
+                    <div className="text-right">
+                      <p className="text-sm font-bold text-[#0071e3]">{webinar.date}</p>
+                      <p className="text-xs text-slate-500 mt-0.5 flex items-center justify-end gap-1">
+                        <CalendarDays className="w-3 h-3" /> {webinar.time}
+                      </p>
+                    </div>
                   </div>
-                  <h3 className="text-lg font-semibold text-[#1a1a2e] mb-2">{event.title}</h3>
-                  <p className="text-sm text-gray-600">{event.desc}</p>
-                </div>
-                <div className="shrink-0">
-                  <a
-                    href="/contact"
-                    className="inline-block bg-[#0056a8] text-white text-sm font-medium px-5 py-2.5 rounded-md hover:bg-[#003d7a] transition-colors"
+                  
+                  <h3 className="text-xl font-bold text-[#0a2540] mb-4 group-hover:text-[#0071e3] transition-colors line-clamp-2">
+                    {webinar.title}
+                  </h3>
+                  
+                  <p className="text-sm text-slate-500 leading-relaxed mb-8 flex-grow">
+                    {webinar.desc}
+                  </p>
+                  
+                  <Link 
+                    href={webinar.href}
+                    className="inline-flex items-center justify-center w-full py-3 rounded-xl bg-slate-50 text-[#0071e3] font-semibold border border-slate-200 group-hover:bg-[#0071e3] group-hover:text-white group-hover:border-[#0071e3] transition-all duration-300 gap-2"
                   >
-                    Register
-                  </a>
+                    Register Now
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
                 </div>
-              </div>
+              </StaggeredItem>
             ))}
-          </div>
-
-          {/* Past events */}
-          <h2 className="text-2xl font-bold text-[#1a1a2e] mb-6">Past Events</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {[
-              "2025 Annual Cybersecurity Summit — Hamilton",
-              "Microsoft Azure Migration Workshop",
-              "Dark Web & Identity Threat Briefing",
-              "IT Strategy Planning Day for SMBs",
-            ].map((e) => (
-              <div key={e} className="bg-gray-50 rounded-lg p-4 text-sm text-gray-600 border border-gray-200">
-                {e}
-              </div>
-            ))}
-          </div>
+          </StaggeredSection>
         </div>
       </section>
 
+      <HorizontalScrollGallery />
+
+      <SectionAngle from="#ffffff" to="#071e3d" flip={false} height={64} />
+
       <CTABanner
-        title="Want to Be Notified of Upcoming Events?"
-        subtitle="Contact us and we'll add you to our event list — no spam, just relevant IT education."
+        title="Never Miss an Update"
+        subtitle="Subscribe to our newsletter to receive invitations to our exclusive events, webinars, and technical workshops."
       />
     </>
   );

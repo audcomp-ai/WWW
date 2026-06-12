@@ -12,7 +12,7 @@ import { AnimatedSection, StaggeredSection, StaggeredItem } from "@/components/A
 export const metadata: Metadata = {
   title: "Audcomp | Trusted IT Consulting Services in Canada",
   description:
-    "Audcomp has been empowering businesses across Hamilton, Ancaster, and beyond since 1986. Top 25 CDN Solutions Provider with 100% Canadian engineers and 24/7 support.",
+    "Audcomp has been empowering businesses across Hamilton, Burlington, Oakville, London, Niagara, and surrounding areas since 1986. Top 25 CDN Solutions Provider with 100% Canadian engineers and 24/7 support.",
 };
 
 const services = [
@@ -228,7 +228,7 @@ export default function Home() {
               What Our Clients Say
             </h2>
             <p className="text-white/45 text-base">
-              Trusted by businesses across the Hamilton region and beyond.
+              Trusted by businesses across Hamilton, Burlington, Oakville, London, Niagara, and beyond.
             </p>
           </AnimatedSection>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">

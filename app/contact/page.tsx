@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 
 export const metadata: Metadata = {
-  title: "Contact Audcomp | IT Support in Hamilton & Ancaster",
+  title: "Contact Audcomp | IT Support in Hamilton, Burlington & Niagara",
   description:
-    "Get in touch with Audcomp's IT experts. Call 905-304-1775 or fill out our form to discuss your IT needs.",
+    "Get in touch with Audcomp's IT experts serving Hamilton, Burlington, Oakville, London, and Niagara. Call 905-304-1775 or fill out our form.",
 };
 
 const services = [

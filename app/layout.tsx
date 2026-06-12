@@ -19,7 +19,35 @@ const openSans = Open_Sans({
 export const metadata: Metadata = {
   title: "Audcomp | Trusted IT Consulting Services in Canada",
   description:
-    "Audcomp empowers businesses to operate confidently and more efficiently by providing tailored IT solutions. Serving Hamilton, Ancaster, and beyond since 1986.",
+    "Audcomp empowers businesses to operate confidently and more efficiently by providing tailored IT solutions. Serving Hamilton, Burlington, Oakville, London, Niagara, and surrounding areas since 1986.",
+  openGraph: {
+    title: "Audcomp | Trusted IT Consulting Services",
+    description: "Tailored IT solutions for businesses in Hamilton, Burlington, Oakville, London, and Niagara.",
+    type: "website",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Audcomp",
+  "image": "https://www.audcomp.com/audcomp-logo.png",
+  "telephone": "905-304-1775",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "611 Tradewind Drive, Suite 100",
+    "addressLocality": "Ancaster",
+    "addressRegion": "ON",
+    "addressCountry": "CA"
+  },
+  "areaServed": [
+    "Hamilton",
+    "Burlington",
+    "Oakville",
+    "London",
+    "Niagara",
+    "Ancaster"
+  ]
 };
 
 export default function RootLayout({
@@ -35,6 +63,10 @@ export default function RootLayout({
     >
       <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossOrigin="anonymous" referrerPolicy="no-referrer" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
       <body className="min-h-full flex flex-col">
         <Nav />

@@ -12,14 +12,21 @@ export const metadata: Metadata = {
 };
 
 const partners = [
-  { name: "Microsoft", domain: "microsoft.com", category: "Cloud & Productivity" },
-  { name: "Dell Technologies", domain: "dell.com", category: "Hardware & Infrastructure" },
-  { name: "HP", domain: "hp.com", category: "Client Systems & Printing" },
-  { name: "Cisco", domain: "cisco.com", category: "Networking & Security" },
-  { name: "Lenovo", domain: "lenovo.com", category: "Client Systems" },
-  { name: "Fortinet", domain: "fortinet.com", category: "Cyber Security" },
-  { name: "Veeam", domain: "veeam.com", category: "Backup & Recovery" },
-  { name: "VMware", domain: "vmware.com", category: "Virtualization & Cloud" },
+  { name: "Microsoft", slug: "microsoft", category: "Cloud & Productivity" },
+  { name: "Dell Technologies", slug: "dell", category: "Hardware & Infrastructure" },
+  { name: "HP", slug: "hp", category: "Client Systems & Printing" },
+  { name: "Cisco", slug: "cisco", category: "Networking & Security" },
+  { name: "Lenovo", slug: "lenovo", category: "Client Systems" },
+  { name: "Fortinet", slug: "fortinet", category: "Cyber Security" },
+  { name: "Veeam", slug: "veeam", category: "Backup & Recovery" },
+  { name: "VMware", slug: "vmware", category: "Virtualization & Cloud" },
+  { name: "Intel", slug: "intel", category: "Processors & Compute" },
+  { name: "Scale Computing", domain: "scalecomputing.com", category: "Edge Computing & HCI" },
+  { name: "Sophos", domain: "sophos.com", category: "Cyber Security" },
+  { name: "Eaton", domain: "eaton.com", category: "Power Management" },
+  { name: "Brother", domain: "brother.ca", category: "Printing & Imaging" },
+  { name: "WatchGuard", domain: "watchguard.com", category: "Cyber Security" },
+  { name: "Arctic Wolf", domain: "arcticwolf.com", category: "Cyber Security" },
 ];
 
 const benefits = [

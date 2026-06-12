@@ -6,9 +6,9 @@ import { SectionAngle } from "@/components/SectionAngle";
 import { AnimatedSection, StaggeredSection, StaggeredItem } from "@/components/AnimatedSection";
 
 export const metadata: Metadata = {
-  title: "About Audcomp | IT Leaders in Hamilton & Ancaster Since 1986",
+  title: "About Audcomp | IT Leaders in Hamilton, Burlington & Beyond",
   description:
-    "Learn about Audcomp, Canada's trusted IT consulting partner. Founded in 1986, ranked top 25 CDN Solutions Provider, 100% Canadian engineers.",
+    "Learn about Audcomp, Canada's trusted IT consulting partner serving Hamilton, Burlington, Oakville, London, and Niagara. Ranked top 25 CDN Solutions Provider.",
 };
 
 const stats = [
@@ -21,32 +21,32 @@ const stats = [
 const verticals = [
   {
     label: "Healthcare",
-    image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop&q=80",
+    image: "/images/ind_healthcare_1781220794136.png",
     desc: "Hospitals, clinics, and public health agencies depend on Audcomp for PHIPA-compliant IT and rapid incident response.",
   },
   {
     label: "Municipalities",
-    image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&h=400&fit=crop&q=80",
+    image: "/images/ind_municipalities_1781220804489.png",
     desc: "City and regional governments trust us to keep essential civic infrastructure running securely around the clock.",
   },
   {
     label: "Universities",
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&h=400&fit=crop&q=80",
+    image: "/images/ind_universities_1781220814872.png",
     desc: "Academic institutions rely on Audcomp for scalable infrastructure, student-facing support, and research data security.",
   },
   {
     label: "Manufacturing",
-    image: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600&h=400&fit=crop&q=80",
+    image: "/images/ind_manufacturing_1781220830507.png",
     desc: "Production floor uptime is everything. We deliver OT/IT integration and zero-downtime IT strategies for manufacturers.",
   },
   {
     label: "Enterprise",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop&q=80",
+    image: "/images/ind_enterprise_1781220840854.png",
     desc: "Large organizations trust Audcomp for enterprise-grade managed IT, cloud migration, and virtual CIO advisory.",
   },
   {
     label: "Small & Medium Business",
-    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&h=400&fit=crop&q=80",
+    image: "/images/ind_smb_1781220849628.png",
     desc: "SMBs gain enterprise-quality IT without the overhead — tailored support that grows with your business.",
   },
 ];
@@ -109,7 +109,7 @@ export default function AboutPage() {
               From McMaster to the Region&apos;s Largest MSP
             </h2>
             <p className="text-white/55 leading-relaxed mb-4 text-base">
-              Founded in 1986 by Gary Sohal at McMaster University, Audcomp started with a simple belief: businesses deserve technology that works and a partner they can trust. Over nearly four decades, that belief has driven us to become the largest MSP in Hamilton and Ancaster.
+              Founded in 1986 by Gary Sohal at McMaster University, Audcomp started with a simple belief: businesses deserve technology that works and a partner they can trust. Over nearly four decades, that belief has driven us to become a leading MSP serving Hamilton, Burlington, Oakville, London, Niagara, and beyond.
             </p>
             <p className="text-white/40 leading-relaxed mb-8 text-base">
               Today, Audcomp proudly ranks in the top 25 of CDN&apos;s Top 100 Solutions Providers — a distinction we&apos;ve earned for more than 10 consecutive years. Our team of 100% Canadian engineers operates out of 100% Canadian data centers, delivering enterprise-grade IT with local accountability.

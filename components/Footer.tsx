@@ -38,14 +38,14 @@ export default function Footer() {
   return (
     <footer className="bg-[#000000] border-t border-white/[0.08]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10">
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/">
               <img src="/audcomp-logo.png" alt="Audcomp" className="h-8 w-auto" />
             </Link>
             <p className="mt-4 text-sm text-white/35 leading-relaxed">
-              Trusted IT Consulting Services in Canada. Serving businesses across Hamilton, Ancaster, and beyond since 1986.
+              Trusted IT Consulting Services in Canada. Serving businesses across Hamilton, Burlington, Oakville, London, Niagara, and surrounding areas since 1986.
             </p>
             <div className="mt-5 text-sm text-white/35">
               <p>611 Tradewind Drive, Suite 100</p>
@@ -119,6 +119,28 @@ export default function Footer() {
               ))}
             </ul>
           </div>
+
+          {/* Locations */}
+          <div>
+            <h3 className="text-xs font-semibold text-white/30 uppercase tracking-widest mb-4">
+              Locations
+            </h3>
+            <ul className="flex flex-col gap-2.5">
+              {[
+                { label: "IT Support Hamilton", href: "/it-support/hamilton" },
+                { label: "IT Support Burlington", href: "/it-support/burlington" },
+                { label: "IT Support Oakville", href: "/it-support/oakville" },
+                { label: "IT Support London", href: "/it-support/london" },
+                { label: "IT Support Niagara", href: "/it-support/niagara" },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-sm text-white/40 hover:text-white/80 transition-colors duration-200">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         <div className="mt-16 pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -130,6 +152,7 @@ export default function Footer() {
               { label: "About", href: "/about" },
               { label: "Partners", href: "/partners" },
               { label: "Careers", href: "/careers" },
+              { label: "Events", href: "/events" },
               { label: "Contact", href: "/contact" },
             ].map((link) => (
               <Link key={link.href} href={link.href} className="text-xs text-white/25 hover:text-white/60 transition-colors duration-200">
