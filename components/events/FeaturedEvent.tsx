@@ -86,7 +86,7 @@ export default function FeaturedEvent() {
                 preload="auto"
                 className="absolute inset-0 w-full h-full object-cover"
               >
-                <source src="/mtm2025.MP4" type="video/mp4" />
+                <source src="/mtm2025.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
