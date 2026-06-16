@@ -1,12 +1,12 @@
-// Angled SVG divider between sections.
-// Place between two sections to create a diagonal edge.
+// Curved wave divider between sections.
+// Replaces sharp diagonal cuts with smooth rounded arches/waves.
 // "from" = color of the section above, "to" = color of the section below.
-// flip: false = angle slopes up-left to down-right; true = mirror image.
+// flip: false = arch (dome rises up); true = valley (dips down in center).
 export function SectionAngle({
   from,
   to,
   flip = false,
-  height = 72,
+  height = 80,
 }: {
   from: string;
   to: string;
@@ -23,9 +23,17 @@ export function SectionAngle({
     >
       <rect width="1440" height={height} fill={from} />
       {flip ? (
-        <polygon points={`0,0 1440,${height} 0,${height}`} fill={to} />
+        // Valley: "to" fills from a downward-curving V at the top to the bottom
+        <path
+          d={`M0,0 Q720,${height} 1440,0 L1440,${height} L0,${height} Z`}
+          fill={to}
+        />
       ) : (
-        <polygon points={`1440,0 1440,${height} 0,${height}`} fill={to} />
+        // Arch: "to" fills an arch/dome shape peaking at the center top
+        <path
+          d={`M0,${height} Q720,0 1440,${height} Z`}
+          fill={to}
+        />
       )}
     </svg>
   );
