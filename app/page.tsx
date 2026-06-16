@@ -88,30 +88,12 @@ const testimonials = [
 ];
 
 const verticals = [
-  {
-    label: "Healthcare",
-    image: "/images/ind_healthcare_1781220794136.png",
-  },
-  {
-    label: "Municipalities",
-    image: "/images/ind_municipalities_1781220804489.png",
-  },
-  {
-    label: "Universities",
-    image: "/images/ind_universities_1781220814872.png",
-  },
-  {
-    label: "Manufacturing",
-    image: "/images/ind_manufacturing_1781220830507.png",
-  },
-  {
-    label: "Enterprise",
-    image: "/images/ind_enterprise_1781220840854.png",
-  },
-  {
-    label: "Small & Medium Business",
-    image: "/images/ind_smb_1781220849628.png",
-  },
+  { label: "Healthcare", slug: "healthcare", image: "/images/ind_healthcare_1781220794136.png" },
+  { label: "Municipalities", slug: "municipalities", image: "/images/ind_municipalities_1781220804489.png" },
+  { label: "Universities", slug: "universities", image: "/images/ind_universities_1781220814872.png" },
+  { label: "Manufacturing", slug: "manufacturing", image: "/images/ind_manufacturing_1781220830507.png" },
+  { label: "Enterprise", slug: "enterprise", image: "/images/ind_enterprise_1781220840854.png" },
+  { label: "Small & Medium Business", slug: "smb", image: "/images/ind_smb_1781220849628.png" },
 ];
 
 export default function Home() {
@@ -188,7 +170,7 @@ export default function Home() {
           <StaggeredSection className="grid grid-cols-2 sm:grid-cols-3 gap-4">
             {verticals.map((v) => (
               <StaggeredItem key={v.label}>
-                <div className="group relative rounded-2xl overflow-hidden aspect-[4/3] cursor-default">
+                <Link href={`/industries#${v.slug}`} className="group relative rounded-2xl overflow-hidden aspect-[4/3] block">
                   <img
                     src={v.image}
                     alt={v.label}
@@ -198,17 +180,17 @@ export default function Home() {
                   <p className="absolute bottom-4 left-4 text-white font-semibold text-base tracking-tight">
                     {v.label}
                   </p>
-                </div>
+                </Link>
               </StaggeredItem>
             ))}
           </StaggeredSection>
 
           <AnimatedSection className="text-center mt-12">
             <Link
-              href="/about"
+              href="/industries"
               className="inline-flex items-center gap-1.5 text-sm text-[#0071e3] font-medium hover:underline"
             >
-              Learn about our mission
+              Explore all sectors
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>

@@ -19,36 +19,12 @@ const stats = [
 ];
 
 const verticals = [
-  {
-    label: "Healthcare",
-    image: "/images/ind_healthcare_1781220794136.png",
-    desc: "Hospitals, clinics, and public health agencies depend on Audcomp for PHIPA-compliant IT and rapid incident response.",
-  },
-  {
-    label: "Municipalities",
-    image: "/images/ind_municipalities_1781220804489.png",
-    desc: "City and regional governments trust us to keep essential civic infrastructure running securely around the clock.",
-  },
-  {
-    label: "Universities",
-    image: "/images/ind_universities_1781220814872.png",
-    desc: "Academic institutions rely on Audcomp for scalable infrastructure, student-facing support, and research data security.",
-  },
-  {
-    label: "Manufacturing",
-    image: "/images/ind_manufacturing_1781220830507.png",
-    desc: "Production floor uptime is everything. We deliver OT/IT integration and zero-downtime IT strategies for manufacturers.",
-  },
-  {
-    label: "Enterprise",
-    image: "/images/ind_enterprise_1781220840854.png",
-    desc: "Large organizations trust Audcomp for enterprise-grade managed IT, cloud migration, and virtual CIO advisory.",
-  },
-  {
-    label: "Small & Medium Business",
-    image: "/images/ind_smb_1781220849628.png",
-    desc: "SMBs gain enterprise-quality IT without the overhead — tailored support that grows with your business.",
-  },
+  { label: "Healthcare", slug: "healthcare", image: "/images/ind_healthcare_1781220794136.png", desc: "Hospitals, clinics, and public health agencies depend on Audcomp for PHIPA-compliant IT and rapid incident response." },
+  { label: "Municipalities", slug: "municipalities", image: "/images/ind_municipalities_1781220804489.png", desc: "City and regional governments trust us to keep essential civic infrastructure running securely around the clock." },
+  { label: "Universities", slug: "universities", image: "/images/ind_universities_1781220814872.png", desc: "Academic institutions rely on Audcomp for scalable infrastructure, student-facing support, and research data security." },
+  { label: "Manufacturing", slug: "manufacturing", image: "/images/ind_manufacturing_1781220830507.png", desc: "Production floor uptime is everything. We deliver OT/IT integration and zero-downtime IT strategies for manufacturers." },
+  { label: "Enterprise", slug: "enterprise", image: "/images/ind_enterprise_1781220840854.png", desc: "Large organizations trust Audcomp for enterprise-grade managed IT, cloud migration, and virtual CIO advisory." },
+  { label: "Small & Medium Business", slug: "smb", image: "/images/ind_smb_1781220849628.png", desc: "SMBs gain enterprise-quality IT without the overhead — tailored support that grows with your business." },
 ];
 
 export default function AboutPage() {
@@ -158,7 +134,7 @@ export default function AboutPage() {
           <StaggeredSection className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {verticals.map((v) => (
               <StaggeredItem key={v.label}>
-                <div className="group rounded-2xl overflow-hidden border border-slate-200 hover:border-blue-200 transition-all duration-300 hover:shadow-lg">
+                <Link href={`/industries#${v.slug}`} className="group rounded-2xl overflow-hidden border border-slate-200 hover:border-blue-200 transition-all duration-300 hover:shadow-lg block">
                   <div className="relative h-48 overflow-hidden">
                     <img
                       src={v.image}
@@ -173,10 +149,22 @@ export default function AboutPage() {
                   <div className="p-5">
                     <p className="text-sm text-slate-500 leading-relaxed">{v.desc}</p>
                   </div>
-                </div>
+                </Link>
               </StaggeredItem>
             ))}
           </StaggeredSection>
+
+          <AnimatedSection className="text-center mt-10">
+            <Link
+              href="/industries"
+              className="inline-flex items-center gap-1.5 text-sm text-[#0071e3] font-medium hover:underline"
+            >
+              View all sectors
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </AnimatedSection>
         </div>
       </section>
 
