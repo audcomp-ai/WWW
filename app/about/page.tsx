@@ -105,7 +105,7 @@ export default function AboutPage() {
             <div className="relative bg-white/[0.06] border border-white/[0.1] rounded-2xl p-10 backdrop-blur-sm">
               <p className="text-5xl text-[#06b6d4] leading-none mb-5 font-serif">&ldquo;</p>
               <p className="text-white/85 text-xl italic leading-relaxed font-light">
-                We are more than a service provider. We are your partner.
+                We are more than a service provider. We are your partner.&rdquo;
               </p>
               <div className="mt-8 pt-6 border-t border-white/[0.1]">
                 <p className="font-semibold text-white text-sm">Gary Sohal</p>
@@ -124,10 +124,10 @@ export default function AboutPage() {
           <AnimatedSection className="text-center mb-16">
             <p className="text-xs font-semibold text-[#0071e3] uppercase tracking-widest mb-4">Industries We Serve</p>
             <h2 className="text-4xl sm:text-5xl font-bold text-[#0a2540] mb-5 tracking-tight">
-              Built for Your Sector
+              Your Industry. Our Expertise.
             </h2>
             <p className="text-slate-500 text-lg max-w-2xl mx-auto leading-relaxed">
-              Audcomp delivers IT solutions tailored to the unique compliance, security, and operational needs of each industry.
+              From hospitals to factory floors, we&apos;ve spent 40 years learning the compliance, security, and operational demands that make each sector unique. That depth is why over 200 organizations across Southern Ontario trust us with their IT.
             </p>
           </AnimatedSection>
 
@@ -155,11 +155,12 @@ export default function AboutPage() {
           </StaggeredSection>
 
           <AnimatedSection className="text-center mt-10">
+            <p className="text-slate-400 text-sm mb-4">Don&apos;t see your industry? We work with organizations of every size and sector.</p>
             <Link
-              href="/industries"
-              className="inline-flex items-center gap-1.5 text-sm text-[#0071e3] font-medium hover:underline"
+              href="/contact"
+              className="inline-flex items-center gap-1.5 bg-[#0071e3] hover:bg-[#0077ed] text-white text-sm font-medium px-6 py-2.5 rounded-full transition-colors duration-200"
             >
-              View all sectors
+              Tell Us About Your Business
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
