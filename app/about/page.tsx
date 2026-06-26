@@ -18,14 +18,6 @@ const stats = [
   { value: "100%", label: "Canadian Engineers" },
 ];
 
-const verticals = [
-  { label: "Healthcare", slug: "healthcare", image: "/images/ind_healthcare_1781220794136.png", desc: "Hospitals, clinics, and public health agencies depend on Audcomp for PHIPA-compliant IT and rapid incident response." },
-  { label: "Municipalities", slug: "municipalities", image: "/images/ind_municipalities_1781220804489.png", desc: "City and regional governments trust us to keep essential civic infrastructure running securely around the clock." },
-  { label: "Universities", slug: "universities", image: "/images/ind_universities_1781220814872.png", desc: "Academic institutions rely on Audcomp for scalable infrastructure, student-facing support, and research data security." },
-  { label: "Manufacturing", slug: "manufacturing", image: "/images/ind_manufacturing_1781220830507.png", desc: "Production floor uptime is everything. We deliver OT/IT integration and zero-downtime IT strategies for manufacturers." },
-  { label: "Enterprise", slug: "enterprise", image: "/images/ind_enterprise_1781220840854.png", desc: "Large organizations trust Audcomp for enterprise-grade managed IT, cloud migration, and virtual CIO advisory." },
-  { label: "Small & Medium Business", slug: "smb", image: "/images/ind_smb_1781220849628.png", desc: "SMBs gain enterprise-quality IT without the overhead — tailored support that grows with your business." },
-];
 
 export default function AboutPage() {
   return (
@@ -209,60 +201,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <SectionAngle from="#f0f7ff" to="#ffffff" flip={false} height={64} />
-
-      {/* Industries — WHITE with real images */}
-      <section className="bg-white py-24 px-4">
-        <div className="max-w-6xl mx-auto">
-          <AnimatedSection className="text-center mb-16">
-            <p className="text-xs font-semibold text-[#0071e3] uppercase tracking-widest mb-4">Industries We Serve</p>
-            <h2 className="text-4xl sm:text-5xl font-bold text-[#0a2540] mb-5 tracking-tight">
-              Your Industry. Our Expertise.
-            </h2>
-            <p className="text-slate-500 text-lg max-w-2xl mx-auto leading-relaxed">
-              From hospitals to factory floors, we&apos;ve spent 40 years learning the compliance, security, and operational demands that make each sector unique. That depth is why over 200 organizations across Southern Ontario trust us with their IT.
-            </p>
-          </AnimatedSection>
-
-          <StaggeredSection className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {verticals.map((v) => (
-              <StaggeredItem key={v.label}>
-                <Link href={`/industries#${v.slug}`} className="group rounded-2xl overflow-hidden border border-slate-200 hover:border-blue-200 transition-all duration-300 hover:shadow-lg block">
-                  <div className="relative h-48 overflow-hidden">
-                    <img
-                      src={v.image}
-                      alt={v.label}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#071e3d]/70 to-transparent" />
-                    <p className="absolute bottom-3 left-4 text-white font-semibold text-base tracking-tight">
-                      {v.label}
-                    </p>
-                  </div>
-                  <div className="p-5">
-                    <p className="text-sm text-slate-500 leading-relaxed">{v.desc}</p>
-                  </div>
-                </Link>
-              </StaggeredItem>
-            ))}
-          </StaggeredSection>
-
-          <AnimatedSection className="text-center mt-10">
-            <p className="text-slate-400 text-sm mb-4">Don&apos;t see your industry? We work with organizations of every size and sector.</p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-1.5 bg-[#0071e3] hover:bg-[#0077ed] text-white text-sm font-medium px-6 py-2.5 rounded-full transition-colors duration-200"
-            >
-              Tell Us About Your Business
-              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      <SectionAngle from="#ffffff" to="#071e3d" flip={true} height={64} />
+      <SectionAngle from="#f0f7ff" to="#071e3d" flip={false} height={64} />
 
       <CTABanner
         title="Let's Talk About Your IT Needs"
