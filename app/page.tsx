@@ -87,14 +87,6 @@ const testimonials = [
   },
 ];
 
-const verticals = [
-  { label: "Healthcare", slug: "healthcare", image: "/images/ind_healthcare_1781220794136.png" },
-  { label: "Municipalities", slug: "municipalities", image: "/images/ind_municipalities_1781220804489.png" },
-  { label: "Universities", slug: "universities", image: "/images/ind_universities_1781220814872.png" },
-  { label: "Manufacturing", slug: "manufacturing", image: "/images/ind_manufacturing_1781220830507.png" },
-  { label: "Enterprise", slug: "enterprise", image: "/images/ind_enterprise_1781220840854.png" },
-  { label: "Small & Medium Business", slug: "smb", image: "/images/ind_smb_1781220849628.png" },
-];
 
 export default function Home() {
   return (
@@ -152,44 +144,7 @@ export default function Home() {
         </div>
       </section>
 
-      <SectionAngle from="#ffffff" to="#f0f7ff" flip={true} height={64} />
-
-      {/* Industries We Serve — light blue with real images */}
-      <section className="bg-[#f0f7ff] py-24 px-4">
-        <div className="max-w-6xl mx-auto">
-          <StaggeredSection className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-            {verticals.map((v) => (
-              <StaggeredItem key={v.label}>
-                <Link href={`/industries#${v.slug}`} className="group relative rounded-2xl overflow-hidden aspect-[4/3] block">
-                  <img
-                    src={v.image}
-                    alt={v.label}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#071e3d]/80 via-[#071e3d]/20 to-transparent" />
-                  <p className="absolute bottom-4 left-4 text-white font-semibold text-base tracking-tight">
-                    {v.label}
-                  </p>
-                </Link>
-              </StaggeredItem>
-            ))}
-          </StaggeredSection>
-
-          <AnimatedSection className="text-center mt-12">
-            <Link
-              href="/industries"
-              className="inline-flex items-center gap-1.5 text-sm text-[#0071e3] font-medium hover:underline"
-            >
-              Explore all sectors
-              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      <SectionAngle from="#f0f7ff" to="#071e3d" flip={false} height={64} />
+      <SectionAngle from="#ffffff" to="#071e3d" flip={true} height={64} />
 
       {/* Testimonials — navy with dark glass cards */}
       <section className="bg-[#071e3d] py-24 px-4">
