@@ -157,16 +157,6 @@ export default function Home() {
       {/* Industries We Serve — light blue with real images */}
       <section className="bg-[#f0f7ff] py-24 px-4">
         <div className="max-w-6xl mx-auto">
-          <AnimatedSection className="text-center mb-16">
-            <p className="text-xs font-semibold text-[#0071e3] uppercase tracking-widest mb-4">Industries</p>
-            <h2 className="text-4xl sm:text-5xl font-bold text-[#0a2540] mb-5 tracking-tight">
-              Built for Your Sector
-            </h2>
-            <p className="text-slate-500 text-lg max-w-2xl mx-auto leading-relaxed">
-              Deep domain knowledge across six industries — so your IT strategy fits the way your business actually works.
-            </p>
-          </AnimatedSection>
-
           <StaggeredSection className="grid grid-cols-2 sm:grid-cols-3 gap-4">
             {verticals.map((v) => (
               <StaggeredItem key={v.label}>
