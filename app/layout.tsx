@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Arimo, Open_Sans } from "next/font/google";
 import "./globals.css";
-import Nav from "@/components/Nav";
-import Footer from "@/components/Footer";
+import SiteShell from "@/components/SiteShell";
 
 const arimo = Arimo({
   subsets: ["latin"],
@@ -69,9 +68,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col">
-        <Nav />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <SiteShell>{children}</SiteShell>
       </body>
     </html>
   );
