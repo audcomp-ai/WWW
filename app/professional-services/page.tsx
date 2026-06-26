@@ -13,25 +13,25 @@ export const metadata: Metadata = {
 const subServices = [
   {
     title: "Virtual CIO (vCIO)",
-    description: "A strategic IT partner who provides executive-level technology guidance, quarterly reviews, and IT roadmap planning.",
+    description: "Your strategic IT partner — expert guidance and tailored IT strategies to optimize technology investments, enhance cybersecurity, and stay competitive.",
     href: "/virtual-cio",
     category: "Professional",
   },
   {
     title: "IT Consulting & Design",
-    description: "Technical assessments, risk identification, architecture design, and training tailored to your business needs.",
+    description: "Specialized insights and customized strategies to optimize your investments in technology and elevate your cybersecurity measures.",
     href: "/consulting-design",
     category: "Professional",
   },
   {
     title: "Implementation & Migration",
-    description: "Server and storage deployment, WiFi design, data migration, and complex IT project delivery.",
+    description: "Your bridge to a seamless and efficient IT transformation — handling the complex process of implementing and migrating your IT systems with minimal disruption.",
     href: "/implementation-migration",
     category: "Professional",
   },
   {
     title: "Structured Cabling",
-    description: "Network infrastructure design and installation — the physical foundation of a reliable, high-performance network.",
+    description: "The backbone of your network infrastructure — we design and implement structured cabling systems that support your evolving technology needs.",
     href: "/structured-cabling",
     category: "Professional",
   },
@@ -52,12 +52,12 @@ export default function ProfessionalServicesPage() {
 
       <section className="bg-background py-20 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-foreground mb-6">IT Expertise When You Need It Most</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-6">Consider Audcomp an Extension of Your Team</h2>
           <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-            Not every IT challenge fits neatly into a managed services contract. Sometimes you need a strategic advisor to help set your IT direction. Sometimes you need a skilled team to execute a complex migration. Sometimes you need physical infrastructure built right.
+            By utilizing our unique framework, your business benefits from instant access to a range of Professional Service and system engineers. We work collaboratively with clients to identify their unique challenges, and recommend and implement the right solutions for their needs and budget.
           </p>
           <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-            Audcomp's Professional Services practice addresses all of these needs — with senior engineers and consultants who bring nearly four decades of experience to every engagement. Whether it's a discrete project or an ongoing strategic relationship, we deliver with the same professionalism and accountability that defines everything we do.
+            Audcomp&apos;s Professional Services practice brings nearly four decades of experience to every engagement. Whether it&apos;s a discrete project or an ongoing strategic relationship, we deliver with the same professionalism and accountability that defines everything we do.
           </p>
         </div>
       </section>

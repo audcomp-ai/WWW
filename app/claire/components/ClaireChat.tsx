@@ -16,6 +16,8 @@ const QUICK_ACTIONS = [
   { label: "Content calendar", prompt: "Create a monthly content calendar for Audcomp focusing on " },
   { label: "SEO keyword research", prompt: "Do keyword research for Audcomp in the topic area of " },
   { label: "AEO optimization", prompt: "Optimize this content for Answer Engine Optimization: " },
+  { label: "Crawl competitor", prompt: "Crawl and analyze this competitor website: " },
+  { label: "Publish to site", prompt: "Publish the following changes to the website: " },
 ];
 
 export default function ClaireChat() {

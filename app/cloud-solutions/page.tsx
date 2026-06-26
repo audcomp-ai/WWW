@@ -13,19 +13,19 @@ export const metadata: Metadata = {
 const subServices = [
   {
     title: "Microsoft Office 365",
-    description: "Full deployment, management, and migration to Microsoft 365 — email, Teams, SharePoint, and beyond.",
+    description: "Explore the efficiency of Microsoft Office 365 solutions for seamless cloud-based productivity — email, Teams, SharePoint, and beyond.",
     href: "/microsoft-office-365",
     category: "Cloud",
   },
   {
     title: "Microsoft Azure",
-    description: "Cloud migration, custom configuration, and ongoing Azure infrastructure management for Canadian organizations.",
+    description: "Unlock the full potential of cloud computing with Microsoft Azure — migration, custom configuration, and ongoing infrastructure management.",
     href: "/microsoft-azure",
     category: "Cloud",
   },
   {
     title: "Hybrid Cloud",
-    description: "Private and public cloud strategy and implementation tailored to your data sovereignty and performance needs.",
+    description: "Embrace the best of both worlds — private and public cloud strategy and implementation tailored to your data sovereignty and performance needs.",
     href: "/hybrid-cloud",
     category: "Cloud",
   },
@@ -48,7 +48,7 @@ export default function CloudSolutionsPage() {
     <>
       <Hero
         title="Cloud Solutions"
-        subtitle="Empower your business with scalable, secure, and modern cloud infrastructure. Move faster and work from anywhere."
+        subtitle="The most cost-effective solution for your cloud and hosting needs. Scalable, flexible, and secure computing resources for your business."
         ctaText="Explore Cloud Options"
         ctaHref="/contact"
         secondaryCtaText="Call 905-304-1775"

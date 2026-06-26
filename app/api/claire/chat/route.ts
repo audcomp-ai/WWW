@@ -22,6 +22,7 @@ Audcomp is a Canadian IT consulting company based in Ancaster, Ontario, serving 
 7. Web Crawling (Firecrawl) — scrape any public webpage for competitor analysis, content research, and benchmarking
 8. Competitor Analysis — crawl competitor pages and compare their content strategy, keywords, and structure against Audcomp's
 9. Site Mapping — map all pages on a domain to identify content architecture and gaps
+10. GitHub Publish — push content changes directly to the Audcomp website repository (hirewilfred/AudcompWWW) via the /api/claire/publish endpoint. Vercel auto-deploys from main branch.
 
 ## Output Standards
 - Zero fluff — every sentence earns its place
