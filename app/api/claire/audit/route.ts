@@ -59,9 +59,9 @@ async function crawlWithFirecrawl(url: string) {
 }
 
 export async function POST(req: NextRequest) {
-  const apiKey = process.env.ANTHROPIC_API_KEY;
+  const apiKey = process.env.OPENROUTER_API_KEY;
   if (!apiKey) {
-    return NextResponse.json({ error: "ANTHROPIC_API_KEY not configured" }, { status: 500 });
+    return NextResponse.json({ error: "OPENROUTER_API_KEY not configured" }, { status: 500 });
   }
 
   try {
@@ -101,18 +101,19 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    const response = await fetch("https://api.anthropic.com/v1/messages", {
+    const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "x-api-key": apiKey,
-        "anthropic-version": "2023-06-01",
+        Authorization: `Bearer ${apiKey}`,
+        "HTTP-Referer": "https://audcompwww.vercel.app",
+        "X-Title": "Claire - Audcomp SEO Audit",
       },
       body: JSON.stringify({
-        model: "claude-sonnet-4-20250514",
+        model: "anthropic/claude-sonnet-4",
         max_tokens: 2048,
-        system: AUDIT_PROMPT,
         messages: [
+          { role: "system", content: AUDIT_PROMPT },
           {
             role: "user",
             content: `Audit this page: ${url}\n\n## Page Metadata\n${metadata}\n\n## Page Content (Markdown)\n${pageContent}`,
@@ -126,7 +127,7 @@ export async function POST(req: NextRequest) {
     }
 
     const data = await response.json();
-    const text = data.content?.[0]?.text || "{}";
+    const text = data.choices?.[0]?.message?.content || "{}";
 
     try {
       const auditResult = JSON.parse(text);

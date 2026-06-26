@@ -39,10 +39,10 @@ Audcomp is a Canadian IT consulting company based in Ancaster, Ontario, serving 
 5. Include SEO metadata and distribution recommendations`;
 
 export async function POST(req: NextRequest) {
-  const apiKey = process.env.ANTHROPIC_API_KEY;
+  const apiKey = process.env.OPENROUTER_API_KEY;
   if (!apiKey) {
     return NextResponse.json(
-      { error: "ANTHROPIC_API_KEY not configured", content: "API key not configured. Add ANTHROPIC_API_KEY to your Vercel environment variables." },
+      { error: "OPENROUTER_API_KEY not configured", content: "API key not configured. Add OPENROUTER_API_KEY to your Vercel environment variables." },
       { status: 500 }
     );
   }
@@ -50,21 +50,24 @@ export async function POST(req: NextRequest) {
   try {
     const { messages } = await req.json();
 
-    const response = await fetch("https://api.anthropic.com/v1/messages", {
+    const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "x-api-key": apiKey,
-        "anthropic-version": "2023-06-01",
+        Authorization: `Bearer ${apiKey}`,
+        "HTTP-Referer": "https://audcompwww.vercel.app",
+        "X-Title": "Claire - Audcomp Content Agent",
       },
       body: JSON.stringify({
-        model: "claude-sonnet-4-20250514",
+        model: "anthropic/claude-sonnet-4",
         max_tokens: 4096,
-        system: CLAIRE_SYSTEM_PROMPT,
-        messages: messages.map((m: { role: string; content: string }) => ({
-          role: m.role,
-          content: m.content,
-        })),
+        messages: [
+          { role: "system", content: CLAIRE_SYSTEM_PROMPT },
+          ...messages.map((m: { role: string; content: string }) => ({
+            role: m.role,
+            content: m.content,
+          })),
+        ],
       }),
     });
 
@@ -74,7 +77,7 @@ export async function POST(req: NextRequest) {
     }
 
     const data = await response.json();
-    const content = data.content?.[0]?.text || "No response generated.";
+    const content = data.choices?.[0]?.message?.content || "No response generated.";
 
     return NextResponse.json({ content });
   } catch (error) {

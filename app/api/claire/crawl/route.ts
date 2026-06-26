@@ -6,9 +6,9 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "FIRECRAWL_API_KEY not configured" }, { status: 500 });
   }
 
-  const anthropicKey = process.env.ANTHROPIC_API_KEY;
-  if (!anthropicKey) {
-    return NextResponse.json({ error: "ANTHROPIC_API_KEY not configured" }, { status: 500 });
+  const openrouterKey = process.env.OPENROUTER_API_KEY;
+  if (!openrouterKey) {
+    return NextResponse.json({ error: "OPENROUTER_API_KEY not configured" }, { status: 500 });
   }
 
   try {
@@ -82,17 +82,21 @@ export async function POST(req: NextRequest) {
       const competitorContent = (scrapeData.data?.markdown || "").substring(0, 15000);
       const competitorMeta = scrapeData.data?.metadata || {};
 
-      const analysisRes = await fetch("https://api.anthropic.com/v1/messages", {
+      const analysisRes = await fetch("https://openrouter.ai/api/v1/chat/completions", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "x-api-key": anthropicKey,
-          "anthropic-version": "2023-06-01",
+          Authorization: `Bearer ${openrouterKey}`,
+          "HTTP-Referer": "https://audcompwww.vercel.app",
+          "X-Title": "Claire - Competitor Analysis",
         },
         body: JSON.stringify({
-          model: "claude-sonnet-4-20250514",
+          model: "anthropic/claude-sonnet-4",
           max_tokens: 2048,
-          system: `You are Claire, Audcomp's Content Marketing Specialist. Analyze this competitor page and return actionable insights for Audcomp. Return JSON with this structure:
+          messages: [
+            {
+              role: "system",
+              content: `You are Claire, Audcomp's Content Marketing Specialist. Analyze this competitor page and return actionable insights for Audcomp. Return JSON with this structure:
 {
   "competitor": "company name",
   "url": "the URL",
@@ -107,7 +111,7 @@ export async function POST(req: NextRequest) {
   "contentQualityScore": 0-100
 }
 Return ONLY JSON, no markdown.`,
-          messages: [
+            },
             {
               role: "user",
               content: `Analyze this competitor page:\nURL: ${url}\nTitle: ${competitorMeta.title || "Unknown"}\nDescription: ${competitorMeta.description || "None"}\n\nContent:\n${competitorContent}`,
@@ -121,7 +125,7 @@ Return ONLY JSON, no markdown.`,
       }
 
       const analysisData = await analysisRes.json();
-      const text = analysisData.content?.[0]?.text || "{}";
+      const text = analysisData.choices?.[0]?.message?.content || "{}";
 
       try {
         return NextResponse.json(JSON.parse(text));
