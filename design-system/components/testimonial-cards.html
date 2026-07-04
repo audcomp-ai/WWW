@@ -1,0 +1,62 @@
+<!-- @dsCard group="Components" name="Testimonial Cards" subtitle="Light + dark, star ratings" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Testimonial Cards — Audcomp Design System</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, "SF Pro Text", sans-serif; background: #ffffff; color: #0a2540; padding: 40px; -webkit-font-smoothing: antialiased; }
+  h2 { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #06b6d4; margin: 4px 0 18px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+  .stars { font-size: 15px; letter-spacing: 2px; margin-bottom: 20px; }
+  .card { border-radius: 16px; padding: 32px; display: flex; flex-direction: column; justify-content: space-between; height: 100%; }
+  /* light */
+  .light { background: #fff; border: 1px solid #e2e8f0; box-shadow: 0 1px 2px rgba(10,37,64,0.05); }
+  .light .star-on { color: #f59e0b; } .light .star-off { color: #e2e8f0; }
+  .light blockquote { color: #475569; font-size: 15px; line-height: 1.65; }
+  .light .who { margin-top: 32px; padding-top: 20px; border-top: 1px solid #f1f5f9; }
+  .who .n { font-weight: 600; font-size: 14px; } .who .t { color: #94a3b8; font-size: 12px; margin-top: 2px; }
+  /* dark */
+  .darkwrap { margin-top: 34px; background: linear-gradient(135deg,#071e3d,#0d2d55,#071e3d); border-radius: 20px; padding: 34px; }
+  .dark { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.10); backdrop-filter: blur(6px); }
+  .dark .star-on { color: #fbbf24; } .dark .star-off { color: rgba(255,255,255,0.2); }
+  .dark blockquote { color: rgba(255,255,255,0.65); font-size: 15px; line-height: 1.65; }
+  .dark .who { margin-top: 32px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); }
+  .dark .who .n { color: #fff; } .dark .who .t { color: rgba(255,255,255,0.4); }
+</style>
+</head>
+<body>
+  <h2>Light</h2>
+  <div class="grid">
+    <div class="card light">
+      <div>
+        <div class="stars"><span class="star-on">★★★★★</span></div>
+        <blockquote>“Audcomp has been our IT partner for over a decade. Response times are fast and the team genuinely understands our business.”</blockquote>
+      </div>
+      <div class="who"><div class="n">Sarah M.</div><div class="t">Operations Director, Manufacturing</div></div>
+    </div>
+    <div class="card light">
+      <div>
+        <div class="stars"><span class="star-on">★★★★</span><span class="star-off">★</span></div>
+        <blockquote>“Their security assessment found gaps we didn't know we had. Migration was seamless.”</blockquote>
+      </div>
+      <div class="who"><div class="n">David R.</div><div class="t">CFO, Professional Services</div></div>
+    </div>
+  </div>
+
+  <div class="darkwrap">
+    <h2 style="color:#38bdf8">Dark</h2>
+    <div class="grid">
+      <div class="card dark">
+        <div>
+          <div class="stars"><span class="star-on">★★★★★</span></div>
+          <blockquote>“The AI agents they built now handle our first-line support end to end. Real ROI in weeks.”</blockquote>
+        </div>
+        <div class="who"><div class="n">Priya K.</div><div class="t">VP Technology, Logistics</div></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

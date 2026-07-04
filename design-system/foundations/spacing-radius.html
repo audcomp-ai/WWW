@@ -1,0 +1,48 @@
+<!-- @dsCard group="Foundations" name="Spacing & Radius" subtitle="Spacing scale + corner radii" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spacing &amp; Radius — Audcomp Design System</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, "SF Pro Text", sans-serif; background: #ffffff; color: #0a2540; padding: 40px; -webkit-font-smoothing: antialiased; }
+  h1 { font-family: "SF Pro Display", sans-serif; font-size: 26px; font-weight: 700; letter-spacing: -0.02em; }
+  h2 { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #06b6d4; margin: 30px 0 14px; }
+  .sub { color: #4a6785; font-size: 14px; margin-top: 6px; max-width: 60ch; }
+  .bar { display: flex; align-items: center; gap: 16px; margin-bottom: 10px; }
+  .bar .l { width: 70px; font-family: "SF Mono", monospace; font-size: 12px; color: #4a6785; flex: none; }
+  .bar .b { height: 16px; background: #0071e3; border-radius: 4px; }
+  .radii { display: flex; gap: 20px; flex-wrap: wrap; }
+  .r { text-align: center; }
+  .r .box { width: 96px; height: 96px; background: #f0f7ff; border: 1px solid #dde8f5; }
+  .r .lab { font-family: "SF Mono", monospace; font-size: 12px; color: #4a6785; margin-top: 8px; }
+  .r .nm { font-size: 13px; font-weight: 600; margin-top: 2px; }
+</style>
+</head>
+<body>
+  <h1>Spacing &amp; Radius</h1>
+  <p class="sub">Tailwind's default 4px spacing scale. Sections breathe: page gutters <code>px-4 sm:px-6 lg:px-8</code>, containers <code>max-w-6xl</code>, vertical rhythm <code>py-16</code> to <code>py-32</code>.</p>
+
+  <h2>Spacing scale (rem · px)</h2>
+  <div class="bar"><span class="l">1 · 4px</span><div class="b" style="width:4px"></div></div>
+  <div class="bar"><span class="l">2 · 8px</span><div class="b" style="width:8px"></div></div>
+  <div class="bar"><span class="l">3 · 12px</span><div class="b" style="width:12px"></div></div>
+  <div class="bar"><span class="l">4 · 16px</span><div class="b" style="width:16px"></div></div>
+  <div class="bar"><span class="l">6 · 24px</span><div class="b" style="width:24px"></div></div>
+  <div class="bar"><span class="l">8 · 32px</span><div class="b" style="width:32px"></div></div>
+  <div class="bar"><span class="l">12 · 48px</span><div class="b" style="width:48px"></div></div>
+  <div class="bar"><span class="l">16 · 64px</span><div class="b" style="width:64px"></div></div>
+  <div class="bar"><span class="l">32 · 128px</span><div class="b" style="width:128px"></div></div>
+
+  <h2>Corner radius</h2>
+  <div class="radii">
+    <div class="r"><div class="box" style="border-radius:8px"></div><div class="nm">Control</div><div class="lab">rounded-lg · 8px</div></div>
+    <div class="r"><div class="box" style="border-radius:16px"></div><div class="nm">Card (base)</div><div class="lab">rounded-2xl · 1rem</div></div>
+    <div class="r"><div class="box" style="border-radius:32px"></div><div class="nm">Studio</div><div class="lab">2rem</div></div>
+    <div class="r"><div class="box" style="border-radius:48px"></div><div class="nm">Studio feat.</div><div class="lab">3rem</div></div>
+    <div class="r"><div class="box" style="border-radius:9999px"></div><div class="nm">Pill / button</div><div class="lab">rounded-full</div></div>
+  </div>
+</body>
+</html>

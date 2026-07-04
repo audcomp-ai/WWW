@@ -1,0 +1,70 @@
+<!-- @dsCard group="Components" name="Service Cards" subtitle="Light + dark glass variants" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Service Cards — Audcomp Design System</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, "SF Pro Text", sans-serif; background: #ffffff; color: #0a2540; padding: 40px; -webkit-font-smoothing: antialiased; }
+  h2 { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #06b6d4; margin: 4px 0 18px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+  /* light */
+  .card { background: #fff; border-radius: 16px; padding: 28px; border: 1px solid #e2e8f0; box-shadow: 0 1px 2px 0 rgba(10,37,64,0.05); transition: all .3s; }
+  .card:hover { box-shadow: 0 10px 30px -10px rgba(10,37,64,0.15); transform: translateY(-4px); border-color: #bfdbfe; }
+  .eyebrow { color: #06b6d4; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; font-size: 11px; display: block; margin-bottom: 20px; }
+  .card h3 { font-family: "SF Pro Display", sans-serif; font-size: 16px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 12px; }
+  .card p { color: #64748b; font-size: 14px; line-height: 1.6; margin-bottom: 20px; }
+  .learn { color: #0071e3; font-size: 14px; font-weight: 500; display: inline-flex; gap: 6px; }
+  .learn-dark { color: #38bdf8; }
+  /* dark glass */
+  .darkwrap { margin-top: 34px; background: linear-gradient(135deg,#071e3d,#0d2d55,#071e3d); border-radius: 20px; padding: 34px; }
+  .card-dark { border-radius: 16px; padding: 28px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.10); backdrop-filter: blur(6px); transition: all .3s; }
+  .card-dark:hover { background: rgba(255,255,255,0.10); border-color: rgba(255,255,255,0.18); }
+  .card-dark h3 { font-family: "SF Pro Display", sans-serif; font-size: 16px; font-weight: 600; color: #fff; margin-bottom: 12px; }
+  .card-dark p { color: rgba(255,255,255,0.55); font-size: 14px; line-height: 1.6; margin-bottom: 20px; }
+</style>
+</head>
+<body>
+  <h2>Light — on white / muted sections</h2>
+  <div class="grid">
+    <div class="card">
+      <span class="eyebrow">Managed IT</span>
+      <h3>Managed IT Services</h3>
+      <p>Proactive monitoring, help desk, and strategic guidance so your technology just works.</p>
+      <span class="learn">Learn more →</span>
+    </div>
+    <div class="card">
+      <span class="eyebrow">Cyber Security</span>
+      <h3>Endpoint Protection</h3>
+      <p>Multi-layered defense across every device — detection, response, and 24/7 monitoring.</p>
+      <span class="learn">Learn more →</span>
+    </div>
+    <div class="card">
+      <span class="eyebrow">Cloud Solutions</span>
+      <h3>Microsoft Azure</h3>
+      <p>Design, migrate, and optimize your cloud with Azure Hybrid Benefit cost control.</p>
+      <span class="learn">Learn more →</span>
+    </div>
+  </div>
+
+  <div class="darkwrap">
+    <h2 style="color:#38bdf8">Dark — glass on navy sections</h2>
+    <div class="grid">
+      <div class="card-dark">
+        <span class="eyebrow">Professional Services</span>
+        <h3>Virtual CIO</h3>
+        <p>Executive-level IT strategy and roadmapping without the full-time hire.</p>
+        <span class="learn learn-dark">Learn more →</span>
+      </div>
+      <div class="card-dark">
+        <span class="eyebrow">AI Services</span>
+        <h3>Agent Studio</h3>
+        <p>Custom AI agents scored to your readiness and sequenced by ROI.</p>
+        <span class="learn learn-dark">Learn more →</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

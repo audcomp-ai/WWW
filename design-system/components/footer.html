@@ -1,0 +1,46 @@
+<!-- @dsCard group="Patterns" name="Footer" subtitle="Pure-black multi-column footer" viewport-width="960" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Footer — Audcomp Design System</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, "SF Pro Text", sans-serif; -webkit-font-smoothing: antialiased; }
+  footer { background: #000; border-top: 1px solid rgba(255,255,255,0.08); }
+  .wrap { max-width: 1152px; margin: 0 auto; padding: 64px 24px; }
+  .cols { display: grid; grid-template-columns: 1.4fr repeat(4, 1fr); gap: 40px; }
+  .logo { color: #fff; font-family: "SF Pro Display", sans-serif; font-weight: 700; font-size: 22px; letter-spacing: -0.02em; }
+  .logo span { color: #06b6d4; }
+  .brand p { color: rgba(255,255,255,0.35); font-size: 13px; line-height: 1.6; margin-top: 16px; }
+  .brand .addr { color: rgba(255,255,255,0.35); font-size: 13px; margin-top: 20px; line-height: 1.7; }
+  .brand .addr a { color: rgba(255,255,255,0.5); text-decoration: none; }
+  .col h4 { color: #fff; font-size: 13px; font-weight: 600; margin-bottom: 16px; }
+  .col a { display: block; color: rgba(255,255,255,0.4); font-size: 13px; text-decoration: none; padding: 5px 0; transition: color .2s; }
+  .col a:hover { color: #fff; }
+  .bottom { border-top: 1px solid rgba(255,255,255,0.08); margin-top: 48px; padding-top: 24px; color: rgba(255,255,255,0.3); font-size: 12px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+</style>
+</head>
+<body>
+  <footer>
+    <div class="wrap">
+      <div class="cols">
+        <div class="brand">
+          <div class="logo">Aud<span>comp</span></div>
+          <p>Trusted IT Consulting Services in Canada. Serving businesses across Hamilton, Burlington, Oakville, London, and Niagara since 1986.</p>
+          <div class="addr">611 Tradewind Drive, Suite 100<br />Ancaster, Ontario<br /><a href="#">905-304-1775</a></div>
+        </div>
+        <div class="col"><h4>Managed IT</h4><a>Help Desk</a><a>Backup &amp; DR</a><a>DaaS</a><a>IT Procurement</a></div>
+        <div class="col"><h4>Cloud</h4><a>Office 365</a><a>Azure</a><a>Hybrid Cloud</a><a>Teams</a></div>
+        <div class="col"><h4>Security</h4><a>Endpoint</a><a>SOC &amp; MDR</a><a>Pen Testing</a><a>Firewall</a></div>
+        <div class="col"><h4>Professional</h4><a>Virtual CIO</a><a>Consulting</a><a>Migration</a><a>AI Services</a></div>
+      </div>
+      <div class="bottom">
+        <span>© 1986–2026 Audcomp. All rights reserved.</span>
+        <span>Privacy · Terms</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

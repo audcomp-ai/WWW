@@ -1,0 +1,40 @@
+<!-- @dsCard group="Patterns" name="Navbar" subtitle="Sticky navy blur header" viewport-width="960" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Navbar — Audcomp Design System</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, "SF Pro Text", sans-serif; -webkit-font-smoothing: antialiased; background: #f0f7ff; }
+  header { position: sticky; top: 0; background: rgba(7,30,61,0.95); backdrop-filter: blur(24px); border-bottom: 1px solid rgba(255,255,255,0.10); }
+  .bar { max-width: 1152px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { color: #fff; font-family: "SF Pro Display", sans-serif; font-weight: 700; font-size: 20px; letter-spacing: -0.02em; }
+  .logo span { color: #06b6d4; }
+  nav { display: flex; gap: 28px; }
+  nav a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; font-weight: 500; transition: color .2s; display: inline-flex; align-items: center; gap: 5px; }
+  nav a:hover { color: #fff; }
+  nav a .caret { font-size: 9px; opacity: 0.6; }
+  .cta { background: #0071e3; color: #fff; text-decoration: none; font-size: 14px; font-weight: 500; padding: 9px 20px; border-radius: 9999px; transition: background .2s; }
+  .cta:hover { background: #0077ed; }
+  .demo { padding: 60px 24px; text-align: center; color: #4a6785; font-size: 13px; }
+</style>
+</head>
+<body>
+  <header>
+    <div class="bar">
+      <div class="logo">Aud<span>comp</span></div>
+      <nav>
+        <a href="#">Services <span class="caret">▾</span></a>
+        <a href="#">AI <span class="caret">▾</span></a>
+        <a href="#">Industries</a>
+        <a href="#">About</a>
+        <a href="#">Blog</a>
+      </nav>
+      <a class="cta" href="#">Contact Us</a>
+    </div>
+  </header>
+  <div class="demo">Sticky header · navy/95 + backdrop-blur-2xl · hairline white/10 border · condenses on scroll</div>
+</body>
+</html>

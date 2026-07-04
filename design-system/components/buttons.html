@@ -1,0 +1,57 @@
+<!-- @dsCard group="Components" name="Buttons" subtitle="Primary / secondary pills · light, dark & studio" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Buttons — Audcomp Design System</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, "SF Pro Text", sans-serif; background: #ffffff; color: #0a2540; padding: 40px; -webkit-font-smoothing: antialiased; }
+  h2 { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #06b6d4; margin: 4px 0 16px; }
+  .set { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; margin-bottom: 8px; }
+  .note { font-family: "SF Mono", monospace; font-size: 11px; color: #4a6785; margin: 6px 0 26px; }
+  /* Pills */
+  .btn { font-size: 14px; font-weight: 500; border-radius: 9999px; padding: 14px 32px; border: none; cursor: pointer; transition: all .2s; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+  .primary { background: #0071e3; color: #fff; }
+  .primary:hover { background: #0077ed; }
+  .secondary-light { background: transparent; color: #0a2540; border: 1px solid #dde8f5; }
+  .secondary-light:hover { border-color: #0071e3; }
+  .ghost { background: transparent; color: #0071e3; font-weight: 500; padding: 14px 12px; }
+  .darkwrap { background: linear-gradient(135deg,#071e3d,#0d2d55,#071e3d); border-radius: 20px; padding: 34px; margin-bottom: 26px; }
+  .secondary-dark { background: transparent; color: rgba(255,255,255,0.75); border: 1px solid rgba(255,255,255,0.25); }
+  .secondary-dark:hover { color: #fff; border-color: rgba(255,255,255,0.5); }
+  /* Studio */
+  .studiowrap { background: #071e3d; border-radius: 20px; padding: 34px; }
+  .studio { border-radius: 16px; padding: 16px 28px; font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; }
+  .studio-primary { background: #0071e3; color: #fff; box-shadow: 0 20px 60px -15px rgba(0,113,227,0.30); }
+  .studio-ghost { background: rgba(255,255,255,0.05); color: #fff; border: 1px solid rgba(255,255,255,0.10); }
+  .arrow { font-size: 12px; }
+</style>
+</head>
+<body>
+  <h2>On light</h2>
+  <div class="set">
+    <a class="btn primary">Contact Us</a>
+    <a class="btn secondary-light">View Our Services</a>
+    <a class="btn ghost">Learn more <span class="arrow">→</span></a>
+  </div>
+  <p class="note">Primary: bg #0071e3 → hover #0077ed · rounded-full · px-8 py-3.5 · text-sm font-medium</p>
+
+  <div class="darkwrap">
+    <h2 style="color:#38bdf8">On dark (navy sections)</h2>
+    <div class="set">
+      <a class="btn primary">Contact Us</a>
+      <a class="btn secondary-dark">905-304-1775</a>
+    </div>
+  </div>
+
+  <div class="studiowrap">
+    <h2 style="color:#06b6d4">Agent Studio (squarer, black weight, uppercase)</h2>
+    <div class="set">
+      <a class="studio studio-primary">Deploy Agent <span class="arrow">→</span></a>
+      <a class="studio studio-ghost">View profile</a>
+    </div>
+  </div>
+</body>
+</html>

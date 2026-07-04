@@ -1,0 +1,45 @@
+<!-- @dsCard group="Foundations" name="Typography" subtitle="SF Pro Display / Text, scale, gradient text" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Typography — Audcomp Design System</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    background: #ffffff; color: #0a2540; padding: 40px; -webkit-font-smoothing: antialiased;
+  }
+  .display { font-family: -apple-system, "SF Pro Display", sans-serif; letter-spacing: -0.02em; }
+  h2 { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #06b6d4; margin: 34px 0 14px; }
+  .row { display: flex; align-items: baseline; gap: 20px; padding: 12px 0; border-bottom: 1px solid #f0f7ff; }
+  .tag { font-family: "SF Mono", monospace; font-size: 11px; color: #4a6785; width: 150px; flex: none; }
+  .eyebrow { color: #06b6d4; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; font-size: 12px; }
+  .body { color: #4a6785; font-size: 15px; line-height: 1.6; max-width: 60ch; }
+  .darkbox { margin-top: 12px; border-radius: 16px; padding: 32px; background: linear-gradient(135deg,#071e3d,#0d2d55,#071e3d); }
+  .grad-dark { background: linear-gradient(180deg,#ffffff 0%,#a8c8e8 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; letter-spacing: -0.02em; font-family: "SF Pro Display", sans-serif; font-size: 40px; }
+  .grad-studio { background: linear-gradient(135deg,#ffffff 0%,#06b6d4 60%,#0071e3 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-weight: 900; letter-spacing: -0.03em; font-family: "SF Pro Display", sans-serif; font-size: 40px; }
+</style>
+</head>
+<body>
+  <h2>Type families</h2>
+  <div class="row"><span class="tag">--font-heading</span><span class="display" style="font-size:22px;font-weight:700">SF Pro Display — headings</span></div>
+  <div class="row"><span class="tag">--font-sans</span><span style="font-size:18px">SF Pro Text — body &amp; UI</span></div>
+  <div class="row"><span class="tag">--font-mono</span><span style="font-family:'SF Mono',monospace;font-size:16px">SF Mono — code &amp; specs</span></div>
+
+  <h2>Scale</h2>
+  <div class="row"><span class="tag">Hero / 5xl–6xl</span><span class="display" style="font-size:52px;font-weight:700">Trusted IT</span></div>
+  <div class="row"><span class="tag">H2 / 3xl–4xl</span><span class="display" style="font-size:34px;font-weight:700">Latest Insights</span></div>
+  <div class="row"><span class="tag">H3 / base–2xl</span><span class="display" style="font-size:20px;font-weight:600">Managed IT Services</span></div>
+  <div class="row"><span class="tag">Eyebrow / xs</span><span class="eyebrow">Get started today</span></div>
+  <div class="row"><span class="tag">Body / sm–base</span><span class="body">40+ years empowering businesses across Hamilton, Ancaster, and beyond — your IT partner, not just your provider.</span></div>
+
+  <h2>Gradient text (dark sections only)</h2>
+  <div class="darkbox">
+    <div class="grad-dark">Ready to get started?</div>
+    <div style="height:14px"></div>
+    <div class="grad-studio">Agent Studio</div>
+  </div>
+</body>
+</html>

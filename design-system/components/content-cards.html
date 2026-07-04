@@ -1,0 +1,50 @@
+<!-- @dsCard group="Components" name="Content Cards" subtitle="Blog / news cards with imagery" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Content Cards — Audcomp Design System</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, "SF Pro Text", sans-serif; background: #ffffff; color: #0a2540; padding: 40px; -webkit-font-smoothing: antialiased; }
+  .head { text-align: center; margin-bottom: 40px; }
+  .head h2 { font-family: "SF Pro Display", sans-serif; font-size: 32px; font-weight: 700; letter-spacing: -0.02em; }
+  .head p { color: #64748b; font-size: 14px; margin-top: 12px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px; }
+  .card { text-decoration: none; color: inherit; display: block; transition: transform .3s; }
+  .card:hover { transform: translateY(-4px); }
+  .thumb { border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; }
+  .thumb div { width: 100%; height: 100%; transition: transform .5s; }
+  .card:hover .thumb div { transform: scale(1.05); }
+  .g1 { background: linear-gradient(135deg,#0071e3,#38bdf8); }
+  .g2 { background: linear-gradient(135deg,#071e3d,#0d2d55); }
+  .g3 { background: linear-gradient(135deg,#06b6d4,#0284c7); }
+  .card h3 { font-size: 16px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.35; margin-top: 16px; }
+  .cat { color: #06b6d4; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.14em; margin-top: 6px; }
+</style>
+</head>
+<body>
+  <div class="head">
+    <h2>Latest Insights</h2>
+    <p>IT expertise and industry updates from the Audcomp team</p>
+  </div>
+  <div class="grid">
+    <a class="card">
+      <div class="thumb"><div class="g1"></div></div>
+      <h3>How Microsoft Copilot is Changing the Modern Workspace</h3>
+      <div class="cat">AI Services</div>
+    </a>
+    <a class="card">
+      <div class="thumb"><div class="g2"></div></div>
+      <h3>Zero Trust Architecture: No Longer Just for Enterprise</h3>
+      <div class="cat">Cyber Security</div>
+    </a>
+    <a class="card">
+      <div class="thumb"><div class="g3"></div></div>
+      <h3>Optimizing Your Cloud Spend with Azure Hybrid Benefits</h3>
+      <div class="cat">Cloud Solutions</div>
+    </a>
+  </div>
+</body>
+</html>

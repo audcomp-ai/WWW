@@ -1,0 +1,48 @@
+<!-- @dsCard group="Components" name="Badges & Eyebrows" subtitle="Eyebrow labels, category tags, pills" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Badges — Audcomp Design System</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, "SF Pro Text", sans-serif; background: #ffffff; color: #0a2540; padding: 40px; -webkit-font-smoothing: antialiased; }
+  h2 { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #06b6d4; margin: 4px 0 16px; }
+  .set { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  .note { font-family: "SF Mono", monospace; font-size: 11px; color: #4a6785; margin: 8px 0 28px; }
+  .eyebrow { color: #06b6d4; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; font-size: 11px; }
+  .pill-solid { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 9999px; background: rgba(0,113,227,0.9); color: #fff; font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.12em; }
+  .pill-tint { display: inline-flex; padding: 6px 14px; border-radius: 9999px; background: #e0f2fe; color: #0a2540; font-size: 12px; font-weight: 600; }
+  .darkwrap { background: linear-gradient(135deg,#071e3d,#0d2d55,#071e3d); border-radius: 20px; padding: 34px; }
+  .chip-dark { padding: 6px 12px; border-radius: 8px; background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.15); color: #fff; font-size: 13px; font-weight: 900; }
+  .eyebrow-studio { color: #06b6d4; text-transform: uppercase; letter-spacing: 0.3em; font-weight: 900; font-size: 10px; }
+</style>
+</head>
+<body>
+  <h2>Eyebrow labels (most common)</h2>
+  <div class="set">
+    <span class="eyebrow">Get started today</span>
+    <span class="eyebrow">AI Services</span>
+    <span class="eyebrow">Cyber Security</span>
+  </div>
+  <p class="note">text-[#06b6d4] · uppercase · tracking-widest · font-semibold · text-xs — sits above headings</p>
+
+  <h2>Category / status pills</h2>
+  <div class="set">
+    <span class="pill-solid">★ Featured</span>
+    <span class="pill-solid" style="background:rgba(0,113,227,0.9)">AI Workforce</span>
+    <span class="pill-tint">Managed IT</span>
+  </div>
+  <p class="note">Solid pill on imagery · tint pill on light surfaces</p>
+
+  <div class="darkwrap">
+    <h2 style="color:#38bdf8">On dark</h2>
+    <div class="set">
+      <span class="eyebrow-studio">★ Agent Studio</span>
+      <span class="chip-dark">99.9% uptime</span>
+      <span class="chip-dark">SOC 2</span>
+    </div>
+  </div>
+</body>
+</html>

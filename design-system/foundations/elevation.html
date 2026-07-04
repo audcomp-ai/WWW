@@ -1,0 +1,40 @@
+<!-- @dsCard group="Foundations" name="Elevation & Glass" subtitle="Shadows, borders, glassmorphism" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Elevation — Audcomp Design System</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, "SF Pro Text", sans-serif; background: #ffffff; color: #0a2540; padding: 40px; -webkit-font-smoothing: antialiased; }
+  h2 { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #06b6d4; margin: 4px 0 18px; }
+  .row { display: flex; gap: 28px; flex-wrap: wrap; }
+  .card { width: 200px; height: 120px; border-radius: 16px; display: flex; align-items: flex-end; padding: 14px; font-size: 12px; }
+  .light1 { background: #fff; border: 1px solid #e2e8f0; box-shadow: 0 1px 2px 0 rgba(10,37,64,0.05); }
+  .light2 { background: #fff; border: 1px solid #dde8f5; box-shadow: 0 10px 30px -10px rgba(10,37,64,0.15); }
+  .light3 { background: #fff; border: 1px solid #bfdbfe; box-shadow: 0 20px 60px -15px rgba(0,113,227,0.30); }
+  .lab { font-family: "SF Mono", monospace; color: #4a6785; }
+  .darkwrap { margin-top: 34px; background: linear-gradient(135deg,#071e3d,#0d2d55,#071e3d); border-radius: 20px; padding: 34px; }
+  .glass { width: 200px; height: 120px; border-radius: 16px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.10); backdrop-filter: blur(6px); display: flex; align-items: flex-end; padding: 14px; color: rgba(255,255,255,0.75); font-size: 12px; }
+  .glass2 { background: rgba(255,255,255,0.10); border-color: rgba(255,255,255,0.18); }
+  .glab { font-family: "SF Mono", monospace; color: rgba(255,255,255,0.5); }
+</style>
+</head>
+<body>
+  <h2>Light — shadow + hairline border</h2>
+  <div class="row">
+    <div class="card light1"><span class="lab">rest · shadow-sm</span></div>
+    <div class="card light2"><span class="lab">hover · shadow-lg + -translate-y-1</span></div>
+    <div class="card light3"><span class="lab">CTA · glow-blue 30%</span></div>
+  </div>
+
+  <div class="darkwrap">
+    <h2 style="color:#38bdf8">Dark — glassmorphism</h2>
+    <div class="row">
+      <div class="glass"><span class="glab">rest · white/6 + white/10 border</span></div>
+      <div class="glass glass2"><span class="glab">hover · white/10 + white/18 border</span></div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!-- @dsCard group="Foundations" name="Colors" subtitle="Brand palette + semantic tokens" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Colors — Audcomp Design System</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    background: #ffffff; color: #0a2540; padding: 40px; -webkit-font-smoothing: antialiased;
+  }
+  h1 { font-family: -apple-system, "SF Pro Display", sans-serif; font-size: 28px; font-weight: 700; letter-spacing: -0.02em; }
+  h2 { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #06b6d4; margin: 32px 0 14px; }
+  .sub { color: #4a6785; font-size: 14px; margin-top: 6px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px; }
+  .swatch { border: 1px solid #dde8f5; border-radius: 12px; overflow: hidden; }
+  .chip { height: 78px; }
+  .meta { padding: 10px 12px; }
+  .meta .n { font-size: 13px; font-weight: 600; }
+  .meta .h { font-family: "SF Mono", monospace; font-size: 12px; color: #4a6785; margin-top: 2px; }
+  .ring { box-shadow: inset 0 0 0 1px rgba(10,37,64,0.08); }
+</style>
+</head>
+<body>
+  <h1>Colors</h1>
+  <p class="sub">Navy + white + teal. Use the CSS variables from <code>app/globals.css</code> — never a raw hex outside this set.</p>
+
+  <h2>Brand</h2>
+  <div class="grid">
+    <div class="swatch"><div class="chip" style="background:#071e3d"></div><div class="meta"><div class="n">Navy</div><div class="h">#071e3d</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#0d2d55"></div><div class="meta"><div class="n">Navy Mid</div><div class="h">#0d2d55</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#0a2540"></div><div class="meta"><div class="n">Foreground</div><div class="h">#0a2540</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#0071e3"></div><div class="meta"><div class="n">Primary</div><div class="h">#0071e3</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#06b6d4"></div><div class="meta"><div class="n">Teal</div><div class="h">#06b6d4</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#38bdf8"></div><div class="meta"><div class="n">Sky</div><div class="h">#38bdf8</div></div></div>
+    <div class="swatch"><div class="chip ring" style="background:#000000"></div><div class="meta"><div class="n">Black (footer)</div><div class="h">#000000</div></div></div>
+  </div>
+
+  <h2>Semantic — Light Surfaces</h2>
+  <div class="grid">
+    <div class="swatch"><div class="chip ring" style="background:#ffffff"></div><div class="meta"><div class="n">Background</div><div class="h">#ffffff</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#f0f7ff"></div><div class="meta"><div class="n">Muted</div><div class="h">#f0f7ff</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#e0f2fe"></div><div class="meta"><div class="n">Accent</div><div class="h">#e0f2fe</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#4a6785"></div><div class="meta"><div class="n">Muted FG</div><div class="h">#4a6785</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#dde8f5"></div><div class="meta"><div class="n">Border</div><div class="h">#dde8f5</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#ef4444"></div><div class="meta"><div class="n">Destructive</div><div class="h">#ef4444</div></div></div>
+  </div>
+
+  <h2>Dark Surfaces (glass over navy)</h2>
+  <div class="grid">
+    <div class="swatch"><div class="chip" style="background:#071e3d"></div><div class="meta"><div class="n">Surface</div><div class="h">#071e3d</div></div></div>
+    <div class="swatch"><div class="chip" style="background:linear-gradient(#0b294c,#0b294c),#071e3d;background-blend-mode:overlay;outline:1px solid rgba(255,255,255,0.1);outline-offset:-1px"></div><div class="meta"><div class="n">Glass fill</div><div class="h">#fff / 6%</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#a8c8e8"></div><div class="meta"><div class="n">Gradient text end</div><div class="h">#a8c8e8</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#f59e0b"></div><div class="meta"><div class="n">Amber (ratings)</div><div class="h">#f59e0b</div></div></div>
+  </div>
+</body>
+</html>
