@@ -24,7 +24,7 @@ export default function AboutPage() {
     <>
       <Hero
         title="About Audcomp"
-        subtitle="Canada's most trusted IT consulting partner — built on 40 years of relationships, results, and reliability."
+        subtitle="40 years keeping Canadian businesses running — 100% Canadian engineers, 100% Canadian data centres, and a partner who answers when it matters most."
         ctaText="Contact Our Team"
         ctaHref="/contact"
         backgroundImage="/images/professional_services_hero.png"
@@ -193,7 +193,7 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-lg font-bold text-[#0a2540] mb-3">Partner Agnostic</h3>
                 <p className="text-slate-500 text-sm leading-relaxed">
-                  Our extensive roster of top tier IT partners enables your business to benefit from a range of cutting-edge technologies through a single point of contact. We are equally committed to all of our partners and strategically match their robust capabilities and competencies to your business needs.
+                  Our extensive roster of top-tier IT partners lets your business tap a broad range of proven technologies through a single point of contact. We are equally committed to all of our partners and strategically match their robust capabilities and competencies to your business needs.
                 </p>
               </div>
             </StaggeredItem>

@@ -51,8 +51,8 @@ export default function EventsPage() {
   return (
     <>
       <Hero
-        title="Audcomp Events"
-        subtitle="Connect with our engineers, partner vendors, and industry peers to discover the technology shaping the future of business."
+        title="Events & Webinars for Canadian Businesses"
+        subtitle="Learn directly from our engineers and partner vendors on the security, cloud, and AI decisions facing Canadian businesses today."
         variant="dark"
         backgroundImage="/images/managed_it_hero.png"
       />

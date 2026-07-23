@@ -10,9 +10,9 @@ import { SectionAngle } from "@/components/SectionAngle";
 import { AnimatedSection, StaggeredSection, StaggeredItem } from "@/components/AnimatedSection";
 
 export const metadata: Metadata = {
-  title: "Audcomp | Trusted IT Consulting Services in Canada",
+  title: "Audcomp | Managed IT, Cybersecurity & Cloud — 100% Canadian",
   description:
-    "Audcomp has been empowering businesses across Hamilton, Burlington, Oakville, London, Niagara, and surrounding areas since 1986. Top 25 CDN Solutions Provider with 100% Canadian engineers and 24/7 support.",
+    "Enterprise-grade managed IT, cybersecurity, and cloud for Ontario businesses — 24/7 monitoring, 100% Canadian engineers, and Canadian data centres. Serving Hamilton, Burlington, Oakville, London, and Niagara since 1986. Top 25 CDN Solutions Provider.",
 };
 
 const services = [

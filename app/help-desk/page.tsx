@@ -15,7 +15,7 @@ export default function HelpDeskPage() {
       <Hero
         title="24/7 Help Desk Support"
         subtitle="When your team hits a tech wall, Audcomp's Help Desk is there — by phone, email, or on-site. Any time, any issue."
-        ctaText="Contact Us"
+        ctaText="Get 24/7 Support"
         ctaHref="/contact"
         backgroundImage="/images/managed_it_hero.png"
       />
@@ -26,7 +26,7 @@ export default function HelpDeskPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">Support When You Need It Most</h2>
           <p className="text-gray-600 text-lg leading-relaxed mb-6">
-            Audcomp's Help Desk is staffed by certified Canadian IT professionals available 24 hours a day, 7 days a week. Whether your team needs help with a software issue at 2pm or a network problem at 2am, we're one call away.
+            Audcomp&apos;s Help Desk is staffed by certified Canadian IT professionals available 24 hours a day, 7 days a week. Whether your team needs help with a software issue at 2pm or a network problem at 2am, we&apos;re one call away — with an average response time of [CONFIRM: average help desk response time].
           </p>
           <p className="text-gray-600 text-lg leading-relaxed">
             Our Help Desk doesn't read from scripts. Our engineers diagnose, solve, and document — efficiently and thoroughly. From routine password resets to complex malware removal, every request is treated with urgency and expertise.

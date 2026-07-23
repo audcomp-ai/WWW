@@ -14,7 +14,7 @@ export default function StructuredCablingPage() {
     <>
       <Hero
         title="Structured Cabling"
-        subtitle="A reliable network starts with solid physical infrastructure. Audcomp designs and installs structured cabling systems built to last."
+        subtitle="Fewer network outages start with the cabling underneath — Audcomp designs, installs, tests, and documents structured cabling built to last."
         ctaText="Get a Cabling Assessment"
         ctaHref="/contact"
         backgroundImage="/images/professional_services_hero.png"

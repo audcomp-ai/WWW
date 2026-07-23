@@ -13,8 +13,8 @@ export default function SOCMDRPage() {
   return (
     <>
       <Hero
-        title="Security Operations Centre & MDR"
-        subtitle="24/7 threat monitoring, hunting, and response — Audcomp's SOC is your always-on defense team."
+        title="Threats Detected and Shut Down — 24/7"
+        subtitle="When an attack hits at 3 a.m., Audcomp&apos;s Security Operations Centre is already watching — detecting, investigating, and containing threats before they disrupt your business. Backed by Audcomp&apos;s 100% Canadian security team."
         ctaText="Talk to Our Security Team"
         ctaHref="/contact"
         bgColor="dark"
@@ -32,10 +32,10 @@ export default function SOCMDRPage() {
             Building and staffing an internal Security Operations Centre requires specialized talent, expensive tooling, and 24/7 coverage — resources most Canadian organizations simply don't have. Audcomp's SOC gives you all of that on a managed basis.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed mb-6">
-            Our Managed Detection and Response (MDR) service continuously monitors your environment for threats — across endpoints, networks, cloud, and email. When a threat is detected, our analysts investigate, contain, and remediate — around the clock, every day of the year.
+            Our Managed Detection and Response (MDR) service continuously monitors your environment for threats — across endpoints, networks, cloud, and email. When a threat is detected, our analysts investigate, contain, and remediate — around the clock, every day of the year, typically containing confirmed threats within [CONFIRM: median containment time].
           </p>
           <p className="text-gray-600 text-lg leading-relaxed">
-            Audcomp's SOC has firsthand experience recovering organizations from active cyberattacks. That real-world incident response experience informs how we monitor, what we look for, and how fast we act.
+            This isn&apos;t theory. In 2024, Audcomp recovered a public-sector healthcare organization from an active cyberattack — restoring critical services within two business days and returning it to full operation within two weeks. That real-world incident response experience informs how we monitor, what we look for, and how fast we act.
           </p>
         </div>
       </section>
@@ -67,7 +67,7 @@ export default function SOCMDRPage() {
 
       <CTABanner
         title="Get 24/7 Security Coverage for Your Organization"
-        subtitle="Contact Audcomp's security team to discuss how our SOC & MDR service can protect your business."
+        subtitle="Book a security assessment with Audcomp&apos;s team to see how our SOC & MDR service keeps your business running through an attack."
       />
     </>
   );

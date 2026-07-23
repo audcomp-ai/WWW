@@ -42,7 +42,7 @@ const subServices = [
 const agentUseCases = [
   {
     title: "IT Help Desk Agent",
-    desc: "Automatically resolve common IT tickets — password resets, software installs, VPN troubleshooting — reducing level-1 support volume by up to 60%.",
+    desc: "Automatically resolve common IT tickets — password resets, software installs, VPN troubleshooting — reducing level-1 support volume by [CONFIRM: typical level-1 ticket reduction %].",
     icon: "🖥",
   },
   {
@@ -101,7 +101,7 @@ export default function AIServicesPage() {
               AI That Actually Works<br />for Your Business
             </h2>
             <p className="text-slate-500 text-lg leading-relaxed mb-6">
-              Artificial intelligence is reshaping how businesses operate — but the hype often outpaces the practical reality. Audcomp helps Canadian organizations cut through the noise to identify AI applications that genuinely improve efficiency, reduce cost, or create competitive advantage.
+              Most AI projects stall because they start with the technology instead of the business problem. Audcomp helps Canadian organizations pinpoint where AI genuinely cuts cost, saves staff hours, or wins new work — then implements it securely, without the hype.
             </p>
             <p className="text-slate-500 text-lg leading-relaxed mb-6">
               Whether you&apos;re beginning with Microsoft Copilot in your existing Microsoft 365 environment, deploying custom AI agents for workflow automation, or building the data governance foundation for responsible AI adoption, Audcomp provides the strategy, implementation, and ongoing support to make it work.

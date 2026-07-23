@@ -13,8 +13,8 @@ export default function DarkWebMonitoringPage() {
   return (
     <>
       <Hero
-        title="Dark Web Monitoring"
-        subtitle="Your employees' credentials are likely already on the dark web. Audcomp finds them before attackers use them."
+        title="Catch Stolen Credentials Before Attackers Use Them"
+        subtitle="Your employees&apos; passwords are likely already for sale on the dark web. Audcomp finds them first — so you can reset access before a leaked login turns into a breach."
         ctaText="Start Monitoring Now"
         ctaHref="/contact"
         bgColor="dark"

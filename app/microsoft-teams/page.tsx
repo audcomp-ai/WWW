@@ -14,7 +14,7 @@ export default function MicrosoftTeamsPage() {
     <>
       <Hero
         title="Microsoft Teams"
-        subtitle="Transform how your team communicates and collaborates — with a Teams deployment configured and managed by Audcomp."
+        subtitle="Fewer scattered chats and lost files — a Teams deployment configured, integrated, and managed by Audcomp so your team actually adopts it."
         ctaText="Get Started with Teams"
         ctaHref="/contact"
         backgroundImage="/images/cloud_solutions_hero.png"

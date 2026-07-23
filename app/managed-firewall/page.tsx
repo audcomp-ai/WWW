@@ -13,8 +13,8 @@ export default function ManagedFirewallPage() {
   return (
     <>
       <Hero
-        title="Managed Firewall"
-        subtitle="Your network perimeter, continuously monitored and maintained by Audcomp's security engineers — 24/7."
+        title="A Firewall That Keeps Blocking Threats Long After Install Day"
+        subtitle="An unpatched or misconfigured firewall is an open door. Audcomp&apos;s 100% Canadian engineers monitor, patch, and tune your network perimeter 24/7 — so it keeps doing its job as threats evolve."
         ctaText="Secure Your Perimeter"
         ctaHref="/contact"
         bgColor="dark"
@@ -33,7 +33,7 @@ export default function ManagedFirewallPage() {
             Audcomp's Managed Firewall service takes complete ownership of your network perimeter security. Our engineers monitor your firewall continuously, respond to alerts, update rules, apply firmware patches, and integrate real-time threat intelligence to keep your perimeter defenses current.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed">
-            We work with leading firewall platforms including Fortinet FortiGate, Cisco, SonicWall, and others — ensuring best-in-class protection regardless of your existing investment.
+            We work with leading firewall platforms including Fortinet FortiGate, Cisco, SonicWall, and others — keeping your protection strong and current regardless of your existing investment.
           </p>
         </div>
       </section>

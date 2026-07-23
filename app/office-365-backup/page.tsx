@@ -61,7 +61,7 @@ export default function Office365BackupPage() {
 
       <CTABanner
         title="Don't Rely on Microsoft Alone for Your Data"
-        subtitle="Add independent backup to your Microsoft 365 environment today — it takes less than an hour to get started."
+        subtitle="Add independent backup to your Microsoft 365 environment today — typical setup takes about [CONFIRM: typical setup time]."
       />
     </>
   );

@@ -14,7 +14,7 @@ export default function HybridCloudPage() {
     <>
       <Hero
         title="Hybrid Cloud Solutions"
-        subtitle="The best of both worlds — on-premise control and cloud flexibility, seamlessly integrated by Audcomp's cloud architects."
+        subtitle="Keep regulated workloads on-premise and scale everything else in the cloud — one integrated environment, managed by Audcomp's cloud architects."
         ctaText="Plan Your Hybrid Cloud"
         ctaHref="/contact"
         backgroundImage="/images/cloud_solutions_hero.png"

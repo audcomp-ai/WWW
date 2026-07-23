@@ -14,7 +14,7 @@ export default function DaaSPage() {
     <>
       <Hero
         title="Device as a Service (DaaS)"
-        subtitle="Fully managed hardware and software on a simple per-user subscription — so you can scale your workforce without the IT headache."
+        subtitle="Predictable per-user pricing and fully managed devices — so you can add or offboard staff in minutes instead of managing hardware yourself."
         ctaText="Get a DaaS Quote"
         ctaHref="/contact"
         backgroundImage="/images/managed_it_hero.png"

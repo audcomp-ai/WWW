@@ -14,7 +14,7 @@ export default function MicrosoftAzurePage() {
     <>
       <Hero
         title="Microsoft Azure"
-        subtitle="Migrate to Azure with confidence — Audcomp's certified engineers plan, deploy, and manage your Azure infrastructure end to end."
+        subtitle="Move to Azure without the risk — Audcomp's certified engineers plan, migrate, and manage it end to end, keeping your data in Canadian Azure regions."
         ctaText="Get an Azure Assessment"
         ctaHref="/contact"
         backgroundImage="/images/cloud_solutions_hero.png"

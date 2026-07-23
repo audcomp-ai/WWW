@@ -14,7 +14,7 @@ export default function ImplementationMigrationPage() {
     <>
       <Hero
         title="Implementation & Migration"
-        subtitle="Complex IT projects, delivered on time and on budget — Audcomp's implementation team has the experience to execute without disruption."
+        subtitle="Complex IT projects delivered on time, on budget, and without downtime — executed by Audcomp's 100% Canadian engineers."
         ctaText="Plan Your Project"
         ctaHref="/contact"
         backgroundImage="/images/professional_services_hero.png"
@@ -26,7 +26,7 @@ export default function ImplementationMigrationPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">Execution You Can Rely On</h2>
           <p className="text-gray-600 text-lg leading-relaxed mb-6">
-            The gap between a great technology plan and a successful deployment is execution. Audcomp's implementation team has delivered hundreds of complex IT projects for organizations across healthcare, government, manufacturing, and enterprise — with a track record of on-time, on-budget delivery.
+            The gap between a great technology plan and a successful deployment is execution — and that&apos;s where most projects stall. Audcomp&apos;s implementation team has delivered [CONFIRM: number of projects delivered] complex IT projects across healthcare, government, manufacturing, and enterprise, with a track record of on-time, on-budget delivery and minimal disruption to operations.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed mb-6">
             From server and storage deployments to cloud migrations, WiFi redesigns, and full data center transformations, Audcomp brings structured project management, deep technical expertise, and a commitment to minimizing disruption to your operations.

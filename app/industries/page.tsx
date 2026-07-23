@@ -151,7 +151,7 @@ export default function IndustriesPage() {
               Industries
             </p>
             <h1 className="text-5xl sm:text-6xl font-bold text-white tracking-tight leading-tight mb-6">
-              Built for Your Sector
+              IT Built for the Way Your Sector Works
             </h1>
             <p className="text-lg text-white/55 max-w-2xl mx-auto leading-relaxed">
               Audcomp brings 40+ years of IT expertise and deep domain knowledge across six sectors —
@@ -168,7 +168,7 @@ export default function IndustriesPage() {
         <div className="max-w-6xl mx-auto">
           <AnimatedSection className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold text-[#0a2540] tracking-tight">
-              Six Sectors. One Trusted Partner.
+              Six Sectors. One Canadian IT Partner.
             </h2>
             <p className="text-slate-500 mt-4 max-w-xl mx-auto">
               Click any sector below to explore the IT challenges we solve and the solutions we deliver.

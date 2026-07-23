@@ -14,7 +14,7 @@ export default function ConsultingDesignPage() {
     <>
       <Hero
         title="IT Consulting & Design"
-        subtitle="Expert assessments, solution architecture, and risk management — Audcomp's consulting team helps you make confident IT decisions."
+        subtitle="Know exactly where your IT stands before you spend — Audcomp's Canadian engineers assess your environment, flag the risks, and design what fits your budget."
         ctaText="Schedule a Consultation"
         ctaHref="/contact"
         backgroundImage="/images/professional_services_hero.png"
@@ -26,7 +26,7 @@ export default function ConsultingDesignPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">Clarity Before Commitment</h2>
           <p className="text-gray-600 text-lg leading-relaxed mb-6">
-            Technology decisions made without proper assessment often lead to costly mistakes — wrong platforms, misaligned architectures, and security gaps that take years to remediate. Audcomp's IT Consulting and Design service provides the clarity you need before you commit budget and resources.
+            A technology decision made without proper assessment can cost you for years — the wrong platform, a misaligned architecture, or a security gap that surfaces at the worst possible time. Audcomp&apos;s IT Consulting and Design service gives you the clarity to commit budget and resources with confidence.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed mb-6">
             Our consultants conduct comprehensive technical assessments of your existing environment, identify risks and inefficiencies, and design solutions that align with your business objectives, budget, and growth trajectory.

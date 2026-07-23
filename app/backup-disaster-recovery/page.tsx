@@ -14,7 +14,7 @@ export default function BackupDisasterRecoveryPage() {
     <>
       <Hero
         title="Backup & Disaster Recovery"
-        subtitle="Military-grade, cloud-based data protection — because data loss is not an option your business can afford."
+        subtitle="Recover from ransomware, hardware failure, or accidental deletion up to 5x faster — with automated cloud backup stored 100% in Canada."
         ctaText="Protect Your Data"
         ctaHref="/contact"
         backgroundImage="/images/managed_it_hero.png"

@@ -7,7 +7,7 @@ import { SectionAngle } from "@/components/SectionAngle";
 export const metadata: Metadata = {
   title: "Managed IT Services | Audcomp — Hamilton & Ancaster",
   description:
-    "Audcomp's Managed IT Services deliver proactive support, 24/7 monitoring, and 100% Canadian engineers to keep your business running at peak performance.",
+    "Reduce downtime and control IT costs with Audcomp's Managed IT Services — 24/7 monitoring, 100% Canadian engineers, and 40+ years serving Ontario businesses.",
 };
 
 const subServices = [
@@ -47,8 +47,8 @@ export default function ManagedITServicesPage() {
   return (
     <>
       <Hero
-        title="Managed IT Services"
-        subtitle="Proactive, comprehensive IT management so your team can focus on what matters most — growing your business."
+        title="Fully Managed IT, 100% Canadian"
+        subtitle="Less downtime, predictable monthly costs, and a team free to focus on the business — with 24/7 monitoring from Canadian engineers who have done this since 1986."
         ctaText="Get a Free Assessment"
         ctaHref="/contact"
         secondaryCtaText="Call 905-304-1775"

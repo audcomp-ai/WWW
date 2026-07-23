@@ -13,8 +13,8 @@ export default function SecurityAwarenessTrainingPage() {
   return (
     <>
       <Hero
-        title="Security Awareness Training"
-        subtitle="Your employees are your last line of defense — and your biggest vulnerability. Audcomp's training program turns them into an asset."
+        title="Turn Your Employees Into Your Strongest Line of Defense"
+        subtitle="Most breaches start with one person clicking one email. Audcomp&apos;s training turns your team from your biggest vulnerability into the control that stops attacks at the front door."
         ctaText="Train Your Team"
         ctaHref="/contact"
         bgColor="dark"
@@ -33,7 +33,7 @@ export default function SecurityAwarenessTrainingPage() {
             Audcomp's Security Awareness Training program is led by experienced cybersecurity professionals — not a software platform with automated videos. Our training is relevant, engaging, and tailored to the threats your organization actually faces.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed">
-            We combine instructor-led sessions with simulated phishing campaigns, micro-learning content, and regular testing to build lasting security habits across your organization.
+            We combine instructor-led sessions with simulated phishing campaigns, micro-learning content, and regular testing to build lasting security habits across your organization — cutting phishing click rates by [CONFIRM: avg client click-rate reduction] over the course of the program.
           </p>
         </div>
       </section>

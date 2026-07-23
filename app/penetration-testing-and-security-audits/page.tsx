@@ -28,7 +28,7 @@ export default function PenetrationTestingPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">Test Your Defenses Before Attackers Do</h2>
           <p className="text-gray-600 text-lg leading-relaxed mb-6">
-            Penetration testing simulates real-world cyberattacks against your environment to identify vulnerabilities before malicious actors can exploit them. Unlike vulnerability scans that only flag known issues, Audcomp's penetration testing combines automated tooling with manual testing by experienced security professionals.
+            The vulnerabilities that cause breaches are the ones no one knew were there. Penetration testing simulates real-world cyberattacks against your environment to surface those weaknesses before an attacker does — turning unknown risk into a prioritized fix list. Unlike vulnerability scans that only flag known issues, Audcomp&apos;s penetration testing combines automated tooling with manual testing by experienced security professionals.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed mb-6">
             Our pen testing program includes up to 4 tests per year — ensuring your security posture is validated continuously as your environment evolves. Every test delivers a detailed report within 48 hours, including executive summary, technical findings, risk ratings, and remediation guidance.

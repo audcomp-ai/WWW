@@ -47,7 +47,7 @@ export default function OurStoryPage() {
     <>
       <Hero
         title="Our Story"
-        subtitle="Nearly four decades of helping Canadian businesses thrive through technology."
+        subtitle="From a 1986 startup at McMaster University to a top-25 Canadian solutions provider — four decades building IT that Canadian businesses rely on every day."
         ctaText="Meet Our Team"
         ctaHref="/about"
         backgroundImage="/images/professional_services_hero.png"
