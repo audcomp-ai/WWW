@@ -66,7 +66,7 @@ export default function SecurityServicesPage() {
             Audcomp's cybersecurity practice builds layered defenses around your organization — from the endpoint to the network perimeter, from user behavior to 24/7 threat monitoring. Our Security Operations Centre (SOC) provides round-the-clock visibility and rapid incident response.
           </p>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            We have firsthand experience recovering organizations from cyberattacks. We'd rather help you never need that service.
+            We have firsthand experience recovering organizations from cyberattacks — when a public-sector healthcare provider was hit in 2024, Audcomp restored critical services within two business days and had them fully operational within two weeks. We&apos;d rather help you never need that service.
           </p>
         </div>
       </section>

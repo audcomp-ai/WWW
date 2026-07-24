@@ -14,7 +14,7 @@ export default function Office365Page() {
     <>
       <Hero
         title="Microsoft Office 365"
-        subtitle="From deployment to daily management — Audcomp ensures your Microsoft 365 environment runs securely and at full potential."
+        subtitle="Migrate with zero downtime and keep Microsoft 365 secure day to day — so your team gets email, Teams, and SharePoint that simply work."
         ctaText="Get Started with M365"
         ctaHref="/contact"
         backgroundImage="/images/cloud_solutions_hero.png"

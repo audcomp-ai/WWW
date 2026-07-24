@@ -14,7 +14,7 @@ export default function MicrosoftCopilotPage() {
     <>
       <Hero
         title="Microsoft Copilot Enablement"
-        subtitle="Unlock AI-powered productivity across your Microsoft 365 environment — Audcomp handles readiness, deployment, and adoption."
+        subtitle="Turn Microsoft 365 Copilot into real productivity gains — Audcomp's 100% Canadian engineers handle readiness, secure deployment, and adoption."
         ctaText="Start Your Copilot Journey"
         ctaHref="/contact"
         backgroundImage="/images/ai_services_hero.png"
@@ -32,7 +32,7 @@ export default function MicrosoftCopilotPage() {
             Audcomp's Microsoft Copilot Enablement program guides your organization through every stage — from readiness assessment through deployment, training, and ongoing optimization. We ensure Copilot is configured securely, your data is protected, and your team knows how to use it effectively.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed">
-            As a Microsoft partner with deep Microsoft 365 and Azure expertise, Audcomp is uniquely positioned to integrate Copilot into your existing environment with minimal disruption and maximum value.
+            As a Microsoft partner with deep Microsoft 365 and Azure expertise — and a team of 100% Canadian engineers — Audcomp integrates Copilot into your existing environment with minimal disruption and measurable results.
           </p>
         </div>
       </section>

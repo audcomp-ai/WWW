@@ -54,7 +54,7 @@ export default function ProfessionalServicesPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-foreground mb-6">Consider Audcomp an Extension of Your Team</h2>
           <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-            By utilizing our unique framework, your business benefits from instant access to a range of Professional Service and system engineers. We work collaboratively with clients to identify their unique challenges, and recommend and implement the right solutions for their needs and budget.
+            Get senior IT strategists and system engineers on demand — without the cost of hiring them full-time. We work alongside your team to pinpoint the real challenges, then recommend and implement the right solution for your needs and budget.
           </p>
           <p className="text-muted-foreground text-lg leading-relaxed mb-6">
             Audcomp&apos;s Professional Services practice brings nearly four decades of experience to every engagement. Whether it&apos;s a discrete project or an ongoing strategic relationship, we deliver with the same professionalism and accountability that defines everything we do.

@@ -13,8 +13,8 @@ export default function PenetrationTestingServicePage() {
   return (
     <>
       <Hero
-        title="Penetration Testing Service"
-        subtitle="Our dedicated pen testing program delivers up to 4 comprehensive security tests per year with 48-hour report turnaround."
+        title="Know Where an Attacker Could Get In — and Close It"
+        subtitle="Our dedicated program runs up to 4 comprehensive security tests a year with 48-hour reporting, so your defenses are validated continuously as your environment changes — not just once."
         ctaText="Book Your First Test"
         ctaHref="/contact"
         bgColor="dark"

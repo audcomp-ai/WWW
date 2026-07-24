@@ -13,8 +13,8 @@ export default function EndpointProtectionPage() {
   return (
     <>
       <Hero
-        title="Endpoint Protection"
-        subtitle="AGS — Audcomp Guarded Services — wraps every endpoint in your organization with advanced threat detection and real-time response."
+        title="Stop Threats Before They Spread Across Your Devices"
+        subtitle="AGS — Audcomp Guarded Services — contains ransomware and zero-day attacks the moment they hit a device, so one infected laptop never becomes a company-wide outage. Deployed and managed by Audcomp&apos;s 100% Canadian security team."
         ctaText="Get Protected"
         ctaHref="/contact"
         bgColor="dark"
@@ -29,13 +29,13 @@ export default function EndpointProtectionPage() {
             Audcomp Guarded Services (AGS)
           </h2>
           <p className="text-gray-600 text-lg leading-relaxed mb-6">
-            AGS — Audcomp Guarded Services — is Audcomp's branded endpoint security platform, built on next-generation antivirus, behavioral AI, and real-time threat intelligence. AGS goes far beyond traditional antivirus to detect and stop threats that signature-based tools miss.
+            When ransomware or a zero-day attack lands on a device, the real cost is downtime — locked files, halted operations, and days spent rebuilding. AGS — Audcomp Guarded Services — is Audcomp&apos;s branded endpoint security platform, built to stop that at the source. Using next-generation antivirus and behavioral AI, it detects and contains threats that signature-based antivirus tools miss.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed mb-6">
-            Every device in your organization — laptops, desktops, servers — is continuously monitored for suspicious behavior. When a threat is detected, AGS responds automatically while alerting Audcomp's security team for investigation and remediation.
+            Every device in your organization — laptops, desktops, servers — is continuously monitored for suspicious behavior. When a threat is detected, AGS contains it automatically and alerts Audcomp&apos;s security team for investigation and remediation — 24/7.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed">
-            AGS is deployed and managed by Audcomp, so you get enterprise-grade endpoint protection without the complexity of managing it internally.
+            AGS is deployed and managed by Audcomp&apos;s 100% Canadian security team, so you get enterprise-grade endpoint protection without adding headcount or managing it internally.
           </p>
         </div>
       </section>
@@ -67,7 +67,7 @@ export default function EndpointProtectionPage() {
 
       <CTABanner
         title="Protect Every Endpoint in Your Organization"
-        subtitle="Contact Audcomp to deploy AGS across your environment — typically active within 24 hours."
+        subtitle="Get a free endpoint security assessment from Audcomp and deploy AGS across your environment — typically active within 24 hours."
       />
     </>
   );

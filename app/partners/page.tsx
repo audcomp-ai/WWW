@@ -8,7 +8,7 @@ import { AnimatedSection, StaggeredSection, StaggeredItem } from "@/components/A
 export const metadata: Metadata = {
   title: "Technology Partners | Audcomp",
   description:
-    "Audcomp partners with the world's leading technology manufacturers to deliver best-in-class IT solutions for Canadian businesses.",
+    "Audcomp partners directly with leading technology manufacturers to source enterprise-grade IT solutions at the right price for Canadian businesses.",
 };
 
 const partners = [
@@ -62,7 +62,7 @@ export default function PartnersPage() {
       <Hero
         title="Our Technology Partners"
         subtitle="We partner with the world's leading technology vendors to deliver proven, enterprise-grade solutions for Canadian businesses."
-        ctaText="Contact Us"
+        ctaText="Talk to Our Procurement Team"
         ctaHref="/contact"
         backgroundImage="/images/professional_services_hero.png"
       />
@@ -73,7 +73,7 @@ export default function PartnersPage() {
           <AnimatedSection>
             <p className="text-xs font-semibold text-[#0071e3] uppercase tracking-widest mb-5">Our Partners</p>
             <h2 className="text-4xl sm:text-5xl font-bold text-[#0a2540] mb-8 tracking-tight leading-tight">
-              Best-in-Class Technology,<br />Canadian Expertise
+              Enterprise Technology,<br />Canadian Expertise
             </h2>
             <p className="text-slate-500 text-lg leading-relaxed mb-6">
               Audcomp maintains partnerships with Tier 1 and Tier 2 technology manufacturers across hardware, software, networking, security, and cloud. These relationships give our clients access to enterprise pricing, expedited support channels, and the latest solutions as they emerge.

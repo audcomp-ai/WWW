@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `IT Support & Consulting in ${cityName} | Audcomp`,
-    description: `Audcomp provides top-tier managed IT, cloud solutions, and cyber security for businesses in ${cityName}. Top 25 CDN Solutions Provider.`,
+    description: `Audcomp delivers managed IT, cloud, and cyber security to ${cityName} businesses with 100% Canadian engineers and 24/7 support. Top 25 CDN Solutions Provider.`,
   };
 }
 
@@ -59,8 +59,8 @@ export default async function LocalItSupportPage({ params }: Props) {
   return (
     <>
       <Hero
-        title={`Trusted IT Support in ${cityName}`}
-        subtitle={`Empowering ${cityName} businesses with reliable, enterprise-grade IT solutions since 1986. 100% Canadian engineers, 24/7 support.`}
+        title={`IT Support in ${cityName}, From 100% Canadian Engineers`}
+        subtitle={`Keeping ${cityName} businesses running with less downtime and predictable IT since 1986 — 100% Canadian engineers, Canadian data centres, and 24/7 support.`}
         ctaText="Get a Free Assessment"
         ctaHref="/contact"
         backgroundImage="/images/managed_it_hero.png"

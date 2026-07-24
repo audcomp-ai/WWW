@@ -6,7 +6,7 @@ import { SectionAngle } from "@/components/SectionAngle";
 export const metadata: Metadata = {
   title: "Careers at Audcomp | IT Jobs in Hamilton & Ancaster",
   description:
-    "Join Canada's top MSP. Audcomp is always looking for talented IT professionals to join our team in Ancaster, Ontario.",
+    "Build your IT career at a CDN Top 100 Solutions Provider. Audcomp is hiring IT professionals for our team in Ancaster, Ontario.",
 };
 
 const benefits = [
@@ -37,7 +37,7 @@ export default function CareersPage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-[#1a1a2e] mb-4">Why Audcomp?</h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              With nearly four decades of history and a team that genuinely cares, Audcomp is one of the best places to build an IT career in Ontario.
+              With 40+ years in business and a team that genuinely cares, Audcomp is a place to build a lasting IT career in Ontario.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

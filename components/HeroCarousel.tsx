@@ -9,9 +9,9 @@ const slides = [
     id: 1,
     type: "image" as const,
     badge: null,
-    headline: "Trusted IT Consulting Services in Canada",
+    headline: "Enterprise-grade IT, run by 100% Canadian engineers",
     subheadline:
-      "40+ years empowering businesses across Hamilton, Ancaster, and beyond. Your IT partner — not just your provider.",
+      "Managed IT, cybersecurity, and cloud for Ontario businesses — proactively monitored 24/7, hosted in Canadian data centres, and delivered by the same team that's kept clients running since 1986.",
     cta1Text: "Get a Free Assessment",
     cta1Href: "/contact",
     cta2Text: "View Our Services",

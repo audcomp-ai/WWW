@@ -22,7 +22,7 @@ export default function ManagedITSupportPage() {
   return (
     <>
       <Hero
-        title="Managed IT Support"
+        title="IT Support That Prevents Problems, Not Just Fixes Them"
         subtitle="End-user support, network management, and 24/7 monitoring — delivered by 100% Canadian engineers who know your environment."
         ctaText="Get Started"
         ctaHref="/contact"
@@ -38,7 +38,7 @@ export default function ManagedITSupportPage() {
             Audcomp's Managed IT Support program provides the full spectrum of day-to-day IT management your business needs. Our engineers become an extension of your team — deeply familiar with your environment, your users, and your business goals.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed mb-6">
-            Unlike break-fix providers that only show up when something is already broken, Audcomp's managed support is fundamentally proactive. We monitor your infrastructure continuously, resolve potential issues before they escalate, and keep your systems patched and optimized.
+            Unlike break-fix providers that only show up once something is already broken, Audcomp works ahead of problems. We monitor your infrastructure continuously, resolve potential issues before they escalate, and keep your systems patched and optimized.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed">
             Every Audcomp engineer is based in Canada. Your data, your support calls, and your account management never leave Canadian hands.

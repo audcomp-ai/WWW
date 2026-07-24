@@ -48,7 +48,7 @@ export default function CloudSolutionsPage() {
     <>
       <Hero
         title="Cloud Solutions"
-        subtitle="The most cost-effective solution for your cloud and hosting needs. Scalable, flexible, and secure computing resources for your business."
+        subtitle="Move to Microsoft 365 and Azure without the downtime or surprise bills — planned, migrated, and managed by 100% Canadian engineers, with your data in Canadian data centres."
         ctaText="Explore Cloud Options"
         ctaHref="/contact"
         secondaryCtaText="Call 905-304-1775"
