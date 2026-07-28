@@ -43,32 +43,26 @@ const agentUseCases = [
   {
     title: "IT Help Desk Agent",
     desc: "Automatically resolve common IT tickets — password resets, software installs, VPN troubleshooting — reducing level-1 support volume by [CONFIRM: typical level-1 ticket reduction %].",
-    icon: "🖥",
   },
   {
     title: "Procurement Assistant",
     desc: "An agent that tracks hardware inventory, raises purchase orders, and surfaces vendor quotes — keeping procurement moving without manual overhead.",
-    icon: "📦",
   },
   {
     title: "Security Alert Triage",
     desc: "Correlate and prioritize security alerts in real time, escalating only the threats that require human attention and reducing analyst fatigue.",
-    icon: "🛡",
   },
   {
     title: "Onboarding Coordinator",
     desc: "Walk new employees through account setup, access provisioning, and policy acknowledgment — cutting IT onboarding time from days to hours.",
-    icon: "✅",
   },
   {
     title: "Reporting & Analytics Agent",
     desc: "Automatically generate weekly IT health reports, license utilization summaries, and cost optimization recommendations delivered to stakeholders.",
-    icon: "📊",
   },
   {
     title: "Compliance Monitor",
     desc: "Continuously scan your environment for policy drift, missing patches, and regulatory gaps — and generate audit-ready reports on demand.",
-    icon: "📋",
   },
 ];
 
@@ -158,7 +152,7 @@ export default function AIServicesPage() {
                   Deploy a full AI<br />workforce in 48 hours.
                 </h2>
                 <p className="text-white/65 leading-relaxed text-base mb-8 max-w-md">
-                  Bookkeeper. SDR. Executive assistant. Paralegal. Receptionist. 19 pre-built specialists — Canadian-hosted, supervised by Wilfred, ready to work alongside your team.
+                  Bookkeeper. SDR. Executive assistant. Paralegal. Receptionist. 13 pre-built specialists — Canadian-hosted, supervised by Wilfred, ready to work alongside your team.
                 </p>
                 <div className="flex flex-wrap gap-3">
                   <Link
@@ -175,6 +169,54 @@ export default function AIServicesPage() {
                     className="inline-flex items-center gap-2 bg-[#0071e3] text-white font-black px-7 py-3.5 rounded-full text-sm hover:bg-[#0077ed] transition-all"
                   >
                     Book a free assessment
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </AnimatedSection>
+      </section>
+
+      {/* Forward Deployed Engineers Callout — WHITE */}
+      <section className="bg-white pb-20 px-4">
+        <AnimatedSection>
+          <div className="max-w-6xl mx-auto">
+            <div
+              className="relative rounded-3xl overflow-hidden bg-cover bg-center"
+              style={{
+                backgroundImage: "url(/images/professional_services_hero.png)",
+                boxShadow: "0 20px 60px rgba(7,30,61,0.10)",
+              }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-[#071e3d]/95 via-[#071e3d]/75 to-[#071e3d]/30" />
+              <div className="relative z-10 p-10 sm:p-14 max-w-2xl min-h-[380px] flex flex-col justify-center">
+                <span className="inline-flex items-center gap-2 bg-[#06b6d4]/20 border border-[#06b6d4]/40 text-[#06b6d4] text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full mb-6 w-fit">
+                  FDE-as-a-Service
+                </span>
+                <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tighter mb-5 leading-tight">
+                  Forward Deployed<br />Engineers, embedded.
+                </h2>
+                <p className="text-white/65 leading-relaxed text-base mb-8 max-w-md">
+                  An Audcomp engineer works inside your business — learning your
+                  workflows, building the automations and agents you actually
+                  need, and shipping them in your environment. Not a ticket
+                  queue: a teammate who builds.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-2 bg-white text-[#0a2540] font-black px-7 py-3.5 rounded-full text-sm hover:bg-[#f0f7ff] hover:shadow-lg transition-all"
+                  >
+                    Talk to an engineer
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                  <Link
+                    href="/professional-services"
+                    className="inline-flex items-center gap-2 bg-[#0071e3] text-white font-black px-7 py-3.5 rounded-full text-sm hover:bg-[#0077ed] transition-all"
+                  >
+                    Professional Services
                   </Link>
                 </div>
               </div>
@@ -204,7 +246,7 @@ export default function AIServicesPage() {
                   Unlike generic AI tools, Audcomp agents are designed specifically for IT workflows — help desk automation, security alert triage, compliance monitoring, and more.
                 </p>
                 <Link href="/ai-services/agent-studio" className="inline-flex items-center gap-1.5 text-sm text-[#06b6d4] font-semibold hover:underline">
-                  See all 19 agents in Agent Studio
+                  See all 13 agents in Agent Studio
                   <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
                 </Link>
               </div>
@@ -215,7 +257,6 @@ export default function AIServicesPage() {
             {agentUseCases.map((uc) => (
               <StaggeredItem key={uc.title}>
                 <div className="rounded-2xl border border-white/[0.1] bg-white/[0.05] p-7 hover:border-[#06b6d4]/30 hover:bg-white/[0.08] transition-all duration-300">
-                  <div className="text-2xl mb-4">{uc.icon}</div>
                   <h3 className="font-semibold text-white mb-2 text-base tracking-tight">{uc.title}</h3>
                   <p className="text-sm text-white/50 leading-relaxed">{uc.desc}</p>
                 </div>

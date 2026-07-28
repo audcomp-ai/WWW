@@ -197,9 +197,6 @@ export default function Nav() {
             <Link href="/partners" className="text-sm text-white/70 hover:text-white transition-colors duration-200">
               Partners
             </Link>
-            <Link href="/careers" className="text-sm text-white/70 hover:text-white transition-colors duration-200">
-              Careers
-            </Link>
             <Link href="/events" className="text-sm text-white/70 hover:text-white transition-colors duration-200">
               Events
             </Link>
@@ -282,7 +279,6 @@ export default function Nav() {
               { label: "Agent Studio", href: "/ai-services/agent-studio" },
               { label: "About", href: "/about" },
               { label: "Partners", href: "/partners" },
-              { label: "Careers", href: "/careers" },
               { label: "Events", href: "/events" },
               { label: "Blog", href: "/blog" },
             ].map((link) => (

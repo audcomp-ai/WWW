@@ -15,6 +15,13 @@ interface PastEvent {
 
 const pastEvents: PastEvent[] = [
   {
+    id: "0",
+    title: "Meet the Moment 2026",
+    date: "April 2026",
+    image: "/images/professional_services_hero.png",
+    href: "#",
+  },
+  {
     id: "1",
     title: "Meet the Moment 2024",
     date: "October 2024",

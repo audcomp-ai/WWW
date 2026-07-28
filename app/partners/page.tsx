@@ -2,8 +2,32 @@ import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import CTABanner from "@/components/CTABanner";
 import PartnerLogo from "@/components/PartnerLogo";
+import { LogoCloud } from "@/components/ui/logo-cloud";
 import { SectionAngle } from "@/components/SectionAngle";
 import { AnimatedSection, StaggeredSection, StaggeredItem } from "@/components/AnimatedSection";
+
+// Same slugs/colors as the PartnerLogo grid below, rendered as flat marks via
+// simpleicons — keeps the two logo treatments on this page visually consistent.
+// Microsoft isn't in simple-icons (like PartnerLogo.tsx, it needs its own inline SVG).
+const MICROSOFT_LOGO =
+  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234a6785'%3E%3Cpath d='M11.4 24H0V12.6h11.4V24zM24 24H12.6V12.6H24V24zM11.4 11.4H0V0h11.4v11.4zm12.6 0H12.6V0H24v11.4z'/%3E%3C/svg%3E";
+
+// Field Effect and Eaton aren't in simple-icons — like the domain-only entries
+// in the PartnerLogo grid below, they resolve through the favicon service.
+const featuredLogos = [
+  { src: MICROSOFT_LOGO, alt: "Microsoft" },
+  { src: "https://cdn.simpleicons.org/dell/4a6785", alt: "Dell Technologies" },
+  { src: "https://cdn.simpleicons.org/cisco/4a6785", alt: "Cisco" },
+  { src: "https://cdn.simpleicons.org/fortinet/4a6785", alt: "Fortinet" },
+  { src: "https://cdn.simpleicons.org/lenovo/4a6785", alt: "Lenovo" },
+  { src: "https://cdn.simpleicons.org/vmware/4a6785", alt: "VMware" },
+  { src: "https://cdn.simpleicons.org/veeam/4a6785", alt: "Veeam" },
+  { src: "https://cdn.simpleicons.org/intel/4a6785", alt: "Intel" },
+  { src: "https://cdn.simpleicons.org/hp/4a6785", alt: "HP" },
+  { src: "https://s2.googleusercontent.com/s2/favicons?domain=sophos.com&sz=128", alt: "Sophos" },
+  { src: "https://s2.googleusercontent.com/s2/favicons?domain=fieldeffect.net&sz=128", alt: "Field Effect" },
+  { src: "https://s2.googleusercontent.com/s2/favicons?domain=eaton.com&sz=128", alt: "Eaton" },
+];
 
 export const metadata: Metadata = {
   title: "Technology Partners | Audcomp",
@@ -66,6 +90,19 @@ export default function PartnersPage() {
         ctaHref="/contact"
         backgroundImage="/images/professional_services_hero.png"
       />
+
+      {/* Trusted-by strip — rendered statically (no scroll-reveal wrapper) so it
+          is visible immediately rather than gated behind a JS opacity animation. */}
+      <section className="bg-white pt-20 pb-8 px-4">
+        <div className="mx-auto w-full max-w-3xl space-y-8">
+          <h2 className="text-center font-medium text-lg tracking-tight md:font-semibold md:text-2xl">
+            <span className="text-muted-foreground">Your business runs on</span>{" "}
+            <span className="text-primary">proven technology.</span>
+          </h2>
+          {/* 12 logos across the component's 4 columns = 3 full rows, no empty cells */}
+          <LogoCloud logos={featuredLogos} />
+        </div>
+      </section>
 
       {/* Intro — WHITE */}
       <section className="bg-white py-32 px-4">
