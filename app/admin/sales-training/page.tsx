@@ -22,10 +22,7 @@ export default function SalesTrainingPage() {
       </p>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <Link
-          href="/admin/sales-training/sterimax"
-          className="group rounded-2xl bg-white/[0.06] border border-white/[0.1] backdrop-blur-sm p-8 hover:border-[#0071e3]/40 transition-colors"
-        >
+        <div className="rounded-2xl bg-white/[0.06] border border-white/[0.1] backdrop-blur-sm p-8">
           <span className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.3em] text-[#06b6d4] mb-4">
             Pharmaceutical
           </span>
@@ -34,10 +31,21 @@ export default function SalesTrainingPage() {
             Sterile injectables, Oakville. {sterimaxAgents.length} specialists plus Wilfred,
             mapped to the 2026&ndash;2027 FDR changes.
           </p>
-          <span className="inline-flex items-center gap-2 text-white text-[10px] font-black uppercase tracking-widest group-hover:text-[#06b6d4] transition-colors">
-            Open demo <i className="fas fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform" />
-          </span>
-        </Link>
+          <div className="flex flex-col gap-2">
+            <Link
+              href="/admin/sales-training/sterimax/os"
+              className="inline-flex items-center gap-2 text-white text-[10px] font-black uppercase tracking-widest hover:text-[#06b6d4] transition-colors"
+            >
+              <i className="fas fa-gauge-high text-[10px]" /> Open the AI OS dashboard
+            </Link>
+            <Link
+              href="/admin/sales-training/sterimax"
+              className="inline-flex items-center gap-2 text-[#4a6785] text-[10px] font-black uppercase tracking-widest hover:text-[#06b6d4] transition-colors"
+            >
+              <i className="fas fa-users text-[10px]" /> Open the agent roster
+            </Link>
+          </div>
+        </div>
       </div>
     </main>
   );

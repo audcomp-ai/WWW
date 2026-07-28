@@ -71,7 +71,13 @@ export default function SteriMaxRosterPage() {
             ))}
           </div>
 
-          <div className="mt-12 text-center">
+          <div className="mt-12 flex items-center justify-center gap-6 flex-wrap">
+            <Link
+              href="/admin/sales-training/sterimax/os"
+              className="inline-flex items-center gap-2 bg-[#0071e3] text-white px-7 py-4 rounded-2xl text-[10px] font-black uppercase tracking-widest hover:shadow-2xl hover:shadow-[#0071e3]/30 transition-all"
+            >
+              <i className="fas fa-gauge-high text-[10px]" /> Open the AI OS
+            </Link>
             <Link
               href="/admin/sales-training"
               className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-[#4a6785] hover:text-[#06b6d4] transition-colors"

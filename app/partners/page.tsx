@@ -1,57 +1,15 @@
 import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import CTABanner from "@/components/CTABanner";
-import PartnerLogo from "@/components/PartnerLogo";
-import { LogoCloud } from "@/components/ui/logo-cloud";
+import LogoCloudBlock from "@/components/ui/logo-cloud-3";
 import { SectionAngle } from "@/components/SectionAngle";
 import { AnimatedSection, StaggeredSection, StaggeredItem } from "@/components/AnimatedSection";
-
-// Same slugs/colors as the PartnerLogo grid below, rendered as flat marks via
-// simpleicons — keeps the two logo treatments on this page visually consistent.
-// Microsoft isn't in simple-icons (like PartnerLogo.tsx, it needs its own inline SVG).
-const MICROSOFT_LOGO =
-  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234a6785'%3E%3Cpath d='M11.4 24H0V12.6h11.4V24zM24 24H12.6V12.6H24V24zM11.4 11.4H0V0h11.4v11.4zm12.6 0H12.6V0H24v11.4z'/%3E%3C/svg%3E";
-
-// Field Effect and Eaton aren't in simple-icons — like the domain-only entries
-// in the PartnerLogo grid below, they resolve through the favicon service.
-const featuredLogos = [
-  { src: MICROSOFT_LOGO, alt: "Microsoft" },
-  { src: "https://cdn.simpleicons.org/dell/4a6785", alt: "Dell Technologies" },
-  { src: "https://cdn.simpleicons.org/cisco/4a6785", alt: "Cisco" },
-  { src: "https://cdn.simpleicons.org/fortinet/4a6785", alt: "Fortinet" },
-  { src: "https://cdn.simpleicons.org/lenovo/4a6785", alt: "Lenovo" },
-  { src: "https://cdn.simpleicons.org/vmware/4a6785", alt: "VMware" },
-  { src: "https://cdn.simpleicons.org/veeam/4a6785", alt: "Veeam" },
-  { src: "https://cdn.simpleicons.org/intel/4a6785", alt: "Intel" },
-  { src: "https://cdn.simpleicons.org/hp/4a6785", alt: "HP" },
-  { src: "https://s2.googleusercontent.com/s2/favicons?domain=sophos.com&sz=128", alt: "Sophos" },
-  { src: "https://s2.googleusercontent.com/s2/favicons?domain=fieldeffect.net&sz=128", alt: "Field Effect" },
-  { src: "https://s2.googleusercontent.com/s2/favicons?domain=eaton.com&sz=128", alt: "Eaton" },
-];
 
 export const metadata: Metadata = {
   title: "Technology Partners | Audcomp",
   description:
     "Audcomp partners directly with leading technology manufacturers to source enterprise-grade IT solutions at the right price for Canadian businesses.",
 };
-
-const partners = [
-  { name: "Microsoft", slug: "microsoft", category: "Cloud & Productivity" },
-  { name: "Dell Technologies", slug: "dell", category: "Hardware & Infrastructure" },
-  { name: "HP", slug: "hp", category: "Client Systems & Printing" },
-  { name: "Cisco", slug: "cisco", category: "Networking & Security" },
-  { name: "Lenovo", slug: "lenovo", category: "Client Systems" },
-  { name: "Fortinet", slug: "fortinet", category: "Cyber Security" },
-  { name: "Veeam", slug: "veeam", category: "Backup & Recovery" },
-  { name: "VMware", slug: "vmware", category: "Virtualization & Cloud" },
-  { name: "Intel", slug: "intel", category: "Processors & Compute" },
-  { name: "Scale Computing", domain: "scalecomputing.com", category: "Edge Computing & HCI" },
-  { name: "Sophos", domain: "sophos.com", category: "Cyber Security" },
-  { name: "Eaton", domain: "eaton.com", category: "Power Management" },
-  { name: "Brother", domain: "brother.ca", category: "Printing & Imaging" },
-  { name: "WatchGuard", domain: "watchguard.com", category: "Cyber Security" },
-  { name: "Arctic Wolf", domain: "arcticwolf.com", category: "Cyber Security" },
-];
 
 const benefits = [
   {
@@ -91,18 +49,9 @@ export default function PartnersPage() {
         backgroundImage="/images/professional_services_hero.png"
       />
 
-      {/* Trusted-by strip — rendered statically (no scroll-reveal wrapper) so it
-          is visible immediately rather than gated behind a JS opacity animation. */}
-      <section className="bg-white pt-20 pb-8 px-4">
-        <div className="mx-auto w-full max-w-3xl space-y-8">
-          <h2 className="text-center font-medium text-lg tracking-tight md:font-semibold md:text-2xl">
-            <span className="text-muted-foreground">Your business runs on</span>{" "}
-            <span className="text-primary">proven technology.</span>
-          </h2>
-          {/* 12 logos across the component's 4 columns = 3 full rows, no empty cells */}
-          <LogoCloud logos={featuredLogos} />
-        </div>
-      </section>
+      {/* Trusted-by marquee — rendered statically (no scroll-reveal wrapper) so
+          it is visible immediately rather than gated behind a JS opacity fade. */}
+      <LogoCloudBlock />
 
       {/* Intro — WHITE */}
       <section className="bg-white py-32 px-4">
@@ -122,32 +71,8 @@ export default function PartnersPage() {
         </div>
       </section>
 
-      <SectionAngle from="#ffffff" to="#f0f7ff" flip={true} height={64} />
-
-      {/* Partner Logo Grid — light blue background, white cards */}
-      <section className="bg-[#f0f7ff] py-24 px-4">
-        <div className="max-w-5xl mx-auto">
-          <AnimatedSection className="text-center mb-16">
-            <p className="text-xs font-semibold text-[#0071e3] uppercase tracking-widest mb-4">Technology Partners</p>
-            <h2 className="text-4xl font-bold text-[#0a2540] tracking-tight">
-              Leading Brands. Proven Platforms.
-            </h2>
-          </AnimatedSection>
-
-          <StaggeredSection className="grid grid-cols-2 sm:grid-cols-4 gap-5">
-            {partners.map((p) => (
-              <StaggeredItem key={p.name}>
-                <PartnerLogo {...p} />
-              </StaggeredItem>
-            ))}
-          </StaggeredSection>
-        </div>
-      </section>
-
-      <SectionAngle from="#f0f7ff" to="#ffffff" flip={false} height={64} />
-
-      {/* Benefits — WHITE */}
-      <section className="bg-white py-24 px-4">
+      {/* Benefits — WHITE (no divider: the intro above is also white) */}
+      <section className="bg-white pb-24 px-4">
         <div className="max-w-5xl mx-auto">
           <AnimatedSection className="text-center mb-16">
             <p className="text-xs font-semibold text-[#06b6d4] uppercase tracking-widest mb-4">Partnership Benefits</p>
