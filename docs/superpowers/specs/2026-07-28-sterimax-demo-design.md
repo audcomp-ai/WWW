@@ -30,9 +30,11 @@ app/admin/sales-training/sterimax/page.tsx             roster
 app/admin/sales-training/sterimax/[agentId]/page.tsx   agent detail
 ```
 
-`app/admin/layout.tsx` renders its own slim shell — it does **not** use `SiteShell`, `Nav`, or
-`Footer`, so the demo fills the screen without public site chrome. It exports
-`metadata.robots = { index: false, follow: false }`, which Next applies to all nested routes.
+`app/admin/layout.tsx` renders its own slim shell. The public `Nav` and `Footer` are suppressed
+by extending the bypass already present in `components/SiteShell.tsx` — it returns bare children
+for `/claire`, and now also for `/admin`. A second root layout is not possible under the app's
+single root layout. `app/admin/layout.tsx` exports `metadata.robots = { index: false, follow:
+false }`, which Next applies to all nested routes.
 
 The launcher at `/admin/sales-training` lists available demos. Today that is one card
 (SteriMax) linking to the roster. It exists so a second prospect is a data addition, not a
@@ -69,6 +71,8 @@ export type SteriMaxAgent = {
   surface: 'dark' | 'light';
   badge?: string;          // 'HIGHEST-VALUE FIT' | 'POST-ANDONE'
   liveScript: string[];    // rotating current-task lines
+  baseRuns: number;        // feed the run counter in lib/sterimax-live.ts
+  runCadence: number;      // feed the run counter in lib/sterimax-live.ts
 };
 
 export const orchestrator: SteriMaxAgent;   // Wilfred
