@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import Hero from "@/components/Hero";
 import CTABanner from "@/components/CTABanner";
 import { SectionAngle } from "@/components/SectionAngle";
 import { AnimatedSection, StaggeredSection, StaggeredItem } from "@/components/AnimatedSection";
-import FeaturedEvent from "@/components/events/FeaturedEvent";
+import SecuritySummitHero from "@/components/events/SecuritySummitHero";
 import HorizontalScrollGallery from "@/components/events/HorizontalScrollGallery";
 import { CalendarDays, Video, ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -11,20 +10,10 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Events & Webinars | Audcomp",
   description:
-    "Join Audcomp at our upcoming events, including Meet the Moment, and explore our library of technical webinars and cyber security roundtables.",
+    "Join Audcomp at our Modern Cyber Security Summit on September 22, 2026, and explore our library of technical webinars and cyber security roundtables.",
 };
 
 const upcomingWebinars = [
-  {
-    id: "w1",
-    title: "AI Agents for Canadian Business",
-    date: "July 17, 2026",
-    time: "1:00 PM EST",
-    type: "Live Webinar",
-    desc: "Learn how Canadian SMBs are deploying AI agents to automate finance, sales, support, and operations — and what it takes to get your first agent live in 48 hours.",
-    href: "/contact",
-    limited: true,
-  },
   {
     id: "w2",
     title: "Data Governance in the AI Era",
@@ -50,14 +39,7 @@ const upcomingWebinars = [
 export default function EventsPage() {
   return (
     <>
-      <Hero
-        title="Events & Webinars for Canadian Businesses"
-        subtitle="Learn directly from our engineers and partner vendors on the security, cloud, and AI decisions facing Canadian businesses today."
-        variant="dark"
-        backgroundImage="/images/managed_it_hero.png"
-      />
-
-      <FeaturedEvent />
+      <SecuritySummitHero />
 
       <SectionAngle from="#071e3d" to="#f8fafc" flip={false} height={64} />
 

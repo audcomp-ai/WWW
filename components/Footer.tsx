@@ -151,7 +151,6 @@ export default function Footer() {
             {[
               { label: "About", href: "/about" },
               { label: "Partners", href: "/partners" },
-              { label: "Careers", href: "/careers" },
               { label: "Events", href: "/events" },
               { label: "Contact", href: "/contact" },
             ].map((link) => (

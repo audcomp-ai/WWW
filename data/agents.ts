@@ -543,7 +543,11 @@ export const realtorPack: Agent[] = [
   },
 ];
 
-export const allAgents: Agent[] = [...workforce, ...juniors, ...realtorPack];
+// The Junior Series is retired from Agent Studio — juniors are deliberately not
+// spread in here, so no junior profile pages are generated and they no longer
+// appear in cross-links. The `juniors` array above is kept intact so the series
+// can be restored by adding it back to this list.
+export const allAgents: Agent[] = [...workforce, ...realtorPack];
 
 export const getAgent = (id: string | undefined): Agent | undefined =>
   allAgents.find((a) => a.id === id);

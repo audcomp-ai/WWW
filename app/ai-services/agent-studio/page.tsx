@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { workforce, juniors, type Agent } from "@/data/agents";
+import { workforce, type Agent } from "@/data/agents";
 import { SectionAngle } from "@/components/SectionAngle";
 
 export const metadata: Metadata = {
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const agentFAQs = [
   { q: "What is an AI agent and how does it work?", a: "An AI agent is an autonomous software system that can reason, plan, and take actions to achieve specific goals. Unlike chatbots that only respond to queries, agents can use tools, access databases, browse the web, send messages, and execute multi-step workflows independently — all within guardrails you define." },
   { q: "What types of AI agents can Audcomp deploy?", a: "We deploy bookkeepers, SDRs, executive assistants, paralegals, receptionists, support managers, content marketers, and more. We also build multi-agent systems where these specialists collaborate on complex tasks." },
-  { q: "How much does a custom AI agent cost?", a: "Agent engagements start at $497/mo for junior specialists and scale based on role complexity and integrations. Every engagement begins with a free assessment session." },
+  { q: "How much does a custom AI agent cost?", a: "Agent engagements start at $497/mo and scale based on role complexity and integrations. Every engagement begins with a free assessment session." },
   { q: "What systems can AI agents integrate with?", a: "Our agents integrate with Slack, Microsoft Teams, Salesforce, Zendesk, email (SMTP), custom webhooks, SQL/NoSQL databases, Google Workspace, QuickBooks, and virtually any API-accessible system." },
   { q: "How do you ensure AI agent security?", a: "Every agent includes security guardrails: defined decision boundaries, tool access permissions, failure handling protocols, data access controls, and human-in-the-loop escalation paths. We follow SOC 2, PIPEDA, and enterprise governance standards." },
   { q: "Can I try an agent before a full engagement?", a: "Yes. Start with our free AI Readiness Assessment — we'll map the right specialists to your workflows and confirm your infrastructure is agent-ready before any production deployment." },
@@ -133,7 +133,6 @@ function WorksBadge({ text }: { text: string }) {
 
 export default function AgentStudioPage() {
   const quinn = workforce.find((a) => a.id === "quinn")!;
-  const scout = juniors.find((a) => a.id === "scout")!;
 
   return (
     <div className="min-h-screen bg-[#071e3d] overflow-x-hidden pb-24">
@@ -239,22 +238,6 @@ export default function AgentStudioPage() {
                       </Link>
                     );
                   })}
-                  {/* Outer ring — juniors */}
-                  {juniors.map((a, i) => {
-                    const list = juniors;
-                    const angle = (i / list.length) * 2 * Math.PI - Math.PI / 2 + Math.PI / list.length;
-                    const r = 46;
-                    const top = 50 + r * Math.sin(angle);
-                    const left = 50 + r * Math.cos(angle);
-                    return (
-                      <Link key={a.id} href={`/ai-services/agent-studio/${a.id}`} title={`${a.name} — ${a.role}`}
-                        className="absolute w-10 h-10 rounded-full overflow-hidden border-2 border-white/15 shadow-md -translate-x-1/2 -translate-y-1/2 hover:border-[#06b6d4] hover:scale-110 transition-all"
-                        style={{ top: `${top}%`, left: `${left}%` }}
-                      >
-                        <img src={a.image} alt={a.name} loading="lazy" className="w-full h-full object-cover object-top" />
-                      </Link>
-                    );
-                  })}
                 </div>
               </div>
             </div>
@@ -300,39 +283,6 @@ export default function AgentStudioPage() {
               Request a custom specialist <i className="fas fa-arrow-right text-[10px]" />
             </Link>
           </div>
-        </section>
-
-        {/* ── JUNIOR SERIES ── */}
-        <section className="mb-32">
-          <div className="text-center mb-14">
-            <span className="text-[10px] font-black uppercase tracking-[0.5em] text-orange-400 mb-6 block">Junior Series</span>
-            <h2 className="text-4xl lg:text-6xl font-black tracking-tighter text-white mb-6 leading-tight">
-              Junior agents for the <span className="text-emerald-400 italic">lighter lifts.</span>
-            </h2>
-            <p className="text-slate-400 text-lg lg:text-xl font-medium max-w-3xl mx-auto leading-relaxed">
-              Focused assistants trained on narrower workflows — ideal for supporting your senior specialists and your team on high-volume, repetitive tasks.
-            </p>
-          </div>
-          <FeaturedAgent
-            a={scout}
-            tag="Featured · Junior Research"
-            blurb="Gathers data and web insights, summarizes competitor activity and industry reports, and feeds fresh topics to the rest of your team — every day."
-            works={
-              <div className="flex flex-wrap items-center gap-3 mb-8">
-                <span className="text-[10px] font-black uppercase tracking-widest text-slate-500">Skilled in</span>
-                <WorksBadge text="Web Research" /><WorksBadge text="Summaries" /><WorksBadge text="Competitor Intel" />
-              </div>
-            }
-            stats={[
-              { v: "Multi-source", l: "Web + data" },
-              { v: "Daily", l: "Briefings" },
-              { v: "24/7", l: "Always digging" },
-            ]}
-          />
-          <div className="mb-8">
-            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-500 block text-center">Our Junior Agents</span>
-          </div>
-          <Marquee agents={juniors} />
         </section>
 
         {/* ── WHO HIRES WILFRED ── */}
