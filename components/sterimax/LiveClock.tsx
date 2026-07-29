@@ -10,6 +10,10 @@ type ClockValue = {
   tick: number;
   running: boolean;
   start: () => void;
+  /** Freeze where it is — the figures stay put so the presenter can talk over a still screen. */
+  stop: () => void;
+  /** Back to base state, ready for the next meeting. */
+  reset: () => void;
 };
 
 const ClockContext = createContext<ClockValue>({
@@ -17,6 +21,8 @@ const ClockContext = createContext<ClockValue>({
   tick: 0,
   running: false,
   start: () => {},
+  stop: () => {},
+  reset: () => {},
 });
 
 /**
@@ -46,6 +52,11 @@ export function LiveClock({
   const [running, setRunning] = useState(autoStart);
 
   const start = useCallback(() => setRunning(true), []);
+  const stop = useCallback(() => setRunning(false), []);
+  const reset = useCallback(() => {
+    setRunning(false);
+    setElapsedSeconds(0);
+  }, []);
 
   useEffect(() => {
     if (!running) return;
@@ -55,7 +66,7 @@ export function LiveClock({
 
   return (
     <ClockContext.Provider
-      value={{ elapsedSeconds, tick: tickFromElapsed(elapsedSeconds), running, start }}
+      value={{ elapsedSeconds, tick: tickFromElapsed(elapsedSeconds), running, start, stop, reset }}
     >
       {children}
     </ClockContext.Provider>

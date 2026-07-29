@@ -61,6 +61,7 @@ function ActivityFeed() {
 }
 import { PitchSection } from "./overview/PitchSection";
 import { ImpactTiles } from "./overview/ImpactTiles";
+import { InFlight } from "./overview/InFlight";
 import { WorkedExample } from "./overview/WorkedExample";
 import { CommandCenter } from "./overview/CommandCenter";
 import { AgentLoadList } from "./overview/AgentLoadList";
@@ -136,6 +137,7 @@ export function OverviewTab() {
     <div className="flex flex-col gap-10">
       <PitchSection />
       <ImpactTiles />
+      <InFlight />
       <WorkedExample />
       <CommandCenter />
       <AgentLoadList rows={liveAgentLoads} title="Active agents" note="6 live" />

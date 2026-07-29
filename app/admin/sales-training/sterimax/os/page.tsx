@@ -20,29 +20,44 @@ const tabs: { id: Tab; label: string }[] = [
   { id: "audit", label: "Audit Log" },
 ];
 
-function StartDemoButton() {
-  const { running, start } = useClock();
+/**
+ * Start / Stop / Reset. Stop freezes the figures where they are so the presenter can talk
+ * over a still screen; Reset returns everything to base for the next meeting.
+ */
+function DemoControls() {
+  const { running, elapsedSeconds, start, stop, reset } = useClock();
+  const started = running || elapsedSeconds > 0;
 
   return (
-    <button
-      onClick={start}
-      disabled={running}
-      className={`inline-flex items-center gap-2 px-6 py-3 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all ${
-        running
-          ? "bg-white/[0.06] border border-[#06b6d4]/40 text-[#06b6d4] cursor-default"
-          : "bg-[#0071e3] text-white hover:shadow-2xl hover:shadow-[#0071e3]/30"
-      }`}
-    >
-      {running ? (
-        <>
-          <span className="w-1.5 h-1.5 rounded-full bg-[#06b6d4] animate-pulse" /> Demo running
-        </>
-      ) : (
-        <>
-          <i className="fas fa-play text-[10px]" /> Start Demo
-        </>
-      )}
-    </button>
+    <div className="flex items-center gap-2">
+      <button
+        onClick={running ? stop : start}
+        className={`inline-flex items-center gap-2 px-6 py-3 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all ${
+          running
+            ? "bg-white/[0.06] border border-[#06b6d4]/40 text-[#06b6d4] hover:border-[#06b6d4]"
+            : "bg-[#0071e3] text-white hover:shadow-2xl hover:shadow-[#0071e3]/30"
+        }`}
+      >
+        {running ? (
+          <>
+            <i className="fas fa-pause text-[10px]" /> Stop
+          </>
+        ) : (
+          <>
+            <i className="fas fa-play text-[10px]" /> {elapsedSeconds > 0 ? "Resume" : "Start Demo"}
+          </>
+        )}
+      </button>
+
+      {started ? (
+        <button
+          onClick={reset}
+          className="inline-flex items-center gap-2 px-4 py-3 rounded-2xl bg-white/[0.04] border border-white/[0.1] text-[#4a6785] text-[10px] font-black uppercase tracking-widest hover:text-white hover:border-white/25 transition-all"
+        >
+          <i className="fas fa-rotate-left text-[10px]" /> Reset
+        </button>
+      ) : null}
+    </div>
   );
 }
 
@@ -71,7 +86,7 @@ function OsShell() {
             <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.06] border border-white/[0.12] text-white text-[10px] font-black uppercase tracking-widest">
               <span className="w-1.5 h-1.5 rounded-full bg-[#06b6d4] animate-pulse" /> Canada Central
             </span>
-            <StartDemoButton />
+            <DemoControls />
             <Link
               href="/admin/sales-training/sterimax"
               className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-[#4a6785] hover:text-[#06b6d4] transition-colors"
