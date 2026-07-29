@@ -1,9 +1,64 @@
 "use client";
 
-import { osSpend, osActivity } from "@/data/sterimax-os";
+import { osSpend, osActivity, osIncomingActivity } from "@/data/sterimax-os";
 import { liveAgentLoads, standbyAgentLoads } from "@/data/sterimax-impact";
-import { useTick } from "../LiveClock";
+import { formatRelativeAge } from "@/lib/sterimax-live";
+import { useClock } from "../LiveClock";
 import { StatusDot } from "../AgentLive";
+
+const MAX_FEED_ENTRIES = 7;
+
+/**
+ * Newest first: entries that have streamed in since Start Demo, then the pre-existing ones,
+ * every age advanced by the elapsed demo time so the whole feed visibly moves.
+ */
+function ActivityFeed() {
+  const { elapsedSeconds, running } = useClock();
+
+  const streamed = osIncomingActivity
+    .filter((e) => elapsedSeconds >= e.appearsAt)
+    .map((e) => ({ key: `in-${e.appearsAt}`, ...e, age: elapsedSeconds - e.appearsAt }))
+    .reverse();
+
+  const existing = osActivity.map((e) => ({
+    key: `base-${e.title}`,
+    ...e,
+    age: e.agoSeconds + elapsedSeconds,
+  }));
+
+  const entries = [...streamed, ...existing].slice(0, MAX_FEED_ENTRIES);
+
+  return (
+    <div className="rounded-2xl bg-white/[0.04] border border-white/[0.1] p-6">
+      <div className="flex items-center gap-2.5 mb-5">
+        <StatusDot />
+        <h3 className="text-white text-sm font-bold">Live activity feed</h3>
+      </div>
+      <ul className="flex flex-col gap-4">
+        {entries.map((entry, i) => (
+          <li
+            key={entry.key}
+            className={
+              i === 0 && streamed.length > 0
+                ? "border-l-2 border-[#06b6d4] pl-3 -ml-3"
+                : "border-l-2 border-transparent pl-3 -ml-3"
+            }
+          >
+            <p className="text-[13px] font-bold text-white leading-snug">{entry.title}</p>
+            <p className="text-[11px] font-medium text-[#4a6785] leading-snug mt-0.5">
+              {entry.detail} · {formatRelativeAge(entry.age)}
+            </p>
+          </li>
+        ))}
+      </ul>
+      <p className="text-[11px] font-medium text-[#4a6785] mt-5 pt-5 border-t border-white/[0.08]">
+        {running
+          ? `Streaming — ${streamed.length} action${streamed.length === 1 ? "" : "s"} this session.`
+          : "Press Start Demo in the header to watch the feed update in real time."}
+      </p>
+    </div>
+  );
+}
 import { PitchSection } from "./overview/PitchSection";
 import { ImpactTiles } from "./overview/ImpactTiles";
 import { WorkedExample } from "./overview/WorkedExample";
@@ -13,7 +68,6 @@ import { ImpactHours } from "./overview/ImpactHours";
 import { OperatingCost } from "./overview/OperatingCost";
 
 function SpendAndActivity() {
-  const tick = useTick();
   const barPct = Math.min(100, (osSpend.monthToDate / osSpend.cap) * 100);
   const overCap = osSpend.monthToDate > osSpend.cap;
   const maxAgentSpend = Math.max(...osSpend.byAgent.map((r) => r.amount));
@@ -72,27 +126,7 @@ function SpendAndActivity() {
         </div>
       </div>
 
-      <div className="rounded-2xl bg-white/[0.04] border border-white/[0.1] p-6">
-        <div className="flex items-center gap-2.5 mb-5">
-          <StatusDot />
-          <h3 className="text-white text-sm font-bold">Live activity feed</h3>
-        </div>
-        <ul className="flex flex-col gap-4">
-          {osActivity.map((entry) => (
-            <li key={entry.title}>
-              <p className="text-[13px] font-bold text-white leading-snug">{entry.title}</p>
-              <p className="text-[11px] font-medium text-[#4a6785] leading-snug mt-0.5">
-                {entry.detail} · {entry.ago}
-              </p>
-            </li>
-          ))}
-        </ul>
-        <p className="text-[11px] font-medium text-[#4a6785] mt-5 pt-5 border-t border-white/[0.08]">
-          {tick > 0
-            ? "Streaming — every action the agents take."
-            : "Press Start Demo in the header to watch the feed update in real time."}
-        </p>
-      </div>
+      <ActivityFeed />
     </div>
   );
 }

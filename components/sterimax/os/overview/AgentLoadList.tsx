@@ -2,6 +2,11 @@
 
 import type { AgentLoadRow } from "@/data/sterimax-impact";
 import { totalHoursPerWeek } from "@/lib/sterimax-roi";
+import { formatRelativeAge } from "@/lib/sterimax-live";
+import { useClock } from "../../LiveClock";
+
+/** A live agent completes a run roughly this often, staggered per row. */
+const RUN_PERIOD_SECONDS = 14;
 
 const statusStyle: Record<AgentLoadRow["status"], string> = {
   Live: "bg-[#06b6d4]/15 border-[#06b6d4]/40 text-[#06b6d4]",
@@ -18,6 +23,7 @@ export function AgentLoadList({
   title: string;
   note: string;
 }) {
+  const { elapsedSeconds, running } = useClock();
   const hours = totalHoursPerWeek(rows);
 
   return (
@@ -52,6 +58,13 @@ export function AgentLoadList({
             </span>
             <span className="text-[12px] font-medium text-slate-400 shrink-0 w-52">
               {row.workload}
+            </span>
+            <span className="text-[11px] font-medium text-[#4a6785] shrink-0 w-28 text-right">
+              {row.status === "Live" && running
+                ? `ran ${formatRelativeAge((elapsedSeconds + i * 3) % RUN_PERIOD_SECONDS)}`
+                : row.status === "Live"
+                  ? "idle until start"
+                  : "no idle cost"}
             </span>
             <span className="text-[12px] font-black text-white shrink-0 w-20 text-right">
               {row.hoursPerWeek}h/wk

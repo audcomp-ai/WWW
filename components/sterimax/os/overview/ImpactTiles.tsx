@@ -11,16 +11,16 @@ import { useClock } from "../../LiveClock";
 
 /**
  * The headline tiles. The time-saved counter sits at its base figure until the presenter
- * presses Start Demo, then climbs — the tick advances every 3s and each tick adds a minute
- * of saved time, which reads as motion without running away during a long meeting.
+ * presses Start Demo, then climbs every second — ten agents working in parallel save far
+ * more than a second of human time per second, and the movement is the point.
  */
-const SECONDS_ADDED_PER_TICK = 60;
+const SECONDS_SAVED_PER_REAL_SECOND = 12;
 
 export function ImpactTiles() {
-  const { tick, running } = useClock();
+  const { elapsedSeconds, running } = useClock();
 
   const baseSeconds = secondsSavedPerWorkday(allAgentLoads);
-  const savedToday = baseSeconds + tick * SECONDS_ADDED_PER_TICK;
+  const savedToday = baseSeconds + elapsedSeconds * SECONDS_SAVED_PER_REAL_SECOND;
   const fte = fteReplaced(allAgentLoads);
   const annual = annualCostSaved(allAgentLoads);
 

@@ -5,7 +5,49 @@ import {
   taskIndexFor,
   secondsSinceLastAction,
   runCountFor,
+  tickFromElapsed,
+  formatRelativeAge,
 } from "./sterimax-live";
+
+describe("tickFromElapsed", () => {
+  it("advances one tick every three seconds", () => {
+    expect(tickFromElapsed(0)).toBe(0);
+    expect(tickFromElapsed(2)).toBe(0);
+    expect(tickFromElapsed(3)).toBe(1);
+    expect(tickFromElapsed(9)).toBe(3);
+  });
+
+  it("never goes backwards", () => {
+    let previous = 0;
+    for (let s = 0; s < 60; s += 1) {
+      const current = tickFromElapsed(s);
+      expect(current).toBeGreaterThanOrEqual(previous);
+      previous = current;
+    }
+  });
+});
+
+describe("formatRelativeAge", () => {
+  it("reads as just now for the newest entries", () => {
+    expect(formatRelativeAge(0)).toBe("just now");
+    expect(formatRelativeAge(4)).toBe("just now");
+  });
+
+  it("counts seconds under a minute", () => {
+    expect(formatRelativeAge(5)).toBe("5s ago");
+    expect(formatRelativeAge(59)).toBe("59s ago");
+  });
+
+  it("switches to minutes", () => {
+    expect(formatRelativeAge(60)).toBe("1 min ago");
+    expect(formatRelativeAge(245)).toBe("4 min ago");
+  });
+
+  it("switches to hours and singularises one", () => {
+    expect(formatRelativeAge(3600)).toBe("1 hr ago");
+    expect(formatRelativeAge(7200)).toBe("2 hrs ago");
+  });
+});
 
 describe("constants", () => {
   it("ticks every three seconds", () => {

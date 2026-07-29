@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { osStats, osSpend, osActivity, osAuditLog } from "./sterimax-os";
+import { osStats, osSpend, osActivity, osIncomingActivity, osAuditLog } from "./sterimax-os";
 import { getSteriMaxAgent } from "./sterimax-agents";
 
 describe("osStats", () => {
@@ -55,6 +55,36 @@ describe("osActivity", () => {
 
   it("has entries", () => {
     expect(osActivity.length).toBeGreaterThan(0);
+  });
+
+  it("carries a numeric base age so the feed can advance it", () => {
+    for (const entry of osActivity) {
+      expect(entry.agoSeconds).toBeGreaterThanOrEqual(0);
+    }
+  });
+});
+
+describe("osIncomingActivity", () => {
+  it("references only real agents", () => {
+    for (const entry of osIncomingActivity) {
+      expect(getSteriMaxAgent(entry.agentId)).toBeDefined();
+    }
+  });
+
+  it("has enough entries to stream through a pitch", () => {
+    expect(osIncomingActivity.length).toBeGreaterThanOrEqual(8);
+  });
+
+  it("arrives in ascending order, starting within a few seconds", () => {
+    const times = osIncomingActivity.map((e) => e.appearsAt);
+    expect([...times].sort((a, b) => a - b)).toEqual(times);
+    expect(times[0]).toBeLessThanOrEqual(5);
+  });
+
+  it("never repeats an arrival time", () => {
+    expect(new Set(osIncomingActivity.map((e) => e.appearsAt)).size).toBe(
+      osIncomingActivity.length,
+    );
   });
 });
 

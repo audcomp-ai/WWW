@@ -2,8 +2,12 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { commandTiles, controlButtons } from "@/data/sterimax-impact";
+import { useClock } from "../../LiveClock";
 
 const CONFIRMATION_MS = 2600;
+
+/** Runs completed per elapsed second while the demo is running. */
+const RUNS_PER_SECOND = 0.4;
 
 /**
  * The four controls are presentation affordances, not wired actions. Each acknowledges the
@@ -11,8 +15,18 @@ const CONFIRMATION_MS = 2600;
  * something it did not.
  */
 export function CommandCenter() {
+  const { elapsedSeconds } = useClock();
   const [confirmed, setConfirmed] = useState<string | null>(null);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // The runs-today figure on the first tile climbs while the demo runs; the rest are stable
+  // facts about the deployment and correctly stay put.
+  const extraRuns = Math.floor(elapsedSeconds * RUNS_PER_SECOND);
+  const tiles = commandTiles.map((tile, i) =>
+    i === 0
+      ? { ...tile, detail: tile.detail.replace("163 runs today", `${163 + extraRuns} runs today`) }
+      : tile,
+  );
 
   const acknowledge = useCallback((id: string) => {
     if (timer.current !== null) clearTimeout(timer.current);
@@ -34,7 +48,7 @@ export function CommandCenter() {
       </span>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-5">
-        {commandTiles.map((tile) => (
+        {tiles.map((tile) => (
           <div key={tile.label} className="rounded-2xl bg-white/[0.04] border border-white/[0.1] p-6">
             <div className="text-[10px] font-black uppercase tracking-widest text-[#4a6785] mb-2">
               {tile.label}

@@ -3,7 +3,12 @@
 // contradict itself on screen.
 
 export type SpendRow = { agentId: string; label: string; amount: number };
-export type ActivityEntry = { agentId: string; title: string; detail: string; ago: string };
+
+/** `agoSeconds` is a base age; the feed adds elapsed demo time so entries visibly age. */
+export type ActivityEntry = { agentId: string; title: string; detail: string; agoSeconds: number };
+
+/** Entries that stream in once the demo starts, at `appearsAt` seconds after Start Demo. */
+export type IncomingEntry = ActivityEntry & { appearsAt: number };
 export type AuditEntry = {
   time: string;
   agentId: string;
@@ -40,26 +45,43 @@ export const osActivity: ActivityEntry[] = [
     agentId: "david",
     title: "David flagged a 250% demand surge",
     detail: "SKU 40118 · shortage report drafted for review",
-    ago: "4 min ago",
+    agoSeconds: 240,
   },
   {
     agentId: "sam",
     title: "Sam refreshed 30-day supply risk",
     detail: "104 SKUs scored · 3 escalated to planning",
-    ago: "22 min ago",
+    agoSeconds: 1320,
   },
   {
     agentId: "olivia",
     title: "Olivia assembled a submission package",
     detail: "Awaiting RA sign-off · human-in-the-loop",
-    ago: "1 hr ago",
+    agoSeconds: 3600,
   },
   {
     agentId: "wilfred",
     title: "Wilfred rebalanced model routing",
     detail: "Cut projected spend 14%",
-    ago: "2 hrs ago",
+    agoSeconds: 7200,
   },
+];
+
+/**
+ * Streamed in after Start Demo, newest first, so the feed visibly fills during the pitch.
+ * `appearsAt` is seconds after the presenter starts the demo.
+ */
+export const osIncomingActivity: IncomingEntry[] = [
+  { appearsAt: 3, agentId: "maya", title: "Maya triaged 6 inbound queries", detail: "2 routed to medical review · 4 answered from label", agoSeconds: 0 },
+  { appearsAt: 9, agentId: "quinn", title: "Quinn matched a new tender posting", detail: "Provincial injectables bid 2026-114 · checklist built", agoSeconds: 0 },
+  { appearsAt: 16, agentId: "claire", title: "Claire answered a deviation question", detail: "SOP-QA-014 rev 6 cited · Andone conflict surfaced", agoSeconds: 0 },
+  { appearsAt: 24, agentId: "david", title: "David checked Drug Shortages Canada", detail: "41 new notices ingested · 104 SKUs cross-referenced", agoSeconds: 0 },
+  { appearsAt: 33, agentId: "sam", title: "Sam detected supplier lead-time drift", detail: "3 suppliers beyond contracted lead time · risk rescored", agoSeconds: 0 },
+  { appearsAt: 43, agentId: "olivia", title: "Olivia flagged 2 stale references", detail: "Module 2.3 and 3.2.S.4 · surfaced before RA review", agoSeconds: 0 },
+  { appearsAt: 54, agentId: "maya", title: "Maya coded an adverse event to MedDRA", detail: "Case 2026-0419 · escalated to qualified reviewer", agoSeconds: 0 },
+  { appearsAt: 66, agentId: "wilfred", title: "Wilfred rebalanced model routing", detail: "Low-stakes work moved to cheaper models · spend −9%", agoSeconds: 0 },
+  { appearsAt: 79, agentId: "david", title: "David queued a discontinuation report", detail: "SKU 40602 · deadline in 11 days · awaiting RA sign-off", agoSeconds: 0 },
+  { appearsAt: 93, agentId: "quinn", title: "Quinn tracked a clarification deadline", detail: "Bid 2026-114 · 6 days remaining · calendar updated", agoSeconds: 0 },
 ];
 
 export const osAuditLog: AuditEntry[] = [
