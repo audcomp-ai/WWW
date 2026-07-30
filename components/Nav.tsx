@@ -208,11 +208,13 @@ export default function Nav() {
             ))}
 
             <a
-              href="tel:9053041775"
-              className="text-sm text-white/40 hover:text-white/70 transition-colors duration-200"
+              href="https://audcomp.myportallogin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-white/25 hover:border-white/50 hover:bg-white/[0.06] text-white/80 hover:text-white text-sm font-medium px-5 py-2 rounded-full transition-colors duration-200"
               onMouseEnter={scheduleClose}
             >
-              905-304-1775
+              My Audcomp
             </a>
 
             <Link
@@ -350,7 +352,7 @@ export default function Nav() {
                   </p>
                   <div className="rounded-2xl border border-white/[0.1] bg-white/[0.06] p-5">
                     <p className="text-white font-semibold text-sm leading-snug mb-2">
-                      Deploy an AI workforce in 48 hours
+                      Deploy an AI workforce in weeks, not months
                     </p>
                     <p className="text-xs text-white/45 leading-relaxed mb-4">
                       13 pre-built specialists — Canadian-hosted, supervised by
@@ -422,8 +424,14 @@ export default function Nav() {
                 {link.label}
               </Link>
             ))}
-            <a href="tel:9053041775" className="text-sm text-white/40">
-              905-304-1775
+            <a
+              href="https://audcomp.myportallogin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-white/25 hover:border-white/50 text-white/80 hover:text-white text-sm font-medium px-6 py-3 rounded-full text-center transition-colors mt-1"
+              onClick={() => setMobileOpen(false)}
+            >
+              My Audcomp
             </a>
             <Link
               href="/contact"

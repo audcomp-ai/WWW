@@ -19,7 +19,7 @@ const pastEvents: PastEvent[] = [
     title: "Meet the Moment 2026",
     date: "April 2026",
     image: "/images/professional_services_hero.png",
-    href: "#",
+    href: "/events/meet-the-moment-2026",
   },
   {
     id: "1",
