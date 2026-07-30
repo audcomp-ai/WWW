@@ -94,12 +94,15 @@ export default function AboutPage() {
           </AnimatedSection>
 
           <AnimatedSection delay={0.1}>
-            <div className="relative bg-white/[0.06] border border-white/[0.1] rounded-2xl p-10 backdrop-blur-sm">
-              <p className="text-5xl text-[#06b6d4] leading-none mb-5 font-serif">&ldquo;</p>
-              <p className="text-white/85 text-xl italic leading-relaxed font-light">
-                We are more than a service provider. We are your partner.&rdquo;
-              </p>
-              <div className="mt-8 pt-6 border-t border-white/[0.1]">
+            <div className="relative bg-white/[0.06] border border-white/[0.1] rounded-2xl overflow-hidden backdrop-blur-sm">
+              {/* Founder photo — square source (1080x1080), shown whole so the
+                  35-years branding isn't cropped. */}
+              <img
+                src="/images/gary-sohal-35-years.jpeg"
+                alt="Gary Sohal, Founder of Audcomp, cutting a cake celebrating 35 years in business"
+                className="w-full aspect-square object-cover"
+              />
+              <div className="p-8">
                 <p className="font-semibold text-white text-sm">Gary Sohal</p>
                 <p className="text-xs text-white/40 mt-0.5">Founder, Audcomp</p>
               </div>
