@@ -149,7 +149,7 @@ export default function AIServicesPage() {
                   New · Agent Studio
                 </span>
                 <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tighter mb-5 leading-tight">
-                  Deploy a full AI<br />workforce in 48 hours.
+                  Deploy an AI workforce in<br />weeks, not months.
                 </h2>
                 <p className="text-white/65 leading-relaxed text-base mb-8 max-w-md">
                   Bookkeeper. SDR. Executive assistant. Paralegal. Receptionist. 13 pre-built specialists — Canadian-hosted, supervised by Wilfred, ready to work alongside your team.
