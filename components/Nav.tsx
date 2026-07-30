@@ -3,10 +3,18 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 
-const serviceCategories = [
+type MenuItem = { label: string; href: string; desc?: string };
+
+const serviceCategories: {
+  label: string;
+  href: string;
+  desc: string;
+  items: MenuItem[];
+}[] = [
   {
     label: "Managed IT",
     href: "/managed-it-services",
+    desc: "Day-to-day IT operations, support, and hardware — run by our team.",
     items: [
       { label: "Managed IT Services", href: "/managed-it-services" },
       { label: "Managed IT Support", href: "/managed-it-support" },
@@ -19,6 +27,7 @@ const serviceCategories = [
   {
     label: "Cloud Solutions",
     href: "/cloud-solutions",
+    desc: "Microsoft 365, Azure, and hybrid cloud — migrated and managed.",
     items: [
       { label: "Cloud Solutions", href: "/cloud-solutions" },
       { label: "Microsoft Office 365", href: "/microsoft-office-365" },
@@ -31,6 +40,7 @@ const serviceCategories = [
   {
     label: "Cyber Security",
     href: "/security-services",
+    desc: "Layered defence from endpoint to perimeter, monitored around the clock.",
     items: [
       { label: "Security Services", href: "/security-services" },
       { label: "Endpoint Protection", href: "/end-point-protection" },
@@ -44,6 +54,7 @@ const serviceCategories = [
   {
     label: "Professional Services",
     href: "/professional-services",
+    desc: "Strategy, design, and implementation for projects that have to land.",
     items: [
       { label: "Professional Services", href: "/professional-services" },
       { label: "Virtual CIO", href: "/virtual-cio" },
@@ -54,14 +65,42 @@ const serviceCategories = [
   },
 ];
 
+const aiItems: (MenuItem & { icon: string })[] = [
+  {
+    label: "AI Services",
+    href: "/ai-services",
+    icon: "fa-microchip",
+    desc: "Copilot enablement, custom agents, AI roadmap, and data governance.",
+  },
+  {
+    label: "Agent Studio",
+    href: "/ai-services/agent-studio",
+    icon: "fa-robot",
+    desc: "A full team of production-ready AI agents, Canadian-hosted.",
+  },
+  {
+    label: "Microsoft Copilot Enablement",
+    href: "/microsoft-copilot-enablement",
+    icon: "fa-wand-magic-sparkles",
+    desc: "Readiness, rollout, and training across your Microsoft 365 tenant.",
+  },
+];
+
+const simpleLinks = [
+  { label: "About", href: "/about" },
+  { label: "Partners", href: "/partners" },
+  { label: "Events", href: "/events" },
+  { label: "Blog", href: "/blog" },
+];
+
+type OpenMenu = "services" | "ai" | null;
+
 export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
-  const [aiOpen, setAiOpen] = useState(false);
-  const [activeCat, setActiveCat] = useState(0);
+  const [openMenu, setOpenMenu] = useState<OpenMenu>(null);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const aiTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -69,144 +108,109 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close on Escape so the panel is dismissable without a mouse.
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpenMenu(null);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
+  useEffect(() => () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+  }, []);
+
+  const open = (menu: OpenMenu) => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setOpenMenu(menu);
+  };
+  // Small grace period so moving the cursor into the panel doesn't close it.
+  const scheduleClose = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    closeTimer.current = setTimeout(() => setOpenMenu(null), 140);
+  };
+
+  const triggerClass = (menu: OpenMenu) =>
+    `relative flex items-center gap-1 text-sm py-4 transition-colors duration-200 ${
+      openMenu === menu ? "text-white" : "text-white/70 hover:text-white"
+    }`;
+
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
-        scrolled
+        scrolled || openMenu
           ? "bg-[#071e3d]/95 backdrop-blur-2xl border-b border-white/[0.1]"
           : "bg-[#071e3d]/85 backdrop-blur-xl border-b border-white/[0.06]"
       }`}
+      onMouseLeave={scheduleClose}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center" onMouseEnter={scheduleClose}>
             <img src="/audcomp-logo.png" alt="Audcomp" className="h-10 w-auto" />
           </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-7">
-            {/* Services Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => setServicesOpen(true)}
-              onMouseLeave={() => setServicesOpen(false)}
+            <button
+              className={triggerClass("services")}
+              onMouseEnter={() => open("services")}
+              onFocus={() => open("services")}
+              onClick={() => setOpenMenu(openMenu === "services" ? null : "services")}
+              aria-expanded={openMenu === "services"}
             >
-              <button className="flex items-center gap-1 text-sm text-white/70 hover:text-white transition-colors duration-200 py-2">
-                Services
-                <svg
-                  className={`w-3.5 h-3.5 transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
+              Services
+              <svg
+                className={`w-3.5 h-3.5 transition-transform duration-200 ${openMenu === "services" ? "rotate-180" : ""}`}
+                fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+              <span
+                className={`absolute inset-x-0 -bottom-px h-0.5 rounded-full bg-[#06b6d4] transition-opacity duration-200 ${
+                  openMenu === "services" ? "opacity-100" : "opacity-0"
+                }`}
+              />
+            </button>
 
-              {servicesOpen && (
-                <div className="absolute left-0 top-full pt-3">
-                  <div className="w-[580px] bg-[#071e3d]/98 backdrop-blur-2xl border border-white/[0.12] shadow-2xl rounded-2xl overflow-hidden">
-                    <div className="flex">
-                      {/* Category tabs */}
-                      <div className="w-44 border-r border-white/[0.06] p-2 flex flex-col gap-0.5">
-                        {serviceCategories.map((cat, i) => (
-                          <button
-                            key={cat.label}
-                            onMouseEnter={() => setActiveCat(i)}
-                            className={`text-left px-3 py-2.5 rounded-lg text-sm transition-all duration-150 ${
-                              activeCat === i
-                                ? "bg-white/10 text-white font-medium"
-                                : "text-white/50 hover:text-white/80 hover:bg-white/[0.05]"
-                            }`}
-                          >
-                            {cat.label}
-                          </button>
-                        ))}
-                      </div>
-                      {/* Sub-items */}
-                      <div className="flex-1 p-4">
-                        <p className="text-[11px] font-semibold text-white/30 uppercase tracking-widest mb-3">
-                          {serviceCategories[activeCat].label}
-                        </p>
-                        <div className="flex flex-col gap-0.5">
-                          {serviceCategories[activeCat].items.map((item) => (
-                            <Link
-                              key={item.href}
-                              href={item.href}
-                              className="text-sm text-white/60 hover:text-white hover:bg-white/[0.06] px-3 py-2 rounded-lg transition-all duration-150"
-                              onClick={() => setServicesOpen(false)}
-                            >
-                              {item.label}
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* AI Services Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => {
-                if (aiTimeout.current) clearTimeout(aiTimeout.current);
-                setAiOpen(true);
-              }}
-              onMouseLeave={() => {
-                aiTimeout.current = setTimeout(() => setAiOpen(false), 120);
-              }}
+            <button
+              className={triggerClass("ai")}
+              onMouseEnter={() => open("ai")}
+              onFocus={() => open("ai")}
+              onClick={() => setOpenMenu(openMenu === "ai" ? null : "ai")}
+              aria-expanded={openMenu === "ai"}
             >
-              <button className="flex items-center gap-1 text-sm text-white/70 hover:text-white transition-colors duration-200 py-2">
-                AI Services
-                <svg
-                  className={`w-3.5 h-3.5 transition-transform duration-200 ${aiOpen ? "rotate-180" : ""}`}
-                  fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              {aiOpen && (
-                <div className="absolute left-0 top-full pt-3">
-                  <div className="w-52 bg-[#071e3d]/98 backdrop-blur-2xl border border-white/[0.12] shadow-2xl rounded-2xl overflow-hidden p-2 flex flex-col gap-0.5">
-                    <Link
-                      href="/ai-services"
-                      className="text-sm text-white/60 hover:text-white hover:bg-white/[0.06] px-3 py-2.5 rounded-lg transition-all duration-150 flex items-center gap-2"
-                      onClick={() => setAiOpen(false)}
-                    >
-                      <i className="fas fa-microchip w-4 text-center text-[#06b6d4]" />
-                      AI Services
-                    </Link>
-                    <Link
-                      href="/ai-services/agent-studio"
-                      className="text-sm text-white/60 hover:text-white hover:bg-white/[0.06] px-3 py-2.5 rounded-lg transition-all duration-150 flex items-center gap-2"
-                      onClick={() => setAiOpen(false)}
-                    >
-                      <i className="fas fa-robot w-4 text-center text-[#06b6d4]" />
-                      Agent Studio
-                    </Link>
-                  </div>
-                </div>
-              )}
-            </div>
-            <Link href="/about" className="text-sm text-white/70 hover:text-white transition-colors duration-200">
-              About
-            </Link>
-            <Link href="/partners" className="text-sm text-white/70 hover:text-white transition-colors duration-200">
-              Partners
-            </Link>
-            <Link href="/events" className="text-sm text-white/70 hover:text-white transition-colors duration-200">
-              Events
-            </Link>
-            <Link href="/blog" className="text-sm text-white/70 hover:text-white transition-colors duration-200">
-              Blog
-            </Link>
+              AI Services
+              <svg
+                className={`w-3.5 h-3.5 transition-transform duration-200 ${openMenu === "ai" ? "rotate-180" : ""}`}
+                fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+              <span
+                className={`absolute inset-x-0 -bottom-px h-0.5 rounded-full bg-[#06b6d4] transition-opacity duration-200 ${
+                  openMenu === "ai" ? "opacity-100" : "opacity-0"
+                }`}
+              />
+            </button>
+
+            {simpleLinks.map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                className="text-sm text-white/70 hover:text-white transition-colors duration-200"
+                onMouseEnter={scheduleClose}
+              >
+                {l.label}
+              </Link>
+            ))}
 
             <a
               href="tel:9053041775"
               className="text-sm text-white/40 hover:text-white/70 transition-colors duration-200"
+              onMouseEnter={scheduleClose}
             >
               905-304-1775
             </a>
@@ -214,6 +218,7 @@ export default function Nav() {
             <Link
               href="/contact"
               className="bg-[#0071e3] hover:bg-[#0077ed] text-white text-sm font-medium px-5 py-2 rounded-full transition-colors duration-200"
+              onMouseEnter={scheduleClose}
             >
               Contact Us
             </Link>
@@ -238,9 +243,140 @@ export default function Nav() {
         </div>
       </div>
 
+      {/* ── Full-bleed mega panel ──
+          Solid navy rather than translucent: page content showing through the
+          panel made the link lists hard to read. */}
+      {openMenu && (
+        <div
+          className="hidden lg:block absolute inset-x-0 top-full bg-[#071e3d] border-t border-white/[0.08] shadow-[0_24px_48px_-12px_rgba(0,0,0,0.5)]"
+          onMouseEnter={() => open(openMenu)}
+        >
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            {openMenu === "services" ? (
+              <div className="grid grid-cols-12 gap-8">
+                {/* Four category columns */}
+                <div className="col-span-9 grid grid-cols-4 gap-7">
+                  {serviceCategories.map((cat) => (
+                    <div key={cat.label}>
+                      <Link
+                        href={cat.href}
+                        className="group block mb-1"
+                        onClick={() => setOpenMenu(null)}
+                      >
+                        <span className="text-[11px] font-semibold text-[#06b6d4] uppercase tracking-widest group-hover:text-[#38bdf8] transition-colors">
+                          {cat.label}
+                        </span>
+                      </Link>
+                      {/* Fixed height keeps the four link lists on a shared baseline
+                          regardless of how many lines each description wraps to. */}
+                      <p className="text-xs text-white/35 leading-relaxed mb-4 min-h-[3.75rem]">
+                        {cat.desc}
+                      </p>
+                      <ul className="flex flex-col gap-0.5">
+                        {cat.items.map((item) => (
+                          <li key={item.href}>
+                            <Link
+                              href={item.href}
+                              className="block text-sm text-white/65 hover:text-white hover:bg-white/[0.06] -mx-2 px-2 py-1.5 rounded-md transition-all duration-150"
+                              onClick={() => setOpenMenu(null)}
+                            >
+                              {item.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Featured panel */}
+                <div className="col-span-3 border-l border-white/[0.08] pl-8">
+                  <p className="text-[11px] font-semibold text-white/30 uppercase tracking-widest mb-4">
+                    Featured
+                  </p>
+                  <div className="rounded-2xl border border-white/[0.1] bg-white/[0.06] p-5">
+                    <span className="inline-flex items-center gap-1.5 text-[10px] font-semibold text-[#38bdf8] uppercase tracking-widest mb-3">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#38bdf8] animate-pulse" />
+                      Sept 22, 2026
+                    </span>
+                    <p className="text-white font-semibold text-sm leading-snug mb-2">
+                      Modern Cyber Security Summit
+                    </p>
+                    <p className="text-xs text-white/45 leading-relaxed mb-4">
+                      Defending business in the age of AI — keynotes, an interactive
+                      panel, and security specialists.
+                    </p>
+                    <Link
+                      href="/events/security-summit"
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#06b6d4] hover:text-[#38bdf8] transition-colors"
+                      onClick={() => setOpenMenu(null)}
+                    >
+                      Event details
+                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="grid grid-cols-12 gap-8">
+                {/* items-start so cards size to their content instead of
+                    stretching to match the taller featured column */}
+                <div className="col-span-9 grid grid-cols-3 gap-7 items-start">
+                  {aiItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="group rounded-2xl border border-white/[0.08] bg-white/[0.03] hover:bg-white/[0.07] hover:border-[#06b6d4]/30 p-5 transition-all duration-200"
+                      onClick={() => setOpenMenu(null)}
+                    >
+                      <span className="flex items-center gap-2.5 mb-2">
+                        <span className="w-8 h-8 rounded-lg bg-[#06b6d4]/10 border border-[#06b6d4]/20 flex items-center justify-center">
+                          <i className={`fas ${item.icon} text-[#06b6d4] text-xs`} />
+                        </span>
+                        <span className="text-sm font-semibold text-white group-hover:text-[#06b6d4] transition-colors">
+                          {item.label}
+                        </span>
+                      </span>
+                      <span className="block text-xs text-white/45 leading-relaxed">{item.desc}</span>
+                    </Link>
+                  ))}
+                </div>
+
+                <div className="col-span-3 border-l border-white/[0.08] pl-8">
+                  <p className="text-[11px] font-semibold text-white/30 uppercase tracking-widest mb-4">
+                    Featured
+                  </p>
+                  <div className="rounded-2xl border border-white/[0.1] bg-white/[0.06] p-5">
+                    <p className="text-white font-semibold text-sm leading-snug mb-2">
+                      Deploy an AI workforce in 48 hours
+                    </p>
+                    <p className="text-xs text-white/45 leading-relaxed mb-4">
+                      13 pre-built specialists — Canadian-hosted, supervised by
+                      Wilfred, ready to work alongside your team.
+                    </p>
+                    <Link
+                      href="/ai-services/agent-studio"
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#06b6d4] hover:text-[#38bdf8] transition-colors"
+                      onClick={() => setOpenMenu(null)}
+                    >
+                      Explore Agent Studio
+                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="lg:hidden bg-[#071e3d]/98 backdrop-blur-2xl border-t border-white/[0.1] px-4 py-5 flex flex-col gap-3">
+        <div className="lg:hidden bg-[#071e3d]/98 backdrop-blur-2xl border-t border-white/[0.1] px-4 py-5 flex flex-col gap-3 max-h-[calc(100vh-3.5rem)] overflow-y-auto">
           <button
             className="flex items-center justify-between text-sm font-medium text-white/80 py-1"
             onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
@@ -257,7 +393,9 @@ export default function Nav() {
             <div className="pl-3 flex flex-col gap-3">
               {serviceCategories.map((cat) => (
                 <div key={cat.label}>
-                  <p className="text-xs font-semibold text-white/30 uppercase tracking-widest mb-1">{cat.label}</p>
+                  <p className="text-[11px] font-semibold text-[#06b6d4] uppercase tracking-widest mb-1">
+                    {cat.label}
+                  </p>
                   {cat.items.map((item) => (
                     <Link
                       key={item.href}
@@ -274,14 +412,7 @@ export default function Nav() {
           )}
 
           <div className="border-t border-white/[0.08] pt-3 flex flex-col gap-2">
-            {[
-              { label: "AI Services", href: "/ai-services" },
-              { label: "Agent Studio", href: "/ai-services/agent-studio" },
-              { label: "About", href: "/about" },
-              { label: "Partners", href: "/partners" },
-              { label: "Events", href: "/events" },
-              { label: "Blog", href: "/blog" },
-            ].map((link) => (
+            {[...aiItems.map((a) => ({ label: a.label, href: a.href })), ...simpleLinks].map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
