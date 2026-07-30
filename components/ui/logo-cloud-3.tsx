@@ -31,12 +31,12 @@ function MicrosoftMark({ className }: { className?: string }) {
 const defaultLogos: LogoCloudItem[] = [
   { name: "Microsoft", Icon: MicrosoftMark },
   { name: "Dell", src: "https://cdn.simpleicons.org/dell" },
-  { name: "Cisco", src: "https://cdn.simpleicons.org/cisco" },
+  { name: "Cisco", wordmark: "https://cdn.simpleicons.org/cisco" },
   { name: "Fortinet", src: "https://cdn.simpleicons.org/fortinet" },
-  { name: "Lenovo", src: "https://cdn.simpleicons.org/lenovo" },
-  { name: "VMware", src: "https://cdn.simpleicons.org/vmware" },
-  { name: "Veeam", src: "https://cdn.simpleicons.org/veeam" },
-  { name: "Intel", src: "https://cdn.simpleicons.org/intel" },
+  { name: "Lenovo", wordmark: "/logos/lenovo.svg" },
+  { name: "VMware", wordmark: "/logos/vmware.svg" },
+  { name: "Veeam", wordmark: "/logos/veeam.svg" },
+  { name: "Intel", wordmark: "/logos/intel.svg" },
   { name: "HP", src: "https://cdn.simpleicons.org/hp" },
   // No simple-icons entry — wordmark tinted with the brand's primary color.
   { name: "Sophos", src: "/logos/sophos.svg" },
@@ -93,7 +93,7 @@ export default function LogoCloudBlock({
                     src={wordmark}
                     alt={name}
                     loading="lazy"
-                    className="h-6 w-auto object-contain"
+                    className="h-6 w-auto max-w-[76px] object-contain"
                   />
                 ) : (
                   <>
