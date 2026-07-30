@@ -1,33 +1,47 @@
 "use client";
 
 import type { ComponentType } from "react";
-import { RiMicrosoftFill } from "@remixicon/react";
 
-// Audcomp's partners are enterprise IT vendors; @remixicon/react only ships a
-// mark for Microsoft, so the rest resolve to monochrome vectors via simple-icons.
-// `Icon` wins when present, else `src`; with neither, the name renders alone.
+// Audcomp's partners are enterprise IT vendors. Colored brand glyphs come from
+// simple-icons' CDN, which serves each mark in its official brand color by
+// default. `Icon` wins when present, else `src`; brands with no icon-library
+// entry fall back to a wordmark tinted with `color`.
 export type LogoCloudItem = {
   name: string;
   Icon?: ComponentType<{ className?: string; "aria-hidden"?: boolean | "true" | "false" }>;
   src?: string;
+  color?: string;
+  // Full wordmark logo — rendered on its own, replacing the glyph + text.
+  wordmark?: string;
 };
 
-const MARK = "4a6785"; // --muted-foreground, keeps every mark monochrome
+// Microsoft was removed from simple-icons over branding policy, so its 4-color
+// mark is inlined here.
+function MicrosoftMark({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
+      <path fill="#F25022" d="M1 1h10v10H1z" />
+      <path fill="#7FBA00" d="M13 1h10v10H13z" />
+      <path fill="#00A4EF" d="M1 13h10v10H1z" />
+      <path fill="#FFB900" d="M13 13h10v10H13z" />
+    </svg>
+  );
+}
 
 const defaultLogos: LogoCloudItem[] = [
-  { name: "Microsoft", Icon: RiMicrosoftFill },
-  { name: "Dell", src: `https://cdn.simpleicons.org/dell/${MARK}` },
-  { name: "Cisco", src: `https://cdn.simpleicons.org/cisco/${MARK}` },
-  { name: "Fortinet", src: `https://cdn.simpleicons.org/fortinet/${MARK}` },
-  { name: "Lenovo", src: `https://cdn.simpleicons.org/lenovo/${MARK}` },
-  { name: "VMware", src: `https://cdn.simpleicons.org/vmware/${MARK}` },
-  { name: "Veeam", src: `https://cdn.simpleicons.org/veeam/${MARK}` },
-  { name: "Intel", src: `https://cdn.simpleicons.org/intel/${MARK}` },
-  { name: "HP", src: `https://cdn.simpleicons.org/hp/${MARK}` },
-  // No simple-icons entry for these three — they render as wordmarks only.
-  { name: "Sophos" },
-  { name: "Field Effect" },
-  { name: "Eaton" },
+  { name: "Microsoft", Icon: MicrosoftMark },
+  { name: "Dell", src: "https://cdn.simpleicons.org/dell" },
+  { name: "Cisco", src: "https://cdn.simpleicons.org/cisco" },
+  { name: "Fortinet", src: "https://cdn.simpleicons.org/fortinet" },
+  { name: "Lenovo", src: "https://cdn.simpleicons.org/lenovo" },
+  { name: "VMware", src: "https://cdn.simpleicons.org/vmware" },
+  { name: "Veeam", src: "https://cdn.simpleicons.org/veeam" },
+  { name: "Intel", src: "https://cdn.simpleicons.org/intel" },
+  { name: "HP", src: "https://cdn.simpleicons.org/hp" },
+  // No simple-icons entry — wordmark tinted with the brand's primary color.
+  { name: "Sophos", src: "/logos/sophos.svg" },
+  { name: "Field Effect", src: "/logos/field-effect.svg" },
+  { name: "Eaton", wordmark: "/logos/eaton.svg" },
 ];
 
 export default function LogoCloudBlock({
@@ -68,26 +82,40 @@ export default function LogoCloudBlock({
 
         <div className="logo-cloud-mask relative mt-10 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
           <div className="logo-cloud-track flex w-max items-center">
-            {[...logos, ...logos].map(({ name, Icon, src }, index) => (
+            {[...logos, ...logos].map(({ name, Icon, src, color, wordmark }, index) => (
               <div
                 key={`${name}-${index}`}
-                className="flex shrink-0 items-center gap-2.5 px-8 text-muted-foreground transition-colors duration-200 hover:text-foreground"
+                className="flex shrink-0 items-center gap-2.5 px-8 opacity-90 transition-opacity duration-200 hover:opacity-100"
                 aria-hidden={index >= logos.length ? "true" : undefined}
               >
-                {Icon ? (
-                  <Icon className="h-6 w-6" aria-hidden="true" />
-                ) : src ? (
+                {wordmark ? (
                   <img
-                    src={src}
-                    alt=""
-                    aria-hidden="true"
+                    src={wordmark}
+                    alt={name}
                     loading="lazy"
-                    className="h-6 w-6 object-contain"
+                    className="h-6 w-auto object-contain"
                   />
-                ) : null}
-                <span className="text-lg font-semibold tracking-tight whitespace-nowrap">
-                  {name}
-                </span>
+                ) : (
+                  <>
+                    {Icon ? (
+                      <Icon className="h-6 w-6" aria-hidden="true" />
+                    ) : src ? (
+                      <img
+                        src={src}
+                        alt=""
+                        aria-hidden="true"
+                        loading="lazy"
+                        className="h-6 w-6 object-contain"
+                      />
+                    ) : null}
+                    <span
+                      className="text-lg font-semibold tracking-tight whitespace-nowrap text-foreground"
+                      style={color ? { color } : undefined}
+                    >
+                      {name}
+                    </span>
+                  </>
+                )}
               </div>
             ))}
           </div>

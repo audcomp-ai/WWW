@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" role="img" aria-label="Field Effect">
+  <defs>
+    <linearGradient id="fe-bright" x1="12" y1="2.5" x2="19" y2="21" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#63C6FF" />
+      <stop offset="1" stop-color="#2F6BF0" />
+    </linearGradient>
+    <linearGradient id="fe-deep" x1="7" y1="4" x2="12" y2="21" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3B48D6" />
+      <stop offset="1" stop-color="#2A2F8F" />
+    </linearGradient>
+  </defs>
+  <path d="M12 2.5 L20.5 21 L12 21 Z" fill="url(#fe-bright)" />
+  <path d="M12 2.5 L12 21 L3.5 21 Z" fill="url(#fe-deep)" />
+  <path d="M12 21 L8.2 21 L12 12.5 Z" fill="#1C2170" />
+</svg>
