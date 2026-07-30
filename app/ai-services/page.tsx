@@ -204,19 +204,19 @@ export default function AIServicesPage() {
                 </p>
                 <div className="flex flex-wrap gap-3">
                   <Link
-                    href="/contact"
+                    href="/forward-deployed-engineers"
                     className="inline-flex items-center gap-2 bg-white text-[#0a2540] font-black px-7 py-3.5 rounded-full text-sm hover:bg-[#f0f7ff] hover:shadow-lg transition-all"
                   >
-                    Talk to an engineer
+                    How FDE works
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </Link>
                   <Link
-                    href="/professional-services"
+                    href="/contact"
                     className="inline-flex items-center gap-2 bg-[#0071e3] text-white font-black px-7 py-3.5 rounded-full text-sm hover:bg-[#0077ed] transition-all"
                   >
-                    Professional Services
+                    Talk to an engineer
                   </Link>
                 </div>
               </div>

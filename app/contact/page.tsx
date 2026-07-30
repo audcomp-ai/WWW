@@ -55,7 +55,7 @@ export default function ContactPage() {
               <div>
                 <p className="font-semibold text-foreground mb-1">Support Hours</p>
                 <p className="text-muted-foreground text-sm">24/7 monitoring and emergency support</p>
-                <p className="text-muted-foreground text-sm">Business hours: Mon–Fri, 8am–6pm ET</p>
+                <p className="text-muted-foreground text-sm">Business hours: Mon–Fri, 8am–5pm ET</p>
               </div>
 
               <div>

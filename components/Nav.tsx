@@ -79,6 +79,12 @@ const aiItems: (MenuItem & { icon: string })[] = [
     desc: "A full team of production-ready AI agents, Canadian-hosted.",
   },
   {
+    label: "Forward Deployed Engineers",
+    href: "/forward-deployed-engineers",
+    icon: "fa-user-gear",
+    desc: "An engineer embedded in your team, building what your workflows need.",
+  },
+  {
     label: "Microsoft Copilot Enablement",
     href: "/microsoft-copilot-enablement",
     icon: "fa-wand-magic-sparkles",
@@ -323,9 +329,10 @@ export default function Nav() {
               </div>
             ) : (
               <div className="grid grid-cols-12 gap-8">
-                {/* items-start so cards size to their content instead of
+                {/* 2 columns so four cards form an even 2x2 rather than 3+1.
+                    items-start so cards size to their content instead of
                     stretching to match the taller featured column */}
-                <div className="col-span-9 grid grid-cols-3 gap-7 items-start">
+                <div className="col-span-9 grid grid-cols-2 gap-5 items-start">
                   {aiItems.map((item) => (
                     <Link
                       key={item.href}

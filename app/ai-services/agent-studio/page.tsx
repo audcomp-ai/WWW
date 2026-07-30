@@ -33,20 +33,20 @@ function AgentCard({ a, keySuffix }: { a: Agent; keySuffix: string }) {
           className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#071e3d] via-[#071e3d]/40 to-transparent" />
-        <span className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0071e3]/90 backdrop-blur text-white text-[10px] font-black uppercase tracking-widest">
+        <span className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0071e3]/90 backdrop-blur text-white text-[10px] font-semibold uppercase tracking-widest">
           {a.domain}
         </span>
         <span className="absolute top-4 right-4 w-9 h-9 rounded-xl bg-white/10 border border-white/20 backdrop-blur flex items-center justify-center">
           <i className={`fas ${a.icon} text-[#06b6d4] text-sm`} />
         </span>
         <div className="absolute bottom-0 left-0 right-0 p-6">
-          <h3 className="text-2xl font-black text-white tracking-tight">{a.name}</h3>
+          <h3 className="text-2xl font-bold text-white tracking-tight">{a.name}</h3>
           <p className="text-[#06b6d4] text-sm font-bold">{a.role}</p>
         </div>
       </div>
       <div className="p-6">
         <p className="text-slate-400 text-sm font-medium leading-relaxed line-clamp-3 mb-4">{a.desc}</p>
-        <span className="inline-flex items-center gap-2 text-white text-xs font-black uppercase tracking-widest group-hover:text-[#06b6d4] transition-colors">
+        <span className="inline-flex items-center gap-2 text-white text-xs font-bold uppercase tracking-widest group-hover:text-[#06b6d4] transition-colors">
           View profile <i className="fas fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform" />
         </span>
       </div>
@@ -84,31 +84,31 @@ function FeaturedAgent({
   return (
     <div className="bg-white/[0.06] border border-white/10 backdrop-blur-sm rounded-[3rem] overflow-hidden shadow-2xl grid lg:grid-cols-2 mb-12">
       <div className="p-8 lg:p-12 flex flex-col justify-center order-2 lg:order-1">
-        <span className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.3em] text-[#06b6d4] mb-5">
+        <span className="inline-flex items-center gap-2 text-[10px] font-semibold uppercase tracking-widest text-[#06b6d4] mb-5">
           <i className="fas fa-star" /> {tag}
         </span>
-        <h3 className="text-4xl lg:text-5xl font-black text-white tracking-tighter mb-1">{a.name}</h3>
-        <p className="text-[#06b6d4] text-sm font-black uppercase tracking-widest mb-5">{a.role}</p>
+        <h3 className="text-4xl lg:text-5xl font-bold text-white tracking-tight mb-1">{a.name}</h3>
+        <p className="text-[#06b6d4] text-sm font-bold uppercase tracking-widest mb-5">{a.role}</p>
         <p className="text-slate-400 text-base lg:text-lg font-medium leading-relaxed mb-8">{blurb}</p>
         {works}
         <div className="grid grid-cols-3 gap-4 mb-8">
           {stats.map((s) => (
             <div key={s.l}>
-              <div className="text-lg lg:text-2xl font-black text-white tracking-tight">{s.v}</div>
-              <div className="text-[10px] font-bold uppercase tracking-widest text-slate-500 mt-1 leading-tight">{s.l}</div>
+              <div className="text-lg lg:text-2xl font-bold text-white tracking-tight">{s.v}</div>
+              <div className="text-[10px] font-semibold uppercase tracking-widest text-slate-500 mt-1 leading-tight">{s.l}</div>
             </div>
           ))}
         </div>
         <div className="flex flex-wrap items-center gap-3">
           <Link
             href="/contact"
-            className="inline-flex items-center gap-3 bg-[#0071e3] text-white px-7 py-4 rounded-2xl text-xs font-black uppercase tracking-widest hover:shadow-2xl hover:shadow-[#0071e3]/30 transition-all"
+            className="inline-flex items-center gap-3 bg-[#0071e3] text-white px-7 py-4 rounded-2xl text-xs font-bold uppercase tracking-widest hover:shadow-2xl hover:shadow-[#0071e3]/30 transition-all"
           >
             Deploy {a.name} <i className="fas fa-arrow-right text-[10px]" />
           </Link>
           <Link
             href={`/ai-services/agent-studio/${a.id}`}
-            className="inline-flex items-center gap-2 bg-white/5 border border-white/10 text-white px-7 py-4 rounded-2xl text-xs font-black uppercase tracking-widest hover:border-[#0071e3]/40 transition-all"
+            className="inline-flex items-center gap-2 bg-white/5 border border-white/10 text-white px-7 py-4 rounded-2xl text-xs font-bold uppercase tracking-widest hover:border-[#0071e3]/40 transition-all"
           >
             Full profile
           </Link>
@@ -127,7 +127,7 @@ function FeaturedAgent({
 
 function WorksBadge({ text }: { text: string }) {
   return (
-    <span className="px-3 py-1.5 rounded-lg bg-white/10 border border-white/15 text-white text-sm font-black">{text}</span>
+    <span className="px-3 py-1.5 rounded-lg bg-white/10 border border-white/15 text-white text-sm font-bold">{text}</span>
   );
 }
 
@@ -151,16 +151,16 @@ export default function AgentStudioPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#071e3d]/85 via-[#071e3d]/20 to-transparent" />
         <div className="relative z-10 h-full max-w-7xl mx-auto px-6 lg:px-12 flex flex-col justify-end pb-20 lg:pb-28">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full mb-6 w-fit backdrop-blur">
-            <span className="text-[10px] font-black px-1.5 py-0.5 rounded bg-[#0071e3] text-white uppercase tracking-widest">Studio Workspace</span>
+            <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#0071e3] text-white uppercase tracking-widest">Studio Workspace</span>
             <span className="text-xs font-bold text-white uppercase tracking-widest">Architecture Suite</span>
           </div>
-          <h1 className="text-6xl lg:text-8xl font-black tracking-tighter text-white mb-6 max-w-4xl leading-[0.95]">
+          <h1 className="text-6xl lg:text-8xl font-bold tracking-tight text-white mb-6 max-w-4xl leading-[0.95]">
             Agent <span className="italic">Studio.</span>
           </h1>
           <p className="text-slate-300 text-lg lg:text-2xl font-medium max-w-2xl mb-8 leading-relaxed">
             Design, deploy, and orchestrate a full team of production-ready AI agents for your organization.
           </p>
-          <a href="#workforce" className="inline-flex items-center gap-3 text-white text-xs font-black uppercase tracking-[0.2em] w-fit group">
+          <a href="#workforce" className="inline-flex items-center gap-3 text-white text-xs font-bold uppercase tracking-widest w-fit group">
             Meet the workforce
             <span className="w-9 h-9 rounded-full bg-[#0071e3] flex items-center justify-center group-hover:translate-y-1 transition-transform">
               <i className="fas fa-arrow-down" />
@@ -174,8 +174,8 @@ export default function AgentStudioPage() {
         {/* ── THE DIGITAL WORKFORCE ── */}
         <section id="workforce" className="mb-32">
           <div className="text-center mb-14">
-            <span className="text-[10px] font-black uppercase tracking-[0.5em] text-[#06b6d4] mb-6 block">Meet the Digital Workforce</span>
-            <h2 className="text-4xl lg:text-6xl font-black tracking-tighter text-gradient-studio mb-6 leading-tight">
+            <span className="text-[10px] font-semibold uppercase tracking-widest text-[#06b6d4] mb-6 block">Meet the Digital Workforce</span>
+            <h2 className="text-4xl lg:text-6xl font-bold tracking-tight text-gradient-studio mb-6 leading-tight">
               A full team of agents.<br /><span className="italic">One orchestrator.</span>
             </h2>
             <p className="text-slate-400 text-lg lg:text-xl font-medium max-w-3xl mx-auto leading-relaxed">
@@ -190,12 +190,12 @@ export default function AgentStudioPage() {
               <div>
                 <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#0071e3]/10 border border-[#0071e3]/20 rounded-full mb-6">
                   <span className="w-2 h-2 rounded-full bg-[#0071e3] animate-pulse" />
-                  <span className="text-[10px] font-black text-[#06b6d4] uppercase tracking-widest">The Orchestrator · Always On</span>
+                  <span className="text-[10px] font-bold text-[#06b6d4] uppercase tracking-widest">The Orchestrator · Always On</span>
                 </div>
-                <h3 className="text-3xl lg:text-5xl font-black text-white tracking-tighter mb-2">
+                <h3 className="text-3xl lg:text-5xl font-bold text-white tracking-tight mb-2">
                   Meet <span className="text-[#06b6d4] italic">Wilfred.</span>
                 </h3>
-                <p className="text-[#06b6d4] text-sm font-black uppercase tracking-widest mb-5">Your AI Workforce Orchestrator</p>
+                <p className="text-[#06b6d4] text-sm font-bold uppercase tracking-widest mb-5">Your AI Workforce Orchestrator</p>
                 <p className="text-slate-400 text-base lg:text-lg font-medium leading-relaxed mb-8">
                   Wilfred is the one who actually hires your AI team. He reads your goal in plain English, picks the right specialist for every job, wires them into your stack, runs the day-to-day, and reports outcomes back to you — so you manage results, not prompts.
                 </p>
@@ -207,8 +207,8 @@ export default function AgentStudioPage() {
                     { stat: "HITL", label: "Human-in-the-loop" },
                   ].map((s) => (
                     <div key={s.label} className="bg-white/5 rounded-2xl border border-white/5 p-4">
-                      <div className="text-xl font-black text-white tracking-tight">{s.stat}</div>
-                      <div className="text-[10px] font-bold uppercase tracking-widest text-slate-500 mt-1 leading-tight">{s.label}</div>
+                      <div className="text-xl font-bold text-white tracking-tight">{s.stat}</div>
+                      <div className="text-[10px] font-semibold uppercase tracking-widest text-slate-500 mt-1 leading-tight">{s.label}</div>
                     </div>
                   ))}
                 </div>
@@ -222,7 +222,7 @@ export default function AgentStudioPage() {
                   <div className="absolute inset-0 m-auto w-36 h-36 lg:w-40 lg:h-40 rounded-full overflow-hidden ring-4 ring-[#0071e3] shadow-2xl shadow-[#0071e3]/40 z-20">
                     <img src="/images/agents/wilfred.png" alt="Wilfred — AI Workforce Orchestrator" className="w-full h-full object-cover" style={{ objectPosition: "60% 20%" }} />
                   </div>
-                  <span className="absolute left-1/2 -translate-x-1/2 bottom-[2%] z-30 px-3 py-1 rounded-full bg-[#0071e3] text-white text-[10px] font-black uppercase tracking-widest shadow-lg">Wilfred</span>
+                  <span className="absolute left-1/2 -translate-x-1/2 bottom-[2%] z-30 px-3 py-1 rounded-full bg-[#0071e3] text-white text-[10px] font-semibold uppercase tracking-widest shadow-lg">Wilfred</span>
                   {/* Inner ring — workforce */}
                   {workforce.map((a, i) => {
                     const angle = (i / workforce.length) * 2 * Math.PI - Math.PI / 2;
@@ -250,9 +250,9 @@ export default function AgentStudioPage() {
             blurb="QuickBooks-certified. Reconciliations, payroll runs, and tax filings with a clean monthly close — every cycle, without you chasing it."
             works={
               <div className="flex flex-wrap items-center gap-3 mb-8">
-                <span className="text-[10px] font-black uppercase tracking-widest text-slate-500">Works with</span>
-                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#2CA01C] text-white text-sm font-black">
-                  <span className="w-5 h-5 rounded-full bg-white text-[#2CA01C] flex items-center justify-center text-[10px] font-black">qb</span>
+                <span className="text-[10px] font-semibold uppercase tracking-widest text-slate-500">Works with</span>
+                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#2CA01C] text-white text-sm font-bold">
+                  <span className="w-5 h-5 rounded-full bg-white text-[#2CA01C] flex items-center justify-center text-[10px] font-bold">qb</span>
                   QuickBooks
                 </span>
                 <WorksBadge text="Sage" />
@@ -267,19 +267,19 @@ export default function AgentStudioPage() {
           />
 
           <div className="mb-8">
-            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-500 block text-center mb-8">Our Specialty Agents</span>
+            <span className="text-[10px] font-semibold uppercase tracking-widest text-slate-500 block text-center mb-8">Our Specialty Agents</span>
           </div>
           <Marquee agents={workforce} />
 
           {/* Custom specialist CTA */}
           <div className="mt-12 bg-white/[0.04] border border-dashed border-white/15 rounded-3xl p-8 lg:p-10 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
             <div>
-              <h3 className="text-xl font-black text-white mb-2 tracking-tight">Need a role that isn&apos;t here?</h3>
+              <h3 className="text-xl font-bold text-white mb-2 tracking-tight">Need a role that isn&apos;t here?</h3>
               <p className="text-slate-400 text-sm font-medium leading-relaxed max-w-xl">
                 Describe the job and Wilfred spins up a new specialist against your spec — wired into your stack and ready to work.
               </p>
             </div>
-            <Link href="/contact" className="shrink-0 inline-flex items-center gap-2 bg-[#0071e3] text-white px-6 py-4 rounded-2xl text-xs font-black uppercase tracking-widest hover:shadow-2xl hover:shadow-[#0071e3]/30 transition-all">
+            <Link href="/contact" className="shrink-0 inline-flex items-center gap-2 bg-[#0071e3] text-white px-6 py-4 rounded-2xl text-xs font-bold uppercase tracking-widest hover:shadow-2xl hover:shadow-[#0071e3]/30 transition-all">
               Request a custom specialist <i className="fas fa-arrow-right text-[10px]" />
             </Link>
           </div>
@@ -288,8 +288,8 @@ export default function AgentStudioPage() {
         {/* ── WHO HIRES WILFRED ── */}
         <section className="mb-32">
           <div className="text-center mb-16 max-w-4xl mx-auto">
-            <span className="text-[10px] font-black uppercase tracking-[0.5em] text-[#06b6d4] mb-6 block">Who hires Wilfred</span>
-            <h2 className="text-4xl lg:text-6xl font-black tracking-tighter text-white mb-6 leading-tight">
+            <span className="text-[10px] font-semibold uppercase tracking-widest text-[#06b6d4] mb-6 block">Who hires Wilfred</span>
+            <h2 className="text-4xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-tight">
               If you have work that needs doing and a hire you can&apos;t justify yet —{" "}
               <span className="italic">Wilfred fills that gap.</span>
             </h2>
@@ -330,21 +330,21 @@ export default function AgentStudioPage() {
               },
             ].map((p) => (
               <div key={p.segment} className="bg-white/[0.06] border border-white/10 backdrop-blur-sm rounded-[2.5rem] p-8 lg:p-10 flex flex-col hover:border-[#0071e3]/30 transition-colors">
-                <span className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.3em] text-[#06b6d4] mb-5">
+                <span className="inline-flex items-center gap-2 text-[10px] font-semibold uppercase tracking-widest text-[#06b6d4] mb-5">
                   <i className={`fas ${p.icon}`} /> {p.segment}
                 </span>
-                <h3 className="text-2xl lg:text-3xl font-black text-white tracking-tight mb-6 leading-snug">{p.headline}</h3>
+                <h3 className="text-2xl lg:text-3xl font-bold text-white tracking-tight mb-6 leading-snug">{p.headline}</h3>
                 <p className="text-slate-400 text-sm lg:text-base font-medium leading-relaxed mb-4">
-                  <span className="text-white font-black">The pain: </span>{p.pain}
+                  <span className="text-white font-bold">The pain: </span>{p.pain}
                 </p>
                 <p className="text-slate-300 text-sm lg:text-base font-medium leading-relaxed mb-8">
-                  <span className="text-[#06b6d4] font-black">The fix: </span>{p.fix}{" "}
-                  <span className="text-white font-black whitespace-nowrap">{p.price}</span>
+                  <span className="text-[#06b6d4] font-bold">The fix: </span>{p.fix}{" "}
+                  <span className="text-white font-bold whitespace-nowrap">{p.price}</span>
                 </p>
                 <Link href="/contact" className="mt-auto group flex items-center gap-4 bg-white/5 border border-white/10 rounded-2xl p-3 pr-5 hover:border-[#0071e3]/40 transition-colors">
                   <img src={p.image} alt={p.name} loading="lazy" className="w-14 h-14 rounded-xl object-cover object-top" />
                   <div className="leading-tight">
-                    <div className="text-base font-black text-white">{p.name}</div>
+                    <div className="text-base font-bold text-white">{p.name}</div>
                     <div className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">{p.role} · Ready in 48hr</div>
                   </div>
                   <span className="ml-auto w-9 h-9 rounded-full bg-[#0071e3]/10 border border-[#0071e3]/20 flex items-center justify-center text-[#0071e3] group-hover:bg-[#0071e3] group-hover:text-white transition-all">
@@ -363,10 +363,10 @@ export default function AgentStudioPage() {
       <section className="bg-white py-24 lg:py-32">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16 max-w-3xl mx-auto">
-            <span className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.5em] text-[#0071e3] mb-6">
+            <span className="inline-flex items-center gap-2 text-[10px] font-semibold uppercase tracking-widest text-[#0071e3] mb-6">
               <span className="text-sm">🍁</span> The Canadian Wedge
             </span>
-            <h2 className="text-4xl lg:text-6xl font-black tracking-tighter text-[#0a2540] mb-6 leading-tight">
+            <h2 className="text-4xl lg:text-6xl font-bold tracking-tight text-[#0a2540] mb-6 leading-tight">
               Canadian conductor.<br /><span className="text-[#0071e3] italic">Canadian team. Canadian rules.</span>
             </h2>
             <p className="text-slate-600 text-lg lg:text-xl font-medium leading-relaxed">
@@ -392,8 +392,8 @@ export default function AgentStudioPage() {
               },
             ].map((c) => (
               <div key={c.label} className="rounded-[2rem] border border-slate-200 bg-slate-50 p-8 flex flex-col shadow-sm">
-                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 mb-3">{c.label}</span>
-                <div className="text-3xl font-black tracking-tight text-[#0a2540] mb-3">{c.value}</div>
+                <span className="text-[10px] font-semibold uppercase tracking-widest text-slate-400 mb-3">{c.label}</span>
+                <div className="text-3xl font-bold tracking-tight text-[#0a2540] mb-3">{c.value}</div>
                 <p className="text-slate-600 text-sm font-medium leading-relaxed mb-6">{c.desc}</p>
                 <ul className="space-y-3 mt-auto">
                   {c.items.map((item) => (
@@ -411,18 +411,18 @@ export default function AgentStudioPage() {
           <div className="rounded-[3rem] bg-[#0a2540] shadow-2xl p-10 lg:p-16 text-center relative overflow-hidden">
             <div className="absolute -bottom-24 -left-24 w-72 h-72 rounded-full opacity-20 pointer-events-none" style={{ background: "radial-gradient(ellipse, #0071e3 0%, transparent 70%)" }} />
             <div className="relative">
-              <span className="text-[10px] font-black uppercase tracking-[0.5em] text-[#06b6d4] mb-6 block">Ready when you are</span>
-              <h2 className="text-4xl lg:text-6xl font-black tracking-tighter text-white mb-6 leading-tight">
+              <span className="text-[10px] font-semibold uppercase tracking-widest text-[#06b6d4] mb-6 block">Ready when you are</span>
+              <h2 className="text-4xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-tight">
                 Tell Wilfred what you need.<br /><span className="italic text-[#06b6d4]">He&apos;ll build the team.</span>
               </h2>
               <p className="text-slate-300 text-lg font-medium max-w-2xl mx-auto mb-10">
                 Book a free assessment and we&apos;ll map the right specialists to your work — deployed, supervised, and Canadian-hosted, ready in 48 hours.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/contact" className="inline-flex items-center justify-center gap-3 bg-[#0071e3] text-white px-10 py-5 rounded-2xl font-black text-lg hover:shadow-2xl hover:shadow-[#0071e3]/30 transition-all group">
+                <Link href="/contact" className="inline-flex items-center justify-center gap-3 bg-[#0071e3] text-white px-10 py-5 rounded-2xl font-bold text-lg hover:shadow-2xl hover:shadow-[#0071e3]/30 transition-all group">
                   Book a free assessment <i className="fas fa-arrow-right group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <Link href="/ai-services" className="inline-flex items-center justify-center gap-3 bg-white/10 border border-white/20 text-white px-10 py-5 rounded-2xl font-black text-lg hover:border-[#0071e3]/60 transition-all">
+                <Link href="/ai-services" className="inline-flex items-center justify-center gap-3 bg-white/10 border border-white/20 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:border-[#0071e3]/60 transition-all">
                   Back to AI Services
                 </Link>
               </div>
@@ -436,8 +436,8 @@ export default function AgentStudioPage() {
       <section className="py-32 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[#06b6d4] mb-4 block">Agent Questions</span>
-            <h2 className="text-5xl lg:text-7xl font-black tracking-tighter text-white">
+            <span className="text-[10px] font-semibold uppercase tracking-widest text-[#06b6d4] mb-4 block">Agent Questions</span>
+            <h2 className="text-5xl lg:text-7xl font-bold tracking-tight text-white">
               Frequently <span className="italic text-[#06b6d4]">Asked.</span>
             </h2>
           </div>

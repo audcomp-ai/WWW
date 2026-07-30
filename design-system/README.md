@@ -60,10 +60,11 @@ tight tracking on headings, soft shadows, pill buttons, rounded-2xl cards.
    `app/globals.css` (e.g. `text-[#0a2540]`, `bg-[#0071e3]`) exactly as existing components do.
 2. **Eyebrow labels** are always teal `#06b6d4`, uppercase, `font-semibold`,
    `tracking-widest`, small (`text-xs`/`text-[11px]`).
-3. **Headings** use the display stack, `font-bold`/`font-black`, `tracking-tight`
-   (`-0.02em`). On dark gradient sections use `.text-gradient-dark`.
+3. **Headings** use the display stack, `font-bold`, `tracking-tight` (`-0.02em`).
+   On dark gradient sections use `.text-gradient-dark`. Agent Studio previously used
+   `font-black`/`tracking-tighter`; it now follows this same rule as the rest of the site.
 4. **Buttons** are pills (`rounded-full`): primary = solid `#0071e3`; secondary = outline.
-   The Agent Studio surface uses squarer `rounded-2xl` + `uppercase font-black tracking-widest`.
+   The Agent Studio surface uses squarer `rounded-2xl` + `uppercase font-bold tracking-widest`.
 5. **Cards** are `rounded-2xl` with a hairline border and soft shadow on light; on dark they
    are glass: `bg-white/[0.06] border border-white/[0.1] backdrop-blur-sm`.
 6. **Dark sections** = navy gradient `linear-gradient(135deg,#071e3d,#0d2d55,#071e3d)` with
