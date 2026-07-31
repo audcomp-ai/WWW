@@ -13,6 +13,9 @@ export type LogoCloudItem = {
   color?: string;
   // Full wordmark logo — rendered on its own, replacing the glyph + text.
   wordmark?: string;
+  // Mark aspect ratios run from square glyphs to 11:1 letterspaced words, so a
+  // single box can't hold them all at the same optical weight.
+  markBox?: string;
 };
 
 // Microsoft was removed from simple-icons over branding policy, so its 4-color
@@ -28,28 +31,88 @@ function MicrosoftMark({ className }: { className?: string }) {
   );
 }
 
-const defaultLogos: LogoCloudItem[] = [
+const infrastructureLogos: LogoCloudItem[] = [
   { name: "Microsoft", Icon: MicrosoftMark },
-  { name: "Dell", src: "https://cdn.simpleicons.org/dell" },
-  { name: "Cisco", wordmark: "https://cdn.simpleicons.org/cisco" },
+  { name: "Dell", wordmark: "https://cdn.simpleicons.org/dell" },
+  { name: "Cisco", wordmark: "/logos/cisco.svg" },
   { name: "Fortinet", src: "https://cdn.simpleicons.org/fortinet" },
   { name: "Lenovo", wordmark: "/logos/lenovo.svg" },
   { name: "VMware", wordmark: "/logos/vmware.svg" },
   { name: "Veeam", wordmark: "/logos/veeam.svg" },
   { name: "Intel", wordmark: "/logos/intel.svg" },
-  { name: "HP", src: "https://cdn.simpleicons.org/hp" },
+  { name: "HP", wordmark: "https://cdn.simpleicons.org/hp" },
   // No simple-icons entry — wordmark tinted with the brand's primary color.
   { name: "Sophos", src: "/logos/sophos.svg" },
   { name: "Field Effect", src: "/logos/field-effect.svg" },
   { name: "Eaton", wordmark: "/logos/eaton.svg" },
 ];
 
+const managedServiceLogos: LogoCloudItem[] = [
+  { name: "ConnectWise", wordmark: "/logos/connectwise.svg", markBox: "h-5 max-w-[122px]" },
+  { name: "Bitdefender", wordmark: "/logos/bitdefender.svg", markBox: "h-4 max-w-[112px]" },
+  // ConnectWise Automate ships no standalone mark, so it rides as a text lockup.
+  { name: "Automate" },
+  { name: "Unitrends", wordmark: "/logos/unitrends.svg", markBox: "h-4 max-w-[190px]" },
+  { name: "Datto", wordmark: "/logos/datto.svg" },
+  { name: "Aruba", wordmark: "/logos/aruba.svg", markBox: "h-5 max-w-[80px]" },
+  { name: "HPE", wordmark: "/logos/hpe.svg", markBox: "h-5 max-w-[72px]" },
+  { name: "Barracuda", wordmark: "/logos/barracuda.svg" },
+  { name: "Hornetsecurity", src: "/logos/hornetsecurity.webp", markBox: "h-6 w-auto max-w-[38px]" },
+];
+
+const defaultRows: LogoCloudItem[][] = [infrastructureLogos, managedServiceLogos];
+
+function LogoRow({ logos, reverse }: { logos: LogoCloudItem[]; reverse?: boolean }) {
+  return (
+    <div className="logo-cloud-mask relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
+      <div className={`logo-cloud-track flex w-max items-center ${reverse ? "logo-cloud-track--reverse" : ""}`}>
+        {[...logos, ...logos].map(({ name, Icon, src, color, wordmark, markBox }, index) => (
+          <div
+            key={`${name}-${index}`}
+            className="flex shrink-0 items-center gap-2.5 px-8 opacity-90 transition-opacity duration-200 hover:opacity-100"
+            aria-hidden={index >= logos.length ? "true" : undefined}
+          >
+            {wordmark ? (
+              <img
+                src={wordmark}
+                alt={name}
+                loading="lazy"
+                className={`w-auto object-contain ${markBox ?? "h-6 max-w-[92px]"}`}
+              />
+            ) : (
+              <>
+                {Icon ? (
+                  <Icon className="h-6 w-6" aria-hidden="true" />
+                ) : src ? (
+                  <img
+                    src={src}
+                    alt=""
+                    aria-hidden="true"
+                    loading="lazy"
+                    className={`object-contain ${markBox ?? "h-6 w-6"}`}
+                  />
+                ) : null}
+                <span
+                  className="text-lg font-semibold tracking-tight whitespace-nowrap text-foreground"
+                  style={color ? { color } : undefined}
+                >
+                  {name}
+                </span>
+              </>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function LogoCloudBlock({
-  logos = defaultLogos,
+  rows = defaultRows,
   eyebrow = "Powered by the industry's leading vendors",
   className,
 }: {
-  logos?: LogoCloudItem[];
+  rows?: LogoCloudItem[][];
   eyebrow?: string;
   className?: string;
 }) {
@@ -64,6 +127,10 @@ export default function LogoCloudBlock({
         }
         .logo-cloud-track {
           animation: logo-cloud-marquee 32s linear infinite;
+        }
+        .logo-cloud-track--reverse {
+          animation-duration: 38s;
+          animation-direction: reverse;
         }
         .logo-cloud-mask:hover .logo-cloud-track {
           animation-play-state: paused;
@@ -80,45 +147,10 @@ export default function LogoCloudBlock({
           {eyebrow}
         </p>
 
-        <div className="logo-cloud-mask relative mt-10 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
-          <div className="logo-cloud-track flex w-max items-center">
-            {[...logos, ...logos].map(({ name, Icon, src, color, wordmark }, index) => (
-              <div
-                key={`${name}-${index}`}
-                className="flex shrink-0 items-center gap-2.5 px-8 opacity-90 transition-opacity duration-200 hover:opacity-100"
-                aria-hidden={index >= logos.length ? "true" : undefined}
-              >
-                {wordmark ? (
-                  <img
-                    src={wordmark}
-                    alt={name}
-                    loading="lazy"
-                    className="h-6 w-auto max-w-[76px] object-contain"
-                  />
-                ) : (
-                  <>
-                    {Icon ? (
-                      <Icon className="h-6 w-6" aria-hidden="true" />
-                    ) : src ? (
-                      <img
-                        src={src}
-                        alt=""
-                        aria-hidden="true"
-                        loading="lazy"
-                        className="h-6 w-6 object-contain"
-                      />
-                    ) : null}
-                    <span
-                      className="text-lg font-semibold tracking-tight whitespace-nowrap text-foreground"
-                      style={color ? { color } : undefined}
-                    >
-                      {name}
-                    </span>
-                  </>
-                )}
-              </div>
-            ))}
-          </div>
+        <div className="mt-10 flex flex-col gap-8">
+          {rows.map((logos, index) => (
+            <LogoRow key={index} logos={logos} reverse={index % 2 === 1} />
+          ))}
         </div>
       </div>
     </section>
