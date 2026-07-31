@@ -50,8 +50,6 @@ const infrastructureLogos: LogoCloudItem[] = [
 const managedServiceLogos: LogoCloudItem[] = [
   { name: "ConnectWise", wordmark: "/logos/connectwise.svg", markBox: "h-5 max-w-[122px]" },
   { name: "Bitdefender", wordmark: "/logos/bitdefender.svg", markBox: "h-4 max-w-[112px]" },
-  // ConnectWise Automate ships no standalone mark, so it rides as a text lockup.
-  { name: "Automate" },
   { name: "Unitrends", wordmark: "/logos/unitrends.svg", markBox: "h-4 max-w-[190px]" },
   { name: "Datto", wordmark: "/logos/datto.svg" },
   { name: "Aruba", wordmark: "/logos/aruba.svg", markBox: "h-5 max-w-[80px]" },
