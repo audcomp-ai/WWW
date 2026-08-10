@@ -150,6 +150,10 @@ export interface ProposedEdit {
   category: 'voice' | 'seo' | 'factual' | 'new_page';
   severity: 'high' | 'medium' | 'low';
   matchCount: number | null;
+  /** 'instruction' = a human asked for this in chat, so it is auto-approved and
+   * shown first. 'audit' = Finn proposed it unprompted and it needs approving. */
+  origin?: 'audit' | 'instruction';
+  chatMessageId?: string | null;
 }
 
 export async function insertDrafts(edits: ProposedEdit[]): Promise<number> {
@@ -160,10 +164,14 @@ export async function insertDrafts(edits: ProposedEdit[]): Promise<number> {
       await client.query(
         `insert into wilfred.site_content_drafts
            (page_id, route, file_path, field, current_text, proposed_text,
-            rationale, category, severity, match_count)
-         values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)`,
+            rationale, category, severity, match_count, origin, chat_message_id,
+            status, reviewed_at)
+         values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12,
+                 case when $11 = 'instruction' then 'approved' else 'pending' end,
+                 case when $11 = 'instruction' then now() else null end)`,
         [e.pageId, e.route, e.filePath, e.field, e.currentText, e.proposedText,
-         e.rationale, e.category, e.severity, e.matchCount]
+         e.rationale, e.category, e.severity, e.matchCount,
+         e.origin ?? 'audit', e.chatMessageId ?? null]
       );
       inserted += 1;
     }
@@ -307,4 +315,95 @@ export async function logProtectionEvent(
   } catch (err) {
     console.error('logProtectionEvent failed', err);
   }
+}
+
+// ------------------------------------------------------------------- chat
+
+export interface ChatMessage {
+  id: string;
+  role: 'user' | 'assistant';
+  content: string;
+  imageUrl: string | null;
+  createdAt: string;
+}
+
+/** The conversation for one page, oldest first. Scoped per route because the
+ * page source is the shared context that makes "make that shorter" resolvable. */
+export async function getChatThread(route: string, limit = 40): Promise<ChatMessage[]> {
+  return withClient(async (client) => {
+    const result = await client.query(
+      `select id, role, content, image_url, created_at
+         from wilfred.site_chat_messages
+        where route = $1
+        order by created_at desc
+        limit $2`,
+      [route, limit]
+    );
+    return result.rows
+      .map((r) => ({
+        id: r.id as string,
+        role: r.role as 'user' | 'assistant',
+        content: r.content as string,
+        imageUrl: r.image_url as string | null,
+        createdAt: new Date(r.created_at).toISOString(),
+      }))
+      .reverse();
+  });
+}
+
+export async function appendChatMessage(
+  route: string,
+  role: 'user' | 'assistant',
+  content: string,
+  imageUrl: string | null = null,
+  userId: string | null = null
+): Promise<string> {
+  return withClient(async (client) => {
+    const result = await client.query(
+      `insert into wilfred.site_chat_messages (route, role, content, image_url, user_id)
+       values ($1, $2, $3, $4, $5) returning id`,
+      [route, role, content, imageUrl, userId]
+    );
+    return result.rows[0].id as string;
+  });
+}
+
+/** Edits already queued for this page but NOT yet merged, so the source on disk
+ * does not reflect them. The chat prompt needs these: without them the model
+ * believes its own last reply ("I changed X to Y") and tries to edit text that
+ * is not in the file yet. */
+export async function getStagedEdits(route: string): Promise<Array<{ id: string; field: string; currentText: string | null; proposedText: string }>> {
+  return withClient(async (client) => {
+    const result = await client.query(
+      `select id, field, current_text, proposed_text
+         from wilfred.site_content_drafts
+        where route = $1 and status in ('pending', 'approved')
+        order by created_at`,
+      [route]
+    );
+    return result.rows.map((r) => ({
+      id: r.id as string,
+      field: r.field as string,
+      currentText: r.current_text as string | null,
+      proposedText: r.proposed_text as string,
+    }));
+  });
+}
+
+/** A refinement targets the same original span as an earlier queued edit, so the
+ * earlier one must step aside — otherwise open_pr would try to apply both to the
+ * same text and the second would fail the exactly-once check at apply time. */
+export async function supersedeDrafts(route: string, currentTexts: string[]): Promise<number> {
+  if (!currentTexts.length) return 0;
+  return withClient(async (client) => {
+    const result = await client.query(
+      `update wilfred.site_content_drafts
+          set status = 'rejected',
+              review_note = 'Superseded by a later instruction in chat'
+        where route = $1 and current_text = any($2::text[])
+          and status in ('pending', 'approved')`,
+      [route, currentTexts]
+    );
+    return result.rowCount ?? 0;
+  });
 }

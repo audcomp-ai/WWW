@@ -113,6 +113,31 @@ export async function proposeEdits(
   const result = await routeAndInvoke('expert', prompt, 'submit_copy_edits', REWRITE_TOOL_SCHEMA as unknown as Record<string, unknown>);
   const raw = Array.isArray(result.edits) ? (result.edits as Array<Record<string, unknown>>) : [];
 
+  return validateEdits(raw, { source, route, filePath, pageId, spec });
+}
+
+export interface ValidateContext {
+  source: string;
+  route: string;
+  filePath: string;
+  pageId: string | null;
+  spec: VoiceSpec;
+  /** Where the edit came from. Chat-authored edits are auto-approved upstream;
+   * this only tags the row so the review UI can order them. */
+  origin?: 'audit' | 'instruction';
+  chatMessageId?: string | null;
+}
+
+/** The single gate every machine-authored edit passes through, whichever path
+ * produced it — the site audit or a chat instruction. These checks are the
+ * reason it is safe to let a model edit hand-written TSX, so there is exactly
+ * one implementation of them on purpose: a second, drifting copy is how that
+ * guarantee quietly rots. */
+export function validateEdits(
+  raw: Array<Record<string, unknown>>,
+  ctx: ValidateContext
+): RewriteOutcome {
+  const { source, route, filePath, pageId, spec } = ctx;
   const accepted: ProposedEdit[] = [];
   const rejected: RewriteOutcome['rejected'] = [];
   const claimed = new Set<string>();
@@ -162,6 +187,8 @@ export async function proposeEdits(
       category: (['voice', 'seo', 'factual'].includes(String(e.category)) ? String(e.category) : 'voice') as ProposedEdit['category'],
       severity: (['high', 'medium', 'low'].includes(String(e.severity)) ? String(e.severity) : 'medium') as ProposedEdit['severity'],
       matchCount: 1,
+      origin: ctx.origin ?? 'audit',
+      chatMessageId: ctx.chatMessageId ?? null,
     });
   }
 
