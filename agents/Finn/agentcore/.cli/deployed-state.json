@@ -1,0 +1,17 @@
+{
+  "targets": {
+    "default": {
+      "resources": {
+        "runtimes": {
+          "Finn": {
+            "runtimeId": "Finn_Finn-cHnRQj8pvN",
+            "runtimeArn": "arn:aws:bedrock-agentcore:ca-central-1:716145798939:runtime/Finn_Finn-cHnRQj8pvN",
+            "roleArn": "arn:aws:iam::716145798939:role/AgentCore-Finn-default-ApplicationAgentFinnRuntimeE-AmnRT2lAQRZh"
+          }
+        },
+        "stackName": "AgentCore-Finn-default",
+        "deployHash": "54cecb3f77865a30"
+      }
+    }
+  }
+}
