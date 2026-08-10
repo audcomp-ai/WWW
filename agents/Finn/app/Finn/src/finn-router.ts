@@ -1,4 +1,5 @@
 import { BedrockRuntimeClient, ConverseCommand, ApplyGuardrailCommand } from '@aws-sdk/client-bedrock-runtime';
+import type { Message } from '@aws-sdk/client-bedrock-runtime';
 import {
   insertTokenUsage, getTodaySpendUsd, getModelHealth,
   recordModelFailure, recordModelSuccess, logProtectionEvent,
@@ -91,21 +92,27 @@ async function invokeModel(
   prompt: string,
   toolName: string,
   inputSchema: Record<string, unknown>,
-  useGuardrail: boolean
+  useGuardrail: boolean,
+  messages?: Message[]
 ): Promise<Record<string, unknown>> {
   const client = new BedrockRuntimeClient({ region: REGION });
   const response = await client.send(
     new ConverseCommand({
       modelId: spec.id,
-      messages: [{ role: 'user', content: [{ text: prompt }] }],
+      // A caller supplying `messages` owns the whole conversation (history, and
+      // image blocks for screenshots). `prompt` remains the single-turn path.
+      messages: messages ?? [{ role: 'user', content: [{ text: prompt }] }],
       toolConfig: {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any -- JSON-Schema object is DocumentType-compatible at runtime.
         tools: [{ toolSpec: { name: toolName, inputSchema: { json: inputSchema as any } } }],
         toolChoice: { tool: { name: toolName } },
       },
-      ...(GUARDRAIL_ID && useGuardrail
-        ? { guardrailConfig: { guardrailIdentifier: GUARDRAIL_ID, guardrailVersion: GUARDRAIL_VERSION, trace: 'enabled' as const } }
-        : {}),
+      // Deliberately NO guardrailConfig here. That would scan the INPUT, which
+      // for Finn is Audcomp's own page source plus Finn's own instruction
+      // preamble — so it flags the site's real credentials as "invented" and
+      // reads the rules preamble as a PROMPT_ATTACK. Both are false positives by
+      // construction. The guardrail is applied to the OUTPUT only, below, where
+      // it is judging copy Finn actually wrote.
     })
   );
 
@@ -164,7 +171,7 @@ export async function routeAndInvoke(
   prompt: string,
   toolName: string,
   inputSchema: Record<string, unknown>,
-  opts: { guardrail?: boolean } = {}
+  opts: { guardrail?: boolean; messages?: Message[] } = {}
 ): Promise<Record<string, unknown>> {
   const useGuardrail = opts.guardrail !== false;
   await assertWithinBudget();
@@ -177,7 +184,7 @@ export async function routeAndInvoke(
   for (const spec of order) {
     if (spec !== order[order.length - 1] && (await isOpen(spec.id))) continue; // skip open unless last resort
     try {
-      const result = await invokeModel(spec, prompt, toolName, inputSchema, useGuardrail);
+      const result = await invokeModel(spec, prompt, toolName, inputSchema, useGuardrail, opts.messages);
       await recordModelSuccess(spec.id).catch((err) => console.error('recordModelSuccess failed', err));
       if (spec.id !== preferred.id) {
         const details = `${preferred.id} was unavailable; Finn used ${spec.id} instead.`;

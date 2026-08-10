@@ -18,8 +18,8 @@
       "protocol": "HTTP",
       "instrumentation": { "enableOtel": false },
       "envVars": [
-        { "name": "WILFRED_GUARDRAIL_ID", "value": "hj9w6d8gzk8p" },
-        { "name": "WILFRED_GUARDRAIL_VERSION", "value": "3" },
+        { "name": "WILFRED_GUARDRAIL_ID", "value": "lr7dx23j90sf" },
+        { "name": "WILFRED_GUARDRAIL_VERSION", "value": "2" },
         { "name": "FINN_DAILY_CAP_USD", "value": "5" },
         { "name": "FINN_SITE_REPO", "value": "audcomp-ai/aud_new_website" },
         { "name": "FINN_SITE_BASE_BRANCH", "value": "claude/design-system-setup-pqv3ph" },

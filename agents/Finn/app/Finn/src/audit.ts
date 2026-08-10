@@ -139,6 +139,10 @@ export function extractCopy(source: string): string {
     if (text.length < 12) return false;
     if (text.split(/\s+/).length < 3) return false;
     if (/^[./#]|^https?:|^[a-z0-9-]+\/[a-z0-9-]/.test(text)) return false; // paths, urls
+    // Markup, not copy. Capital letters and punctuation inside an <svg> tag or a
+    // JSX attribute would otherwise read as prose to the checks below.
+    if (/[<>{}]/.test(text)) return false;
+    if (/\w+\s*=\s*["']/.test(text)) return false;                          // attribute soup
     if (!/[A-Z]|[,.!?;]/.test(text)) return false;                          // class strings
     if (/^[a-z0-9\s:_-]+$/.test(text) && !/[,.!?;]/.test(text)) return false;
     return true;
@@ -153,9 +157,14 @@ export function extractCopy(source: string): string {
 
 /** Reads the Next.js metadata block, which is where the SEO copy lives. */
 export function extractMetadata(source: string): { title: string; description: string } {
-  const title = /title:\s*["'`]([^"'`]+)["'`]/.exec(source)?.[1] ?? '';
-  const description = /description:\s*\n?\s*["'`]([^"'`]+)["'`]/.exec(source)?.[1] ?? '';
-  return { title, description };
+  // Capture the opening quote and read to its matching partner, so an apostrophe
+  // inside a double-quoted string does not end the match early. A naive
+  // [^"\'`]+ truncated "Canada\'s trusted IT..." to "Canada".
+  const field = (name: string): string => {
+    const re = new RegExp(`${name}:\\s*\\n?\\s*(["'\`])((?:(?!\\1)[\\s\\S])*)\\1`);
+    return re.exec(source)?.[2] ?? '';
+  };
+  return { title: field('title'), description: field('description') };
 }
 
 export async function auditSource(

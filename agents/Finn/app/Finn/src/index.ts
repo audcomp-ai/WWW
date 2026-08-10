@@ -5,7 +5,9 @@ import {
   getActiveVoiceSpec, insertProposedVoiceSpec,
   getPageByRoute, upsertPage, insertDrafts,
   getApprovedDrafts, markDraftsShipped, markDraftsFailed,
+  getChatThread, appendChatMessage, getStagedEdits, supersedeDrafts,
 } from './db.js';
+import { runChat } from './chat.js';
 import { scrapePage, mapSite, hashContent, urlToRoute, routeToFilePath, filePathToRoute } from './crawl.js';
 import { auditPage, auditSource, extractCopy, extractMetadata } from './audit.js';
 import { learnVoiceSpec } from './voice-spec.js';
@@ -37,6 +39,18 @@ const RequestSchema = z.discriminatedUnion('action', [
   z.object({ action: z.literal('draft_page'), route: z.string(), brief: z.string() }),
   // Turns approved drafts into a pull request. Never touches the base branch.
   z.object({ action: z.literal('open_pr'), draftIds: z.array(z.string()).min(1), title: z.string().optional() }),
+  // Instruction-led editing. The human says what to change; Finn does exactly
+  // that. Resulting edits are auto-approved (they were asked for) — the pull
+  // request stays the gate.
+  z.object({
+    action: z.literal('chat'),
+    route: z.string(),
+    message: z.string().min(1),
+    imageUrl: z.string().url().optional(),
+  }),
+  // The page's editable strings, for the "pick a section from a list" targeting
+  // mode. Pure source parse, no model call.
+  z.object({ action: z.literal('list_fields'), route: z.string() }),
 ]);
 
 const app = new BedrockAgentCoreApp({
@@ -246,6 +260,96 @@ const app = new BedrockAgentCoreApp({
           }).catch(() => {});
 
           return JSON.stringify({ route: request.route, filePath, drafts: inserted, warnings: page.warnings, summary: page.summary });
+        }
+
+        case 'list_fields': {
+          const filePath = routeToFilePath(request.route);
+          if (!filePath) return JSON.stringify({ error: `Route ${request.route} does not map to a static page file.` });
+          const source = await getFileContent(filePath);
+          const meta = extractMetadata(source);
+          // Only strings that occur exactly once are offered: anything ambiguous
+          // would be rejected by the validator anyway, so showing it as a target
+          // would just waste a turn. Metadata is listed separately, so it is
+          // excluded from the body copy to avoid offering the same string twice.
+          const seen = new Set([meta.title, meta.description].filter(Boolean));
+          const body = extractCopy(source)
+            .split('\n')
+            .map((t) => t.trim())
+            .filter((t) => t.length > 0 && !seen.has(t) && source.split(t).length - 1 === 1)
+            // Longest first: the substantial paragraphs are what someone
+            // actually wants to point at, not stray two-word labels.
+            .sort((a, b) => b.length - a.length)
+            .slice(0, 60);
+
+          const fields = [
+            ...(meta.title ? [{ field: 'metadata.title', text: meta.title }] : []),
+            ...(meta.description ? [{ field: 'metadata.description', text: meta.description }] : []),
+            ...body.map((text, i) => ({ field: `copy[${i}]`, text })),
+          ];
+          return JSON.stringify({ route: request.route, filePath, fields, truncated: body.length === 60 });
+        }
+
+        case 'chat': {
+          try {
+          const spec = await getActiveVoiceSpec();
+          const filePath = routeToFilePath(request.route);
+          if (!filePath) return JSON.stringify({ error: `Route ${request.route} does not map to a static page file.` });
+
+          const page = await getPageByRoute(request.route);
+          const source = await getFileContent(filePath);
+          const history = await getChatThread(request.route);
+          const staged = await getStagedEdits(request.route);
+
+          // The user's message is persisted BEFORE the model runs, so a failed
+          // or slow turn never loses what they typed.
+          const userMessageId = await appendChatMessage(
+            request.route, 'user', request.message, request.imageUrl ?? null
+          );
+
+          const outcome = await runChat({
+            route: request.route,
+            filePath,
+            source,
+            pageId: page?.id ?? null,
+            spec,
+            history,
+            message: request.message,
+            imageUrl: request.imageUrl,
+            chatMessageId: userMessageId,
+            staged,
+          });
+
+          // A refinement targets the same span as the edit it replaces, so the
+          // older one is retired first — otherwise open_pr would try to apply
+          // two edits to the same text and the second would fail.
+          const superseded = await supersedeDrafts(
+            request.route,
+            outcome.accepted.map((e) => e.currentText).filter((t): t is string => Boolean(t))
+          );
+          const inserted = await insertDrafts(outcome.accepted);
+          await appendChatMessage(request.route, 'assistant', outcome.reply);
+
+          await logActivity('chat_edit', `${inserted} change(s) requested on ${request.route}`, {
+            route: request.route, rejected: outcome.rejected.length, hadImage: Boolean(request.imageUrl),
+          }).catch(() => {});
+
+          return JSON.stringify({
+            route: request.route,
+            filePath,
+            reply: outcome.reply,
+            applied: inserted,
+            superseded,
+            rejected: outcome.rejected,
+          });
+          } catch (err) {
+            // An exception escaping the handler makes bedrock-agentcore try to
+            // send the Error object itself, which Fastify rejects with an opaque
+            // FST_ERR_REP_INVALID_PAYLOAD_TYPE 500 that hides the real cause.
+            // Always come back as a JSON string.
+            const detail = err instanceof Error ? err.message : String(err);
+            context.log.error({ err }, 'chat failed');
+            return JSON.stringify({ error: detail, route: request.route });
+          }
         }
 
         case 'open_pr': {
