@@ -147,7 +147,7 @@ export interface ProposedEdit {
   currentText: string | null;
   proposedText: string;
   rationale: string;
-  category: 'voice' | 'seo' | 'factual' | 'new_page';
+  category: 'voice' | 'seo' | 'factual' | 'new_page' | 'new_section';
   severity: 'high' | 'medium' | 'low';
   matchCount: number | null;
   /** 'instruction' = a human asked for this in chat, so it is auto-approved and

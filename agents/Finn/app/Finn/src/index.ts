@@ -1,17 +1,18 @@
 import { createHash } from 'node:crypto';
 import { z } from 'zod';
 import { BedrockAgentCoreApp } from 'bedrock-agentcore/runtime';
+import type { ProposedEdit } from './db.js';
 import {
   getActiveVoiceSpec, insertProposedVoiceSpec,
   getPageByRoute, upsertPage, insertDrafts,
   getApprovedDrafts, markDraftsShipped, markDraftsFailed,
   getChatThread, appendChatMessage, getStagedEdits, supersedeDrafts,
 } from './db.js';
-import { runChat } from './chat.js';
+import { runChat, runSiteReplace } from './chat.js';
 import { scrapePage, mapSite, hashContent, urlToRoute, routeToFilePath, filePathToRoute } from './crawl.js';
 import { auditPage, auditSource, extractCopy, extractMetadata } from './audit.js';
 import { learnVoiceSpec } from './voice-spec.js';
-import { proposeEdits, applyEdits } from './rewrite.js';
+import { proposeEdits, applyEdits, validateEdits } from './rewrite.js';
 import { draftPage, newPageDraft } from './new-page.js';
 import { getFileContent, listPageFiles, createBranch, commitFile, openPullRequest, repoSlug } from './github.js';
 import { logActivity } from './activity-log.js';
@@ -47,6 +48,9 @@ const RequestSchema = z.discriminatedUnion('action', [
     route: z.string(),
     message: z.string().min(1),
     imageUrl: z.string().url().optional(),
+    // 'site' applies one wording change across every page. One model call, then
+    // a deterministic sweep — cost does not scale with page count.
+    scope: z.enum(['page', 'site']).optional(),
   }),
   // The page's editable strings, for the "pick a section from a list" targeting
   // mode. Pure source parse, no model call.
@@ -292,6 +296,72 @@ const app = new BedrockAgentCoreApp({
         case 'chat': {
           try {
           const spec = await getActiveVoiceSpec();
+
+          if (request.scope === 'site') {
+            const sampleFile = routeToFilePath(request.route) ?? 'app/page.tsx';
+            const sampleSource = await getFileContent(sampleFile);
+            const history = await getChatThread(request.route);
+            const userMessageId = await appendChatMessage(request.route, 'user', request.message, null);
+
+            const pair = await runSiteReplace({
+              sampleRoute: request.route, sampleSource, spec, history, message: request.message,
+            });
+
+            if (!pair.findText) {
+              await appendChatMessage(request.route, 'assistant', pair.reply);
+              return JSON.stringify({ scope: 'site', reply: pair.reply, applied: 0, files: [], skipped: [] });
+            }
+
+            // The sweep: plain string matching across every page file. A file is
+            // only touched when the wording appears EXACTLY once in it — the same
+            // rule as a single-page edit, applied per file.
+            const files = await listPageFiles();
+            const accepted: ProposedEdit[] = [];
+            const skipped: Array<{ file: string; reason: string }> = [];
+            let scanned = 0;
+
+            for (const filePath of files) {
+              let source: string;
+              try { source = await getFileContent(filePath); } catch { skipped.push({ file: filePath, reason: 'could not read' }); continue; }
+              scanned += 1;
+              const count = source.split(pair.findText).length - 1;
+              if (count === 0) continue;
+              if (count > 1) { skipped.push({ file: filePath, reason: `appears ${count} times, not unique` }); continue; }
+
+              const route = filePathToRoute(filePath) ?? filePath;
+              const page = await getPageByRoute(route);
+              const outcome = validateEdits(
+                [{
+                  field: 'site-wide wording',
+                  currentText: pair.findText,
+                  proposedText: pair.replaceText,
+                  rationale: `Site-wide change requested in chat: "${request.message.slice(0, 90)}"`,
+                  category: 'voice',
+                  severity: 'medium',
+                }],
+                { source, route, filePath, pageId: page?.id ?? null, spec, origin: 'instruction', chatMessageId: userMessageId }
+              );
+              accepted.push(...outcome.accepted);
+              for (const r of outcome.rejected) skipped.push({ file: filePath, reason: r.reason });
+            }
+
+            const inserted = await insertDrafts(accepted);
+            const summary = `${inserted} page(s) will change` + (skipped.length ? `, ${skipped.length} skipped` : '');
+            await appendChatMessage(request.route, 'assistant', `${pair.reply}\n\n${summary}.`);
+            await logActivity('site_wide_edit', summary, { find: pair.findText.slice(0, 60), scanned }).catch(() => {});
+
+            return JSON.stringify({
+              scope: 'site',
+              reply: pair.reply,
+              find: pair.findText,
+              replace: pair.replaceText,
+              scanned,
+              applied: inserted,
+              files: accepted.map((e) => e.filePath),
+              skipped,
+            });
+          }
+
           const filePath = routeToFilePath(request.route);
           if (!filePath) return JSON.stringify({ error: `Route ${request.route} does not map to a static page file.` });
 

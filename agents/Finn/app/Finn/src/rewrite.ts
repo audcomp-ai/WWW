@@ -124,6 +124,68 @@ export async function proposeEdits(
   return validateEdits(raw, { source, route, filePath, pageId, spec });
 }
 
+// Plain HTML that is always safe to emit. Anything else must already be
+// imported by the file the block is going into.
+const SAFE_HTML_TAGS = new Set([
+  'section', 'div', 'p', 'h2', 'h3', 'h4', 'ul', 'ol', 'li', 'a', 'span',
+  'strong', 'em', 'br', 'img', 'hr',
+]);
+
+/** Reads the components a file imports, so a block can be held to what is
+ * already available rather than adding import lines. */
+export function importedComponentsOf(source: string): string[] {
+  const names: string[] = [];
+  for (const m of source.matchAll(/import\s+(?:\{([^}]*)\}|(\w+))\s+from\s+["'][^"']+["']/g)) {
+    const named = (m[1] ?? m[2] ?? '').split(',').map((x) => x.trim().split(/\s+as\s+/).pop()?.trim() ?? '');
+    for (const n of named) if (n && /^[A-Z]/.test(n)) names.push(n);
+  }
+  return Array.from(new Set(names));
+}
+
+/** The checks that buy a block its exemption from the no-JSX rule. Returns a
+ * reason string when the block is unsafe, or null when it passes. The pull
+ * request's preview build remains the real backstop. */
+export function validateBlock(anchor: string, proposed: string, imported: string[]): string | null {
+  if (!proposed.startsWith(anchor) && !proposed.endsWith(anchor)) {
+    return 'a block must keep the anchor text intact at the start or end';
+  }
+  const block = proposed.startsWith(anchor) ? proposed.slice(anchor.length) : proposed.slice(0, -anchor.length);
+
+  // A SectionAngle is a coloured wedge transitioning one section into the next.
+  // When the anchor IS one, a model that inserts after it has to emit a second
+  // divider to repair the colour run, which leaves a duplicate line and a wedge
+  // in the wrong place. Refuse it: the fix is to anchor on the other side, not to
+  // compensate. Enforced here rather than in the prompt because the prompt did
+  // not hold.
+  if (/<\s*SectionAngle/.test(anchor) && /<\s*SectionAngle/.test(block)) {
+    return 'block adds another SectionAngle beside the divider it is anchored to; use position "before" so the new section sits above the divider instead';
+  }
+
+  if (/<\s*(script|iframe|object|embed)\b/i.test(block)) return 'block contains a script or embed tag';
+  if (/dangerouslySetInnerHTML/.test(block)) return 'block uses dangerouslySetInnerHTML';
+  if (/\son[A-Z]\w*\s*=/.test(block)) return 'block attaches an event handler';
+
+  // Every element must be plain HTML or already imported by this file.
+  const allowed = new Set([...SAFE_HTML_TAGS, ...imported]);
+  const used = new Set<string>();
+  for (const m of block.matchAll(/<\s*([A-Za-z][A-Za-z0-9.]*)/g)) used.add(m[1]!);
+  const unknown = [...used].filter((t) => !allowed.has(t) && !allowed.has(t.split('.')[0]!));
+  if (unknown.length) return `block uses ${unknown.join(', ')}, which this file does not import`;
+
+  // Tags must balance, or the file will not parse.
+  for (const tag of used) {
+    if (SAFE_HTML_TAGS.has(tag) && ['br', 'img', 'hr'].includes(tag)) continue;
+    const open = (block.match(new RegExp(`<\\s*${tag}(\\s|>|/)`, 'g')) ?? []).length;
+    const close = (block.match(new RegExp(`</\\s*${tag}\\s*>`, 'g')) ?? []).length;
+    const self = (block.match(new RegExp(`<\\s*${tag}[^>]*/>`, 'g')) ?? []).length;
+    if (open - self !== close) return `block has unbalanced <${tag}> tags (${open - self} open, ${close} closed)`;
+  }
+  if ((block.match(/\{/g) ?? []).length !== (block.match(/\}/g) ?? []).length) {
+    return 'block has unbalanced braces';
+  }
+  return null;
+}
+
 export interface ValidateContext {
   source: string;
   route: string;
@@ -134,6 +196,9 @@ export interface ValidateContext {
    * this only tags the row so the review UI can order them. */
   origin?: 'audit' | 'instruction';
   chatMessageId?: string | null;
+  /** Components already imported by the target file. A block may only use these,
+   * which removes any need to add import lines and the risk of breaking them. */
+  importedComponents?: string[];
 }
 
 /** The single gate every machine-authored edit passes through, whichever path
@@ -183,12 +248,25 @@ export function validateEdits(
 
     // Guard against the model "helpfully" rewriting code. A replacement that
     // changes the shape of the surrounding syntax is not a copy edit.
-    if (/[<>{}]/.test(currentText) || /[<>{}]/.test(proposedText)) { reject('edit touches JSX or expression syntax, not plain copy'); continue; }
+    // new_section is the one exception: it inserts markup on purpose, and pays
+    // for that exemption with validateBlock's own checks below.
+    const isBlock = String(e.category) === 'new_section';
+    if (!isBlock && (/[<>{}]/.test(currentText) || /[<>{}]/.test(proposedText))) {
+      reject('edit touches JSX or expression syntax, not plain copy'); continue;
+    }
+    if (isBlock) {
+      const problem = validateBlock(currentText, proposedText, ctx.importedComponents ?? []);
+      if (problem) { reject(problem); continue; }
+    }
 
     // Finn cannot run `next build` (no checkout or node_modules in the AgentCore
     // container), so the one realistic build-breaker is checked directly here.
-    const conflict = delimiterConflict(source, currentText, proposedText);
-    if (conflict) { reject(conflict); continue; }
+    // Skipped for blocks: they span lines and contain quotes by design, and
+    // validateBlock covers them instead.
+    if (!isBlock) {
+      const conflict = delimiterConflict(source, currentText, proposedText);
+      if (conflict) { reject(conflict); continue; }
+    }
 
     claimed.add(currentText);
     accepted.push({
@@ -199,7 +277,7 @@ export function validateEdits(
       currentText,
       proposedText,
       rationale,
-      category: (['voice', 'seo', 'factual'].includes(String(e.category)) ? String(e.category) : 'voice') as ProposedEdit['category'],
+      category: (['voice', 'seo', 'factual', 'new_section'].includes(String(e.category)) ? String(e.category) : 'voice') as ProposedEdit['category'],
       severity: (['high', 'medium', 'low'].includes(String(e.severity)) ? String(e.severity) : 'medium') as ProposedEdit['severity'],
       matchCount: 1,
       origin: ctx.origin ?? 'audit',
