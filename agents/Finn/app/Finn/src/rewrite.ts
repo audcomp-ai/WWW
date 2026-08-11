@@ -34,6 +34,14 @@ const REWRITE_TOOL_SCHEMA = {
   required: ['edits'],
 } as const;
 
+/** Banned-term counts, so a rejection can be based on what an edit ADDS rather
+ * than what it inherits from the text it replaces. */
+function countTerms(text: string, banned: string[]): Map<string, number> {
+  const m = new Map<string, number>();
+  for (const f of scanBannedTerms(text, banned)) m.set(f.term, f.count);
+  return m;
+}
+
 function occurrences(haystack: string, needle: string): number {
   if (!needle) return 0;
   return haystack.split(needle).length - 1;
@@ -161,10 +169,17 @@ export function validateEdits(
     // Two edits claiming the same span would make application order-dependent.
     if (claimed.has(currentText)) { reject('duplicate: another edit already targets this exact string'); continue; }
 
-    // Never ship a fix that reintroduces the problem.
-    const introduced = scanBannedTerms(proposedText, spec.bannedWords);
-    if (introduced.length) { reject(`proposed text uses banned term(s): ${introduced.map((b) => b.term).join(', ')}`); continue; }
-    if (countEmDashes(proposedText)) { reject('proposed text still contains an em/en-dash'); continue; }
+    // Never ship a fix that INTRODUCES a banned term. Deliberately differential:
+    // an edit inherits whatever was already in the text it replaces, and judging
+    // the replacement as a whole made any paragraph containing a banned term
+    // permanently uneditable. /our-story cites "top-25 CDN Solutions Provider" —
+    // a real award whose name contains a banned marketing phrase — so appending a
+    // sentence to that paragraph was refused for a term the edit did not add.
+    const before = countTerms(currentText, spec.bannedWords);
+    const after = countTerms(proposedText, spec.bannedWords);
+    const added = [...after.keys()].filter((t) => (after.get(t) ?? 0) > (before.get(t) ?? 0));
+    if (added.length) { reject(`proposed text adds banned term(s): ${added.join(', ')}`); continue; }
+    if (countEmDashes(proposedText) > countEmDashes(currentText)) { reject('proposed text adds an em/en-dash'); continue; }
 
     // Guard against the model "helpfully" rewriting code. A replacement that
     // changes the shape of the surrounding syntax is not a copy edit.
