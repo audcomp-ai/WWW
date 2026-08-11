@@ -6,9 +6,9 @@ import { SectionAngle } from "@/components/SectionAngle";
 import { AnimatedSection, StaggeredSection, StaggeredItem } from "@/components/AnimatedSection";
 
 export const metadata: Metadata = {
-  title: "About Audcomp | IT Leaders in Hamilton, Burlington & Beyond",
+  title: "About Audcomp | IT Partner in Hamilton, Burlington & Beyond",
   description:
-    "Learn about Audcomp, Canada's trusted IT consulting partner serving Hamilton, Burlington, Oakville, London, and Niagara. Ranked top 25 CDN Solutions Provider.",
+    "Learn about Audcomp, Canada's trusted IT consulting partner serving Hamilton, Burlington, Oakville, London, and Niagara. Ranked top 25 CDN provider.",
 };
 
 const stats = [
@@ -24,7 +24,7 @@ export default function AboutPage() {
     <>
       <Hero
         title="About Audcomp"
-        subtitle="40 years keeping Canadian businesses running — 100% Canadian engineers, 100% Canadian data centres, and a partner who answers when it matters most."
+        subtitle="40 years keeping Canadian businesses running. 100% Canadian engineers, 100% Canadian data centres, and a partner who answers when it matters most."
         ctaText="Contact Our Team"
         ctaHref="/contact"
         backgroundImage="/images/professional_services_hero.png"
@@ -56,7 +56,7 @@ export default function AboutPage() {
               More Than IT Support.<br />A True Business Partner.
             </h2>
             <p className="text-slate-500 text-lg leading-relaxed mb-6">
-              Our mission is to empower businesses to operate confidently and more efficiently by providing tailored IT solutions. Our team of dedicated professionals is committed to developing and implementing reliable, cost-effective solutions for businesses of all sizes — no matter the scope of the need.
+              Our mission is to help businesses operate confidently and more efficiently by providing tailored IT services. Our team of dedicated professionals is committed to developing and implementing reliable, cost-effective services for businesses of all sizes, no matter the scope of the need.
             </p>
             <p className="text-slate-500 text-lg leading-relaxed">
               We are more than a service provider. We are your partner. That philosophy has guided every client relationship since Gary Sohal founded Audcomp at McMaster University in 1986.
@@ -123,7 +123,7 @@ export default function AboutPage() {
                 Guided by Our Roots
               </h2>
               <p className="text-slate-500 text-base leading-relaxed mb-4">
-                Our beliefs and values are the heart of how we operate. The Audcomp philosophy guides how we approach every client relationship and project. Though we are one of the largest IT services providers in Ontario, we have not forgotten our small business roots.
+                Our beliefs and values are the heart of how we operate. The Audcomp philosophy guides how we approach every client relationship and project. Though we are one of the largest IT providers in Ontario, we have not forgotten our small business roots.
               </p>
             </AnimatedSection>
 
@@ -172,7 +172,7 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-lg font-bold text-[#0a2540] mb-3">People First</h3>
                 <p className="text-slate-500 text-sm leading-relaxed">
-                  We invest heavily into our staff because our people are our power. We continuously connect our team to resources and opportunities that deepen their expertise. When our people are empowered they are more nimble, satisfied, and able to deliver the highest level of service.
+                  We invest heavily into our staff because our people are our power. We continuously connect our team to resources and opportunities that deepen their expertise. When our people are supported they are more nimble, satisfied, and able to deliver the highest level of service.
                 </p>
               </div>
             </StaggeredItem>
@@ -196,7 +196,7 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-lg font-bold text-[#0a2540] mb-3">Partner Agnostic</h3>
                 <p className="text-slate-500 text-sm leading-relaxed">
-                  Our extensive roster of top-tier IT partners lets your business tap a broad range of proven technologies through a single point of contact. We are equally committed to all of our partners and strategically match their robust capabilities and competencies to your business needs.
+                  Our extensive roster of top-tier IT partners lets your business tap a broad range of proven technologies through a single point of contact. We are equally committed to all of our partners and strategically match their strong capabilities and competencies to your business needs.
                 </p>
               </div>
             </StaggeredItem>
