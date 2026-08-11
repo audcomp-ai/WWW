@@ -110,7 +110,7 @@ export default function Home() {
             </div>
             <div>
               <p className="text-4xl font-bold text-white tracking-tight"><CountUp end={100} suffix="%" /></p>
-              <p className="text-xs text-white/40 mt-2 uppercase tracking-widest">Canadian Engineers</p>
+              <p className="text-xs text-white/40 mt-2 uppercase tracking-widest">Engineers in Canada</p>
             </div>
             <div>
               <p className="text-4xl font-bold text-white tracking-tight">24/7</p>
