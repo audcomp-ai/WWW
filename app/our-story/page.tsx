@@ -66,7 +66,7 @@ export default function OurStoryPage() {
             That philosophy turned a small startup into the largest Managed Service Provider in the Hamilton and Ancaster region. Today, Audcomp is recognized as a top-25 CDN Solutions Provider — a designation earned through results, not marketing.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed">
-            Through every technological shift — from on-premise servers to the cloud, from basic networking to AI — Audcomp's north star has remained the same: empower clients to operate confidently and efficiently, with technology that works the way their business needs it to.
+            Through every technological shift, from on-premise servers to the cloud, from basic networking to AI, Audcomp's north star has remained the same: empower clients to operate confidently and efficiently, with technology that works the way their business needs it to. Every engineer is based in Canada.
           </p>
         </div>
       </section>
