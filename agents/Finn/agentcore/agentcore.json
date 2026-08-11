@@ -23,7 +23,7 @@
         { "name": "FINN_DAILY_CAP_USD", "value": "5" },
         { "name": "FINN_SITE_REPO", "value": "audcomp-ai/aud_new_website" },
         { "name": "FINN_SITE_BASE_BRANCH", "value": "claude/design-system-setup-pqv3ph" },
-        { "name": "FINN_SITE_URL", "value": "https://aud-new-website.vercel.app" }
+        { "name": "FINN_SITE_URL", "value": "https://dev.audcomp.ai" }
       ]
     }
   ],
