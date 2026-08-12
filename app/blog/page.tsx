@@ -6,7 +6,7 @@ import { SectionAngle } from "@/components/SectionAngle";
 export const metadata: Metadata = {
   title: "Blog & Insights | Audcomp — IT Expertise for Canadian Businesses",
   description:
-    "IT insights, cybersecurity updates, cloud tips, and AI news from Audcomp's team of Canadian engineers.",
+    "IT insights, cybersecurity updates, cloud tips, and AI news from Audcomp's team of engineers in Canada.",
 };
 
 const allPosts = [
@@ -56,7 +56,7 @@ export default function BlogPage() {
             IT Expertise for<br />Canadian Businesses
           </h1>
           <p className="text-white/55 text-lg leading-relaxed max-w-xl mx-auto">
-            Cybersecurity, cloud, AI, and managed IT — practical insights from Audcomp&apos;s team of 100% Canadian engineers.
+            Cybersecurity, cloud, AI, and managed IT — practical insights from Audcomp&apos;s team of 100% engineers in Canada.
           </p>
         </div>
       </section>

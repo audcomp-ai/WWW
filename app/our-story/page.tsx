@@ -114,7 +114,7 @@ export default function OurStoryPage() {
               },
               {
                 title: "Canadian First",
-                desc: "100% Canadian engineers. 100% Canadian data centers. Your data stays on Canadian soil.",
+                desc: "100% engineers in Canada. 100% Canadian data centers. Your data stays on Canadian soil.",
               },
               {
                 title: "Proactive",

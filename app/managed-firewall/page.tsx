@@ -14,7 +14,7 @@ export default function ManagedFirewallPage() {
     <>
       <Hero
         title="A Firewall That Keeps Blocking Threats Long After Install Day"
-        subtitle="An unpatched or misconfigured firewall is an open door. Audcomp&apos;s 100% Canadian engineers monitor, patch, and tune your network perimeter 24/7 — so it keeps doing its job as threats evolve."
+        subtitle="An unpatched or misconfigured firewall is an open door. Audcomp&apos;s 100% engineers in Canada monitor, patch, and tune your network perimeter 24/7 — so it keeps doing its job as threats evolve."
         ctaText="Secure Your Perimeter"
         ctaHref="/contact"
         bgColor="dark"

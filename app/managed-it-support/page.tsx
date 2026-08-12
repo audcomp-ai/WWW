@@ -4,9 +4,9 @@ import CTABanner from "@/components/CTABanner";
 import { SectionAngle } from "@/components/SectionAngle";
 
 export const metadata: Metadata = {
-  title: "Managed IT Support | Audcomp — 24/7 Canadian Engineers",
+  title: "Managed IT Support | Audcomp — 24/7 Engineers in Canada",
   description:
-    "Audcomp's Managed IT Support provides end-user support, network management, and infrastructure monitoring with 100% Canadian engineers and 24/7 coverage.",
+    "Audcomp's Managed IT Support provides end-user support, network management, and infrastructure monitoring with 100% engineers in Canada and 24/7 coverage.",
 };
 
 const features = [
@@ -23,7 +23,7 @@ export default function ManagedITSupportPage() {
     <>
       <Hero
         title="IT Support That Prevents Problems, Not Just Fixes Them"
-        subtitle="End-user support, network management, and 24/7 monitoring — delivered by 100% Canadian engineers who know your environment."
+        subtitle="End-user support, network management, and 24/7 monitoring — delivered by 100% engineers in Canada who know your environment."
         ctaText="Get Started"
         ctaHref="/contact"
         backgroundImage="/images/managed_it_hero.png"

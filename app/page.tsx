@@ -12,14 +12,14 @@ import { AnimatedSection, StaggeredSection, StaggeredItem } from "@/components/A
 export const metadata: Metadata = {
   title: "Audcomp | Managed IT, Cybersecurity & Cloud — 100% Canadian",
   description:
-    "Enterprise-grade managed IT, cybersecurity, and cloud for Ontario businesses — 24/7 monitoring, 100% Canadian engineers, and Canadian data centres. Serving Hamilton, Burlington, Oakville, London, and Niagara since 1986. Top 25 CDN Solutions Provider.",
+    "Enterprise-grade managed IT, cybersecurity, and cloud for Ontario businesses — 24/7 monitoring, 100% engineers in Canada, and Canadian data centres. Serving Hamilton, Burlington, Oakville, London, and Niagara since 1986. Top 25 CDN Solutions Provider.",
 };
 
 const services = [
   {
     title: "Managed IT Services",
     description:
-      "End-user support, network monitoring, and infrastructure management with 100% Canadian engineers and 24/7 coverage.",
+      "End-user support, network monitoring, and infrastructure management with 100% engineers in Canada and 24/7 coverage.",
     href: "/managed-it-services",
     category: "Managed IT",
   },

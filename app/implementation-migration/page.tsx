@@ -14,7 +14,7 @@ export default function ImplementationMigrationPage() {
     <>
       <Hero
         title="Implementation & Migration"
-        subtitle="Complex IT projects delivered on time, on budget, and without downtime — executed by Audcomp's 100% Canadian engineers."
+        subtitle="Complex IT projects delivered on time, on budget, and without downtime — executed by Audcomp's 100% engineers in Canada."
         ctaText="Plan Your Project"
         ctaHref="/contact"
         backgroundImage="/images/professional_services_hero.png"

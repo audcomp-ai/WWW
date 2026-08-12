@@ -6,7 +6,7 @@ import { SectionAngle } from "@/components/SectionAngle";
 export const metadata: Metadata = {
   title: "Help Desk Support | Audcomp — 24/7 IT Help Desk in Canada",
   description:
-    "Audcomp's 24/7 Help Desk provides phone, email, and on-site support for hardware, software, and security issues. 100% Canadian engineers.",
+    "Audcomp's 24/7 Help Desk provides phone, email, and on-site support for hardware, software, and security issues. 100% engineers in Canada.",
 };
 
 export default function HelpDeskPage() {

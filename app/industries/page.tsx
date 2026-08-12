@@ -43,7 +43,7 @@ const industries = [
       "Citizen-facing service continuity",
     ],
     solution:
-      "We help municipalities modernize their IT infrastructure cost-effectively — with 100% Canadian engineers, compliant data handling, and a Virtual CIO to guide long-term technology planning.",
+      "We help municipalities modernize their IT infrastructure cost-effectively — with 100% engineers in Canada, compliant data handling, and a Virtual CIO to guide long-term technology planning.",
     services: [
       { label: "Managed IT Services", href: "/managed-it-services" },
       { label: "Virtual CIO", href: "/virtual-cio" },

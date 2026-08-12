@@ -14,7 +14,7 @@ export default function VirtualCIOPage() {
     <>
       <Hero
         title="Virtual CIO (vCIO)"
-        subtitle="Get executive-level IT strategy and a documented technology roadmap — without the cost of a full-time C-suite hire. Delivered by Audcomp's 100% Canadian engineers."
+        subtitle="Get executive-level IT strategy and a documented technology roadmap — without the cost of a full-time C-suite hire. Delivered by Audcomp's 100% engineers in Canada."
         ctaText="Meet Your vCIO"
         ctaHref="/contact"
         backgroundImage="/images/professional_services_hero.png"

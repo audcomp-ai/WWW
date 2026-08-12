@@ -14,7 +14,7 @@ export default function ConsultingDesignPage() {
     <>
       <Hero
         title="IT Consulting & Design"
-        subtitle="Know exactly where your IT stands before you spend — Audcomp's Canadian engineers assess your environment, flag the risks, and design what fits your budget."
+        subtitle="Know exactly where your IT stands before you spend — Audcomp's engineers in Canada assess your environment, flag the risks, and design what fits your budget."
         ctaText="Schedule a Consultation"
         ctaHref="/contact"
         backgroundImage="/images/professional_services_hero.png"

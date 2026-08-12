@@ -3,7 +3,7 @@ import ClientAiAgentsPage from "./ClientPage";
 
 export const metadata: Metadata = {
   title: "AI Agents & Automation | Audcomp — Built by 100% Engineers in Canada",
-  description: "Put practical AI agents to work automating real business tasks — designed, deployed, and supported by Audcomp's 100% Canadian engineers and Canadian data centres.",
+  description: "Put practical AI agents to work automating real business tasks — designed, deployed, and supported by Audcomp's 100% engineers in Canada and Canadian data centres.",
 };
 
 export default function AiAgentsPage() {
