@@ -35,7 +35,19 @@ const RequestSchema = z.discriminatedUnion('action', [
   // Field-level copy proposals for one page, queued for human review.
   z.object({ action: z.literal('propose_edits'), route: z.string() }),
   // Proposes a NEW voice spec version. Always lands inactive.
-  z.object({ action: z.literal('learn_voice'), sampleRoutes: z.array(z.string()).optional() }),
+  z.object({
+    action: z.literal('learn_voice'),
+    sampleRoutes: z.array(z.string()).optional(),
+    // 'repo' (the default) reads TSX on the base branch. 'live' Firecrawls
+    // rendered pages, so voice can be learned from an established site that is
+    // not this repo — the brand's existing marketing site, for instance.
+    source: z.enum(['repo', 'live']).optional(),
+    // Only read when source is 'live'. Defaults to FINN_SITE_URL. Kept separate
+    // from FINN_SITE_URL on purpose: the site Finn learns voice FROM need not be
+    // the site it audits and edits, and pointing the env var at a reference site
+    // would silently redirect live audits at a repo Finn cannot open PRs against.
+    siteUrl: z.string().url().optional(),
+  }),
   // Drafts a brand-new page from a brief.
   z.object({ action: z.literal('draft_page'), route: z.string(), brief: z.string() }),
   // Turns approved drafts into a pull request. Never touches the base branch.
@@ -206,48 +218,106 @@ const app = new BedrockAgentCoreApp({
 
         case 'learn_voice': {
           const current = await getActiveVoiceSpec();
-
-          // Sampled from the repo for the same reason audit_site is: there is no
-          // deployment to crawl, and the source is what actually gets edited.
-          let files = await listPageFiles();
-          if (request.sampleRoutes?.length) {
-            const wanted = new Set(request.sampleRoutes);
-            files = files.filter((f) => {
-              const r = filePathToRoute(f);
-              return r !== null && wanted.has(r);
-            });
-          } else {
-            files = files.slice(0, 6);
-          }
-
+          const source = request.source ?? 'repo';
+          // Enough copy to generalise from, few enough that one learn_voice run
+          // is a handful of scrapes rather than a whole-site crawl.
+          const SAMPLE_LIMIT = 6;
           const samples: Array<{ route: string; markdown: string }> = [];
-          for (const filePath of files) {
-            try {
-              const route = filePathToRoute(filePath);
-              if (!route) continue;
-              const source = await getFileContent(filePath);
-              samples.push({ route, markdown: extractCopy(source) });
-            } catch (err) {
-              context.log.warn(`learn_voice: ${filePath} failed, skipping: ${err instanceof Error ? err.message : err}`);
+          const failed: string[] = [];
+          let origin: string;
+
+          if (source === 'repo') {
+            origin = `the ${repoSlug()} repo on branch ${process.env.FINN_SITE_BASE_BRANCH ?? 'main'}`;
+
+            // Sampled from the repo for the same reason audit_site is: the source
+            // is what actually gets edited.
+            let files = await listPageFiles();
+            if (request.sampleRoutes?.length) {
+              const wanted = new Set(request.sampleRoutes);
+              files = files.filter((f) => {
+                const r = filePathToRoute(f);
+                return r !== null && wanted.has(r);
+              });
+            } else {
+              files = files.slice(0, SAMPLE_LIMIT);
+            }
+
+            for (const filePath of files) {
+              try {
+                const route = filePathToRoute(filePath);
+                if (!route) continue;
+                const src = await getFileContent(filePath);
+                samples.push({ route, markdown: extractCopy(src) });
+              } catch (err) {
+                const detail = err instanceof Error ? err.message : String(err);
+                failed.push(`${filePath}: ${detail}`);
+                context.log.warn(`learn_voice: ${filePath} failed, skipping: ${detail}`);
+              }
+            }
+          } else {
+            const siteUrl = request.siteUrl ?? SITE_URL;
+            origin = `the live site ${siteUrl}`;
+
+            let routes = request.sampleRoutes;
+            if (!routes?.length) {
+              const links = await mapSite(siteUrl);
+              routes = Array.from(new Set(
+                links.map((l) => urlToRoute(l, siteUrl)).filter((r): r is string => r !== null)
+              ))
+                // Shallowest first, so a six-page sample lands on the homepage and
+                // top-level pages. Plain alphabetical sorting would spend the whole
+                // budget on whichever deep section happens to sort first, which is
+                // the worst possible sample to define house voice from.
+                .sort((a, b) => (a.split('/').length - b.split('/').length) || a.localeCompare(b))
+                .slice(0, SAMPLE_LIMIT);
+            }
+
+            for (const route of routes) {
+              try {
+                const page = await scrapePage(new URL(route, siteUrl).toString());
+                if (!page.markdown.trim()) {
+                  failed.push(`${route}: scraped empty`);
+                  continue;
+                }
+                samples.push({ route, markdown: page.markdown });
+              } catch (err) {
+                const detail = err instanceof Error ? err.message : String(err);
+                failed.push(`${route}: ${detail}`);
+                context.log.warn(`learn_voice: ${route} failed, skipping: ${detail}`);
+              }
             }
           }
-          if (!samples.length) return JSON.stringify({ error: 'Could not read any page source' });
 
-          const learned = await learnVoiceSpec(samples, current);
-          const created = await insertProposedVoiceSpec(learned.positioning, learned.bannedWords, learned.rules, learned.notes);
+          if (!samples.length) {
+            return JSON.stringify({ error: `Could not read any page copy from ${origin}`, source, failed });
+          }
 
-          await logActivity('voice_spec_proposed', `Proposed voice spec v${created.version} (inactive)`, {
+          const learned = await learnVoiceSpec(samples, current, origin);
+          // Provenance goes in the stored notes, not just the activity log: a
+          // reviewer in AIOS deciding whether to activate a spec needs to know
+          // which site's copy it generalised from.
+          const notes = `Sampled ${samples.length} page(s) from ${origin}. ${learned.notes}`;
+          const created = await insertProposedVoiceSpec(learned.positioning, learned.bannedWords, learned.rules, notes);
+
+          await logActivity('voice_spec_proposed', `Proposed voice spec v${created.version} from ${origin} (inactive)`, {
             sampledRoutes: samples.map((s) => s.route),
+            source,
+            origin,
+            failed: failed.length,
           }).catch(() => {});
 
           return JSON.stringify({
             ...created,
             isActive: false,
             note: 'Written inactive. Activate it in AIOS to make it the operating spec.',
+            source,
+            origin,
+            sampledRoutes: samples.map((s) => s.route),
+            failed,
             positioning: learned.positioning,
             bannedWords: learned.bannedWords,
             rules: learned.rules,
-            notes: learned.notes,
+            notes,
           });
         }
 

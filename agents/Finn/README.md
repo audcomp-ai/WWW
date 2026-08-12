@@ -42,6 +42,13 @@ Set in `agentcore/agentcore.json`:
 - `FINN_SITE_URL` — only used by `mode: "live"`, which crawls the deployed site
   instead of the source. Requires the site to actually be deployed.
 
+`learn_voice` takes `source: "repo" | "live"` (default `repo`). With `"live"` it
+Firecrawls rendered pages instead of reading TSX, and an optional `siteUrl`
+overrides `FINN_SITE_URL` for that call only — so voice can be learned from an
+established marketing site without repointing the site Finn audits and edits.
+Without `sampleRoutes` it samples the six shallowest routes, so the homepage and
+top-level pages define the voice rather than whichever deep page sorts first.
+
 Credentials come from the AWS Secrets Manager secret `wilfred/agent-credentials`
 (`SUPABASE_DB_URL`, `FIRECRAWL_API_KEY`, `FINN_GITHUB_TOKEN`). None are stored in
 this repo.

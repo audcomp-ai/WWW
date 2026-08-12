@@ -74,24 +74,42 @@ export interface LearnedSpec {
 /** Proposes a voice spec from real page copy. The result is written inactive —
  * see insertProposedVoiceSpec. The current spec is passed in deliberately: the
  * site is known to be off-spec today (the homepage meta says "streamline"), so
- * learning from the pages alone would launder existing drift into the standard. */
-export async function learnVoiceSpec(samples: Array<{ route: string; markdown: string }>, current: VoiceSpec): Promise<LearnedSpec> {
+ * learning from the pages alone would launder existing drift into the standard.
+ *
+ * `origin` names where the samples came from. It is not decoration: the samples
+ * may be an older marketing site rather than the repo Finn edits, and a model
+ * told nothing would assume it is reading the pages it is about to rewrite. */
+export async function learnVoiceSpec(
+  samples: Array<{ route: string; markdown: string }>,
+  current: VoiceSpec,
+  origin?: string
+): Promise<LearnedSpec> {
   const prompt = [
     'You are defining the written voice standard for Audcomp\'s marketing website.',
     '',
-    'Below is the CURRENT approved spec, then real copy from several live pages.',
+    'Below is the CURRENT approved spec, then real copy from several pages.',
+    ...(origin
+      ? [
+          '',
+          `The sampled copy comes from ${origin}. It is evidence of how Audcomp`,
+          'writes about itself, not a description of the pages you are editing.',
+          'Take the brand\'s subject matter, claims and self-description from it.',
+          'Do NOT take structural or layout habits from it, and do not assume any',
+          'page, product or service named in it still exists.',
+        ]
+      : []),
     '',
     renderSpec(current),
     '',
-    '--- LIVE PAGE COPY ---',
+    '--- SAMPLED PAGE COPY ---',
     ...samples.map((s) => `\n## ${s.route}\n${s.markdown.slice(0, 4000)}`),
     '--- END ---',
     '',
     'Propose the voice spec this site SHOULD be held to. Keep what is genuinely',
-    'Audcomp about the live copy: its subject matter, its Canadian and Ontario',
+    'Audcomp about the sampled copy: its subject matter, its Canadian and Ontario',
     'grounding, its concrete service detail.',
     '',
-    'Do NOT adopt a habit merely because the live pages do it. The current pages',
+    'Do NOT adopt a habit merely because the sampled pages do it. Those pages',
     'contain marketing filler and banned words; that is the problem being solved,',
     'not evidence of house style. Never remove a term from the banned list just',
     'because the site currently uses it.',
