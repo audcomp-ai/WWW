@@ -9,7 +9,7 @@ const slides = [
     id: 1,
     type: "image" as const,
     badge: null,
-    headline: "Enterprise-grade IT, run by 100% Canadian engineers",
+    headline: "Enterprise-grade IT, run by 100% engineers in Canada",
     subheadline:
       "Managed IT, cybersecurity, and cloud for Ontario businesses — proactively monitored 24/7, hosted in Canadian data centres, and delivered by the same team that's kept clients running since 1986.",
     cta1Text: "Get a Free Assessment",
