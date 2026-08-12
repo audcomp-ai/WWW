@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `IT Support & Consulting in ${cityName} | Audcomp`,
-    description: `Audcomp delivers managed IT, cloud, and cyber security to ${cityName} businesses with 100% Canadian engineers and 24/7 support. Top 25 CDN Solutions Provider.`,
+    description: `Audcomp delivers managed IT, cloud, and cyber security to ${cityName} businesses with 100% engineers in Canada and 24/7 support. Top 25 CDN Solutions Provider.`,
   };
 }
 
@@ -50,7 +50,7 @@ export default async function LocalItSupportPage({ params }: Props) {
     },
     {
       title: "Cloud Solutions",
-      description: "Microsoft 365, Azure, and hybrid cloud deployment fully managed by our Canadian engineers.",
+      description: "Microsoft 365, Azure, and hybrid cloud deployment fully managed by our engineers in Canada.",
       href: "/cloud-solutions",
       category: "Cloud",
     },
@@ -59,8 +59,8 @@ export default async function LocalItSupportPage({ params }: Props) {
   return (
     <>
       <Hero
-        title={`IT Support in ${cityName}, From 100% Canadian Engineers`}
-        subtitle={`Keeping ${cityName} businesses running with less downtime and predictable IT since 1986 — 100% Canadian engineers, Canadian data centres, and 24/7 support.`}
+        title={`IT Support in ${cityName}, From 100% Engineers in Canada`}
+        subtitle={`Keeping ${cityName} businesses running with less downtime and predictable IT since 1986 — 100% engineers in Canada, Canadian data centres, and 24/7 support.`}
         ctaText="Get a Free Assessment"
         ctaHref="/contact"
         backgroundImage="/images/managed_it_hero.png"

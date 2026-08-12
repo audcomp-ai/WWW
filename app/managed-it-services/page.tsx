@@ -71,7 +71,7 @@ export default function ManagedITServicesPage() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-10">
             {[
               { value: "24/7", label: "Monitoring & Alerts" },
-              { value: "100%", label: "Canadian Engineers" },
+              { value: "100%", label: "Engineers in Canada" },
               { value: "40+", label: "Years of Experience" },
               { value: "Top 25", label: "CDN Solutions Provider" },
             ].map((s) => (

@@ -15,7 +15,7 @@ const stats = [
   { value: "1986", label: "Year Founded" },
   { value: "40+", label: "Years of Excellence" },
   { value: "Top 25", label: "CDN Solutions Provider" },
-  { value: "100%", label: "Canadian Engineers" },
+  { value: "100%", label: "Engineers in Canada" },
 ];
 
 
