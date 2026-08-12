@@ -4,7 +4,7 @@ import CTABanner from "@/components/CTABanner";
 import { SectionAngle } from "@/components/SectionAngle";
 
 export const metadata: Metadata = {
-  title: "IT Consulting & Design | Audcomp — Technical Assessments & Architecture",
+  title: "IT Consulting & Design | Audcomp, Technical Assessments & Architecture",
   description:
     "Audcomp's IT Consulting and Design team conducts technical assessments, identifies risk, designs solutions, and delivers training for Canadian businesses.",
 };
@@ -14,7 +14,7 @@ export default function ConsultingDesignPage() {
     <>
       <Hero
         title="IT Consulting & Design"
-        subtitle="Know exactly where your IT stands before you spend — Audcomp's Canadian engineers assess your environment, flag the risks, and design what fits your budget."
+        subtitle="Know exactly where your IT stands before you spend, Audcomp's Canadian technicians assess your environment, flag the risks, and design what fits your budget."
         ctaText="Schedule a Consultation"
         ctaHref="/contact"
         backgroundImage="/images/professional_services_hero.png"
@@ -26,7 +26,7 @@ export default function ConsultingDesignPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">Clarity Before Commitment</h2>
           <p className="text-gray-600 text-lg leading-relaxed mb-6">
-            A technology decision made without proper assessment can cost you for years — the wrong platform, a misaligned architecture, or a security gap that surfaces at the worst possible time. Audcomp&apos;s IT Consulting and Design service gives you the clarity to commit budget and resources with confidence.
+            A technology decision made without proper assessment can cost you for years, the wrong platform, a misaligned architecture, or a security gap that surfaces at the worst possible time. Audcomp&apos;s IT Consulting and Design service gives you the clarity to commit budget and resources with confidence.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed mb-6">
             Our consultants conduct comprehensive technical assessments of your existing environment, identify risks and inefficiencies, and design solutions that align with your business objectives, budget, and growth trajectory.
@@ -44,12 +44,12 @@ export default function ConsultingDesignPage() {
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-12 text-center">Consulting & Design Services</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "Technical Assessment", desc: "Comprehensive review of your current IT environment — infrastructure, security, processes, and costs." },
+              { title: "Technical Assessment", desc: "Comprehensive review of your current IT environment, infrastructure, security, processes, and costs." },
               { title: "Risk Identification", desc: "Identify technical, security, and operational risks before they become incidents." },
               { title: "Solution Architecture", desc: "Custom technology architectures designed for your specific requirements and constraints." },
               { title: "IT Roadmap Development", desc: "A prioritized, budgeted IT roadmap that aligns technology investment with business goals." },
               { title: "Technical Training", desc: "Staff training on new technologies, processes, and best practices." },
-              { title: "Vendor Assessment", desc: "Evaluate vendor proposals and technology options independently — without the sales bias." },
+              { title: "Vendor Assessment", desc: "Evaluate vendor proposals and technology options independently, without the sales bias." },
             ].map((f) => (
               <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6">
                 <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
@@ -64,7 +64,7 @@ export default function ConsultingDesignPage() {
 
       <CTABanner
         title="Get an Expert Assessment of Your IT Environment"
-        subtitle="Contact Audcomp to schedule a technical assessment — know where you stand before your next investment."
+        subtitle="Contact Audcomp to schedule a technical assessment, know where you stand before your next investment."
       />
     </>
   );

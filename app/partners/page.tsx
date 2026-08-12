@@ -18,7 +18,7 @@ const benefits = [
   },
   {
     title: "Try & Buy Program",
-    desc: "Evaluate hardware in your environment before committing — our exclusive demo program reduces procurement risk.",
+    desc: "Evaluate hardware in your environment before committing, our exclusive demo program reduces procurement risk.",
   },
   {
     title: "Priority Support",
@@ -26,7 +26,7 @@ const benefits = [
   },
   {
     title: "Certified Expertise",
-    desc: "Our engineers hold certifications across all partner platforms, ensuring solutions are implemented correctly.",
+    desc: "Our technicians hold certifications across all partner platforms, ensuring solutions are implemented correctly.",
   },
   {
     title: "Lifecycle Management",
@@ -65,7 +65,7 @@ export default function PartnersPage() {
               Audcomp maintains partnerships with Tier 1 and Tier 2 technology manufacturers across hardware, software, networking, security, and cloud. These relationships give our clients access to enterprise pricing, expedited support channels, and the latest solutions as they emerge.
             </p>
             <p className="text-slate-500 text-lg leading-relaxed">
-              Our procurement team works directly with manufacturer representatives to ensure you get the right technology at the best value — including access to our exclusive &ldquo;Try and Buy&rdquo; demo program for pre-purchase evaluation.
+              Our procurement team works directly with manufacturer representatives to ensure you get the right technology at the best value, including access to our exclusive &ldquo;Try and Buy&rdquo; demo program for pre-purchase evaluation.
             </p>
           </AnimatedSection>
         </div>

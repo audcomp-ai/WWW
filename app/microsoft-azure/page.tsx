@@ -4,9 +4,9 @@ import CTABanner from "@/components/CTABanner";
 import { SectionAngle } from "@/components/SectionAngle";
 
 export const metadata: Metadata = {
-  title: "Microsoft Azure | Audcomp — Azure Cloud Migration & Management",
+  title: "Microsoft Azure | Audcomp, Azure Cloud Migration & Management",
   description:
-    "Audcomp delivers Azure cloud setup, custom configuration, and migration for Canadian businesses. 100% Canadian data sovereignty.",
+    "Audcomp delivers Azure cloud setup, custom configuration, and migration for Canadian businesses. Canadian data sovereignty.",
 };
 
 export default function MicrosoftAzurePage() {
@@ -14,7 +14,7 @@ export default function MicrosoftAzurePage() {
     <>
       <Hero
         title="Microsoft Azure"
-        subtitle="Move to Azure without the risk — Audcomp's certified engineers plan, migrate, and manage it end to end, keeping your data in Canadian Azure regions."
+        subtitle="Move to Azure without the risk, Audcomp's certified technicians plan, migrate, and manage it end to end, keeping your data in Canadian Azure regions."
         ctaText="Get an Azure Assessment"
         ctaHref="/contact"
         backgroundImage="/images/cloud_solutions_hero.png"
@@ -26,7 +26,7 @@ export default function MicrosoftAzurePage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">Enterprise Cloud, Canadian Values</h2>
           <p className="text-gray-600 text-lg leading-relaxed mb-6">
-            Microsoft Azure gives Canadian businesses enterprise-grade cloud infrastructure — virtual machines, databases, networking, security, and more — on demand and at scale. Audcomp helps you navigate Azure's breadth of services to build exactly the environment your business needs.
+            Microsoft Azure gives Canadian businesses enterprise-grade cloud infrastructure, virtual machines, databases, networking, security, and more, on demand and at scale. Audcomp helps you navigate Azure's breadth of services to build exactly the environment your business needs.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed mb-6">
             From initial cloud readiness assessments through architecture design, migration, and ongoing management, Audcomp is your Azure partner at every step. We configure Canadian Azure regions to ensure your data stays in Canada.
@@ -61,7 +61,7 @@ export default function MicrosoftAzurePage() {
 
       <CTABanner
         title="Ready to Move to Azure?"
-        subtitle="Start with a free Azure readiness assessment from Audcomp's certified cloud engineers."
+        subtitle="Start with a free Azure readiness assessment from Audcomp's certified cloud technicians."
       />
     </>
   );

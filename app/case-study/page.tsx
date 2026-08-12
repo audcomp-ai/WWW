@@ -20,7 +20,7 @@ const steps = [
   {
     step: "01",
     title: "Forensic Investigation",
-    desc: "Audcomp's incident response team conducted a thorough forensic investigation to identify the attack vector, scope of breach, and affected systems — establishing a clear picture before remediation began.",
+    desc: "Audcomp's incident response team conducted a thorough forensic investigation to identify the attack vector, scope of breach, and affected systems, establishing a clear picture before remediation began.",
   },
   {
     step: "02",
@@ -35,7 +35,7 @@ const steps = [
   {
     step: "04",
     title: "Disaster Recovery Activation",
-    desc: "Using the client's Audcomp-managed backup infrastructure, critical patient and operational systems were restored from clean backups — bringing core services back within 48 hours.",
+    desc: "Using the client's Audcomp-managed backup infrastructure, critical patient and operational systems were restored from clean backups, bringing core services back within 48 hours.",
   },
   {
     step: "05",
@@ -85,7 +85,7 @@ export default function CaseStudyPage() {
               Cyber Incident Response
             </span>
             <span className="bg-card text-muted-foreground text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider border border-border">
-              Healthcare — Public Sector
+              Healthcare, Public Sector
             </span>
           </div>
           <h2 className="text-3xl font-bold text-foreground mb-6">Background</h2>
@@ -96,7 +96,7 @@ export default function CaseStudyPage() {
             With patient care at risk and regulatory obligations looming, the organization turned to Audcomp for immediate incident response. What followed was a rapid, methodical recovery that became a model for cyber resilience in Canadian healthcare.
           </p>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Because Audcomp had been the organization's primary IT provider for over a decade, our engineers had deep familiarity with the environment — which proved critical in compressing the recovery timeline from weeks to days.
+            Because Audcomp had been the organization's primary IT provider for over a decade, our technicians had deep familiarity with the environment, which proved critical in compressing the recovery timeline from weeks to days.
           </p>
         </div>
       </section>

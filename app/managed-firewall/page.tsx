@@ -4,7 +4,7 @@ import CTABanner from "@/components/CTABanner";
 import { SectionAngle } from "@/components/SectionAngle";
 
 export const metadata: Metadata = {
-  title: "Managed Firewall | Audcomp — 24/7 Firewall Monitoring & Maintenance",
+  title: "Managed Firewall | Audcomp, 24/7 Firewall Monitoring & Maintenance",
   description:
     "Audcomp's Managed Firewall service provides 24/7 monitoring, maintenance, rule management, and threat intelligence for your network perimeter.",
 };
@@ -14,7 +14,7 @@ export default function ManagedFirewallPage() {
     <>
       <Hero
         title="A Firewall That Keeps Blocking Threats Long After Install Day"
-        subtitle="An unpatched or misconfigured firewall is an open door. Audcomp&apos;s 100% Canadian engineers monitor, patch, and tune your network perimeter 24/7 — so it keeps doing its job as threats evolve."
+        subtitle="An unpatched or misconfigured firewall is an open door. Audcomp&apos;s Canadian technicians monitor, patch, and tune your network perimeter 24/7, so it keeps doing its job as threats evolve."
         ctaText="Secure Your Perimeter"
         ctaHref="/contact"
         bgColor="dark"
@@ -27,13 +27,13 @@ export default function ManagedFirewallPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">Your Firewall Needs More Than Configuration</h2>
           <p className="text-gray-600 text-lg leading-relaxed mb-6">
-            A firewall that was configured three years ago and hasn't been reviewed since is not a security control — it's a false sense of security. Firewall rules accumulate, threat landscapes evolve, and firmware vulnerabilities emerge. Active management is essential.
+            A firewall that was configured three years ago and hasn't been reviewed since is not a security control, it's a false sense of security. Firewall rules accumulate, threat landscapes evolve, and firmware vulnerabilities emerge. Active management is essential.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed mb-6">
-            Audcomp's Managed Firewall service takes complete ownership of your network perimeter security. Our engineers monitor your firewall continuously, respond to alerts, update rules, apply firmware patches, and integrate real-time threat intelligence to keep your perimeter defenses current.
+            Audcomp's Managed Firewall service takes complete ownership of your network perimeter security. Our technicians monitor your firewall continuously, respond to alerts, update rules, apply firmware patches, and integrate real-time threat intelligence to keep your perimeter defenses current.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed">
-            We work with leading firewall platforms including Fortinet FortiGate, Cisco, SonicWall, and others — keeping your protection strong and current regardless of your existing investment.
+            We work with leading firewall platforms including Fortinet FortiGate, Cisco, SonicWall, and others, keeping your protection strong and current regardless of your existing investment.
           </p>
         </div>
       </section>

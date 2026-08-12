@@ -4,7 +4,7 @@ import CTABanner from "@/components/CTABanner";
 import { SectionAngle } from "@/components/SectionAngle";
 
 export const metadata: Metadata = {
-  title: "Hybrid Cloud Solutions | Audcomp — Private & Public Cloud Strategy",
+  title: "Hybrid Cloud Solutions | Audcomp, Private & Public Cloud Strategy",
   description:
     "Audcomp designs and implements hybrid cloud strategies that balance on-premise control with cloud flexibility for Canadian businesses.",
 };
@@ -14,7 +14,7 @@ export default function HybridCloudPage() {
     <>
       <Hero
         title="Hybrid Cloud Solutions"
-        subtitle="Keep regulated workloads on-premise and scale everything else in the cloud — one integrated environment, managed by Audcomp's cloud architects."
+        subtitle="Keep regulated workloads on-premise and scale everything else in the cloud, one integrated environment, managed by Audcomp's cloud architects."
         ctaText="Plan Your Hybrid Cloud"
         ctaHref="/contact"
         backgroundImage="/images/cloud_solutions_hero.png"
@@ -26,10 +26,10 @@ export default function HybridCloudPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">Not Everything Belongs in the Cloud</h2>
           <p className="text-gray-600 text-lg leading-relaxed mb-6">
-            For many Canadian organizations — particularly those in regulated industries like healthcare, finance, and government — a full cloud migration isn't the right answer. Hybrid cloud gives you the flexibility to run sensitive workloads on-premise while leveraging cloud for scalability, backup, and productivity tools.
+            For many Canadian organizations, particularly those in regulated industries like healthcare, finance, and government, a full cloud migration isn't the right answer. Hybrid cloud gives you the flexibility to run sensitive workloads on-premise while leveraging cloud for scalability, backup, and productivity tools.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed mb-6">
-            Audcomp's hybrid cloud architects work with your team to evaluate each workload, understand your compliance requirements, and build a strategy that makes sense — technically and financially.
+            Audcomp's hybrid cloud architects work with your team to evaluate each workload, understand your compliance requirements, and build a strategy that makes sense, technically and financially.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed">
             The result is a unified environment where on-premise and cloud systems work seamlessly together, managed by Audcomp as a single, coherent infrastructure.
@@ -64,7 +64,7 @@ export default function HybridCloudPage() {
 
       <CTABanner
         title="Not Sure Where to Start with Cloud?"
-        subtitle="Audcomp's hybrid cloud assessment identifies the right path for your organization — on-premise, cloud, or somewhere in between."
+        subtitle="Audcomp's hybrid cloud assessment identifies the right path for your organization, on-premise, cloud, or somewhere in between."
       />
     </>
   );

@@ -4,9 +4,9 @@ import CTABanner from "@/components/CTABanner";
 import { SectionAngle } from "@/components/SectionAngle";
 
 export const metadata: Metadata = {
-  title: "Blog & Insights | Audcomp — IT Expertise for Canadian Businesses",
+  title: "Blog & Insights | Audcomp, IT Expertise for Canadian Businesses",
   description:
-    "IT insights, cybersecurity updates, cloud tips, and AI news from Audcomp's team of Canadian engineers.",
+    "IT insights, cybersecurity updates, cloud tips, and AI news from Audcomp's team of Canadian technicians.",
 };
 
 const allPosts = [
@@ -36,7 +36,7 @@ const allPosts = [
     image: "/images/cyber_security_hero.png",
   },
   {
-    title: "What is a Virtual CIO — and Does Your Business Need One?",
+    title: "What is a Virtual CIO, and Does Your Business Need One?",
     category: "Professional Services",
     image: "/images/professional_services_hero.png",
   },
@@ -56,7 +56,7 @@ export default function BlogPage() {
             IT Expertise for<br />Canadian Businesses
           </h1>
           <p className="text-white/55 text-lg leading-relaxed max-w-xl mx-auto">
-            Cybersecurity, cloud, AI, and managed IT — practical insights from Audcomp&apos;s team of 100% Canadian engineers.
+            Cybersecurity, cloud, AI, and managed IT, practical insights from Audcomp&apos;s team of Canadian technicians.
           </p>
         </div>
       </section>
@@ -78,7 +78,7 @@ export default function BlogPage() {
 
       <CTABanner
         title="Have an IT Question?"
-        subtitle="Our team is ready to help — whether you need advice on cybersecurity, cloud strategy, or AI readiness."
+        subtitle="Our team is ready to help, whether you need advice on cybersecurity, cloud strategy, or AI readiness."
       />
     </>
   );

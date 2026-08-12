@@ -4,7 +4,7 @@ import CTABanner from "@/components/CTABanner";
 import { SectionAngle } from "@/components/SectionAngle";
 
 export const metadata: Metadata = {
-  title: "Security Awareness Training | Audcomp — Phishing Resistance Training",
+  title: "Security Awareness Training | Audcomp, Phishing Resistance Training",
   description:
     "Audcomp's Security Awareness Training builds phishing-resistant employees through professional-led training, simulated attacks, and continuous education.",
 };
@@ -30,10 +30,10 @@ export default function SecurityAwarenessTrainingPage() {
             Over 90% of successful cyberattacks begin with a phishing email. No amount of technical security controls can fully compensate for an employee who clicks a malicious link or provides credentials to a spoofed website. Security awareness training is the single most effective control against social engineering attacks.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed mb-6">
-            Audcomp's Security Awareness Training program is led by experienced cybersecurity professionals — not a software platform with automated videos. Our training is relevant, engaging, and tailored to the threats your organization actually faces.
+            Audcomp's Security Awareness Training program is led by experienced cybersecurity professionals, not a software platform with automated videos. Our training is relevant, engaging, and tailored to the threats your organization actually faces.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed">
-            We combine instructor-led sessions with simulated phishing campaigns, micro-learning content, and regular testing to build lasting security habits across your organization — cutting phishing click rates by [CONFIRM: avg client click-rate reduction] over the course of the program.
+            We combine instructor-led sessions with simulated phishing campaigns, micro-learning content, and regular testing to build lasting security habits across your organization, with click rates tracked over the course of the program.
           </p>
         </div>
       </section>
@@ -45,11 +45,11 @@ export default function SecurityAwarenessTrainingPage() {
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-12 text-center">Program Components</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
-              { title: "Instructor-Led Training", desc: "Live training sessions led by Audcomp's cybersecurity professionals — practical, relevant, and engaging." },
+              { title: "Instructor-Led Training", desc: "Live training sessions led by Audcomp's cybersecurity professionals, practical, relevant, and engaging." },
               { title: "Phishing Simulations", desc: "Simulated phishing campaigns that test employee awareness and identify who needs additional coaching." },
-              { title: "Micro-Learning Modules", desc: "Short, targeted modules on specific threats — delivered regularly to maintain awareness over time." },
+              { title: "Micro-Learning Modules", desc: "Short, targeted modules on specific threats, delivered regularly to maintain awareness over time." },
               { title: "Progress Reporting", desc: "Track improvement in click rates, reporting rates, and overall security culture across your organization." },
-              { title: "Role-Based Training", desc: "Tailored content for executives, finance teams, IT staff, and general employees — focused on their specific risks." },
+              { title: "Role-Based Training", desc: "Tailored content for executives, finance teams, IT staff, and general employees, focused on their specific risks." },
               { title: "Policy & Compliance", desc: "Training aligned to your security policies and regulatory requirements (PIPEDA, HIPAA, etc.)." },
             ].map((f) => (
               <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6">

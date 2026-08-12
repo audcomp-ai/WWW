@@ -4,7 +4,7 @@ import CTABanner from "@/components/CTABanner";
 import { SectionAngle } from "@/components/SectionAngle";
 
 export const metadata: Metadata = {
-  title: "IT Procurement | Audcomp — Tier 1 & Tier 2 Technology Partners",
+  title: "IT Procurement | Audcomp, Tier 1 & Tier 2 Technology Partners",
   description:
     "Audcomp sources hardware and software from Tier 1 and Tier 2 manufacturers. Competitive pricing, Try & Buy demo program, and full lifecycle support.",
 };
@@ -14,7 +14,7 @@ export default function ITProcurementPage() {
     <>
       <Hero
         title="IT Procurement"
-        subtitle="The right technology at the best value — sourced through Tier 1 and Tier 2 manufacturer partnerships built over 40 years."
+        subtitle="The right technology at the best value, sourced through Tier 1 and Tier 2 manufacturer partnerships built over 40 years."
         ctaText="Request a Quote"
         ctaHref="/contact"
         backgroundImage="/images/managed_it_hero.png"
@@ -26,13 +26,13 @@ export default function ITProcurementPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">Strategic Procurement. Trusted Partners.</h2>
           <p className="text-gray-600 text-lg leading-relaxed mb-6">
-            Pay less, wait less, and reach support that actually answers. Audcomp&apos;s direct partnerships with the world&apos;s leading Tier 1 and Tier 2 technology manufacturers — built over nearly four decades — give clients enterprise pricing, expedited shipping, and manufacturer support channels unavailable through retail purchasing.
+            Pay less, wait less, and reach support that actually answers. Audcomp&apos;s direct partnerships with the world&apos;s leading Tier 1 and Tier 2 technology manufacturers, built over nearly four decades, give clients enterprise pricing, expedited shipping, and manufacturer support channels unavailable through retail purchasing.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed mb-6">
             Our procurement team works closely with your team to identify the right solutions for your environment, budget, and growth plans. We don't upsell. We recommend what fits.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed">
-            Through our exclusive "Try and Buy" demo program, you can evaluate hardware in your own environment before committing — eliminating procurement risk and ensuring the right fit every time.
+            Through our exclusive "Try and Buy" demo program, you can evaluate hardware in your own environment before committing, eliminating procurement risk and ensuring the right fit every time.
           </p>
         </div>
       </section>
@@ -67,7 +67,7 @@ export default function ITProcurementPage() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl font-bold text-[#1a1a2e] mb-4">Our &quot;Try and Buy&quot; Demo Program</h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Evaluate hardware in your own environment before you commit. Our exclusive Try and Buy program lets you test servers, networking equipment, and workstations with your actual workloads — eliminating guesswork from every procurement decision.
+            Evaluate hardware in your own environment before you commit. Our exclusive Try and Buy program lets you test servers, networking equipment, and workstations with your actual workloads, eliminating guesswork from every procurement decision.
           </p>
         </div>
       </section>

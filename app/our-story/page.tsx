@@ -4,7 +4,7 @@ import CTABanner from "@/components/CTABanner";
 import { SectionAngle } from "@/components/SectionAngle";
 
 export const metadata: Metadata = {
-  title: "Our Story | Audcomp — 40 Years of IT Excellence in Canada",
+  title: "Our Story | Audcomp, 40 Years of IT Excellence in Canada",
   description:
     "From a university startup in 1986 to the largest MSP in Hamilton and Ancaster. The story of Audcomp and our commitment to Canadian businesses.",
 };
@@ -20,7 +20,7 @@ const milestones = [
     year: "1990s",
     title: "Growing the Hamilton Region",
     description:
-      "Audcomp expands its footprint across Hamilton and Ancaster, building a reputation for responsive service and deep technical expertise. We establish our 100% Canadian engineer policy.",
+      "Audcomp expands its footprint across Hamilton and Ancaster, building a reputation for responsive service and deep technical expertise. We establish our Canadian technician policy.",
   },
   {
     year: "2000s",
@@ -32,7 +32,7 @@ const milestones = [
     year: "2010s",
     title: "Top 25 CDN Solutions Provider",
     description:
-      "Audcomp earns recognition on CDN's Top 100 Solutions Providers list — a ranking we've maintained for over 10 consecutive years. We expand into healthcare, municipalities, and school boards.",
+      "Audcomp earns recognition on CDN's Top 100 Solutions Providers list, a ranking we've maintained for over 10 consecutive years. We expand into healthcare, municipalities, and school boards.",
   },
   {
     year: "2020s",
@@ -47,7 +47,7 @@ export default function OurStoryPage() {
     <>
       <Hero
         title="Our Story"
-        subtitle="From a 1986 startup at McMaster University to a top-25 Canadian solutions provider — four decades building IT that Canadian businesses rely on every day."
+        subtitle="From a 1986 startup at McMaster University to a top-25 Canadian solutions provider, four decades building IT that Canadian businesses rely on every day."
         backgroundImage="/images/professional_services_hero.png"
       />
 
@@ -63,10 +63,10 @@ export default function OurStoryPage() {
             In 1986, Gary Sohal founded Audcomp at McMaster University with a conviction that would define the company for generations: businesses deserve a technology partner they can genuinely trust. Not a vendor who disappears after the sale. Not a helpdesk that reads from a script. A partner.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed mb-6">
-            That philosophy turned a small startup into the largest Managed Service Provider in the Hamilton and Ancaster region. Today, Audcomp is recognized as a top-25 CDN Solutions Provider — a designation earned through results, not marketing.
+            That philosophy turned a small startup into the largest Managed Service Provider in the Hamilton and Ancaster region. Today, Audcomp is recognized as a top-25 CDN Solutions Provider, a designation earned through results, not marketing.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed">
-            Through every technological shift, from on-premise servers to the cloud, from basic networking to AI, Audcomp's north star has remained the same: empower clients to operate confidently and efficiently, with technology that works the way their business needs it to. Every engineer is based in Canada.
+            Through every technological shift, from on-premise servers to the cloud, from basic networking to AI, Audcomp's north star has remained the same: empower clients to operate confidently and efficiently, with technology that works the way their business needs it to. Every technician is based in Canada.
           </p>
         </div>
       </section>
@@ -114,11 +114,11 @@ export default function OurStoryPage() {
               },
               {
                 title: "Canadian First",
-                desc: "100% Canadian engineers. 100% Canadian data centers. Your data stays on Canadian soil.",
+                desc: "Canadian technicians. Canadian data centers. Your data stays on Canadian soil.",
               },
               {
                 title: "Proactive",
-                desc: "We monitor, maintain, and optimize before problems occur — not after.",
+                desc: "We monitor, maintain, and optimize before problems occur, not after.",
               },
               {
                 title: "Accountability",
@@ -126,7 +126,7 @@ export default function OurStoryPage() {
               },
               {
                 title: "Security First",
-                desc: "Cyber security isn't a product we sell — it's a principle we build every solution around.",
+                desc: "Cyber security isn't a product we sell, it's a principle we build every solution around.",
               },
               {
                 title: "Continuous Growth",

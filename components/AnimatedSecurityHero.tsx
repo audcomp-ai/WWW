@@ -94,7 +94,7 @@ export default function AnimatedSecurityHero() {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-400 to-primary">Matters Most</span>
           </h1>
           <p className="text-xl sm:text-2xl leading-relaxed mb-12 max-w-3xl mx-auto text-gray-300 font-light">
-            Multi-layered security — <span className="text-white font-medium">endpoint protection</span>, <span className="text-white font-medium">SOC & MDR</span>, <span className="text-white font-medium">penetration testing</span>, and <span className="text-white font-medium">24/7 monitoring</span> — so your business stays resilient.
+            Multi-layered security<span className="text-white font-medium">endpoint protection</span>, <span className="text-white font-medium">SOC & MDR</span>, <span className="text-white font-medium">penetration testing</span>, and <span className="text-white font-medium">24/7 monitoring</span>, so your business stays resilient.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

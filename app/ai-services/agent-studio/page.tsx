@@ -4,18 +4,18 @@ import { workforce, type Agent } from "@/data/agents";
 import { SectionAngle } from "@/components/SectionAngle";
 
 export const metadata: Metadata = {
-  title: "Agent Studio | Audcomp — AI Agent Workforce for Canadian Businesses",
+  title: "Agent Studio | Audcomp, AI Agent Workforce for Canadian Businesses",
   description:
-    "Deploy a full team of production-ready AI agents for your organization. Bookkeeper, SDR, Executive Assistant, Paralegal, Receptionist, and more — Canadian-hosted, ready in 48 hours.",
+    "Deploy a full team of production-ready AI agents for your organization. Bookkeeper, SDR, Executive Assistant, Paralegal, Receptionist, and more, Canadian-hosted, ready in 48 hours.",
 };
 
 const agentFAQs = [
-  { q: "What is an AI agent and how does it work?", a: "An AI agent is an autonomous software system that can reason, plan, and take actions to achieve specific goals. Unlike chatbots that only respond to queries, agents can use tools, access databases, browse the web, send messages, and execute multi-step workflows independently — all within guardrails you define." },
+  { q: "What is an AI agent and how does it work?", a: "An AI agent is an autonomous software system that can reason, plan, and take actions to achieve specific goals. Unlike chatbots that only respond to queries, agents can use tools, access databases, browse the web, send messages, and execute multi-step workflows independently, all within guardrails you define." },
   { q: "What types of AI agents can Audcomp deploy?", a: "We deploy bookkeepers, SDRs, executive assistants, paralegals, receptionists, support managers, content marketers, and more. We also build multi-agent systems where these specialists collaborate on complex tasks." },
   { q: "How much does a custom AI agent cost?", a: "Agent engagements start at $497/mo and scale based on role complexity and integrations. Every engagement begins with a free assessment session." },
   { q: "What systems can AI agents integrate with?", a: "Our agents integrate with Slack, Microsoft Teams, Salesforce, Zendesk, email (SMTP), custom webhooks, SQL/NoSQL databases, Google Workspace, QuickBooks, and virtually any API-accessible system." },
   { q: "How do you ensure AI agent security?", a: "Every agent includes security guardrails: defined decision boundaries, tool access permissions, failure handling protocols, data access controls, and human-in-the-loop escalation paths. We follow SOC 2, PIPEDA, and enterprise governance standards." },
-  { q: "Can I try an agent before a full engagement?", a: "Yes. Start with our free AI Readiness Assessment — we'll map the right specialists to your workflows and confirm your infrastructure is agent-ready before any production deployment." },
+  { q: "Can I try an agent before a full engagement?", a: "Yes. Start with our free AI Readiness Assessment, we'll map the right specialists to your workflows and confirm your infrastructure is agent-ready before any production deployment." },
 ];
 
 function AgentCard({ a, keySuffix }: { a: Agent; keySuffix: string }) {
@@ -179,7 +179,7 @@ export default function AgentStudioPage() {
               A full team of agents.<br /><span className="italic">One orchestrator.</span>
             </h2>
             <p className="text-slate-400 text-lg lg:text-xl font-medium max-w-3xl mx-auto leading-relaxed">
-              Pre-trained specialists for the work you&apos;d otherwise hire for — each one deployable into your stack, hired and managed by Wilfred, and on duty around the clock.
+              Pre-trained specialists for the work you&apos;d otherwise hire for, each one deployable into your stack, hired and managed by Wilfred, and on duty around the clock.
             </p>
           </div>
 
@@ -197,7 +197,7 @@ export default function AgentStudioPage() {
                 </h3>
                 <p className="text-[#06b6d4] text-sm font-bold uppercase tracking-widest mb-5">Your AI Workforce Orchestrator</p>
                 <p className="text-slate-400 text-base lg:text-lg font-medium leading-relaxed mb-8">
-                  Wilfred is the one who actually hires your AI team. He reads your goal in plain English, picks the right specialist for every job, wires them into your stack, runs the day-to-day, and reports outcomes back to you — so you manage results, not prompts.
+                  Wilfred is the one who actually hires your AI team. He reads your goal in plain English, picks the right specialist for every job, wires them into your stack, runs the day-to-day, and reports outcomes back to you, so you manage results, not prompts.
                 </p>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                   {[
@@ -220,7 +220,7 @@ export default function AgentStudioPage() {
                   <div className="absolute inset-[24%] rounded-full border border-white/5" />
                   {/* Wilfred center */}
                   <div className="absolute inset-0 m-auto w-36 h-36 lg:w-40 lg:h-40 rounded-full overflow-hidden ring-4 ring-[#0071e3] shadow-2xl shadow-[#0071e3]/40 z-20">
-                    <img src="/images/agents/wilfred.png" alt="Wilfred — AI Workforce Orchestrator" className="w-full h-full object-cover" style={{ objectPosition: "60% 20%" }} />
+                    <img src="/images/agents/wilfred.png" alt="Wilfred, AI Workforce Orchestrator" className="w-full h-full object-cover" style={{ objectPosition: "60% 20%" }} />
                   </div>
                   <span className="absolute left-1/2 -translate-x-1/2 bottom-[2%] z-30 px-3 py-1 rounded-full bg-[#0071e3] text-white text-[10px] font-semibold uppercase tracking-widest shadow-lg">Wilfred</span>
                   {/* Inner ring — workforce */}
@@ -247,7 +247,7 @@ export default function AgentStudioPage() {
           <FeaturedAgent
             a={quinn}
             tag="Featured · Finance"
-            blurb="QuickBooks-certified. Reconciliations, payroll runs, and tax filings with a clean monthly close — every cycle, without you chasing it."
+            blurb="QuickBooks-certified. Reconciliations, payroll runs, and tax filings with a clean monthly close, every cycle, without you chasing it."
             works={
               <div className="flex flex-wrap items-center gap-3 mb-8">
                 <span className="text-[10px] font-semibold uppercase tracking-widest text-slate-500">Works with</span>
@@ -276,7 +276,7 @@ export default function AgentStudioPage() {
             <div>
               <h3 className="text-xl font-bold text-white mb-2 tracking-tight">Need a role that isn&apos;t here?</h3>
               <p className="text-slate-400 text-sm font-medium leading-relaxed max-w-xl">
-                Describe the job and Wilfred spins up a new specialist against your spec — wired into your stack and ready to work.
+                Describe the job and Wilfred spins up a new specialist against your spec, wired into your stack and ready to work.
               </p>
             </div>
             <Link href="/contact" className="shrink-0 inline-flex items-center gap-2 bg-[#0071e3] text-white px-6 py-4 rounded-2xl text-xs font-bold uppercase tracking-widest hover:shadow-2xl hover:shadow-[#0071e3]/30 transition-all">
@@ -310,14 +310,14 @@ export default function AgentStudioPage() {
               {
                 segment: "Professional Services", icon: "fa-scale-balanced",
                 headline: "Your books are three weeks behind. Again.",
-                pain: "You're a 6–15 person firm — law, accounting, consulting, architecture. You bill by the hour, but you spend Sundays catching up on reconciliations and chasing invoices. A full-time bookkeeper is overkill; finding a reliable part-time one is a hiring nightmare.",
+                pain: "You're a 6, 15 person firm, law, accounting, consulting, architecture. You bill by the hour, but you spend Sundays catching up on reconciliations and chasing invoices. A full-time bookkeeper is overkill; finding a reliable part-time one is a hiring nightmare.",
                 fix: "Quinn closes the books weekly inside your QuickBooks or Xero, chases AR, files GST/HST, and hands your CPA a clean year-end.",
                 price: "From $1,200/mo", name: "Quinn", role: "Bookkeeper", image: "/images/agents/quinn.png",
               },
               {
                 segment: "Retail & E-Commerce", icon: "fa-bag-shopping",
                 headline: "Your DMs are open. You aren't.",
-                pain: "Instagram DMs, Shopify chat, abandoned-cart emails, return requests, \"is this in stock?\" — and you're a team of three. Customers wait 8 hours for a reply, then buy from Amazon instead.",
+                pain: "Instagram DMs, Shopify chat, abandoned-cart emails, return requests, \"is this in stock?\", and you're a team of three. Customers wait 8 hours for a reply, then buy from Amazon instead.",
                 fix: "Theo handles tier-1 support across every channel, answers from your knowledge base, escalates only what matters, and recovers abandoned carts overnight.",
                 price: "From $1,497/mo", name: "Theo", role: "Support", image: "/images/agents/theo.png",
               },
@@ -370,19 +370,19 @@ export default function AgentStudioPage() {
               Canadian conductor.<br /><span className="text-[#0071e3] italic">Canadian team. Canadian rules.</span>
             </h2>
             <p className="text-slate-600 text-lg lg:text-xl font-medium leading-relaxed">
-              Every other AI staffing platform routes your data through US servers. For regulated Canadian businesses — legal, healthcare, financial, dental, government, education — that&apos;s a non-starter. Wilfred is the only AI workforce conductor built end-to-end on Canadian soil.
+              Every other AI staffing platform routes your data through US servers. For regulated Canadian businesses, legal, healthcare, financial, dental, government, education, that&apos;s a non-starter. Wilfred is the only AI workforce conductor built end-to-end on Canadian soil.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6 mb-16">
             {[
               {
-                label: "Data residency", value: "100% Canadian",
+                label: "Data residency", value: "Canadian",
                 desc: "Azure Canada Central + AWS Bedrock ca-central-1. Your data never crosses the border.",
                 items: ["No cross-border data flows", "CMK encryption available", "Dedicated tenant on Sovereign tier", "Annual third-party audit"],
               },
               {
                 label: "Built-in compliance", value: "PIPEDA + Law 25",
-                desc: "DPA, audit logs, 7-year retention — out of the box, every plan.",
+                desc: "DPA, audit logs, 7-year retention, out of the box, every plan.",
                 items: ["PIPEDA-compliant by default", "Quebec Law 25 ready", "7-year immutable audit logs", "Optional PHIPA / Law Society guardrails"],
               },
               {
@@ -416,7 +416,7 @@ export default function AgentStudioPage() {
                 Tell Wilfred what you need.<br /><span className="italic text-[#06b6d4]">He&apos;ll build the team.</span>
               </h2>
               <p className="text-slate-300 text-lg font-medium max-w-2xl mx-auto mb-10">
-                Book a free assessment and we&apos;ll map the right specialists to your work — deployed, supervised, and Canadian-hosted, ready in 48 hours.
+                Book a free assessment and we&apos;ll map the right specialists to your work, deployed, supervised, and Canadian-hosted, ready in 48 hours.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/contact" className="inline-flex items-center justify-center gap-3 bg-[#0071e3] text-white px-10 py-5 rounded-2xl font-bold text-lg hover:shadow-2xl hover:shadow-[#0071e3]/30 transition-all group">

@@ -10,23 +10,23 @@ import { SectionAngle } from "@/components/SectionAngle";
 import { AnimatedSection, StaggeredSection, StaggeredItem } from "@/components/AnimatedSection";
 
 export const metadata: Metadata = {
-  title: "Audcomp | Managed IT, Cybersecurity & Cloud — 100% Canadian",
+  title: "Audcomp | Managed IT, Cybersecurity & Cloud in Canada",
   description:
-    "Enterprise-grade managed IT, cybersecurity, and cloud for Ontario businesses — 24/7 monitoring, 100% Canadian engineers, and Canadian data centres. Serving Hamilton, Burlington, Oakville, London, and Niagara since 1986. Top 25 CDN Solutions Provider.",
+    "Enterprise-grade managed IT, cybersecurity, and cloud for Ontario businesses, 24/7 monitoring, Canadian technicians, and Canadian data centres. Serving Hamilton, Burlington, Oakville, London, and Niagara since 1986. Top 25 CDN Solutions Provider.",
 };
 
 const services = [
   {
     title: "Managed IT Services",
     description:
-      "End-user support, network monitoring, and infrastructure management with 100% Canadian engineers and 24/7 coverage.",
+      "End-user support, network monitoring, and infrastructure management with Canadian technicians and 24/7 coverage.",
     href: "/managed-it-services",
     category: "Managed IT",
   },
   {
     title: "Cloud Solutions",
     description:
-      "Microsoft 365, Azure, hybrid cloud, and Teams deployment — fully managed and tailored to your business needs.",
+      "Microsoft 365, Azure, hybrid cloud, and Teams deployment, fully managed and tailored to your business needs.",
     href: "/cloud-solutions",
     category: "Cloud",
   },
@@ -109,8 +109,8 @@ export default function Home() {
               <p className="text-xs text-white/40 mt-2 uppercase tracking-widest">CDN Solutions Provider</p>
             </div>
             <div>
-              <p className="text-4xl font-bold text-white tracking-tight"><CountUp end={100} suffix="%" /></p>
-              <p className="text-xs text-white/40 mt-2 uppercase tracking-widest">Engineers in Canada</p>
+              <p className="text-4xl font-bold text-white tracking-tight">In Canada</p>
+              <p className="text-xs text-white/40 mt-2 uppercase tracking-widest">Technicians & Data Centres</p>
             </div>
             <div>
               <p className="text-4xl font-bold text-white tracking-tight">24/7</p>
@@ -190,7 +190,7 @@ export default function Home() {
                   Healthcare Cybersecurity Recovery
                 </h3>
                 <p className="text-white/65 leading-relaxed text-base mb-8 max-w-md">
-                  A public-sector healthcare organization hit by a cyberattack in 2024 was fully operational within two weeks — critical services restored within two business days — thanks to Audcomp&apos;s rapid incident response.
+                  A public-sector healthcare organization hit by a cyberattack in 2024 was fully operational within two weeks, critical services restored within two business days, thanks to Audcomp&apos;s rapid incident response.
                 </p>
                 <Link
                   href="/case-study"

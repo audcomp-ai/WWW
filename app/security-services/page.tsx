@@ -5,7 +5,7 @@ import CTABanner from "@/components/CTABanner";
 import { SectionAngle } from "@/components/SectionAngle";
 
 export const metadata: Metadata = {
-  title: "Cyber Security Services | Audcomp — Canadian Cybersecurity Partner",
+  title: "Cyber Security Services | Audcomp, Canadian Cybersecurity Partner",
   description:
     "Audcomp delivers comprehensive cyber security: endpoint protection, SOC & MDR, penetration testing, dark web monitoring, and security awareness training.",
 };
@@ -37,7 +37,7 @@ const subServices = [
   },
   {
     title: "Security Awareness Training",
-    description: "Phishing resistance training led by cybersecurity professionals — your last line of defense.",
+    description: "Phishing resistance training led by cybersecurity professionals, your last line of defense.",
     href: "/security-awareness-training",
     category: "Security",
   },
@@ -60,13 +60,13 @@ export default function SecurityServicesPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-foreground mb-6">Security Is Not Optional</h2>
           <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-            Cyberattacks on Canadian businesses have increased dramatically over the past five years. Ransomware, business email compromise, and supply chain attacks are no longer rare — they're inevitable for organizations that aren't prepared. The question isn't whether your organization will be targeted; it's whether you'll be ready.
+            Cyberattacks on Canadian businesses have increased dramatically over the past five years. Ransomware, business email compromise, and supply chain attacks are no longer rare, they're inevitable for organizations that aren't prepared. The question isn't whether your organization will be targeted; it's whether you'll be ready.
           </p>
           <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-            Audcomp's cybersecurity practice builds layered defenses around your organization — from the endpoint to the network perimeter, from user behavior to 24/7 threat monitoring. Our Security Operations Centre (SOC) provides round-the-clock visibility and rapid incident response.
+            Audcomp's cybersecurity practice builds layered defenses around your organization, from the endpoint to the network perimeter, from user behavior to 24/7 threat monitoring. Our Security Operations Centre (SOC) provides round-the-clock visibility and rapid incident response.
           </p>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            We have firsthand experience recovering organizations from cyberattacks — when a public-sector healthcare provider was hit in 2024, Audcomp restored critical services within two business days and had them fully operational within two weeks. We&apos;d rather help you never need that service.
+            We have firsthand experience recovering organizations from cyberattacks, when a public-sector healthcare provider was hit in 2024, Audcomp restored critical services within two business days and had them fully operational within two weeks. We&apos;d rather help you never need that service.
           </p>
         </div>
       </section>
@@ -77,7 +77,7 @@ export default function SecurityServicesPage() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-foreground mb-4 text-center">Our Security Services</h2>
           <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-            A complete cybersecurity program — built in layers, managed continuously.
+            A complete cybersecurity program, built in layers, managed continuously.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {subServices.map((s) => (
@@ -112,7 +112,7 @@ export default function SecurityServicesPage() {
 
       <CTABanner
         title="Is Your Organization Prepared?"
-        subtitle="Start with a free cybersecurity assessment — Audcomp will identify your gaps and build a plan to close them."
+        subtitle="Start with a free cybersecurity assessment, Audcomp will identify your gaps and build a plan to close them."
       />
     </>
   );

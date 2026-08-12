@@ -4,7 +4,7 @@ import CTABanner from "@/components/CTABanner";
 import { SectionAngle } from "@/components/SectionAngle";
 
 export const metadata: Metadata = {
-  title: "Structured Cabling | Audcomp — Network Infrastructure Installation",
+  title: "Structured Cabling | Audcomp, Network Infrastructure Installation",
   description:
     "Audcomp designs and installs structured cabling systems for offices, data centers, and enterprise environments across the Hamilton and Ancaster region.",
 };
@@ -14,7 +14,7 @@ export default function StructuredCablingPage() {
     <>
       <Hero
         title="Structured Cabling"
-        subtitle="Fewer network outages start with the cabling underneath — Audcomp designs, installs, tests, and documents structured cabling built to last."
+        subtitle="Fewer network outages start with the cabling underneath, Audcomp designs, installs, tests, and documents structured cabling built to last."
         ctaText="Get a Cabling Assessment"
         ctaHref="/contact"
         backgroundImage="/images/professional_services_hero.png"
@@ -48,7 +48,7 @@ export default function StructuredCablingPage() {
               { title: "Cat6 / Cat6A Installation", desc: "High-performance copper cabling supporting 10Gbps and beyond for future-ready networks." },
               { title: "Fiber Optic Installation", desc: "Single-mode and multi-mode fiber for backbone runs, inter-building connections, and high-density environments." },
               { title: "Patch Panel & Rack Setup", desc: "Clean, labeled patch panels and structured rack builds that are easy to manage and expand." },
-              { title: "Cable Testing & Certification", desc: "Every run is tested and certified — complete test documentation provided at project completion." },
+              { title: "Cable Testing & Certification", desc: "Every run is tested and certified, complete test documentation provided at project completion." },
               { title: "As-Built Documentation", desc: "Detailed as-built drawings and cable schedules so your network is fully documented for the future." },
             ].map((f) => (
               <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6">

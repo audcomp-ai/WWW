@@ -9,7 +9,7 @@ const agents = [
     name: "Atlas",
     role: "Tier-1 Help Desk Responder",
     image: "https://images.unsplash.com/photo-1614729939124-032f0b56c9ce?w=800&q=80",
-    description: "Instantly resolves 60% of incoming tickets before a human engineer even sees them."
+    description: "Instantly resolves 60% of incoming tickets before a human technician even sees them."
   },
   {
     name: "Cipher",
@@ -25,7 +25,7 @@ const agents = [
   },
   {
     name: "Orion",
-    role: "Network Reliability Engineer",
+    role: "Network Reliability Technician",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80",
     description: "Predicts bandwidth bottlenecks and re-routes traffic automatically."
   },

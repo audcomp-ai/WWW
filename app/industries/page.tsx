@@ -5,7 +5,7 @@ import { SectionAngle } from "@/components/SectionAngle";
 import { AnimatedSection, StaggeredSection, StaggeredItem } from "@/components/AnimatedSection";
 
 export const metadata: Metadata = {
-  title: "Industries We Serve | Audcomp — IT Solutions Built for Your Sector",
+  title: "Industries We Serve | Audcomp, IT Solutions Built for Your Sector",
   description:
     "Audcomp delivers IT solutions tailored to healthcare, municipalities, universities, manufacturing, enterprise, and SMB sectors across Hamilton, Burlington, and beyond.",
 };
@@ -23,7 +23,7 @@ const industries = [
       "Medical device and endpoint security",
     ],
     solution:
-      "Audcomp combines 24/7 SOC monitoring, compliant cloud backup, and endpoint protection to keep patient data secure and clinical systems running — so your staff can focus on care, not IT.",
+      "Audcomp combines 24/7 SOC monitoring, compliant cloud backup, and endpoint protection to keep patient data secure and clinical systems running, so your staff can focus on care, not IT.",
     services: [
       { label: "Managed IT Support", href: "/managed-it-support" },
       { label: "Cyber Security", href: "/security-services" },
@@ -38,12 +38,12 @@ const industries = [
     tagline: "Budget-conscious IT that keeps public services running",
     challenges: [
       "Tight budgets and public accountability",
-      "100% Canadian data sovereignty requirements",
+      "Canadian data sovereignty requirements",
       "Legacy systems and modernization pressure",
       "Citizen-facing service continuity",
     ],
     solution:
-      "We help municipalities modernize their IT infrastructure cost-effectively — with 100% Canadian engineers, compliant data handling, and a Virtual CIO to guide long-term technology planning.",
+      "We help municipalities modernize their IT infrastructure cost-effectively, with Canadian technicians, compliant data handling, and a Virtual CIO to guide long-term technology planning.",
     services: [
       { label: "Managed IT Services", href: "/managed-it-services" },
       { label: "Virtual CIO", href: "/virtual-cio" },
@@ -83,7 +83,7 @@ const industries = [
       "IoT device security and patch management",
     ],
     solution:
-      "Audcomp bridges operational technology and IT — delivering hardened networks, industrial cybersecurity, and reliable infrastructure so your production lines never stop due to IT failures.",
+      "Audcomp bridges operational technology and IT, delivering hardened networks, industrial cybersecurity, and reliable infrastructure so your production lines never stop due to IT failures.",
     services: [
       { label: "Managed IT Support", href: "/managed-it-support" },
       { label: "Managed Firewall", href: "/managed-firewall" },
@@ -103,7 +103,7 @@ const industries = [
       "Technology vendor sprawl and cost control",
     ],
     solution:
-      "Our Virtual CIO and professional services team align your IT strategy with business goals — consolidating vendors, enabling cloud-first infrastructure, and managing transformation with zero disruption.",
+      "Our Virtual CIO and professional services team align your IT strategy with business goals, consolidating vendors, enabling cloud-first infrastructure, and managing transformation with zero disruption.",
     services: [
       { label: "Virtual CIO", href: "/virtual-cio" },
       { label: "Microsoft Azure", href: "/microsoft-azure" },
@@ -123,7 +123,7 @@ const industries = [
       "Managing hardware, software, and vendors",
     ],
     solution:
-      "Audcomp becomes your full IT department — proactive monitoring, a responsive help desk, Device as a Service, and security awareness training — so you get enterprise-grade IT without the overhead.",
+      "Audcomp becomes your full IT department, proactive monitoring, a responsive help desk, Device as a Service, and security awareness training, so you get enterprise-grade IT without the overhead.",
     services: [
       { label: "Managed IT Support", href: "/managed-it-support" },
       { label: "Help Desk", href: "/help-desk" },
@@ -154,8 +154,7 @@ export default function IndustriesPage() {
               IT Built for the Way Your Sector Works
             </h1>
             <p className="text-lg text-white/55 max-w-2xl mx-auto leading-relaxed">
-              Audcomp brings 40+ years of IT expertise and deep domain knowledge across six sectors —
-              so your technology strategy fits the way your business actually works.
+              Audcomp brings 40+ years of IT expertise and deep domain knowledge across six sectors, so your technology strategy fits the way your business actually works.
             </p>
           </div>
         </AnimatedSection>

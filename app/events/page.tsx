@@ -30,7 +30,7 @@ const upcomingWebinars = [
     date: "November 5, 2026",
     time: "11:00 AM EST",
     type: "Panel Discussion",
-    desc: "AI is changing how attacks happen — and how you respond. Our SOC experts walk through real breach scenarios, AI-assisted threat detection, and the new playbook every Canadian business needs.",
+    desc: "AI is changing how attacks happen, and how you respond. Our SOC experts walk through real breach scenarios, AI-assisted threat detection, and the new playbook every Canadian business needs.",
     href: "/contact",
     limited: true,
   },

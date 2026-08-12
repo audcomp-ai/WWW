@@ -8,14 +8,14 @@ import { AnimatedSection, StaggeredSection, StaggeredItem } from "@/components/A
 export const metadata: Metadata = {
   title: "Forward Deployed Engineers (FDE-as-a-Service) | Audcomp",
   description:
-    "An Audcomp engineer embedded in your business — learning your workflows, then building and shipping the automations, integrations, and AI agents your team actually needs.",
+    "An Audcomp engineer embedded in your business, learning your workflows, then building and shipping the automations, integrations, and AI agents your team actually needs.",
 };
 
 const howItWorks = [
   {
     step: "01",
     title: "Embed",
-    desc: "Your engineer joins the way your team already works — your standups, your channels, your tools. No separate intake queue.",
+    desc: "Your engineer joins the way your team already works, your standups, your channels, your tools. No separate intake queue.",
   },
   {
     step: "02",
@@ -25,19 +25,19 @@ const howItWorks = [
   {
     step: "03",
     title: "Build",
-    desc: "Working software shipped into your environment in small increments, so you see something running in weeks — not a slide deck at the end of a quarter.",
+    desc: "Working software shipped into your environment in small increments, so you see something running in weeks, not a slide deck at the end of a quarter.",
   },
   {
     step: "04",
     title: "Operate & hand over",
-    desc: "Everything is documented, monitored, and handed to your team — with Audcomp's managed services behind it if you'd rather we keep running it.",
+    desc: "Everything is documented, monitored, and handed to your team, with Audcomp's managed services behind it if you'd rather we keep running it.",
   },
 ];
 
 const whatTheyBuild = [
   {
     title: "Workflow Automation",
-    desc: "Replace the manual steps between systems — approvals, data entry, routing, notifications — with something that runs on its own.",
+    desc: "Replace the manual steps between systems, approvals, data entry, routing, notifications, with something that runs on its own.",
   },
   {
     title: "System Integrations",
@@ -45,7 +45,7 @@ const whatTheyBuild = [
   },
   {
     title: "Custom AI Agents",
-    desc: "Purpose-built agents scoped to your data and governed by your security policies — built on the same foundation as Agent Studio.",
+    desc: "Purpose-built agents scoped to your data and governed by your security policies, built on the same foundation as Agent Studio.",
   },
   {
     title: "Internal Tools & Dashboards",
@@ -53,7 +53,7 @@ const whatTheyBuild = [
   },
   {
     title: "Data & Reporting Pipelines",
-    desc: "Get numbers out of the systems holding them, into one place, on a schedule — instead of someone rebuilding the same report every month.",
+    desc: "Get numbers out of the systems holding them, into one place, on a schedule, instead of someone rebuilding the same report every month.",
   },
   {
     title: "Migration & Modernization",
@@ -72,7 +72,7 @@ const whoItsFor = [
   },
   {
     title: "You want AI, but not a science project",
-    desc: "You've seen what agents can do and need someone to build the practical version against your real data — not another pilot that stalls.",
+    desc: "You've seen what agents can do and need someone to build the practical version against your real data, not another pilot that stalls.",
   },
   {
     title: "A full-time engineer is hard to justify",
@@ -83,7 +83,7 @@ const whoItsFor = [
 const differentiators = [
   {
     title: "Senior engineers only",
-    desc: "The person embedded with you is the person writing the code — not a coordinator relaying requirements to someone else.",
+    desc: "The person embedded with you is the person writing the code, not a coordinator relaying requirements to someone else.",
   },
   {
     title: "Security-first by default",
@@ -91,7 +91,7 @@ const differentiators = [
   },
   {
     title: "Canadian, end to end",
-    desc: "Canadian engineers and Canadian-hosted infrastructure — built for PIPEDA and provincial privacy obligations from the start.",
+    desc: "Canadian engineers and Canadian-hosted infrastructure, built for PIPEDA and provincial privacy obligations from the start.",
   },
   {
     title: "Backed by a full MSP",
@@ -103,7 +103,7 @@ const differentiators = [
   },
   {
     title: "Outcome focused",
-    desc: "Measured on what ships and what it saves — hours returned, errors removed, processes that no longer need a person watching them.",
+    desc: "Measured on what ships and what it saves, hours returned, errors removed, processes that no longer need a person watching them.",
   },
 ];
 
@@ -112,7 +112,7 @@ export default function ForwardDeployedEngineersPage() {
     <>
       <Hero
         title="Forward Deployed Engineers"
-        subtitle="An Audcomp engineer embedded in your business — learning how you actually work, then building and shipping what your team needs. Not a ticket queue: a teammate who builds."
+        subtitle="An Audcomp engineer embedded in your business, learning how you actually work, then building and shipping what your team needs. Not a ticket queue: a teammate who builds."
         ctaText="Talk to an Engineer"
         ctaHref="/contact"
         secondaryCtaText="Explore AI Services"
@@ -140,7 +140,7 @@ export default function ForwardDeployedEngineersPage() {
             </p>
             <p className="text-slate-500 text-lg leading-relaxed mb-6">
               A Forward Deployed Engineer closes that gap by removing it. An
-              Audcomp engineer works inside your business — sitting with the
+              Audcomp engineer works inside your business, sitting with the
               people doing the work, seeing the friction first-hand, and building
               against it directly. The person who understands the problem is the
               person shipping the solution.
@@ -293,7 +293,7 @@ export default function ForwardDeployedEngineersPage() {
 
       <CTABanner
         title="Put an Engineer on It"
-        subtitle="Tell us where your team is losing time. We'll scope an engagement around the work that matters most — and have someone building on it in weeks."
+        subtitle="Tell us where your team is losing time. We'll scope an engagement around the work that matters most, and have someone building on it in weeks."
       />
     </>
   );

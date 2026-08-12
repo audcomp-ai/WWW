@@ -7,9 +7,9 @@ import { SectionAngle } from "@/components/SectionAngle";
 import { AnimatedSection, StaggeredSection, StaggeredItem } from "@/components/AnimatedSection";
 
 export const metadata: Metadata = {
-  title: "AI Services | Audcomp — Microsoft Copilot & AI Agent Consulting in Canada",
+  title: "AI Services | Audcomp, Microsoft Copilot & AI Agent Consulting in Canada",
   description:
-    "Audcomp helps Canadian businesses adopt AI safely and strategically — Microsoft Copilot enablement, custom AI agents, AI readiness assessments, and data governance.",
+    "Audcomp helps Canadian businesses adopt AI safely and strategically, Microsoft Copilot enablement, custom AI agents, AI readiness assessments, and data governance.",
 };
 
 const subServices = [
@@ -21,7 +21,7 @@ const subServices = [
   },
   {
     title: "Custom AI Agents",
-    description: "Purpose-built AI agents that automate workflows, answer staff questions, and handle routine tasks — deployed securely in your environment.",
+    description: "Purpose-built AI agents that automate workflows, answer staff questions, and handle routine tasks, deployed securely in your environment.",
     href: "/ai-services#agents",
     category: "AI",
   },
@@ -42,11 +42,11 @@ const subServices = [
 const agentUseCases = [
   {
     title: "IT Help Desk Agent",
-    desc: "Automatically resolve common IT tickets — password resets, software installs, VPN troubleshooting — reducing level-1 support volume by [CONFIRM: typical level-1 ticket reduction %].",
+    desc: "Automatically resolve common IT tickets, password resets, software installs, VPN troubleshooting, so your team handles fewer level-1 tickets by hand.",
   },
   {
     title: "Procurement Assistant",
-    desc: "An agent that tracks hardware inventory, raises purchase orders, and surfaces vendor quotes — keeping procurement moving without manual overhead.",
+    desc: "An agent that tracks hardware inventory, raises purchase orders, and surfaces vendor quotes, keeping procurement moving without manual overhead.",
   },
   {
     title: "Security Alert Triage",
@@ -54,7 +54,7 @@ const agentUseCases = [
   },
   {
     title: "Onboarding Coordinator",
-    desc: "Walk new employees through account setup, access provisioning, and policy acknowledgment — cutting IT onboarding time from days to hours.",
+    desc: "Walk new employees through account setup, access provisioning, and policy acknowledgment, cutting IT onboarding time from days to hours.",
   },
   {
     title: "Reporting & Analytics Agent",
@@ -62,7 +62,7 @@ const agentUseCases = [
   },
   {
     title: "Compliance Monitor",
-    desc: "Continuously scan your environment for policy drift, missing patches, and regulatory gaps — and generate audit-ready reports on demand.",
+    desc: "Continuously scan your environment for policy drift, missing patches, and regulatory gaps, and generate audit-ready reports on demand.",
   },
 ];
 
@@ -70,7 +70,7 @@ const deploymentSteps = [
   { step: "01", title: "Discovery", desc: "Map your existing workflows and identify which tasks are best suited for AI automation." },
   { step: "02", title: "Agent Design", desc: "Configure agent scope, data sources, permissions, and escalation rules aligned with your security policies." },
   { step: "03", title: "Pilot Deployment", desc: "Run a controlled pilot with a small team to validate performance and gather feedback." },
-  { step: "04", title: "Full Rollout", desc: "Scale across your organization with training, documentation, and ongoing monitoring by Audcomp engineers." },
+  { step: "04", title: "Full Rollout", desc: "Scale across your organization with training, documentation, and ongoing monitoring by Audcomp technicians." },
 ];
 
 export default function AIServicesPage() {
@@ -78,7 +78,7 @@ export default function AIServicesPage() {
     <>
       <Hero
         title="AI Services"
-        subtitle="Practical AI for Canadian businesses — from Microsoft Copilot to custom AI agents that automate the work your team does every day."
+        subtitle="Practical AI for Canadian businesses, from Microsoft Copilot to custom AI agents that automate the work your team does every day."
         ctaText="Start Your AI Assessment"
         ctaHref="/contact"
         backgroundImage="/images/ai_services_hero.png"
@@ -95,13 +95,13 @@ export default function AIServicesPage() {
               AI That Actually Works<br />for Your Business
             </h2>
             <p className="text-slate-500 text-lg leading-relaxed mb-6">
-              Most AI projects stall because they start with the technology instead of the business problem. Audcomp helps Canadian organizations pinpoint where AI genuinely cuts cost, saves staff hours, or wins new work — then implements it securely, without the hype.
+              Most AI projects stall because they start with the technology instead of the business problem. Audcomp helps Canadian organizations pinpoint where AI genuinely cuts cost, saves staff hours, or wins new work, then implements it securely, without the hype.
             </p>
             <p className="text-slate-500 text-lg leading-relaxed mb-6">
               Whether you&apos;re beginning with Microsoft Copilot in your existing Microsoft 365 environment, deploying custom AI agents for workflow automation, or building the data governance foundation for responsible AI adoption, Audcomp provides the strategy, implementation, and ongoing support to make it work.
             </p>
             <p className="text-slate-500 text-lg leading-relaxed">
-              We take a security-first approach to every AI engagement — ensuring your data, your privacy, and your compliance obligations are protected as you embrace new technologies.
+              We take a security-first approach to every AI engagement, ensuring your data, your privacy, and your compliance obligations are protected as you embrace new technologies.
             </p>
           </AnimatedSection>
         </div>
@@ -116,7 +116,7 @@ export default function AIServicesPage() {
             <p className="text-xs font-semibold text-[#06b6d4] uppercase tracking-widest mb-4">Services</p>
             <h2 className="text-4xl font-bold text-white mb-4 tracking-tight">A Complete AI Journey</h2>
             <p className="text-white/50 text-base max-w-2xl mx-auto">
-              From readiness through deployment and governance — Audcomp covers the full AI lifecycle.
+              From readiness through deployment and governance, Audcomp covers the full AI lifecycle.
             </p>
           </AnimatedSection>
           <StaggeredSection className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -152,7 +152,7 @@ export default function AIServicesPage() {
                   Deploy an AI workforce in<br />weeks, not months.
                 </h2>
                 <p className="text-white/65 leading-relaxed text-base mb-8 max-w-md">
-                  Bookkeeper. SDR. Executive assistant. Paralegal. Receptionist. 13 pre-built specialists — Canadian-hosted, supervised by Wilfred, ready to work alongside your team.
+                  Bookkeeper. SDR. Executive assistant. Paralegal. Receptionist. 13 pre-built specialists, Canadian-hosted, supervised by Wilfred, ready to work alongside your team.
                 </p>
                 <div className="flex flex-wrap gap-3">
                   <Link
@@ -194,10 +194,10 @@ export default function AIServicesPage() {
                   FDE-as-a-Service
                 </span>
                 <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tighter mb-5 leading-tight">
-                  Forward Deployed<br />Engineers, embedded.
+                  Forward Deployed<br />Technicians, embedded.
                 </h2>
                 <p className="text-white/65 leading-relaxed text-base mb-8 max-w-md">
-                  An Audcomp engineer works inside your business — learning your
+                  An Audcomp technician works inside your business, learning your
                   workflows, building the automations and agents you actually
                   need, and shipping them in your environment. Not a ticket
                   queue: a teammate who builds.
@@ -238,12 +238,12 @@ export default function AIServicesPage() {
                   IT-Specific Agents<br />for Your Team
                 </h2>
                 <p className="text-white/55 text-lg leading-relaxed">
-                  Purpose-built agents for IT environments — scoped to your Microsoft 365 infrastructure, connected to your data sources, and governed by your security policies.
+                  Purpose-built agents for IT environments, scoped to your Microsoft 365 infrastructure, connected to your data sources, and governed by your security policies.
                 </p>
               </div>
               <div>
                 <p className="text-white/45 text-base leading-relaxed mb-4">
-                  Unlike generic AI tools, Audcomp agents are designed specifically for IT workflows — help desk automation, security alert triage, compliance monitoring, and more.
+                  Unlike generic AI tools, Audcomp agents are designed specifically for IT workflows, help desk automation, security alert triage, compliance monitoring, and more.
                 </p>
                 <Link href="/ai-services/agent-studio" className="inline-flex items-center gap-1.5 text-sm text-[#06b6d4] font-semibold hover:underline">
                   See all 13 agents in Agent Studio
@@ -304,7 +304,7 @@ export default function AIServicesPage() {
               Start with Strategy
             </h2>
             <p className="text-slate-500 text-lg leading-relaxed max-w-3xl">
-              Before deploying AI tools, organizations need to understand where AI can genuinely add value — and where it introduces risk. Audcomp&apos;s AI Consulting service helps you answer both questions.
+              Before deploying AI tools, organizations need to understand where AI can genuinely add value, and where it introduces risk. Audcomp&apos;s AI Consulting service helps you answer both questions.
             </p>
           </AnimatedSection>
           <StaggeredSection className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -312,7 +312,7 @@ export default function AIServicesPage() {
               { title: "Use Case Identification", desc: "Identify the highest-value AI use cases specific to your industry, workflows, and data." },
               { title: "Readiness Assessment", desc: "Evaluate your data quality, infrastructure, and organizational readiness for AI adoption." },
               { title: "AI Roadmap", desc: "A phased, prioritized AI adoption roadmap tailored to your business and risk tolerance." },
-              { title: "Vendor Evaluation", desc: "Assess AI tools and platforms independently — without the vendor sales pitch." },
+              { title: "Vendor Evaluation", desc: "Assess AI tools and platforms independently, without the vendor sales pitch." },
             ].map((f) => (
               <StaggeredItem key={f.title}>
                 <div className="rounded-2xl border border-slate-200 bg-white p-7 hover:border-blue-200 hover:shadow-sm transition-all duration-300">
@@ -356,7 +356,7 @@ export default function AIServicesPage() {
 
       <CTABanner
         title="Ready to Explore AI for Your Business?"
-        subtitle="Contact Audcomp for an AI readiness assessment — we'll identify the best starting point for your organization."
+        subtitle="Contact Audcomp for an AI readiness assessment, we'll identify the best starting point for your organization."
       />
     </>
   );
