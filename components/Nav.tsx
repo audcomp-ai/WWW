@@ -92,8 +92,10 @@ const aiItems: (MenuItem & { icon: string })[] = [
   },
 ];
 
+// Kept out of simpleLinks so it can lead the bar, ahead of the two dropdowns.
+const aboutLink = { label: "About", href: "/about" };
+
 const simpleLinks = [
-  { label: "About", href: "/about" },
   { label: "Partners", href: "/partners" },
   { label: "Events", href: "/events" },
   { label: "Blog", href: "/blog" },
@@ -160,6 +162,14 @@ export default function Nav() {
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-7">
+            <Link
+              href={aboutLink.href}
+              className="text-sm text-white/70 hover:text-white transition-colors duration-200"
+              onMouseEnter={scheduleClose}
+            >
+              {aboutLink.label}
+            </Link>
+
             <button
               className={triggerClass("services")}
               onMouseEnter={() => open("services")}
@@ -421,7 +431,7 @@ export default function Nav() {
           )}
 
           <div className="border-t border-white/[0.08] pt-3 flex flex-col gap-2">
-            {[...aiItems.map((a) => ({ label: a.label, href: a.href })), ...simpleLinks].map((link) => (
+            {[aboutLink, ...aiItems.map((a) => ({ label: a.label, href: a.href })), ...simpleLinks].map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
