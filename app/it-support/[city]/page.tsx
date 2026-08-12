@@ -60,7 +60,7 @@ export default async function LocalItSupportPage({ params }: Props) {
     <>
       <Hero
         title={`IT Support in ${cityName}, From Canadian Technicians`}
-        subtitle={`Keeping ${cityName} businesses running with less downtime and predictable IT since 1986 — Canadian technicians, Canadian data centres, and 24/7 support.`}
+        subtitle={`Keeping ${cityName} businesses running with less downtime and predictable IT since 1986, Canadian technicians, Canadian data centres, and 24/7 support.`}
         ctaText="Get a Free Assessment"
         ctaHref="/contact"
         backgroundImage="/images/managed_it_hero.png"

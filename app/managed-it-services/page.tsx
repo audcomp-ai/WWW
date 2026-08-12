@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 const subServices = [
   {
     title: "Managed IT Support",
-    description: "End-user support, network, infrastructure, core application, data protection, and cyber security, with 24/7 coverage and Canadian technicians.",
+    description: "End-user support, network, infrastructure, core application, data protection, and cyber security, with 24/7 coverage.",
     href: "/managed-it-support",
     category: "Managed IT",
   },
@@ -48,7 +48,7 @@ export default function ManagedITServicesPage() {
     <>
       <Hero
         title="Fully Managed IT, Based in Canada"
-        subtitle="Less downtime, predictable monthly costs, and a team free to focus on the business, with 24/7 monitoring from Canadian technicians who have done this since 1986."
+        subtitle="Less downtime, predictable monthly costs, and a team free to focus on the business, with 24/7 monitoring from technicians who have done this since 1986."
         ctaText="Get a Free Assessment"
         ctaHref="/contact"
         secondaryCtaText="Call 905-304-1775"
@@ -61,7 +61,7 @@ export default function ManagedITServicesPage() {
       {/* Overview */}
       <section className="bg-background py-20 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-foreground mb-6">Your IT. Fully Managed. Fully Canadian.</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-6">Your IT. Fully Managed.</h2>
           <p className="text-muted-foreground text-lg leading-relaxed mb-6">
             Our Managed IT Services allow you to store your data, secure your network, and optimize your IT, while reducing your costs, maximizing your uptime, and increasing your productivity. Our team of Canadian technicians monitors your environment around the clock, resolving issues before they become outages.
           </p>

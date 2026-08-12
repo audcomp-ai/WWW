@@ -47,7 +47,7 @@ export default function OurStoryPage() {
     <>
       <Hero
         title="Our Story"
-        subtitle="From a 1986 startup at McMaster University to a top-25 Canadian solutions provider, four decades building IT that Canadian businesses rely on every day."
+        subtitle="From a 1986 startup at McMaster University to a top-25 Canadian solutions provider, four decades building IT that businesses rely on every day."
         backgroundImage="/images/professional_services_hero.png"
       />
 
@@ -114,7 +114,7 @@ export default function OurStoryPage() {
               },
               {
                 title: "Canadian First",
-                desc: "Canadian technicians. Canadian data centers. Your data stays on Canadian soil.",
+                desc: "Technicians and data centres in Canada. Your data never leaves the country.",
               },
               {
                 title: "Proactive",

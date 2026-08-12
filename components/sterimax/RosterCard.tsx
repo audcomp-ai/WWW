@@ -11,7 +11,7 @@ export function RosterCard({ agent, agentIndex }: { agent: SteriMaxAgent; agentI
       <div className="relative aspect-[4/5] overflow-hidden">
         <img
           src={agent.image}
-          alt={`${agent.name} — ${agent.role}`}
+          alt={`${agent.name}, ${agent.role}`}
           loading="lazy"
           className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
         />

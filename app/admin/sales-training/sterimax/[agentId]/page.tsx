@@ -23,7 +23,7 @@ export async function generateMetadata({
   const agent = getSteriMaxAgent(agentId);
   if (!agent) return { title: "Agent Not Found | Audcomp Admin", robots: { index: false, follow: false } };
   return {
-    title: `${agent.name} — ${agent.role} | SteriMax Demo`,
+    title: `${agent.name}, ${agent.role} | SteriMax Demo`,
     description: agent.blurb,
     robots: { index: false, follow: false },
   };
@@ -77,7 +77,7 @@ export default async function SteriMaxAgentPage({
           >
             <img
               src={agent.image}
-              alt={`${agent.name} — ${agent.role}`}
+              alt={`${agent.name}, ${agent.role}`}
               className="absolute inset-0 w-full h-full object-cover object-top"
             />
             <div

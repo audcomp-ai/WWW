@@ -28,7 +28,7 @@ function AgentCard({ a, keySuffix }: { a: Agent; keySuffix: string }) {
       <div className="relative aspect-[4/5] overflow-hidden">
         <img
           src={a.image}
-          alt={`${a.name} — ${a.role}`}
+          alt={`${a.name}, ${a.role}`}
           loading="lazy"
           className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
         />
@@ -115,7 +115,7 @@ function FeaturedAgent({
         </div>
       </div>
       <div className="relative min-h-[22rem] lg:min-h-[30rem] order-1 lg:order-2 overflow-hidden">
-        <img src={a.image} alt={`${a.name} — ${a.role}`} className="absolute inset-0 w-full h-full object-cover object-top" />
+        <img src={a.image} alt={`${a.name}, ${a.role}`} className="absolute inset-0 w-full h-full object-cover object-top" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#071e3d] via-transparent to-transparent lg:bg-gradient-to-r lg:from-[#071e3d] lg:via-[#071e3d]/10 lg:to-transparent" />
         <span className="absolute top-5 right-5 w-11 h-11 rounded-2xl bg-white/10 border border-white/20 backdrop-blur flex items-center justify-center">
           <i className={`fas ${a.icon} text-[#06b6d4]`} />
@@ -230,7 +230,7 @@ export default function AgentStudioPage() {
                     const top = 50 + r * Math.sin(angle);
                     const left = 50 + r * Math.cos(angle);
                     return (
-                      <Link key={a.id} href={`/ai-services/agent-studio/${a.id}`} title={`${a.name} — ${a.role}`}
+                      <Link key={a.id} href={`/ai-services/agent-studio/${a.id}`} title={`${a.name}, ${a.role}`}
                         className="absolute w-14 h-14 rounded-full overflow-hidden border-2 border-white/20 shadow-lg -translate-x-1/2 -translate-y-1/2 z-10 hover:border-[#0071e3] hover:scale-110 transition-all"
                         style={{ top: `${top}%`, left: `${left}%` }}
                       >
@@ -290,11 +290,11 @@ export default function AgentStudioPage() {
           <div className="text-center mb-16 max-w-4xl mx-auto">
             <span className="text-[10px] font-semibold uppercase tracking-widest text-[#06b6d4] mb-6 block">Who hires Wilfred</span>
             <h2 className="text-4xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-tight">
-              If you have work that needs doing and a hire you can&apos;t justify yet —{" "}
+              If you have work that needs doing and a hire you can&apos;t justify yet,{" "}
               <span className="italic">Wilfred fills that gap.</span>
             </h2>
             <p className="text-slate-400 text-lg lg:text-xl font-medium leading-relaxed">
-              Four kinds of Canadian SMB owners are quietly running themselves into the ground because they can&apos;t find, afford, or justify the next hire. If any of these sound like your week, we should talk.
+              Four kinds of SMB owners are quietly running themselves into the ground because they can&apos;t find, afford, or justify the next hire. If any of these sound like your week, we should talk.
             </p>
           </div>
 

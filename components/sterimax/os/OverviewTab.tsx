@@ -53,7 +53,7 @@ function ActivityFeed() {
       </ul>
       <p className="text-[11px] font-medium text-[#4a6785] mt-5 pt-5 border-t border-white/[0.08]">
         {running
-          ? `Streaming — ${streamed.length} action${streamed.length === 1 ? "" : "s"} this session.`
+          ? `Streaming, ${streamed.length} action${streamed.length === 1 ? "" : "s"} this session.`
           : "Press Start Demo in the header to watch the feed update in real time."}
       </p>
     </div>
@@ -144,7 +144,7 @@ export function OverviewTab() {
       <AgentLoadList
         rows={standbyAgentLoads}
         title="Standing by · idle & queued"
-        note="spin up on trigger — no idle cost"
+        note="spin up on trigger, no idle cost"
       />
       <ImpactHours />
       <OperatingCost />
