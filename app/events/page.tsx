@@ -6,6 +6,7 @@ import SecuritySummitHero from "@/components/events/SecuritySummitHero";
 import HorizontalScrollGallery from "@/components/events/HorizontalScrollGallery";
 import { CalendarDays, Video, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { summit } from "@/data/security-summit";
 
 export const metadata: Metadata = {
   title: "Events & Webinars | Audcomp",
@@ -14,6 +15,18 @@ export const metadata: Metadata = {
 };
 
 const upcomingWebinars = [
+  {
+    // Pulled from data/security-summit.ts rather than retyped, so the card can
+    // never drift from the hero and the detail page.
+    id: "summit",
+    title: summit.title,
+    date: `Save the Date · ${summit.dateShort}`,
+    time: summit.schedule,
+    type: "Flagship Summit",
+    desc: `${summit.tagline}. Keynotes, technology partners, and a working session on what AI changes about attacks and defence, and what it doesn't.`,
+    href: summit.detailHref,
+    limited: true,
+  },
   {
     id: "w2",
     title: "Data Governance in the AI Era",
@@ -30,7 +43,7 @@ const upcomingWebinars = [
     date: "November 5, 2026",
     time: "11:00 AM EST",
     type: "Panel Discussion",
-    desc: "AI is changing how attacks happen — and how you respond. Our SOC experts walk through real breach scenarios, AI-assisted threat detection, and the new playbook every Canadian business needs.",
+    desc: "AI is changing how attacks happen, and how you respond. Our SOC experts walk through real breach scenarios, AI-assisted threat detection, and the new playbook every Canadian business needs.",
     href: "/contact",
     limited: true,
   },

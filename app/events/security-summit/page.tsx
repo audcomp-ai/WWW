@@ -15,9 +15,9 @@ import {
 } from "@/data/security-summit";
 
 export const metadata: Metadata = {
-  title: "Modern Cyber Security Summit — September 22, 2026 | Audcomp",
+  title: "Modern Cyber Security Summit, September 22, 2026 | Audcomp",
   description:
-    "Audcomp's Security Summit on defending business in the age of AI. September 22, 2026 — keynotes, an interactive panel, and security specialists from Field Effect, Hornetsecurity and more.",
+    "Audcomp's Security Summit on defending business in the age of AI. September 22, 2026, keynotes, an interactive panel, and security specialists from Field Effect, Hornetsecurity and more.",
 };
 
 export default function SecuritySummitPage() {
@@ -92,8 +92,7 @@ export default function SecuritySummitPage() {
             </p>
             <p className="text-slate-500 leading-relaxed">
               Phishing remains the #1 way attackers get in. Roughly 3.4 billion
-              phishing emails are sent every day — 82.6% now AI-generated —
-              driving over $25 billion in annual losses. For small and mid-sized
+              phishing emails are sent every day, 82.6% now AI-generated, driving over $25 billion in annual losses. For small and mid-sized
               businesses the danger is no longer just big-enterprise headlines:
               AI lets even low-skill attackers move through a network faster than
               most IT teams can respond.

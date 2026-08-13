@@ -7,20 +7,21 @@ import { SectionAngle } from "@/components/SectionAngle";
 export const metadata: Metadata = {
   title: "Meet the Moment 2026 | Audcomp",
   description:
-    "Audcomp's flagship annual event — April 28, 2026 at Hamilton Golf and Country Club. Industry leaders, technology partners, and the Audcomp engineering team on the future of IT infrastructure and cyber security.",
+    "Audcomp's flagship annual event, April 28, 2026 at Hamilton Golf and Country Club. Industry leaders, technology partners, and the Audcomp engineering team on the future of IT infrastructure and cyber security.",
 };
 
-// Placeholder imagery: no Meet the Moment photography exists in the repo yet.
-// Swap these for real event photos (portrait crops read best in the fan) and
-// the section works as-is.
+// Real event photography, converted from the camera originals (HEIC/ARW) and
+// cropped to portrait for the fan. Originals live in public/images/MTM2026/
+// and are gitignored; only these web JPEGs are committed.
 const GALLERY: CardItem[] = [
-  { imgUrl: "/images/gary-sohal-35-years.jpeg", alt: "Gary Sohal marking 35 years with Audcomp" },
-  { imgUrl: "/images/ind_enterprise_1781220840854.png", alt: "Enterprise leaders in session" },
-  { imgUrl: "/images/ind_healthcare_1781220794136.png", alt: "Healthcare IT roundtable" },
-  { imgUrl: "/images/ind_municipalities_1781220804489.png", alt: "Municipal technology discussion" },
-  { imgUrl: "/images/ind_universities_1781220814872.png", alt: "Education sector attendees" },
-  { imgUrl: "/images/ind_manufacturing_1781220830507.png", alt: "Manufacturing technology showcase" },
-  { imgUrl: "/images/ind_smb_1781220849628.png", alt: "Small business owners networking" },
+  { imgUrl: "/images/events/mtm2026/gary-speech-40th.jpg", alt: "Gary's speech at the Audcomp 40th anniversary" },
+  { imgUrl: "/images/events/mtm2026/40-years-presentation.jpg", alt: "Audcomp 40 years presentation" },
+  { imgUrl: "/images/events/mtm2026/jons-presentation.jpg", alt: "Jon presenting to the room" },
+  { imgUrl: "/images/events/mtm2026/hpe.jpg", alt: "HPE at Meet the Moment" },
+  { imgUrl: "/images/events/mtm2026/intel.jpg", alt: "Intel at Meet the Moment" },
+  { imgUrl: "/images/events/mtm2026/intel-cameron-allen.jpg", alt: "Cameron Allen of Intel presenting" },
+  { imgUrl: "/images/events/mtm2026/td-synnex.jpg", alt: "TD Synnex at Meet the Moment" },
+  { imgUrl: "/images/events/mtm2026/dsc06701.jpg", alt: "Guests at Meet the Moment" },
 ];
 
 export default function MeetTheMoment2026Page() {

@@ -4,7 +4,34 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { Calendar, MapPin, ArrowRight } from "lucide-react";
 
-export default function MeetTheMomentHero() {
+type Media =
+  | { kind: "video"; src: string }
+  | { kind: "image"; src: string; alt: string };
+
+interface MeetTheMomentHeroProps {
+  /** Event name preceding the accented year, e.g. "RBC Canadian Open". */
+  title?: string;
+  year?: string;
+  eyebrow?: string;
+  blurb?: string;
+  date?: string;
+  location?: string;
+  ctaLabel?: string;
+  media?: Media;
+}
+
+// Defaults describe the 2026 event, so <MeetTheMomentHero /> renders exactly as
+// it did before this became reusable. The 2025 recap passes its own values.
+export default function MeetTheMomentHero({
+  title = "Meet the Moment",
+  year = "2026",
+  eyebrow = "Flagship Event",
+  blurb = "Join industry leaders, top technology partners, and the Audcomp engineering team for our premier annual event. Discover the strategies and tools shaping the future of IT infrastructure and cyber security.",
+  date = "April 28, 2026",
+  location = "Hamilton Golf and Country Club",
+  ctaLabel = "Get Invited Next Year",
+  media = { kind: "video", src: "/mtm2025.mp4" },
+}: MeetTheMomentHeroProps = {}) {
   return (
     <section className="relative py-24 px-4 overflow-hidden bg-[#071e3d]">
       {/* Dynamic Background */}
@@ -33,15 +60,15 @@ export default function MeetTheMomentHero() {
                 className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0071e3]/20 border border-[#0071e3]/30 text-[#38bdf8] text-xs font-semibold tracking-widest uppercase mb-6"
               >
                 <span className="w-2 h-2 rounded-full bg-[#38bdf8] animate-pulse"></span>
-                Flagship Event
+                {eyebrow}
               </motion.span>
 
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">
-                Meet the Moment <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#06b6d4] to-[#0071e3]">2026</span>
+                {title} <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#06b6d4] to-[#0071e3]">{year}</span>
               </h1>
 
               <p className="text-white/60 text-lg leading-relaxed mb-8 max-w-lg">
-                Join industry leaders, top technology partners, and the Audcomp engineering team for our premier annual event. Discover the strategies and tools shaping the future of IT infrastructure and cyber security.
+                {blurb}
               </p>
 
               <div className="flex flex-col sm:flex-row gap-6 mb-10">
@@ -51,7 +78,7 @@ export default function MeetTheMomentHero() {
                   </div>
                   <div>
                     <p className="text-xs text-white/40 uppercase tracking-wider font-semibold">Date</p>
-                    <p className="font-medium">April 28, 2026</p>
+                    <p className="font-medium">{date}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 text-white/80">
@@ -60,14 +87,14 @@ export default function MeetTheMomentHero() {
                   </div>
                   <div>
                     <p className="text-xs text-white/40 uppercase tracking-wider font-semibold">Location</p>
-                    <p className="font-medium">Hamilton Golf and Country Club</p>
+                    <p className="font-medium">{location}</p>
                   </div>
                 </div>
               </div>
 
               <div className="flex flex-wrap gap-4">
                 <Link href="/contact" className="bg-[#0071e3] hover:bg-[#0077ed] text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(0,113,227,0.3)] hover:shadow-[0_0_30px_rgba(0,113,227,0.5)] hover:-translate-y-1 flex items-center gap-2">
-                  Get Invited Next Year
+                  {ctaLabel}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link href="/events" className="border border-white/20 text-white/80 hover:text-white hover:bg-white/5 font-semibold px-8 py-4 rounded-full transition-all duration-300">
@@ -78,16 +105,24 @@ export default function MeetTheMomentHero() {
 
             <div className="relative hidden lg:block h-full min-h-[400px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
               <div className="absolute inset-0 bg-gradient-to-t from-[#071e3d] via-transparent to-transparent z-10"></div>
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="auto"
-                className="absolute inset-0 w-full h-full object-cover"
-              >
-                <source src="/mtm2025.mp4" type="video/mp4" />
-              </video>
+              {media.kind === "video" ? (
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="auto"
+                  className="absolute inset-0 w-full h-full object-cover"
+                >
+                  <source src={media.src} type="video/mp4" />
+                </video>
+              ) : (
+                <img
+                  src={media.src}
+                  alt={media.alt}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              )}
             </div>
           </div>
         </motion.div>

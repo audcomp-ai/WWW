@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Camera originals for Meet the Moment (HEIC/ARW, ~80MB). The web-ready
+# JPEGs live in public/images/events/mtm2026/ and are committed instead.
+public/images/RBC2024/
+public/images/MTM2024/
+public/images/MTM2025/
+public/images/MTM2026/
