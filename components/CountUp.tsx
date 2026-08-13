@@ -39,7 +39,9 @@ export default function CountUp({ end, duration = 2000, suffix = "", prefix = ""
 
   return (
     <span ref={ref}>
-      {prefix}{count}{suffix}
+      {/* Grouped so four-digit counts read as 12,000 rather than 12000.
+          Smaller values are unaffected. */}
+      {prefix}{count.toLocaleString("en-CA")}{suffix}
     </span>
   );
 }

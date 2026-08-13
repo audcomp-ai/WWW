@@ -1,46 +1,24 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { BlogCards } from "@/components/ui/cards";
 import CTABanner from "@/components/CTABanner";
 import { SectionAngle } from "@/components/SectionAngle";
+import { postsByNewest, toCard } from "@/data/blog";
 
 export const metadata: Metadata = {
-  title: "Blog & Insights | Audcomp — IT Expertise for Canadian Businesses",
+  title: "Blog & Insights | Audcomp, IT Expertise for Canadian Businesses",
   description:
-    "IT insights, cybersecurity updates, cloud tips, and AI news from Audcomp's team of engineers in Canada.",
+    "IT insights, cybersecurity updates, cloud tips, and AI news from Audcomp's team of technicians in Canada.",
 };
 
-const allPosts = [
-  {
-    title: "How Microsoft Copilot is Changing the Modern Workspace",
-    category: "AI Services",
-    image: "/images/blog_copilot.png",
-  },
-  {
-    title: "Zero Trust Architecture: No Longer Just for Enterprise",
-    category: "Cyber Security",
-    image: "/images/cyber_security_hero.png",
-  },
-  {
-    title: "Optimizing Your Cloud Spend with Azure Hybrid Benefits",
-    category: "Cloud Solutions",
-    image: "/images/cloud_solutions_hero.png",
-  },
-  {
-    title: "The Case for Managed IT: Why In-House IT Falls Short",
-    category: "Managed IT",
-    image: "/images/managed_it_hero.png",
-  },
-  {
-    title: "Ransomware in 2024: What Every Canadian Business Needs to Know",
-    category: "Cyber Security",
-    image: "/images/cyber_security_hero.png",
-  },
-  {
-    title: "What is a Virtual CIO — and Does Your Business Need One?",
-    category: "Professional Services",
-    image: "/images/professional_services_hero.png",
-  },
-];
+// Derived from data/blog.ts so the index can never list a post that has no
+// page, or a title that differs from the one on it. The first six run as full
+// cards; the rest sit in the scrolling strip below them.
+const FEATURED_COUNT = 6;
+
+const featuredPosts = postsByNewest.slice(0, FEATURED_COUNT).map(toCard);
+const archivePosts = postsByNewest.slice(FEATURED_COUNT);
+
 
 export default function BlogPage() {
   return (
@@ -56,7 +34,7 @@ export default function BlogPage() {
             IT Expertise for<br />Canadian Businesses
           </h1>
           <p className="text-white/55 text-lg leading-relaxed max-w-xl mx-auto">
-            Cybersecurity, cloud, AI, and managed IT — practical insights from Audcomp&apos;s team of 100% engineers in Canada.
+            Cybersecurity, cloud, AI, and managed IT, practical insights from Audcomp&apos;s team of technicians in Canada.
           </p>
         </div>
       </section>
@@ -68,17 +46,55 @@ export default function BlogPage() {
         <div className="max-w-6xl mx-auto">
           <BlogCards
             title="Latest Articles"
-            subtitle="Stay ahead of the curve with insights from our IT experts"
-            cards={allPosts}
+            subtitle="Practical guidance from the team that runs this work every day"
+            cards={featuredPosts}
           />
         </div>
       </section>
+
+      {/* Archive strip, small thumbnails that scroll horizontally */}
+      {archivePosts.length > 0 && (
+        <section className="bg-white pb-24 px-4">
+          <div className="max-w-6xl mx-auto">
+            <p className="text-xs font-semibold text-[#06b6d4] uppercase tracking-widest mb-6">
+              More Reading
+            </p>
+            {/* snap-x keeps a card aligned to the left edge after a flick on
+                touch; overflow-x-auto keeps the page itself from scrolling. */}
+            <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 -mx-4 px-4">
+              {archivePosts.map((p) => (
+                <Link
+                  key={p.slug}
+                  href={`/blog/${p.slug}`}
+                  className="group snap-start shrink-0 w-[220px] sm:w-[240px] bg-white rounded-2xl border border-[#dde8f5] overflow-hidden hover:shadow-[0_20px_40px_-15px_rgba(0,113,227,0.15)] hover:border-[#0071e3]/30 transition-all duration-300 hover:-translate-y-1"
+                >
+                  <img
+                    src={p.image}
+                    alt=""
+                    aria-hidden="true"
+                    loading="lazy"
+                    className="w-full aspect-[16/10] object-cover"
+                  />
+                  <div className="p-4">
+                    <p className="text-[10px] font-semibold text-[#06b6d4] uppercase tracking-widest mb-1.5">
+                      {p.category}
+                    </p>
+                    <h3 className="text-sm font-semibold text-[#0a2540] leading-snug line-clamp-3 group-hover:text-[#0071e3] transition-colors">
+                      {p.title}
+                    </h3>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <SectionAngle from="#ffffff" to="#071e3d" flip={true} height={64} />
 
       <CTABanner
         title="Have an IT Question?"
-        subtitle="Our team is ready to help — whether you need advice on cybersecurity, cloud strategy, or AI readiness."
+        subtitle="Our team is ready to help, whether you need advice on cybersecurity, cloud strategy, or AI readiness."
       />
     </>
   );
