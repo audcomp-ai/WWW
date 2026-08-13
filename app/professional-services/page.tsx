@@ -5,7 +5,7 @@ import CTABanner from "@/components/CTABanner";
 import { SectionAngle } from "@/components/SectionAngle";
 
 export const metadata: Metadata = {
-  title: "Professional Services | Audcomp — IT Strategy & Implementation",
+  title: "Professional Services | Audcomp, IT Strategy & Implementation",
   description:
     "Audcomp's Professional Services include Virtual CIO, IT consulting, implementation, migration, and structured cabling for Canadian businesses.",
 };
@@ -13,25 +13,25 @@ export const metadata: Metadata = {
 const subServices = [
   {
     title: "Virtual CIO (vCIO)",
-    description: "Your strategic IT partner — expert guidance and tailored IT strategies to optimize technology investments, enhance cybersecurity, and stay competitive.",
+    description: "Your strategic IT partner, expert guidance and tailored IT strategies to optimize technology investments, enhance cybersecurity, and stay competitive.",
     href: "/virtual-cio",
     category: "Professional",
   },
   {
     title: "IT Consulting & Design",
-    description: "Specialized insights and customized strategies to optimize your investments in technology and elevate your cybersecurity measures.",
+    description: "Specialized insights and customized strategies to optimize your investments in technology and strengthen your cybersecurity.",
     href: "/consulting-design",
     category: "Professional",
   },
   {
     title: "Implementation & Migration",
-    description: "Your bridge to a seamless and efficient IT transformation — handling the complex process of implementing and migrating your IT systems with minimal disruption.",
+    description: "Your bridge to an efficient IT transformation, handling the complex process of implementing and migrating your IT systems with minimal disruption.",
     href: "/implementation-migration",
     category: "Professional",
   },
   {
     title: "Structured Cabling",
-    description: "The backbone of your network infrastructure — we design and implement structured cabling systems that support your evolving technology needs.",
+    description: "The backbone of your network infrastructure, we design and implement structured cabling systems that support your evolving technology needs.",
     href: "/structured-cabling",
     category: "Professional",
   },
@@ -42,7 +42,7 @@ export default function ProfessionalServicesPage() {
     <>
       <Hero
         title="Professional Services"
-        subtitle="Strategic IT guidance, expert implementation, and physical infrastructure — Audcomp's professional services team delivers results that last."
+        subtitle="Strategic IT guidance, expert implementation, and physical infrastructure, Audcomp's professional services team delivers results that last."
         ctaText="Discuss Your Project"
         ctaHref="/contact"
         backgroundImage="/images/professional_services_hero.png"
@@ -54,7 +54,7 @@ export default function ProfessionalServicesPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-foreground mb-6">Consider Audcomp an Extension of Your Team</h2>
           <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-            Get senior IT strategists and system engineers on demand — without the cost of hiring them full-time. We work alongside your team to pinpoint the real challenges, then recommend and implement the right solution for your needs and budget.
+            Get senior IT strategists and system technicians on demand, without the cost of hiring them full-time. We work alongside your team to pinpoint the real challenges, then recommend and implement the right solution for your needs and budget.
           </p>
           <p className="text-muted-foreground text-lg leading-relaxed mb-6">
             Audcomp&apos;s Professional Services practice brings nearly four decades of experience to every engagement. Whether it&apos;s a discrete project or an ongoing strategic relationship, we deliver with the same professionalism and accountability that defines everything we do.
@@ -68,7 +68,7 @@ export default function ProfessionalServicesPage() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-foreground mb-4 text-center">Professional Services</h2>
           <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-            From strategy to execution — Audcomp's professional services span the full IT lifecycle.
+            From strategy to execution, Audcomp's professional services span the full IT lifecycle.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {subServices.map((s) => (
@@ -87,10 +87,10 @@ export default function ProfessionalServicesPage() {
             {[
               { title: "Senior Expertise", desc: "Our professional services team includes senior architects and consultants with decades of experience." },
               { title: "Proven Methodology", desc: "Structured project delivery with clear milestones, documentation, and accountability." },
-              { title: "Integrated Approach", desc: "Professional services connect seamlessly with our managed services for ongoing support post-delivery." },
+              { title: "Integrated Approach", desc: "Professional services connect directly with our managed services for ongoing support post-delivery." },
               { title: "Industry Knowledge", desc: "Deep experience across healthcare, municipalities, manufacturing, and enterprise environments." },
               { title: "Local Delivery", desc: "On-site presence in Hamilton, Ancaster, and across southern Ontario when you need it." },
-              { title: "Outcome Focused", desc: "We're measured on results — successful projects delivered on time and on budget." },
+              { title: "Outcome Focused", desc: "We're measured on results, successful projects delivered on time and on budget." },
             ].map((f) => (
               <div key={f.title} className="bg-card border border-border rounded-2xl p-6">
                 <h3 className="font-semibold text-foreground mb-2">{f.title}</h3>

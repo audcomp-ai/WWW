@@ -9,9 +9,9 @@ const slides = [
     id: 1,
     type: "image" as const,
     badge: null,
-    headline: "Enterprise-grade IT, run by 100% engineers in Canada",
+    headline: "Enterprise-grade IT, run by technicians in Canada",
     subheadline:
-      "Managed IT, cybersecurity, and cloud for Ontario businesses — proactively monitored 24/7, hosted in Canadian data centres, and delivered by the same team that's kept clients running since 1986.",
+      "Managed IT, cybersecurity, and cloud for Ontario businesses, proactively monitored 24/7, hosted in Canadian data centres, and delivered by the same team that's kept clients running since 1986.",
     cta1Text: "Get a Free Assessment",
     cta1Href: "/contact",
     cta2Text: "View Our Services",
@@ -24,7 +24,7 @@ const slides = [
     badge: "AI Workforce",
     headline: "The Modern Workforce Is Already Here",
     subheadline:
-      "Custom AI agents that work alongside your team — scored to your readiness, sequenced by ROI, deployed in weeks.",
+      "Custom AI agents that work alongside your team, scored to your readiness, sequenced by ROI, deployed in weeks.",
     cta1Text: "Start Your AI Assessment",
     cta1Href: "/ai-services",
     cta2Text: "Learn More",
@@ -37,7 +37,7 @@ const slides = [
     badge: "Cyber Security",
     headline: "Protect What Matters Most",
     subheadline:
-      "Multi-layered security — endpoint protection, SOC & MDR, penetration testing, and 24/7 monitoring — so your business stays resilient.",
+      "Multi-layered security, endpoint protection, SOC & MDR, penetration testing, and 24/7 monitoring, so your business stays resilient.",
     cta1Text: "Get a Security Assessment",
     cta1Href: "/security-services",
     cta2Text: "View Security Services",

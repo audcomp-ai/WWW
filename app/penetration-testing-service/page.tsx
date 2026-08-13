@@ -13,8 +13,8 @@ export default function PenetrationTestingServicePage() {
   return (
     <>
       <Hero
-        title="Know Where an Attacker Could Get In — and Close It"
-        subtitle="Our dedicated program runs up to 4 comprehensive security tests a year with 48-hour reporting, so your defenses are validated continuously as your environment changes — not just once."
+        title="Know Where an Attacker Could Get In, and Close It"
+        subtitle="Our dedicated program runs up to 4 comprehensive security tests a year with 48-hour reporting, so your defenses are validated continuously as your environment changes, not just once."
         ctaText="Book Your First Test"
         ctaHref="/contact"
         bgColor="dark"
@@ -27,7 +27,7 @@ export default function PenetrationTestingServicePage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">Continuous Security Validation</h2>
           <p className="text-gray-600 text-lg leading-relaxed mb-6">
-            A single annual penetration test doesn't reflect the reality of today's threat landscape — your environment changes constantly, and so do attacker techniques. Audcomp's penetration testing service provides continuous security validation with up to 4 tests per year, ensuring your defenses remain effective as your environment evolves.
+            A single annual penetration test doesn't reflect the reality of today's threat landscape, your environment changes constantly, and so do attacker techniques. Audcomp's penetration testing service provides continuous security validation with up to 4 tests per year, ensuring your defenses remain effective as your environment evolves.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed mb-6">
             Our SaaS-based testing platform combines automated scanning with manual exploitation techniques, delivering depth that automated tools alone cannot achieve. Every test is led by a certified penetration tester who understands both the technical and business context of your environment.
@@ -45,7 +45,7 @@ export default function PenetrationTestingServicePage() {
               { value: "4/yr", label: "Tests per Year" },
               { value: "48hr", label: "Report Turnaround" },
               { value: "Manual+", label: "Automated Testing" },
-              { value: "100%", label: "Canadian Security Team" },
+              { value: "In Canada", label: "Security Team" },
             ].map((s) => (
               <div key={s.label} className="bg-[#0056a8] text-white rounded-xl p-6 text-center">
                 <p className="text-3xl font-bold">{s.value}</p>
@@ -58,7 +58,7 @@ export default function PenetrationTestingServicePage() {
             {[
               { title: "Manual Exploitation", desc: "Certified testers attempt real-world exploitation beyond what automated scanners detect." },
               { title: "Automated Scanning", desc: "Comprehensive vulnerability scanning across your entire attack surface." },
-              { title: "Executive & Technical Reports", desc: "Dual-layer reporting for leadership and technical teams — both complete within 48 hours." },
+              { title: "Executive & Technical Reports", desc: "Dual-layer reporting for leadership and technical teams, both complete within 48 hours." },
               { title: "Remediation Validation", desc: "Re-test critical findings after remediation to confirm vulnerabilities are closed." },
             ].map((f) => (
               <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6">

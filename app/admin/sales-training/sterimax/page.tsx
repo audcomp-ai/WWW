@@ -35,7 +35,7 @@ export default function SteriMaxRosterPage() {
             <div className="relative min-h-[20rem] lg:min-h-[26rem] overflow-hidden">
               <img
                 src={orchestrator.image}
-                alt={`${orchestrator.name} — ${orchestrator.role}`}
+                alt={`${orchestrator.name}, ${orchestrator.role}`}
                 className="absolute inset-0 w-full h-full object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#071e3d] via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-[#071e3d]/20 lg:to-[#071e3d]" />

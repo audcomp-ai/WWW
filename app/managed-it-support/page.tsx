@@ -4,13 +4,13 @@ import CTABanner from "@/components/CTABanner";
 import { SectionAngle } from "@/components/SectionAngle";
 
 export const metadata: Metadata = {
-  title: "Managed IT Support | Audcomp — 24/7 Engineers in Canada",
+  title: "Managed IT Support | Audcomp, 24/7 Technicians in Canada",
   description:
-    "Audcomp's Managed IT Support provides end-user support, network management, and infrastructure monitoring with 100% engineers in Canada and 24/7 coverage.",
+    "Audcomp's Managed IT Support provides end-user support, network management, and infrastructure monitoring with technicians in Canada and 24/7 coverage.",
 };
 
 const features = [
-  { title: "End-User Support", desc: "Responsive support for every member of your team — from password resets to complex workstation issues." },
+  { title: "End-User Support", desc: "Responsive support for every member of your team, from password resets to complex workstation issues." },
   { title: "Network Management", desc: "Proactive monitoring, configuration, and maintenance of your entire network infrastructure." },
   { title: "Infrastructure Management", desc: "Server, storage, and virtualization management to keep your core systems running optimally." },
   { title: "24/7 Monitoring", desc: "Round-the-clock monitoring with automated alerting ensures issues are caught before they cause downtime." },
@@ -23,7 +23,7 @@ export default function ManagedITSupportPage() {
     <>
       <Hero
         title="IT Support That Prevents Problems, Not Just Fixes Them"
-        subtitle="End-user support, network management, and 24/7 monitoring — delivered by 100% engineers in Canada who know your environment."
+        subtitle="End-user support, network management, and 24/7 monitoring, delivered by technicians in Canada who know your environment."
         ctaText="Get Started"
         ctaHref="/contact"
         backgroundImage="/images/managed_it_hero.png"
@@ -35,13 +35,13 @@ export default function ManagedITSupportPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">IT Support That Never Sleeps</h2>
           <p className="text-gray-600 text-lg leading-relaxed mb-6">
-            Audcomp's Managed IT Support program provides the full spectrum of day-to-day IT management your business needs. Our engineers become an extension of your team — deeply familiar with your environment, your users, and your business goals.
+            Audcomp's Managed IT Support program provides the full spectrum of day-to-day IT management your business needs. Our technicians become an extension of your team, deeply familiar with your environment, your users, and your business goals.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed mb-6">
             Unlike break-fix providers that only show up once something is already broken, Audcomp works ahead of problems. We monitor your infrastructure continuously, resolve potential issues before they escalate, and keep your systems patched and optimized.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed">
-            Every Audcomp engineer is based in Canada. Your data, your support calls, and your account management never leave Canadian hands.
+            Every Audcomp technician is based in Canada. Your data, your support calls, and your account management never leave Canadian hands.
           </p>
         </div>
       </section>

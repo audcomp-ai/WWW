@@ -4,9 +4,9 @@ import CTABanner from "@/components/CTABanner";
 import { SectionAngle } from "@/components/SectionAngle";
 
 export const metadata: Metadata = {
-  title: "Microsoft Copilot Enablement | Audcomp — Copilot Deployment & Training",
+  title: "Microsoft Copilot Enablement | Audcomp, Copilot Deployment & Training",
   description:
-    "Audcomp delivers Microsoft Copilot readiness assessments, integration, training, and ongoing support to help Canadian businesses unlock AI productivity.",
+    "Audcomp delivers Microsoft Copilot readiness assessments, integration, training, and ongoing support to help Canadian businesses get real work out of AI.",
 };
 
 export default function MicrosoftCopilotPage() {
@@ -14,7 +14,7 @@ export default function MicrosoftCopilotPage() {
     <>
       <Hero
         title="Microsoft Copilot Enablement"
-        subtitle="Turn Microsoft 365 Copilot into real productivity gains — Audcomp's 100% engineers in Canada handle readiness, secure deployment, and adoption."
+        subtitle="Turn Microsoft 365 Copilot into real productivity gains, Audcomp's technicians in Canada handle readiness, secure deployment, and adoption."
         ctaText="Start Your Copilot Journey"
         ctaHref="/contact"
         backgroundImage="/images/ai_services_hero.png"
@@ -26,13 +26,13 @@ export default function MicrosoftCopilotPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">Microsoft Copilot, Done Right</h2>
           <p className="text-gray-600 text-lg leading-relaxed mb-6">
-            Microsoft Copilot brings AI capabilities directly into the tools your team already uses — Word, Excel, PowerPoint, Teams, Outlook, and more. But unlocking its value requires more than just purchasing a license. Proper configuration, security settings, and user adoption are essential.
+            Microsoft Copilot brings AI capabilities directly into the tools your team already uses, Word, Excel, PowerPoint, Teams, Outlook, and more. But getting value from it requires more than just purchasing a license. Proper configuration, security settings, and user adoption are essential.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed mb-6">
-            Audcomp's Microsoft Copilot Enablement program guides your organization through every stage — from readiness assessment through deployment, training, and ongoing optimization. We ensure Copilot is configured securely, your data is protected, and your team knows how to use it effectively.
+            Audcomp's Microsoft Copilot Enablement program guides your organization through every stage, from readiness assessment through deployment, training, and ongoing optimization. We ensure Copilot is configured securely, your data is protected, and your team knows how to use it effectively.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed">
-            As a Microsoft partner with deep Microsoft 365 and Azure expertise — and a team of 100% engineers in Canada — Audcomp integrates Copilot into your existing environment with minimal disruption and measurable results.
+            As a Microsoft partner with deep Microsoft 365 and Azure expertise, and a team of technicians in Canada, Audcomp integrates Copilot into your existing environment with minimal disruption and measurable results.
           </p>
         </div>
       </section>
@@ -52,7 +52,7 @@ export default function MicrosoftCopilotPage() {
               {
                 step: "02",
                 title: "Data Governance & Security",
-                desc: "Review and configure SharePoint permissions, sensitivity labels, and data loss prevention policies — ensuring Copilot doesn't surface data inappropriately.",
+                desc: "Review and configure SharePoint permissions, sensitivity labels, and data loss prevention policies, ensuring Copilot doesn't surface data inappropriately.",
               },
               {
                 step: "03",
@@ -116,7 +116,7 @@ export default function MicrosoftCopilotPage() {
 
       <CTABanner
         title="Ready to Bring AI into Your Microsoft 365 Environment?"
-        subtitle="Contact Audcomp to start with a Copilot readiness assessment — we'll tell you exactly what it takes to get started."
+        subtitle="Contact Audcomp to start with a Copilot readiness assessment, we'll tell you exactly what it takes to get started."
       />
     </>
   );

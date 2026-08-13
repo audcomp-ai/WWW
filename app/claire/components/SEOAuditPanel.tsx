@@ -149,7 +149,7 @@ export default function SEOAuditPanel() {
         </div>
         <p className="text-[10px] text-white/20 mt-2">
           <i className="fas fa-bolt text-amber-400 mr-1" />
-          Powered by Firecrawl — supports internal paths (/page) and external URLs (https://competitor.com)
+          Powered by Firecrawl, supports internal paths (/page) and external URLs (https://competitor.com)
         </p>
         <div className="flex gap-2 mt-2">
           {["/managed-it-services", "/cloud-solutions", "/security-services", "/ai-services"].map((path) => (

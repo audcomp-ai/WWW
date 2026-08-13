@@ -14,7 +14,7 @@ const serviceCategories: {
   {
     label: "Managed IT",
     href: "/managed-it-services",
-    desc: "Day-to-day IT operations, support, and hardware — run by our team.",
+    desc: "Day-to-day IT operations, support, and hardware, run by our team.",
     items: [
       { label: "Managed IT Services", href: "/managed-it-services" },
       { label: "Managed IT Support", href: "/managed-it-support" },
@@ -27,7 +27,7 @@ const serviceCategories: {
   {
     label: "Cloud Solutions",
     href: "/cloud-solutions",
-    desc: "Microsoft 365, Azure, and hybrid cloud — migrated and managed.",
+    desc: "Microsoft 365, Azure, and hybrid cloud, migrated and managed.",
     items: [
       { label: "Cloud Solutions", href: "/cloud-solutions" },
       { label: "Microsoft Office 365", href: "/microsoft-office-365" },
@@ -321,7 +321,7 @@ export default function Nav() {
                       Modern Cyber Security Summit
                     </p>
                     <p className="text-xs text-white/45 leading-relaxed mb-4">
-                      Defending business in the age of AI — keynotes, an interactive
+                      Defending business in the age of AI, keynotes, an interactive
                       panel, and security specialists.
                     </p>
                     <Link
@@ -372,7 +372,7 @@ export default function Nav() {
                       Deploy an AI workforce in weeks, not months
                     </p>
                     <p className="text-xs text-white/45 leading-relaxed mb-4">
-                      13 pre-built specialists — Canadian-hosted, supervised by
+                      13 pre-built specialists, Canadian-hosted, supervised by
                       Wilfred, ready to work alongside your team.
                     </p>
                     <Link

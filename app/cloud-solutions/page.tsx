@@ -5,39 +5,39 @@ import CTABanner from "@/components/CTABanner";
 import { SectionAngle } from "@/components/SectionAngle";
 
 export const metadata: Metadata = {
-  title: "Cloud Solutions | Audcomp — Microsoft Cloud Partner in Canada",
+  title: "Cloud Solutions | Audcomp, Microsoft Cloud Partner in Canada",
   description:
-    "Audcomp delivers Microsoft 365, Azure, hybrid cloud, and Teams solutions for Canadian businesses. 100% Canadian data centers.",
+    "Audcomp delivers Microsoft 365, Azure, hybrid cloud, and Teams solutions for Canadian businesses. Canadian data centers.",
 };
 
 const subServices = [
   {
     title: "Microsoft Office 365",
-    description: "Explore the efficiency of Microsoft Office 365 solutions for seamless cloud-based productivity — email, Teams, SharePoint, and beyond.",
+    description: "Explore the efficiency of Microsoft Office 365 solutions for cloud-based productivity, email, Teams, SharePoint, and beyond.",
     href: "/microsoft-office-365",
     category: "Cloud",
   },
   {
     title: "Microsoft Azure",
-    description: "Unlock the full potential of cloud computing with Microsoft Azure — migration, custom configuration, and ongoing infrastructure management.",
+    description: "Get the full value of cloud computing with Microsoft Azure, migration, custom configuration, and ongoing infrastructure management.",
     href: "/microsoft-azure",
     category: "Cloud",
   },
   {
     title: "Hybrid Cloud",
-    description: "Embrace the best of both worlds — private and public cloud strategy and implementation tailored to your data sovereignty and performance needs.",
+    description: "Embrace the best of both worlds, private and public cloud strategy and implementation tailored to your data sovereignty and performance needs.",
     href: "/hybrid-cloud",
     category: "Cloud",
   },
   {
     title: "Office 365 Backup",
-    description: "Military-grade backup for your Microsoft 365 data with up to 5x faster recovery and flexible retention.",
+    description: "Encrypted backup for your Microsoft 365 data with up to 5x faster recovery and flexible retention.",
     href: "/office-365-backup",
     category: "Cloud",
   },
   {
     title: "Microsoft Teams",
-    description: "Teams deployment, configuration, training, and integration with SharePoint and OneDrive for seamless collaboration.",
+    description: "Teams deployment, configuration, training, and integration with SharePoint and OneDrive so files stay in one place.",
     href: "/microsoft-teams",
     category: "Cloud",
   },
@@ -48,7 +48,7 @@ export default function CloudSolutionsPage() {
     <>
       <Hero
         title="Cloud Solutions"
-        subtitle="Move to Microsoft 365 and Azure without the downtime or surprise bills — planned, migrated, and managed by 100% engineers in Canada, with your data in Canadian data centres."
+        subtitle="Move to Microsoft 365 and Azure without the downtime or surprise bills, planned, migrated, and managed by technicians in Canada, with your data in Canadian data centres."
         ctaText="Explore Cloud Options"
         ctaHref="/contact"
         secondaryCtaText="Call 905-304-1775"
@@ -62,10 +62,10 @@ export default function CloudSolutionsPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-foreground mb-6">Cloud Without Compromise</h2>
           <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-            Moving to the cloud is one of the most impactful decisions a business can make — but only when done right. Audcomp's cloud team combines deep Microsoft partnership expertise with nearly four decades of infrastructure knowledge to plan, migrate, and manage cloud environments that actually perform.
+            Moving to the cloud is one of the most impactful decisions a business can make, but only when done right. Audcomp's cloud team combines deep Microsoft partnership expertise with nearly four decades of infrastructure knowledge to plan, migrate, and manage cloud environments that actually perform.
           </p>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Whether you're adopting Microsoft 365 for the first time, migrating workloads to Azure, or architecting a hybrid cloud strategy, Audcomp provides the strategy, execution, and ongoing management you need — with all data remaining in Canadian data centers.
+            Whether you're adopting Microsoft 365 for the first time, migrating workloads to Azure, or architecting a hybrid cloud strategy, Audcomp provides the strategy, execution, and ongoing management you need, with all data remaining in Canadian data centers.
           </p>
         </div>
       </section>
@@ -93,10 +93,10 @@ export default function CloudSolutionsPage() {
           <h2 className="text-3xl font-bold text-foreground mb-12 text-center">Why Choose Audcomp for Cloud?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
-              { title: "Microsoft Certified", desc: "Our engineers hold Microsoft certifications across 365, Azure, Teams, and more." },
-              { title: "Canadian Data Sovereignty", desc: "All Audcomp-managed cloud data is stored in Canadian data centers — always." },
+              { title: "Microsoft Certified", desc: "Our technicians hold Microsoft certifications across 365, Azure, Teams, and more." },
+              { title: "Canadian Data Sovereignty", desc: "All Audcomp-managed cloud data is stored in Canadian data centers, always." },
               { title: "Security Integrated", desc: "Every cloud deployment includes security best practices, MFA, and access controls." },
-              { title: "Seamless Migration", desc: "Zero-downtime migration strategies protect your data and your operations during transition." },
+              { title: "Migration Without Downtime", desc: "Zero-downtime migration strategies protect your data and your operations during transition." },
               { title: "Ongoing Management", desc: "Post-migration, Audcomp monitors and manages your cloud environment continuously." },
               { title: "Cost Optimization", desc: "We right-size cloud resources and licensing so you only pay for what you need." },
             ].map((f) => (

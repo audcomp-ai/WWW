@@ -4,7 +4,7 @@ import CTABanner from "@/components/CTABanner";
 import { SectionAngle } from "@/components/SectionAngle";
 
 export const metadata: Metadata = {
-  title: "Device as a Service (DaaS) | Audcomp — Subscription Hardware Management",
+  title: "Device as a Service (DaaS) | Audcomp, Subscription Hardware Management",
   description:
     "Audcomp's Device as a Service (DaaS) provides fully managed hardware and software on a per-user subscription model. Scalable, predictable, and hassle-free.",
 };
@@ -14,7 +14,7 @@ export default function DaaSPage() {
     <>
       <Hero
         title="Device as a Service (DaaS)"
-        subtitle="Predictable per-user pricing and fully managed devices — so you can add or offboard staff in minutes instead of managing hardware yourself."
+        subtitle="Predictable per-user pricing and fully managed devices, so you can add or offboard staff in minutes instead of managing hardware yourself."
         ctaText="Get a DaaS Quote"
         ctaHref="/contact"
         backgroundImage="/images/managed_it_hero.png"
@@ -29,7 +29,7 @@ export default function DaaSPage() {
             Device as a Service (DaaS) from Audcomp replaces the traditional hardware procurement and management model with a simple, scalable subscription. Instead of capital expenditure on hardware followed by years of internal management, DaaS puts Audcomp in charge of the full device lifecycle on your behalf.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed mb-6">
-            Every device arrives configured, secured, and ready to deploy. When a team member leaves, their device is recovered, wiped, and redeployed. When a device fails, it's replaced — with minimal disruption and no surprise costs.
+            Every device arrives configured, secured, and ready to deploy. When a team member leaves, their device is recovered, wiped, and redeployed. When a device fails, it's replaced, with minimal disruption and no surprise costs.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed">
             DaaS works for organizations of all sizes. Whether you're onboarding five new employees or standing up a new office, Audcomp's DaaS program scales with you.
@@ -48,7 +48,7 @@ export default function DaaSPage() {
               { title: "Configuration & Imaging", desc: "Every device arrives pre-configured with your software, policies, and security settings." },
               { title: "Security Management", desc: "Endpoint protection, encryption, and MDM enrollment included on every device." },
               { title: "Lifecycle Management", desc: "Refresh cycles, trade-ins, and end-of-life disposal handled entirely by Audcomp." },
-              { title: "Break-Fix Support", desc: "Hardware failures are addressed rapidly — with loaner devices available to minimize disruption." },
+              { title: "Break-Fix Support", desc: "Hardware failures are addressed rapidly, with loaner devices available to minimize disruption." },
               { title: "Asset Tracking & Reporting", desc: "Complete visibility into your device fleet with real-time asset inventory and reporting." },
             ].map((f) => (
               <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6">

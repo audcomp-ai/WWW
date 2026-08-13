@@ -18,7 +18,7 @@ const openSans = Open_Sans({
 export const metadata: Metadata = {
   title: "Audcomp | Trusted IT Consulting Services in Canada",
   description:
-    "Audcomp empowers businesses to operate confidently and more efficiently by providing tailored IT solutions. Serving Hamilton, Burlington, Oakville, London, Niagara, and surrounding areas since 1986.",
+    "Audcomp helps businesses operate confidently and more efficiently by providing tailored IT solutions. Serving Hamilton, Burlington, Oakville, London, Niagara, and surrounding areas since 1986.",
   openGraph: {
     title: "Audcomp | Trusted IT Consulting Services",
     description: "Tailored IT solutions for businesses in Hamilton, Burlington, Oakville, London, and Niagara.",

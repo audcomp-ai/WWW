@@ -5,15 +5,15 @@ import CTABanner from "@/components/CTABanner";
 import { SectionAngle } from "@/components/SectionAngle";
 
 export const metadata: Metadata = {
-  title: "Managed IT Services | Audcomp — Hamilton & Ancaster",
+  title: "Managed IT Services | Audcomp, Hamilton & Ancaster",
   description:
-    "Reduce downtime and control IT costs with Audcomp's Managed IT Services — 24/7 monitoring, 100% engineers in Canada, and 40+ years serving Ontario businesses.",
+    "Reduce downtime and control IT costs with Audcomp's Managed IT Services, 24/7 monitoring, technicians in Canada, and 40+ years serving Ontario businesses.",
 };
 
 const subServices = [
   {
     title: "Managed IT Support",
-    description: "End-user support, network, infrastructure, core application, data protection, and cyber security — with 24/7 coverage and 100% engineers in Canada.",
+    description: "End-user support, network, infrastructure, core application, data protection, and cyber security, with 24/7 coverage and technicians in Canada.",
     href: "/managed-it-support",
     category: "Managed IT",
   },
@@ -25,13 +25,13 @@ const subServices = [
   },
   {
     title: "Backup & Disaster Recovery",
-    description: "A fast, secure, and cost-effective cloud solution offering military-grade data protection with backups up to five times faster than other options.",
+    description: "A fast, secure, and cost-effective cloud solution offering encrypted data protection with backups up to five times faster than other options.",
     href: "/backup-disaster-recovery",
     category: "Managed IT",
   },
   {
     title: "Device as a Service (DaaS)",
-    description: "A subscription-based solution that streamlines your IT costs and improves user experience — scalable as your team grows.",
+    description: "A subscription-based solution that makes IT costs predictable and improves user experience, scalable as your team grows.",
     href: "/daas",
     category: "Managed IT",
   },
@@ -47,8 +47,8 @@ export default function ManagedITServicesPage() {
   return (
     <>
       <Hero
-        title="Fully Managed IT, 100% Canadian"
-        subtitle="Less downtime, predictable monthly costs, and a team free to focus on the business — with 24/7 monitoring from engineers in Canada who have done this since 1986."
+        title="Fully Managed IT, Based in Canada"
+        subtitle="Less downtime, predictable monthly costs, and a team free to focus on the business, with 24/7 monitoring from technicians in Canada who have done this since 1986."
         ctaText="Get a Free Assessment"
         ctaHref="/contact"
         secondaryCtaText="Call 905-304-1775"
@@ -63,7 +63,7 @@ export default function ManagedITServicesPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-foreground mb-6">Your IT. Fully Managed. Fully Canadian.</h2>
           <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-            Our Managed IT Services allow you to store your data, secure your network, and optimize your IT, while reducing your costs, maximizing your uptime, and increasing your productivity. Our team of 100% engineers in Canada monitors your environment around the clock, resolving issues before they become outages.
+            Our Managed IT Services allow you to store your data, secure your network, and optimize your IT, while reducing your costs, maximizing your uptime, and increasing your productivity. Our team of technicians in Canada monitors your environment around the clock, resolving issues before they become outages.
           </p>
           <p className="text-muted-foreground text-lg leading-relaxed mb-6">
             From end-user support and network management to disaster recovery and hardware procurement, Audcomp provides a complete managed IT program tailored to your size, industry, and budget. We serve SMBs, enterprise organizations, municipalities, universities, healthcare providers, and school boards across Hamilton, Burlington, Oakville, London, Niagara, and beyond.
@@ -71,7 +71,7 @@ export default function ManagedITServicesPage() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-10">
             {[
               { value: "24/7", label: "Monitoring & Alerts" },
-              { value: "100%", label: "Engineers in Canada" },
+              { value: "In Canada", label: "Technicians & Data Centres" },
               { value: "40+", label: "Years of Experience" },
               { value: "Top 25", label: "CDN Solutions Provider" },
             ].map((s) => (
@@ -112,9 +112,9 @@ export default function ManagedITServicesPage() {
               { title: "Predictable Costs", desc: "Fixed monthly billing replaces unpredictable break-fix expenses." },
               { title: "Faster Response", desc: "24/7 monitoring means issues are caught and fixed before they impact your team." },
               { title: "Better Security", desc: "Proactive patching, monitoring, and threat detection reduce your attack surface." },
-              { title: "Scalability", desc: "Your IT scales with your business — up or down — without re-hiring." },
+              { title: "Scalability", desc: "Your IT scales with your business, up or down, without re-hiring." },
               { title: "Strategic Focus", desc: "Your team focuses on core work; we handle the IT." },
-              { title: "Local Expertise", desc: "Engineers who know your environment, your industry, and your community." },
+              { title: "Local Expertise", desc: "Technicians who know your environment, your industry, and your community." },
             ].map((item) => (
               <div key={item.title} className="border-l-4 border-primary pl-4">
                 <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>

@@ -135,7 +135,7 @@ export default function CareersPage() {
 
       <CTABanner
         title="Questions About Working at Audcomp?"
-        subtitle="Reach out to our team — we'd love to tell you more about life at Audcomp."
+        subtitle="Reach out to our team, we'd love to tell you more about life at Audcomp."
       />
     </>
   );

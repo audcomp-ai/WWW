@@ -26,7 +26,7 @@ export default function ClaireChat() {
       id: "welcome",
       role: "assistant",
       content:
-        "Hi, I'm Claire — your Content Marketing Specialist. I write ranking SEO blog posts, newsletters that get opened, and landing-page copy that converts — all in Audcomp's brand voice.\n\nWhat would you like to work on today?",
+        "Hi, I'm Claire, your Content Marketing Specialist. I write ranking SEO blog posts, newsletters that get opened, and landing-page copy that converts, all in Audcomp's brand voice.\n\nWhat would you like to work on today?",
       timestamp: new Date(),
     },
   ]);

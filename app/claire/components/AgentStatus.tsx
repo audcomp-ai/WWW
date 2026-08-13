@@ -35,7 +35,7 @@ const agents: AgentInfo[] = [
       { task: "Weekly blog draft", schedule: "Every Monday 9:00 AM", nextRun: "Jun 30, 2026" },
       { task: "Newsletter draft", schedule: "Every Thursday 10:00 AM", nextRun: "Jun 27, 2026" },
       { task: "Monthly content calendar", schedule: "1st of month 8:00 AM", nextRun: "Jul 1, 2026" },
-      { task: "SEO audit — all pages", schedule: "Every Friday 6:00 AM", nextRun: "Jun 27, 2026" },
+      { task: "SEO audit, all pages", schedule: "Every Friday 6:00 AM", nextRun: "Jun 27, 2026" },
     ],
   },
   {

@@ -24,7 +24,7 @@ export default function ContactPage() {
   return (
     <>
       <Hero
-        title="Talk to a 100% Canadian IT Team"
+        title="Talk to a Canadian IT Team"
         subtitle="Tell us about your IT environment and challenges. Our team responds within one business day."
         variant="dark"
         backgroundImage="/images/professional_services_hero.png"
@@ -55,12 +55,12 @@ export default function ContactPage() {
               <div>
                 <p className="font-semibold text-foreground mb-1">Support Hours</p>
                 <p className="text-muted-foreground text-sm">24/7 monitoring and emergency support</p>
-                <p className="text-muted-foreground text-sm">Business hours: Mon–Fri, 8am–5pm ET</p>
+                <p className="text-muted-foreground text-sm">Business hours: Mon, Fri, 8am, 5pm ET</p>
               </div>
 
               <div>
-                <p className="font-semibold text-foreground mb-1">100% Canadian</p>
-                <p className="text-muted-foreground text-sm">All engineers and data centers are Canadian.</p>
+                <p className="font-semibold text-foreground mb-1">Based in Canada</p>
+                <p className="text-muted-foreground text-sm">All technicians and data centers are Canadian.</p>
               </div>
             </div>
           </div>

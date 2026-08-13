@@ -37,7 +37,7 @@ const SAMPLE_ITEMS: ContentItem[] = [
   },
   {
     id: "3",
-    title: "June Newsletter — Cybersecurity Awareness",
+    title: "June Newsletter, Cybersecurity Awareness",
     type: "newsletter",
     status: "scheduled",
     date: "2026-06-27",
@@ -63,7 +63,7 @@ const SAMPLE_ITEMS: ContentItem[] = [
   },
   {
     id: "6",
-    title: "July Newsletter — AI in the Workplace",
+    title: "July Newsletter, AI in the Workplace",
     type: "newsletter",
     status: "draft",
     date: "2026-07-10",

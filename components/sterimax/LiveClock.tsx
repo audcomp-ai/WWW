@@ -10,7 +10,7 @@ type ClockValue = {
   tick: number;
   running: boolean;
   start: () => void;
-  /** Freeze where it is — the figures stay put so the presenter can talk over a still screen. */
+  /** Freeze where it is, the figures stay put so the presenter can talk over a still screen. */
   stop: () => void;
   /** Back to base state, ready for the next meeting. */
   reset: () => void;

@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   if (!agent) return { title: "Agent Not Found | Audcomp Agent Studio" };
   const tagline = agent.tagline || agent.desc;
   return {
-    title: `${agent.name} — ${agent.title || agent.role} | Audcomp Agent Studio`,
+    title: `${agent.name}, ${agent.title || agent.role} | Audcomp Agent Studio`,
     description: tagline,
   };
 }
@@ -185,7 +185,7 @@ export default async function AgentDetailPage({ params }: { params: Promise<{ id
           </div>
           <div className="flex flex-wrap justify-center gap-4">
             {others.map((a) => (
-              <Link key={a.id} href={`/ai-services/agent-studio/${a.id}`} title={`${a.name} — ${a.role}`}
+              <Link key={a.id} href={`/ai-services/agent-studio/${a.id}`} title={`${a.name}, ${a.role}`}
                 className="group flex items-center gap-3 bg-white/5 border border-white/10 rounded-2xl p-2 pr-5 hover:border-[#0071e3]/40 transition-colors"
               >
                 <img src={a.image} alt={a.name} loading="lazy" className="w-11 h-11 rounded-xl object-cover object-top" />
@@ -206,7 +206,7 @@ export default async function AgentDetailPage({ params }: { params: Promise<{ id
               Put {agent.name} to work.
             </h2>
             <p className="text-slate-400 text-lg font-medium max-w-2xl mx-auto mb-10">
-              Book a free assessment and we&apos;ll deploy {agent.name} into your stack — Canadian-hosted, ready in 48 hours.
+              Book a free assessment and we&apos;ll deploy {agent.name} into your stack, Canadian-hosted, ready in 48 hours.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact" className="inline-flex items-center justify-center gap-3 bg-[#0071e3] text-white px-10 py-5 rounded-2xl font-bold text-lg hover:shadow-2xl hover:shadow-[#0071e3]/30 transition-all group">

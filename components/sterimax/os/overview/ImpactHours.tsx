@@ -30,7 +30,7 @@ export function ImpactHours() {
     <section>
       <div className="flex items-baseline justify-between gap-4 flex-wrap mb-4">
         <span className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.3em] text-[#06b6d4]">
-          Impact — what this would cost in human hours
+          Impact, what this would cost in human hours
         </span>
         <span className="text-[10px] font-black uppercase tracking-widest text-[#4a6785]">
           Estimated against ${BLENDED_RATE}/hr blended rate

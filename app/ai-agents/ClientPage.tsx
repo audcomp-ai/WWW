@@ -9,7 +9,7 @@ const agents = [
     name: "Atlas",
     role: "Tier-1 Help Desk Responder",
     image: "https://images.unsplash.com/photo-1614729939124-032f0b56c9ce?w=800&q=80",
-    description: "Instantly resolves 60% of incoming tickets before a human engineer even sees them."
+    description: "Instantly resolves 60% of incoming tickets before a human technician even sees them."
   },
   {
     name: "Cipher",
@@ -25,7 +25,7 @@ const agents = [
   },
   {
     name: "Orion",
-    role: "Network Reliability Engineer",
+    role: "Network Reliability Technician",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80",
     description: "Predicts bandwidth bottlenecks and re-routes traffic automatically."
   },
@@ -120,7 +120,7 @@ export default function ClientAiAgentsPage() {
               Zero downtime.
             </h2>
             <p className="text-xl md:text-3xl text-gray-300 font-light max-w-3xl mx-auto drop-shadow-lg">
-              Agents that never sleep, never stop learning, and integrate seamlessly with your human team.
+              Agents that never sleep, never stop learning, and work alongside your human team.
             </p>
           </div>
         </motion.div>

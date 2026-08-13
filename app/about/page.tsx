@@ -15,7 +15,7 @@ const stats = [
   { value: "1986", label: "Year Founded" },
   { value: "40+", label: "Years of Excellence" },
   { value: "Top 25", label: "CDN Solutions Provider" },
-  { value: "100%", label: "Engineers in Canada" },
+  { value: "In Canada", label: "Technicians & Data Centres" },
 ];
 
 
@@ -24,7 +24,7 @@ export default function AboutPage() {
     <>
       <Hero
         title="About Audcomp"
-        subtitle="40 years keeping Canadian businesses running. 100% engineers in Canada, 100% Canadian data centres, and a partner who answers when it matters most."
+        subtitle="40 years keeping Canadian businesses running. Technicians and data centres in Canada, and a partner who answers when it matters most."
         ctaText="Contact Our Team"
         ctaHref="/contact"
         backgroundImage="/images/professional_services_hero.png"
@@ -59,7 +59,7 @@ export default function AboutPage() {
               Our mission is to help businesses operate confidently and more efficiently by providing tailored IT services. Our team of dedicated professionals is committed to developing and implementing reliable, cost-effective services for businesses of all sizes, no matter the scope of the need.
             </p>
             <p className="text-slate-500 text-lg leading-relaxed">
-              We are more than a service provider. We are your partner. That philosophy has guided every client relationship since Gary Sohal founded Audcomp at McMaster University in 1986.
+              We are more than a service provider. We are your partner. That philosophy has guided every client relationship since Gary Sohal founded Audcomp in 1986.
             </p>
           </AnimatedSection>
         </div>
@@ -74,13 +74,13 @@ export default function AboutPage() {
           <AnimatedSection delay={0}>
             <p className="text-xs font-semibold text-[#06b6d4] uppercase tracking-widest mb-5">Our Story</p>
             <h2 className="text-4xl font-bold text-white mb-6 tracking-tight leading-tight">
-              From McMaster to the Region&apos;s Largest MSP
+              From Startup to the Region&apos;s Largest MSP
             </h2>
             <p className="text-white/55 leading-relaxed mb-4 text-base">
-              Founded in 1986 by Gary Sohal at McMaster University, Audcomp started with a simple belief: businesses deserve technology that works and a partner they can trust. Over nearly four decades, that belief has driven us to become a leading MSP serving Hamilton, Burlington, Oakville, London, Niagara, and beyond.
+              Founded in 1986 by Gary Sohal, Audcomp started with a simple belief: businesses deserve technology that works and a partner they can trust. Over nearly four decades, that belief has driven us to become a leading MSP serving Hamilton, Burlington, Oakville, London, Niagara, and beyond.
             </p>
             <p className="text-white/40 leading-relaxed mb-8 text-base">
-              Today, Audcomp proudly ranks in the top 25 of CDN&apos;s Top 100 Solutions Providers — a distinction we&apos;ve earned for more than 10 consecutive years. Our team of 100% engineers in Canada operates out of 100% Canadian data centers, delivering enterprise-grade IT with local accountability.
+              Today, Audcomp proudly ranks in the top 25 of CDN&apos;s Top 100 Solutions Providers, a distinction we&apos;ve earned for more than 10 consecutive years. Our team of technicians in Canada operates out of Canadian data centers, delivering enterprise-grade IT with local accountability.
             </p>
             <Link
               href="/our-story"
@@ -95,12 +95,13 @@ export default function AboutPage() {
 
           <AnimatedSection delay={0.1}>
             <div className="relative bg-white/[0.06] border border-white/[0.1] rounded-2xl overflow-hidden backdrop-blur-sm">
-              {/* Founder photo — square source (1080x1080), shown whole so the
-                  35-years branding isn't cropped. */}
+              {/* Founder headshot — portrait source (2000x3008). Held at 3:4
+                  rather than square so the frame isn't cropped through the
+                  shoulders. */}
               <img
-                src="/images/gary-sohal-35-years.jpeg"
-                alt="Gary Sohal, Founder of Audcomp, cutting a cake celebrating 35 years in business"
-                className="w-full aspect-square object-cover"
+                src="/images/gary-sohal.jpg"
+                alt="Gary Sohal, Founder of Audcomp"
+                className="w-full aspect-[3/4] object-cover object-top"
               />
               <div className="p-8">
                 <p className="font-semibold text-white text-sm">Gary Sohal</p>
