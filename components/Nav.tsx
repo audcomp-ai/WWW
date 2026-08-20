@@ -87,6 +87,29 @@ const simpleLinks = [
   { label: "Blog", href: "/blog" },
 ];
 
+function BarLink({
+  href,
+  label,
+  onMouseEnter,
+}: {
+  href: string;
+  label: string;
+  onMouseEnter?: () => void;
+}) {
+  return (
+    <Link
+      href={href}
+      className="group relative text-sm font-semibold text-white/75 hover:text-white transition-colors duration-200"
+      onMouseEnter={onMouseEnter}
+    >
+      {label}
+      {/* Grows from the centre on hover, the same teal rule the Services
+          trigger raises when its panel is open. */}
+      <span className="absolute -bottom-1.5 inset-x-0 h-0.5 origin-center scale-x-0 rounded-full bg-[#06b6d4] transition-transform duration-200 group-hover:scale-x-100" />
+    </Link>
+  );
+}
+
 type OpenMenu = "services" | null;
 
 export default function Nav() {
@@ -130,7 +153,7 @@ export default function Nav() {
   };
 
   const triggerClass = (menu: OpenMenu) =>
-    `relative flex items-center gap-1 text-sm py-4 transition-colors duration-200 ${
+    `relative flex items-center gap-1 text-sm font-semibold py-4 transition-colors duration-200 ${
       openMenu === menu ? "text-white" : "text-white/70 hover:text-white"
     }`;
 
@@ -175,13 +198,11 @@ export default function Nav() {
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-7">
-            <Link
+            <BarLink
               href={aboutLink.href}
-              className="text-sm text-white/70 hover:text-white transition-colors duration-200"
+              label={aboutLink.label}
               onMouseEnter={scheduleClose}
-            >
-              {aboutLink.label}
-            </Link>
+            />
 
             <button
               className={triggerClass("services")}
@@ -205,21 +226,19 @@ export default function Nav() {
             </button>
 
             {simpleLinks.map((l) => (
-              <Link
+              <BarLink
                 key={l.href}
                 href={l.href}
-                className="text-sm text-white/70 hover:text-white transition-colors duration-200"
+                label={l.label}
                 onMouseEnter={scheduleClose}
-              >
-                {l.label}
-              </Link>
+              />
             ))}
 
             <a
               href="https://audcomp.myportallogin.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-white/40 bg-white/[0.1] backdrop-blur-md text-white text-sm font-medium px-5 py-2 rounded-full shadow-[0_2px_12px_rgba(3,12,26,0.35)] transition-all duration-200 hover:-translate-y-0.5 hover:scale-[1.04] hover:border-white/80 hover:bg-white/20 hover:shadow-[0_8px_24px_rgba(3,12,26,0.5)] active:translate-y-0 active:scale-100"
+              className="inline-flex items-center border border-white/40 bg-white/[0.1] backdrop-blur-md text-white text-sm font-semibold px-5 py-2 rounded-full shadow-[0_2px_12px_rgba(3,12,26,0.35)] transition-all duration-200 hover:-translate-y-0.5 hover:scale-[1.04] hover:border-white/80 hover:bg-white/20 hover:shadow-[0_8px_24px_rgba(3,12,26,0.5)] active:translate-y-0 active:scale-100"
               onMouseEnter={scheduleClose}
             >
               My Audcomp
@@ -227,10 +246,18 @@ export default function Nav() {
 
             <Link
               href="/contact"
-              className="bg-[#0071e3] text-white text-sm font-medium px-5 py-2 rounded-full shadow-[0_4px_18px_rgba(0,113,227,0.5)] transition-all duration-200 hover:-translate-y-0.5 hover:scale-[1.04] hover:bg-[#0077ed] hover:shadow-[0_10px_28px_rgba(0,113,227,0.7)] active:translate-y-0 active:scale-100"
+              className="group inline-flex items-center gap-1.5 bg-[#0071e3] text-white text-sm font-semibold px-5 py-2 rounded-full shadow-[0_4px_18px_rgba(0,113,227,0.5)] transition-all duration-200 hover:-translate-y-0.5 hover:scale-[1.04] hover:bg-[#0077ed] hover:shadow-[0_10px_28px_rgba(0,113,227,0.7)] active:translate-y-0 active:scale-100"
               onMouseEnter={scheduleClose}
             >
               Contact Us
+              {/* Same nudging arrow the service cards use for Learn more, so the
+                  primary action behaves like the rest of the site. */}
+              <svg
+                className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1"
+                fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+              </svg>
             </Link>
           </nav>
 
