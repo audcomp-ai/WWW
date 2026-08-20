@@ -1,12 +1,24 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 
 const slides = [
   {
     id: 1,
+    type: "brand" as const,
+    badge: null,
+    headline: "Audcomp Information Technology Solutions",
+    subheadline: "",
+    cta1Text: "",
+    cta1Href: "",
+    cta2Text: "",
+    cta2Href: "",
+    bg: "brand",
+  },
+  {
+    id: 2,
     type: "image" as const,
     badge: null,
     headline: "Enterprise-grade IT, run by technicians in Canada",
@@ -19,7 +31,7 @@ const slides = [
     bg: "image",
   },
   {
-    id: 2,
+    id: 3,
     type: "video" as const,
     badge: "AI Workforce",
     headline: "The Modern Workforce Is Already Here",
@@ -32,7 +44,7 @@ const slides = [
     bg: "video",
   },
   {
-    id: 3,
+    id: 4,
     type: "image" as const,
     badge: "Cyber Security",
     headline: "Protect What Matters Most",
@@ -44,6 +56,22 @@ const slides = [
     cta2Href: "/security-services",
     bg: "cyber",
   },
+];
+
+// Category links per row on the brand slide; the rest centre on line two.
+const BRAND_ROW_BREAK = 4;
+
+// Seconds for one copy of the brand plate to travel from 1x to full push.
+const PLATE_TRAVEL = 16;
+
+// The brand slide routes into the same five categories the Services menu now
+// carries, so the two never drift apart.
+const brandLinks = [
+  { label: "Managed IT", href: "/managed-it-services" },
+  { label: "Cloud Solutions", href: "/cloud-solutions" },
+  { label: "Cyber Security", href: "/security-services" },
+  { label: "Professional Services", href: "/professional-services" },
+  { label: "AI Services", href: "/ai-services" },
 ];
 
 const textVariants: Variants = {
@@ -108,9 +136,9 @@ export default function HeroCarousel() {
       onMouseEnter={() => { setPaused(true); clearCurrentInterval(); }}
       onMouseLeave={() => setPaused(false)}
     >
-      {/* ── Slide 1 background: datacenter image ── */}
+      {/* ── Background: datacenter photo ── */}
       <div
-        className={`absolute inset-0 transition-opacity duration-1000 ${active === 0 ? "opacity-100" : "opacity-0"}`}
+        className={`absolute inset-0 transition-opacity duration-1000 ${slide.bg === "image" ? "opacity-100" : "opacity-0"}`}
       >
         <img
           src="/hero-datacenter.jpeg"
@@ -121,9 +149,9 @@ export default function HeroCarousel() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/80" />
       </div>
 
-      {/* ── Slide 2 background: video ── */}
+      {/* ── Background: AI workforce video ── */}
       <div
-        className={`absolute inset-0 transition-opacity duration-1000 ${active === 1 ? "opacity-100" : "opacity-0"}`}
+        className={`absolute inset-0 transition-opacity duration-1000 ${slide.bg === "video" ? "opacity-100" : "opacity-0"}`}
       >
         <video
           className="absolute inset-0 w-full h-full object-cover"
@@ -135,9 +163,9 @@ export default function HeroCarousel() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/60 to-black/85" />
       </div>
 
-      {/* ── Slide 3 background: cyber ── */}
+      {/* ── Background: cyber ── */}
       <div
-        className={`absolute inset-0 transition-opacity duration-1000 ${active === 2 ? "opacity-100" : "opacity-0"}`}
+        className={`absolute inset-0 transition-opacity duration-1000 ${slide.bg === "cyber" ? "opacity-100" : "opacity-0"}`}
       >
         <div
           className="absolute inset-0 bg-cover bg-center"
@@ -145,7 +173,7 @@ export default function HeroCarousel() {
         />
         <div className="absolute inset-0 bg-[#080c14]/85 backdrop-blur-[1px]" />
         {/* Scan line effect */}
-        {active === 2 && (
+        {slide.bg === "cyber" && (
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
             <motion.div
               className="absolute left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-400/60 to-transparent shadow-[0_0_12px_2px_rgba(34,211,238,0.3)]"
@@ -173,10 +201,151 @@ export default function HeroCarousel() {
         )}
       </div>
 
+      {/* ── Background: brand ──
+          Each background is selected by slide.bg, not by a slide index, so the
+          order above can change without silently pairing a slide with the
+          wrong one. */}
+      <div
+        className={`absolute inset-0 transition-opacity duration-1000 ${slide.bg === "brand" ? "opacity-100" : "opacity-0"}`}
+      >
+        <div className="absolute inset-0 bg-[#071e3d]" />
+        {/* A data centre aisle rather than an abstract field: it carries the
+            same one-point perspective as the reference, and it is a picture of
+            the work.
+
+            Two copies of the plate run the same push half a cycle apart, each
+            fading in as it starts and out as it ends. A single looping zoom has
+            to snap back to 1x, and a reversing one pulls backwards down the
+            corridor — it reads as breathing rather than travelling. Handing off
+            between two copies keeps the camera moving forward without end. */}
+        {[0, 1].map((layer) => (
+          <motion.img
+            key={layer}
+            src="/images/hero-brand-datacenter.webp"
+            alt=""
+            aria-hidden="true"
+            // First slide, so this plate is the LCP element.
+            fetchPriority={layer === 0 ? "high" : "low"}
+            decoding="async"
+            className="absolute inset-0 w-full h-full object-cover"
+            initial={{ scale: 1, opacity: 0 }}
+            animate={{ scale: [1, 1.34], opacity: [0, 1, 1, 0] }}
+            transition={{
+              scale: {
+                duration: PLATE_TRAVEL,
+                ease: "linear",
+                repeat: Infinity,
+                delay: (layer * PLATE_TRAVEL) / 2,
+              },
+              opacity: {
+                duration: PLATE_TRAVEL,
+                ease: "linear",
+                times: [0, 0.18, 0.7, 1],
+                repeat: Infinity,
+                delay: (layer * PLATE_TRAVEL) / 2,
+              },
+            }}
+          />
+        ))}
+        {/* The aisle's vanishing point is a near-white blowout sitting exactly
+            behind a white wordmark, so the centre is knocked well down before
+            the navy tint and the edge vignette. */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_42%_40%_at_50%_50%,rgba(7,30,61,0.88)_8%,rgba(7,30,61,0.5)_46%,transparent_78%)]" />
+        <div className="absolute inset-0 bg-[#071e3d]/28" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_82%_76%_at_50%_50%,transparent_46%,#071e3d_100%)]" />
+      </div>
+
       {/* ── Centered text content (animated per slide) ── */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
         <div className="max-w-4xl mx-auto w-full">
           <AnimatePresence mode="wait">
+            {slide.type === "brand" ? (
+              <motion.div
+                key={`content-${active}`}
+                className="flex flex-col items-center"
+              >
+                <motion.div
+                  initial={{ opacity: 0, scale: 1.035, y: 10 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -12, transition: { duration: 0.4 } }}
+                  transition={{ duration: 1.05, ease: [0.25, 0.46, 0.45, 0.94] }}
+                  className="relative w-[min(78vw,700px)]"
+                >
+                  {/* The mark is a transparent grayscale PNG, so it needs no
+                      recolouring to sit on navy. */}
+                  <img
+                    src="/audcomp-logo.png"
+                    alt="Audcomp — Information Technology Solutions"
+                    className="relative w-full h-auto drop-shadow-[0_8px_32px_rgba(0,0,0,0.45)]"
+                  />
+
+                  {/* Specular sweep. The layer is masked by the logo itself, so
+                      the light only ever appears on the letterforms and never
+                      as a band crossing the background. */}
+                  <motion.div
+                    aria-hidden="true"
+                    className="absolute inset-0 pointer-events-none"
+                    style={{
+                      WebkitMaskImage: "url(/audcomp-logo.png)",
+                      maskImage: "url(/audcomp-logo.png)",
+                      WebkitMaskSize: "100% 100%",
+                      maskSize: "100% 100%",
+                      WebkitMaskRepeat: "no-repeat",
+                      maskRepeat: "no-repeat",
+                    }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.5 }}
+                  >
+                    {/* Once per slide entry, not looped. The content block is
+                        keyed on the active index, so it replays each time the
+                        slide comes back around. */}
+                    <motion.div
+                      className="absolute inset-y-0 w-1/3 bg-[linear-gradient(100deg,transparent,rgba(56,189,248,0.9),rgba(255,255,255,0.95),transparent)]"
+                      initial={{ left: "-40%" }}
+                      animate={{ left: "115%" }}
+                      transition={{ duration: 1.4, delay: 0.55, ease: [0.4, 0, 0.2, 1] }}
+                    />
+                  </motion.div>
+                </motion.div>
+
+                <div className="mt-12 flex flex-wrap items-center justify-center gap-x-9 gap-y-4">
+                  {brandLinks.map((link, i) => (
+                    <Fragment key={link.href}>
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, transition: { duration: 0.25 } }}
+                      transition={{ duration: 0.5, delay: 0.75 + i * 0.08, ease: "easeOut" }}
+                    >
+                      <Link
+                        href={link.href}
+                        // White rather than the teal eyebrow colour: over a lit
+                        // server aisle the teal sat at roughly the luminance of
+                        // the racks behind it and disappeared. The shadow keeps
+                        // it off the brighter patches.
+                        className="group inline-flex items-center gap-2 text-xs md:text-sm font-semibold uppercase tracking-widest text-white hover:text-[#38bdf8] transition-colors duration-200 [text-shadow:0_2px_14px_rgba(3,12,26,0.95)]"
+                      >
+                        {link.label}
+                        <svg
+                          className="w-3 h-3 text-[#38bdf8] transition-transform duration-200 group-hover:translate-x-1"
+                          fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Link>
+                    </motion.div>
+                    {/* Hard break after the fourth, so AI Services always drops
+                        to its own centred line instead of wrapping at whatever
+                        width the row happens to run out of room. */}
+                    {i === BRAND_ROW_BREAK - 1 && (
+                      <div className="basis-full" aria-hidden="true" />
+                    )}
+                    </Fragment>
+                  ))}
+                </div>
+              </motion.div>
+            ) : (
             <motion.div key={`content-${active}`}>
               {/* Badge */}
               {slide.badge && (
@@ -238,6 +407,7 @@ export default function HeroCarousel() {
                 </Link>
               </motion.div>
             </motion.div>
+            )}
           </AnimatePresence>
         </div>
       </div>
