@@ -63,36 +63,20 @@ const serviceCategories: {
       { label: "Structured Cabling", href: "/structured-cabling" },
     ],
   },
-];
-
-const aiItems: (MenuItem & { icon: string })[] = [
   {
     label: "AI Services",
     href: "/ai-services",
-    icon: "fa-microchip",
     desc: "Copilot enablement, custom agents, AI roadmap, and data governance.",
-  },
-  {
-    label: "Agent Studio",
-    href: "/ai-services/agent-studio",
-    icon: "fa-robot",
-    desc: "A full team of production-ready AI agents, Canadian-hosted.",
-  },
-  {
-    label: "Forward Deployed Engineers",
-    href: "/forward-deployed-engineers",
-    icon: "fa-user-gear",
-    desc: "An engineer embedded in your team, building what your workflows need.",
-  },
-  {
-    label: "Microsoft Copilot Enablement",
-    href: "/microsoft-copilot-enablement",
-    icon: "fa-wand-magic-sparkles",
-    desc: "Readiness, rollout, and training across your Microsoft 365 tenant.",
+    items: [
+      { label: "AI Services", href: "/ai-services" },
+      { label: "Agent Studio", href: "/ai-services/agent-studio" },
+      { label: "Forward Deployed Engineers", href: "/forward-deployed-engineers" },
+      { label: "Microsoft Copilot Enablement", href: "/microsoft-copilot-enablement" },
+    ],
   },
 ];
 
-// Kept out of simpleLinks so it can lead the bar, ahead of the two dropdowns.
+// Kept out of simpleLinks so it can lead the bar, ahead of the dropdown.
 const aboutLink = { label: "About", href: "/about" };
 
 const simpleLinks = [
@@ -101,7 +85,7 @@ const simpleLinks = [
   { label: "Blog", href: "/blog" },
 ];
 
-type OpenMenu = "services" | "ai" | null;
+type OpenMenu = "services" | null;
 
 export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -191,27 +175,6 @@ export default function Nav() {
               />
             </button>
 
-            <button
-              className={triggerClass("ai")}
-              onMouseEnter={() => open("ai")}
-              onFocus={() => open("ai")}
-              onClick={() => setOpenMenu(openMenu === "ai" ? null : "ai")}
-              aria-expanded={openMenu === "ai"}
-            >
-              AI Services
-              <svg
-                className={`w-3.5 h-3.5 transition-transform duration-200 ${openMenu === "ai" ? "rotate-180" : ""}`}
-                fill="none" stroke="currentColor" viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-              <span
-                className={`absolute inset-x-0 -bottom-px h-0.5 rounded-full bg-[#06b6d4] transition-opacity duration-200 ${
-                  openMenu === "ai" ? "opacity-100" : "opacity-0"
-                }`}
-              />
-            </button>
-
             {simpleLinks.map((l) => (
               <Link
                 key={l.href}
@@ -270,48 +233,53 @@ export default function Nav() {
           onMouseEnter={() => open(openMenu)}
         >
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-            {openMenu === "services" ? (
-              <div className="grid grid-cols-12 gap-8">
-                {/* Four category columns */}
-                <div className="col-span-9 grid grid-cols-4 gap-7">
-                  {serviceCategories.map((cat) => (
-                    <div key={cat.label}>
-                      <Link
-                        href={cat.href}
-                        className="group block mb-1"
-                        onClick={() => setOpenMenu(null)}
-                      >
-                        <span className="text-[11px] font-semibold text-[#06b6d4] uppercase tracking-widest group-hover:text-[#38bdf8] transition-colors">
-                          {cat.label}
-                        </span>
-                      </Link>
-                      {/* Fixed height keeps the four link lists on a shared baseline
-                          regardless of how many lines each description wraps to. */}
-                      <p className="text-xs text-white/35 leading-relaxed mb-4 min-h-[3.75rem]">
-                        {cat.desc}
-                      </p>
-                      <ul className="flex flex-col gap-0.5">
-                        {cat.items.map((item) => (
-                          <li key={item.href}>
-                            <Link
-                              href={item.href}
-                              className="block text-sm text-white/65 hover:text-white hover:bg-white/[0.06] -mx-2 px-2 py-1.5 rounded-md transition-all duration-150"
-                              onClick={() => setOpenMenu(null)}
-                            >
-                              {item.label}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
+            <div className="grid grid-cols-12 gap-8">
+              {/* Five category columns */}
+              {/* Three shared rows (heading, description, links) that each column
+                  opts into with subgrid, so the five link lists stay on one
+                  baseline however many lines a heading or description wraps to.
+                  A fixed min-height cannot do this: at five columns both
+                  "Professional Services" and the longer descriptions wrap. */}
+              <div className="col-span-9 grid grid-cols-5 grid-rows-[auto_auto_auto] content-start gap-x-6">
+                {serviceCategories.map((cat) => (
+                  <div key={cat.label} className="row-span-3 grid grid-rows-subgrid">
+                    <Link
+                      href={cat.href}
+                      className="group block mb-1"
+                      onClick={() => setOpenMenu(null)}
+                    >
+                      <span className="text-[11px] font-semibold text-[#06b6d4] uppercase tracking-widest group-hover:text-[#38bdf8] transition-colors">
+                        {cat.label}
+                      </span>
+                    </Link>
+                    <p className="text-xs text-white/35 leading-relaxed mb-4">
+                      {cat.desc}
+                    </p>
+                    <ul className="flex flex-col gap-0.5">
+                      {cat.items.map((item) => (
+                        <li key={item.href}>
+                          <Link
+                            href={item.href}
+                            className="block text-sm text-white/65 hover:text-white hover:bg-white/[0.06] -mx-2 px-2 py-1.5 rounded-md transition-all duration-150"
+                            onClick={() => setOpenMenu(null)}
+                          >
+                            {item.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
 
-                {/* Featured panel */}
-                <div className="col-span-3 border-l border-white/[0.08] pl-8">
-                  <p className="text-[11px] font-semibold text-white/30 uppercase tracking-widest mb-4">
-                    Featured
-                  </p>
+              {/* Featured panel — carries both promos, the summit and the one
+                  the AI menu used to hold, so folding that menu in loses
+                  nothing. */}
+              <div className="col-span-3 border-l border-white/[0.08] pl-8">
+                <p className="text-[11px] font-semibold text-white/30 uppercase tracking-widest mb-4">
+                  Featured
+                </p>
+                <div className="flex flex-col gap-4">
                   <div className="rounded-2xl border border-white/[0.1] bg-white/[0.06] p-5">
                     <span className="inline-flex items-center gap-1.5 text-[10px] font-semibold text-[#38bdf8] uppercase tracking-widest mb-3">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#38bdf8] animate-pulse" />
@@ -335,38 +303,7 @@ export default function Nav() {
                       </svg>
                     </Link>
                   </div>
-                </div>
-              </div>
-            ) : (
-              <div className="grid grid-cols-12 gap-8">
-                {/* 2 columns so four cards form an even 2x2 rather than 3+1.
-                    items-start so cards size to their content instead of
-                    stretching to match the taller featured column */}
-                <div className="col-span-9 grid grid-cols-2 gap-5 items-start">
-                  {aiItems.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className="group rounded-2xl border border-white/[0.08] bg-white/[0.03] hover:bg-white/[0.07] hover:border-[#06b6d4]/30 p-5 transition-all duration-200"
-                      onClick={() => setOpenMenu(null)}
-                    >
-                      <span className="flex items-center gap-2.5 mb-2">
-                        <span className="w-8 h-8 rounded-lg bg-[#06b6d4]/10 border border-[#06b6d4]/20 flex items-center justify-center">
-                          <i className={`fas ${item.icon} text-[#06b6d4] text-xs`} />
-                        </span>
-                        <span className="text-sm font-semibold text-white group-hover:text-[#06b6d4] transition-colors">
-                          {item.label}
-                        </span>
-                      </span>
-                      <span className="block text-xs text-white/45 leading-relaxed">{item.desc}</span>
-                    </Link>
-                  ))}
-                </div>
 
-                <div className="col-span-3 border-l border-white/[0.08] pl-8">
-                  <p className="text-[11px] font-semibold text-white/30 uppercase tracking-widest mb-4">
-                    Featured
-                  </p>
                   <div className="rounded-2xl border border-white/[0.1] bg-white/[0.06] p-5">
                     <p className="text-white font-semibold text-sm leading-snug mb-2">
                       Deploy an AI workforce in weeks, not months
@@ -388,7 +325,7 @@ export default function Nav() {
                   </div>
                 </div>
               </div>
-            )}
+            </div>
           </div>
         </div>
       )}
@@ -431,7 +368,7 @@ export default function Nav() {
           )}
 
           <div className="border-t border-white/[0.08] pt-3 flex flex-col gap-2">
-            {[aboutLink, ...aiItems.map((a) => ({ label: a.label, href: a.href })), ...simpleLinks].map((link) => (
+            {[aboutLink, ...simpleLinks].map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
