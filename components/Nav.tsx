@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import { SHOW_BRAND_SLIDE } from "@/lib/hero-events";
 
 type MenuItem = { label: string; href: string; desc?: string };
 
@@ -130,17 +131,38 @@ export default function Nav() {
 
   return (
     <header
+      // Opaque at rest. The bar sits in flow above the page, so at scroll top
+      // there is nothing behind it but the white page background, and 85% navy
+      // over white composites to #2c405a — a band visibly lighter than the navy
+      // it sits against. Translucency only earns its keep once content is
+      // actually passing underneath, which is the scrolled state.
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled || openMenu
           ? "bg-[#071e3d]/95 backdrop-blur-2xl border-b border-white/[0.1]"
-          : "bg-[#071e3d]/85 backdrop-blur-xl border-b border-white/[0.06]"
+          : "bg-[#071e3d] border-b border-white/[0.06]"
       }`}
       onMouseLeave={scheduleClose}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14">
           {/* Logo */}
-          <Link href="/" className="flex items-center" onMouseEnter={scheduleClose}>
+          <Link
+            href="/"
+            className="flex items-center"
+            onMouseEnter={scheduleClose}
+            onClick={() => {
+              setOpenMenu(null);
+              setMobileOpen(false);
+              // Navigating home from elsewhere mounts the hero on the brand
+              // slide already. Clicking it while on the homepage routes to the
+              // page you are on, so nothing remounts and the carousel stays
+              // wherever it had rotated to — it has to be asked directly.
+              if (window.location.pathname === "/") {
+                window.dispatchEvent(new CustomEvent(SHOW_BRAND_SLIDE));
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
+            }}
+          >
             <img src="/audcomp-logo.png" alt="Audcomp" className="h-10 w-auto" />
           </Link>
 
@@ -229,7 +251,11 @@ export default function Nav() {
           panel made the link lists hard to read. */}
       {openMenu && (
         <div
-          className="hidden lg:block absolute inset-x-0 top-full bg-[#071e3d] border-t border-white/[0.08] shadow-[0_24px_48px_-12px_rgba(0,0,0,0.5)]"
+          // Never taller than the screen below the bar. The panel grew when the
+          // featured rail went to two cards, and on a short window it ran off
+          // the bottom with no way to reach what was cut off. 3.5rem is the h-14
+          // bar above it.
+          className="hidden lg:block absolute inset-x-0 top-full max-h-[calc(100dvh-3.5rem)] overflow-y-auto overscroll-contain bg-[#071e3d] border-t border-white/[0.08] shadow-[0_24px_48px_-12px_rgba(0,0,0,0.5)]"
           onMouseEnter={() => open(openMenu)}
         >
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">

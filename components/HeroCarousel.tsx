@@ -2,6 +2,7 @@
 
 import { Fragment, useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { SHOW_BRAND_SLIDE } from "@/lib/hero-events";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 
 const slides = [
@@ -121,6 +122,20 @@ export default function HeroCarousel() {
     return () => clearCurrentInterval();
   }, [paused]);
 
+  // The logo in the bar asks for the brand slide when it is clicked from the
+  // homepage, where routing to "/" changes nothing on its own.
+  useEffect(() => {
+    const toBrandSlide = () => {
+      const index = slides.findIndex((s) => s.type === "brand");
+      if (index < 0) return;
+      setActive(index);
+      clearCurrentInterval();
+      if (!paused) startInterval();
+    };
+    window.addEventListener(SHOW_BRAND_SLIDE, toBrandSlide);
+    return () => window.removeEventListener(SHOW_BRAND_SLIDE, toBrandSlide);
+  }, [paused]);
+
   const goToSlide = (index: number) => {
     setActive(index);
     clearCurrentInterval();
@@ -172,15 +187,8 @@ export default function HeroCarousel() {
           style={{ backgroundImage: "url('/images/cyber_security_hero.png')" }}
         />
         <div className="absolute inset-0 bg-[#080c14]/85 backdrop-blur-[1px]" />
-        {/* Scan line effect */}
         {slide.bg === "cyber" && (
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            <motion.div
-              className="absolute left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-400/60 to-transparent shadow-[0_0_12px_2px_rgba(34,211,238,0.3)]"
-              initial={{ top: "-5%" }}
-              animate={{ top: "105%" }}
-              transition={{ duration: 7, repeat: Infinity, ease: "linear" }}
-            />
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#22d3ee08_1px,transparent_1px),linear-gradient(to_bottom,#22d3ee08_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_70%_70%_at_50%_50%,#000_20%,transparent_100%)]" />
             {[...Array(10)].map((_, i) => (
               <motion.div
