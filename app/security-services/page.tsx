@@ -60,13 +60,13 @@ export default function SecurityServicesPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-foreground mb-6">Security Is Not Optional</h2>
           <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-            Cyberattacks on Canadian businesses have increased dramatically over the past five years. Ransomware, business email compromise, and supply chain attacks are no longer rare, they're inevitable for organizations that aren't prepared. The question isn't whether your organization will be targeted; it's whether you'll be ready.
+            Cyberattacks on Canadian businesses have increased dramatically over the past five years. Ransomware, business email compromise, and supply chain attacks are no longer rare. They&apos;re inevitable for organizations that aren&apos;t prepared. The question isn't whether your organization will be targeted; it's whether you'll be ready.
           </p>
           <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-            Audcomp's cybersecurity practice builds layered defenses around your organization, from the endpoint to the network perimeter, from user behavior to 24/7 threat monitoring. Our Security Operations Centre (SOC) provides round-the-clock visibility and rapid incident response.
+            Audcomp's cybersecurity practice builds layered defenses around your organization, from the endpoint to the network perimeter, from user behavior to 24/7 threat monitoring. Our SOC &amp; MDR team provides round-the-clock visibility and rapid incident response.
           </p>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            We have firsthand experience recovering organizations from cyberattacks, when a public-sector healthcare provider was hit in 2024, Audcomp restored critical services within two business days and had them fully operational within two weeks. We&apos;d rather help you never need that service.
+            We have expertise in cybersecurity recovery, restoring critical services and getting organizations fully operational under pressure. We&apos;d rather help you never need that service.
           </p>
         </div>
       </section>

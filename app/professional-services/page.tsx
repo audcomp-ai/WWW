@@ -88,7 +88,7 @@ export default function ProfessionalServicesPage() {
               { title: "Experienced Team", desc: "Our professional services team includes architects and consultants with years of hands-on experience." },
               { title: "Proven Methodology", desc: "Structured project delivery with clear milestones, documentation, and accountability." },
               { title: "Integrated Approach", desc: "Professional services connect directly with our managed services for ongoing support post-delivery." },
-              { title: "Industry Knowledge", desc: "Deep experience across municipalities, manufacturing, and enterprise environments." },
+              { title: "Industry Knowledge", desc: "Proven experience across municipalities, manufacturing, and enterprise environments." },
               { title: "Service Delivery", desc: "On-site presence in Hamilton, Ancaster, and southern Ontario, with service delivery across Canada." },
               { title: "Outcome Focused", desc: "We're measured on results, successful projects delivered on time and on budget." },
             ].map((f) => (
