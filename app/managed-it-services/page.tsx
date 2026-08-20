@@ -15,31 +15,42 @@ const subServices = [
     title: "Managed IT Support",
     description: "End-user support, network, infrastructure, core application, data protection, and cyber security, with 24/7 coverage and technicians in Canada.",
     href: "/managed-it-support",
-    category: "Managed IT",
+    category: "Operations",
   },
   {
     title: "Help Desk",
     description: "Audcomp's Help Desk Support is available 24/7, offering expert assistance through our advanced ticketing system, accessible via email, phone, or on-site support.",
     href: "/help-desk",
-    category: "Managed IT",
+    category: "User Support",
   },
   {
     title: "Backup & Disaster Recovery",
     description: "A fast, secure, and cost-effective cloud solution offering encrypted data protection with backups up to five times faster than other options.",
     href: "/backup-disaster-recovery",
-    category: "Managed IT",
+    category: "Continuity",
   },
   {
     title: "Device as a Service (DaaS)",
     description: "A subscription-based solution that makes IT costs predictable and improves user experience, scalable as your team grows.",
     href: "/daas",
-    category: "Managed IT",
+    category: "Devices",
   },
   {
     title: "IT Procurement",
     description: "Tier 1 and Tier 2 manufacturer partnerships, competitive pricing, and our exclusive Try & Buy demo program.",
     href: "/it-procurement",
-    category: "Managed IT",
+    category: "Sourcing",
+  },
+  // Not a sixth Managed IT service in the nav's sense — that category is this
+  // page plus the five above. It is here because managed clients take it
+  // alongside them. Still filed under Cyber Security in the nav and on
+  // /security-services, where the wording below is copied from so the two
+  // descriptions cannot drift.
+  {
+    title: "Endpoint Protection (AGS)",
+    description: "Advanced threat detection, real-time monitoring, Office Protection, and Email Protection under Audcomp Guarded Services.",
+    href: "/end-point-protection",
+    category: "Security",
   },
 ];
 

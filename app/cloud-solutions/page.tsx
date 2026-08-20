@@ -15,31 +15,42 @@ const subServices = [
     title: "Microsoft Office 365",
     description: "Explore the efficiency of Microsoft Office 365 solutions for cloud-based productivity, email, Teams, SharePoint, and beyond.",
     href: "/microsoft-office-365",
-    category: "Cloud",
+    category: "Productivity",
   },
   {
     title: "Microsoft Azure",
     description: "Get the full value of cloud computing with Microsoft Azure, migration, custom configuration, and ongoing infrastructure management.",
     href: "/microsoft-azure",
-    category: "Cloud",
+    category: "Infrastructure",
   },
   {
     title: "Hybrid Cloud",
     description: "Embrace the best of both worlds, private and public cloud strategy and implementation tailored to your data sovereignty and performance needs.",
     href: "/hybrid-cloud",
-    category: "Cloud",
+    category: "Architecture",
   },
   {
     title: "Office 365 Backup",
     description: "Encrypted backup for your Microsoft 365 data with up to 5x faster recovery and flexible retention.",
     href: "/office-365-backup",
-    category: "Cloud",
+    category: "Data Protection",
   },
   {
     title: "Microsoft Teams",
     description: "Teams deployment, configuration, training, and integration with SharePoint and OneDrive so files stay in one place.",
     href: "/microsoft-teams",
-    category: "Cloud",
+    category: "Collaboration",
+  },
+  // Not a sixth Cloud service in the nav's sense — that category is this page
+  // plus the five above. Copilot is the piece that sits on top of the Microsoft
+  // 365 tenancy these cards describe, so it belongs in the same grid. Filed
+  // under AI Services in the nav; wording copied from /ai-services so the two
+  // descriptions cannot drift.
+  {
+    title: "Microsoft Copilot Enablement",
+    description: "Readiness assessment, integration, training, and ongoing support for Microsoft Copilot across your Microsoft 365 environment.",
+    href: "/microsoft-copilot-enablement",
+    category: "AI Productivity",
   },
 ];
 
