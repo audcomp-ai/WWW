@@ -189,7 +189,6 @@ export default function HeroCarousel() {
         <div className="absolute inset-0 bg-[#080c14]/85 backdrop-blur-[1px]" />
         {slide.bg === "cyber" && (
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#22d3ee08_1px,transparent_1px),linear-gradient(to_bottom,#22d3ee08_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_70%_70%_at_50%_50%,#000_20%,transparent_100%)]" />
             {[...Array(10)].map((_, i) => (
               <motion.div
                 key={i}

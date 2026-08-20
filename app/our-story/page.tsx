@@ -113,8 +113,8 @@ export default function OurStoryPage() {
                 desc: "We build long-term relationships, not transactional interactions. Your success is our success.",
               },
               {
-                title: "Canadian First",
-                desc: "technicians in Canada. Canadian data centers. Your data stays on Canadian soil.",
+                title: "Canadian Roots",
+                desc: "Serving businesses across Ontario and across Canada. Technicians and data centres in Canada, so your data stays on Canadian soil.",
               },
               {
                 title: "Proactive",

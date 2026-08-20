@@ -22,27 +22,11 @@ export default function AnimatedSecurityHero() {
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-[#181E2C]/85 z-0 backdrop-blur-[2px]"></div>
 
-      {/* Animated Cyber Grid / Radar Effects */}
+      {/* Floating nodes only. The sweeping scan line and the grid overlay that
+          used to sit here were removed: on a photographic hero they read as
+          artefacts laid over the picture rather than as part of it. */}
       {isMounted && (
         <div className="absolute inset-0 z-0 pointer-events-none">
-          {/* Scanning Line */}
-          <motion.div
-            className="absolute left-0 right-0 h-[2px] bg-cyan-400 shadow-[0_0_20px_5px_rgba(34,211,238,0.4)]"
-            initial={{ top: "-10%" }}
-            animate={{ top: "110%" }}
-            transition={{
-              duration: 6,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-          />
-          
-          {/* Pulsing Grid Overlay (CSS pattern) */}
-          <div 
-            className="absolute inset-0 bg-[linear-gradient(to_right,#22d3ee15_1px,transparent_1px),linear-gradient(to_bottom,#22d3ee15_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_10%,transparent_100%)]"
-          ></div>
-
-          {/* Floating security nodes */}
           {[...Array(15)].map((_, i) => {
             const left = Math.random() * 100;
             const delay = Math.random() * 5;

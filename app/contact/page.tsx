@@ -24,7 +24,7 @@ export default function ContactPage() {
   return (
     <>
       <Hero
-        title="Talk to a Canadian IT Team"
+        title="Talk to Our Specialist Team"
         subtitle="Tell us about your IT environment and challenges. Our team responds within one business day."
         variant="dark"
         backgroundImage="/images/professional_services_hero.png"
