@@ -442,8 +442,10 @@ export default function HeroCarousel() {
         ))}
       </div>
 
-      {/* Bottom fade into next section */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent pointer-events-none" />
+      {/* Bottom fade into the next section, which is the navy stats bar. It
+          used to fade to black, so the hero ended in a black band and then
+          jumped to navy instead of blending into it. */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#071e3d] to-transparent pointer-events-none" />
     </div>
   );
 }

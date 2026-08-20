@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { SHOW_BRAND_SLIDE } from "@/lib/hero-events";
 
 type MenuItem = { label: string; href: string; desc?: string };
@@ -93,6 +94,10 @@ export default function Nav() {
   const [openMenu, setOpenMenu] = useState<OpenMenu>(null);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  // Matches the pull-up in SiteShell: only where the hero runs under the bar
+  // can the bar be transparent without exposing the white page behind it.
+  const canOverlay = pathname === "/";
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
@@ -139,7 +144,9 @@ export default function Nav() {
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled || openMenu
           ? "bg-[#071e3d]/95 backdrop-blur-2xl border-b border-white/[0.1]"
-          : "bg-[#071e3d] border-b border-white/[0.06]"
+          : canOverlay
+            ? "bg-transparent border-b border-transparent"
+            : "bg-[#071e3d] border-b border-white/[0.06]"
       }`}
       onMouseLeave={scheduleClose}
     >
@@ -157,7 +164,7 @@ export default function Nav() {
               // slide already. Clicking it while on the homepage routes to the
               // page you are on, so nothing remounts and the carousel stays
               // wherever it had rotated to — it has to be asked directly.
-              if (window.location.pathname === "/") {
+              if (canOverlay) {
                 window.dispatchEvent(new CustomEvent(SHOW_BRAND_SLIDE));
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }
@@ -212,7 +219,7 @@ export default function Nav() {
               href="https://audcomp.myportallogin.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-white/25 hover:border-white/50 hover:bg-white/[0.06] text-white/80 hover:text-white text-sm font-medium px-5 py-2 rounded-full transition-colors duration-200"
+              className="border border-white/40 bg-white/[0.1] backdrop-blur-md text-white text-sm font-medium px-5 py-2 rounded-full shadow-[0_2px_12px_rgba(3,12,26,0.35)] transition-all duration-200 hover:-translate-y-0.5 hover:scale-[1.04] hover:border-white/80 hover:bg-white/20 hover:shadow-[0_8px_24px_rgba(3,12,26,0.5)] active:translate-y-0 active:scale-100"
               onMouseEnter={scheduleClose}
             >
               My Audcomp
@@ -220,7 +227,7 @@ export default function Nav() {
 
             <Link
               href="/contact"
-              className="bg-[#0071e3] hover:bg-[#0077ed] text-white text-sm font-medium px-5 py-2 rounded-full transition-colors duration-200"
+              className="bg-[#0071e3] text-white text-sm font-medium px-5 py-2 rounded-full shadow-[0_4px_18px_rgba(0,113,227,0.5)] transition-all duration-200 hover:-translate-y-0.5 hover:scale-[1.04] hover:bg-[#0077ed] hover:shadow-[0_10px_28px_rgba(0,113,227,0.7)] active:translate-y-0 active:scale-100"
               onMouseEnter={scheduleClose}
             >
               Contact Us
