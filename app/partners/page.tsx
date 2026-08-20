@@ -61,11 +61,8 @@ export default function PartnersPage() {
             <h2 className="text-4xl sm:text-5xl font-bold text-[#0a2540] mb-8 tracking-tight leading-tight">
               Enterprise Technology,<br />Canadian Expertise
             </h2>
-            <p className="text-slate-500 text-lg leading-relaxed mb-6">
-              Audcomp maintains partnerships with Tier 1 and Tier 2 technology manufacturers across hardware, software, networking, security, and cloud. These relationships give our clients access to enterprise pricing, expedited support channels, and the latest solutions as they emerge.
-            </p>
             <p className="text-slate-500 text-lg leading-relaxed">
-              Our procurement team works directly with manufacturer representatives to ensure you get the right technology at the best value, including access to our exclusive &ldquo;Try and Buy&rdquo; demo program for pre-purchase evaluation.
+              Audcomp is a certified partner of technology manufacturers across hardware, software, networking, security, and cloud. These relationships give our clients access to enterprise pricing, expedited support channels, and the latest solutions as they emerge. Our procurement team works directly with manufacturer representatives to ensure you get the right technology at the best value.
             </p>
           </AnimatedSection>
         </div>
