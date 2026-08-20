@@ -54,10 +54,10 @@ export default function ProfessionalServicesPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-foreground mb-6">Consider Audcomp an Extension of Your Team</h2>
           <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-            Get senior IT strategists and system technicians on demand, without the cost of hiring them full-time. We work alongside your team to pinpoint the real challenges, then recommend and implement the right solution for your needs and budget.
+            Our on-demand system engineers have years of experience, without the cost of hiring them full-time. We work alongside your team to pinpoint the real challenges, then recommend and implement the right solution for your needs and budget.
           </p>
           <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-            Audcomp&apos;s Professional Services practice brings nearly four decades of experience to every engagement. Whether it&apos;s a discrete project or an ongoing strategic relationship, we deliver with the same professionalism and accountability that defines everything we do.
+            Audcomp&apos;s Professional Services practice brings over 40 years of experience to every engagement. Whether the project is small or large, or an ongoing relationship, Audcomp delivers with the same professionalism and accountability that defines everything we do.
           </p>
         </div>
       </section>
@@ -85,11 +85,11 @@ export default function ProfessionalServicesPage() {
           <h2 className="text-3xl font-bold text-foreground mb-12 text-center">Why Audcomp Professional Services?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "Senior Expertise", desc: "Our professional services team includes senior architects and consultants with decades of experience." },
+              { title: "Experienced Team", desc: "Our professional services team includes architects and consultants with years of hands-on experience." },
               { title: "Proven Methodology", desc: "Structured project delivery with clear milestones, documentation, and accountability." },
               { title: "Integrated Approach", desc: "Professional services connect directly with our managed services for ongoing support post-delivery." },
-              { title: "Industry Knowledge", desc: "Deep experience across healthcare, municipalities, manufacturing, and enterprise environments." },
-              { title: "Local Delivery", desc: "On-site presence in Hamilton, Ancaster, and across southern Ontario when you need it." },
+              { title: "Industry Knowledge", desc: "Deep experience across municipalities, manufacturing, and enterprise environments." },
+              { title: "Service Delivery", desc: "On-site presence in Hamilton, Ancaster, and southern Ontario, with service delivery across Canada." },
               { title: "Outcome Focused", desc: "We're measured on results, successful projects delivered on time and on budget." },
             ].map((f) => (
               <div key={f.title} className="bg-card border border-border rounded-2xl p-6">
