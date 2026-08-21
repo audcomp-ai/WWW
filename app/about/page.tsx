@@ -19,6 +19,11 @@ const stats = [
 ];
 
 
+const leadership = [
+  { name: "Gary Sohal", role: "Founder", photo: "/images/gary-sohal.jpg" },
+  { name: "Jon Binkosky", role: "Chief Operating Officer", photo: "/images/jon-binkosky.jpg" },
+];
+
 export default function AboutPage() {
   return (
     <>
@@ -70,7 +75,7 @@ export default function AboutPage() {
       {/* Our Story — navy */}
       <section className="relative bg-[#071e3d] py-24 px-4 overflow-hidden">
         <div className="absolute top-0 right-0 w-[600px] h-[400px] rounded-full opacity-10 pointer-events-none" style={{ background: "radial-gradient(ellipse, #06b6d4 0%, transparent 70%)" }} />
-        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-3xl mx-auto">
           <AnimatedSection delay={0}>
             <p className="text-xs font-semibold text-[#06b6d4] uppercase tracking-widest mb-5">Our Story</p>
             <h2 className="text-4xl font-bold text-white mb-6 tracking-tight leading-tight">
@@ -92,24 +97,32 @@ export default function AboutPage() {
               </svg>
             </Link>
           </AnimatedSection>
-
-          <AnimatedSection delay={0.1}>
-            <div className="relative bg-white/[0.06] border border-white/[0.1] rounded-2xl overflow-hidden backdrop-blur-sm">
-              {/* Founder headshot — portrait source (2000x3008). Held at 3:4
-                  rather than square so the frame isn't cropped through the
-                  shoulders. */}
-              <img
-                src="/images/gary-sohal.jpg"
-                alt="Gary Sohal, Founder of Audcomp"
-                className="w-full aspect-[3/4] object-cover object-top"
-              />
-              <div className="p-8">
-                <p className="font-semibold text-white text-sm">Gary Sohal</p>
-                <p className="text-xs text-white/40 mt-0.5">Founder, Audcomp</p>
-              </div>
-            </div>
-          </AnimatedSection>
         </div>
+
+        {/* Leadership — portraits in a row with the name beneath, rather than a
+            single founder card beside the copy. */}
+        <AnimatedSection delay={0.1}>
+          <div className="max-w-3xl mx-auto mt-20 grid grid-cols-1 sm:grid-cols-2 gap-10">
+            {leadership.map((person) => (
+              <div key={person.name} className="text-center">
+                {/* Circular rather than a rectangle: the source headshots are
+                    framed differently from one another, and a circle crops to
+                    the face without inventing background to fill corners. */}
+                <div className="mx-auto aspect-square w-full max-w-[260px] overflow-hidden rounded-full border border-white/[0.12] bg-white/[0.06] backdrop-blur-sm">
+                  {person.photo ? (
+                    <img
+                      src={person.photo}
+                      alt={`${person.name}, ${person.role} of Audcomp`}
+                      className="h-full w-full object-cover object-top"
+                    />
+                  ) : null}
+                </div>
+                <p className="mt-6 text-lg font-semibold text-white">{person.name}</p>
+                <p className="mt-1 text-sm text-white/45">{person.role}</p>
+              </div>
+            ))}
+          </div>
+        </AnimatedSection>
       </section>
 
       <SectionAngle from="#071e3d" to="#ffffff" flip={false} height={64} />

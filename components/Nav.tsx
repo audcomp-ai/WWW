@@ -72,7 +72,7 @@ const serviceCategories: {
     items: [
       { label: "AI Services", href: "/ai-services" },
       { label: "Agent Studio", href: "/ai-services/agent-studio" },
-      { label: "Forward Deployed Engineers", href: "/forward-deployed-engineers" },
+      { label: "Embedded AI Engineers", href: "/forward-deployed-engineers" },
       { label: "Microsoft Copilot Enablement", href: "/microsoft-copilot-enablement" },
     ],
   },

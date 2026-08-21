@@ -177,7 +177,7 @@ export default function AIServicesPage() {
         </AnimatedSection>
       </section>
 
-      {/* Forward Deployed Engineers Callout — WHITE */}
+      {/* Embedded AI Engineers Callout — WHITE */}
       <section className="bg-white pb-20 px-4">
         <AnimatedSection>
           <div className="max-w-6xl mx-auto">
@@ -191,10 +191,10 @@ export default function AIServicesPage() {
               <div className="absolute inset-0 bg-gradient-to-r from-[#071e3d]/95 via-[#071e3d]/75 to-[#071e3d]/30" />
               <div className="relative z-10 p-10 sm:p-14 max-w-2xl min-h-[380px] flex flex-col justify-center">
                 <span className="inline-flex items-center gap-2 bg-[#06b6d4]/20 border border-[#06b6d4]/40 text-[#06b6d4] text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full mb-6 w-fit">
-                  FDE-as-a-Service
+                  Embedded AI Engineers
                 </span>
                 <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tighter mb-5 leading-tight">
-                  Forward Deployed<br />Technicians, embedded.
+                  An engineer who<br />builds inside your team.
                 </h2>
                 <p className="text-white/65 leading-relaxed text-base mb-8 max-w-md">
                   An Audcomp technician works inside your business, learning your
@@ -207,7 +207,7 @@ export default function AIServicesPage() {
                     href="/forward-deployed-engineers"
                     className="inline-flex items-center gap-2 bg-white text-[#0a2540] font-black px-7 py-3.5 rounded-full text-sm hover:bg-[#f0f7ff] hover:shadow-lg transition-all"
                   >
-                    How FDE works
+                    How it works
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>

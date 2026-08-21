@@ -6,7 +6,7 @@ import { SectionAngle } from "@/components/SectionAngle";
 import { AnimatedSection, StaggeredSection, StaggeredItem } from "@/components/AnimatedSection";
 
 export const metadata: Metadata = {
-  title: "Forward Deployed Engineers (FDE-as-a-Service) | Audcomp",
+  title: "Embedded AI Engineers | Audcomp",
   description:
     "An Audcomp engineer embedded in your business, learning your workflows, then building and shipping the automations, integrations, and AI agents your team actually needs.",
 };
@@ -111,8 +111,8 @@ export default function ForwardDeployedEngineersPage() {
   return (
     <>
       <Hero
-        title="Forward Deployed Engineers"
-        subtitle="An Audcomp engineer embedded in your business, learning how you actually work, then building and shipping what your team needs. Not a ticket queue: a teammate who builds."
+        title="Embedded AI Engineers"
+        subtitle="An Audcomp engineer joins your team, learns how you work, and builds the automations and AI agents you need. You get someone who builds alongside you, not a ticket queue."
         ctaText="Talk to an Engineer"
         ctaHref="/contact"
         secondaryCtaText="Explore AI Services"
@@ -127,7 +127,7 @@ export default function ForwardDeployedEngineersPage() {
         <div className="max-w-4xl mx-auto">
           <AnimatedSection>
             <p className="text-xs font-semibold text-[#06b6d4] uppercase tracking-widest mb-5">
-              FDE-as-a-Service
+              Embedded AI Engineers
             </p>
             <h2 className="text-4xl sm:text-5xl font-bold text-[#0a2540] mb-8 tracking-tight leading-tight">
               Engineering capacity,<br />embedded in your team
@@ -139,7 +139,7 @@ export default function ForwardDeployedEngineersPage() {
               documents, scoping calls, and change requests.
             </p>
             <p className="text-slate-500 text-lg leading-relaxed mb-6">
-              A Forward Deployed Engineer closes that gap by removing it. An
+              An embedded engineer closes that gap by removing it. An
               Audcomp engineer works inside your business, sitting with the
               people doing the work, seeing the friction first-hand, and building
               against it directly. The person who understands the problem is the
@@ -273,7 +273,7 @@ export default function ForwardDeployedEngineersPage() {
 
           <AnimatedSection className="mt-14 text-center">
             <p className="text-slate-500 text-base mb-5">
-              Already looking at AI agents? A Forward Deployed Engineer is how
+              Already looking at AI agents? An embedded engineer is how
               they get built against your real systems.
             </p>
             <Link
