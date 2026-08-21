@@ -122,6 +122,21 @@ export default function HeroCarousel() {
     return () => clearCurrentInterval();
   }, [paused]);
 
+  // Left and right arrows move between slides once the hero has focus.
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+      setActive((prev) => {
+        const delta = e.key === "ArrowLeft" ? -1 : 1;
+        return (prev + delta + slides.length) % slides.length;
+      });
+      clearCurrentInterval();
+      if (!paused) startInterval();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [paused]);
+
   // The logo in the bar asks for the brand slide when it is clicked from the
   // homepage, where routing to "/" changes nothing on its own.
   useEffect(() => {
@@ -141,6 +156,10 @@ export default function HeroCarousel() {
     clearCurrentInterval();
     if (!paused) startInterval();
   };
+
+  // Wraps both ways, so back from the first slide lands on the last.
+  const step = (delta: number) =>
+    goToSlide((active + delta + slides.length) % slides.length);
 
   const slide = slides[active];
 
@@ -419,24 +438,51 @@ export default function HeroCarousel() {
         </div>
       </div>
 
+      {/* ── Previous / next ──
+          The indicators below only jump to a specific slide; there was no way
+          to step back one. */}
+      {[
+        { dir: -1, label: "Previous slide", side: "left-4 sm:left-8", d: "M15 19l-7-7 7-7" },
+        { dir: 1, label: "Next slide", side: "right-4 sm:right-8", d: "M9 5l7 7-7 7" },
+      ].map((btn) => (
+        <button
+          key={btn.label}
+          onClick={() => step(btn.dir)}
+          aria-label={btn.label}
+          className={`group absolute ${btn.side} top-1/2 z-20 hidden -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-black/25 p-3 text-white/70 backdrop-blur-md transition-all duration-200 hover:border-white/60 hover:bg-black/40 hover:text-white active:scale-95 sm:flex`}
+        >
+          <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={btn.d} />
+          </svg>
+        </button>
+      ))}
+
       {/* ── Progress bar indicators (Apple-style) ── */}
-      <div className="absolute bottom-8 left-0 right-0 flex justify-center gap-2 z-20">
+      <div className="absolute bottom-8 left-0 right-0 flex justify-center gap-0 z-20">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
             aria-label={`Go to slide ${index + 1}`}
-            className="relative h-[3px] rounded-full overflow-hidden transition-all duration-300"
-            style={{ width: active === index ? "32px" : "20px" }}
+            aria-current={active === index}
+            // The bar stays 3px, but the button around it is padded out to a
+            // real target. Hit areas were 20x3, which is not something a hand
+            // can land on, so jumping straight to a slide only worked by luck.
+            className="group flex cursor-pointer items-center px-1 py-3"
           >
-            <span className="absolute inset-0 bg-white/20 rounded-full" />
-            {active === index && (
-              <motion.span
-                className="absolute inset-0 bg-white rounded-full"
-                layoutId="indicator"
-                transition={{ type: "spring", stiffness: 400, damping: 30 }}
-              />
-            )}
+            <span
+              className="relative block h-[3px] overflow-hidden rounded-full transition-all duration-300 group-hover:h-[5px]"
+              style={{ width: active === index ? "32px" : "20px" }}
+            >
+              <span className="absolute inset-0 rounded-full bg-white/25 group-hover:bg-white/45" />
+              {active === index && (
+                <motion.span
+                  className="absolute inset-0 bg-white rounded-full"
+                  layoutId="indicator"
+                  transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                />
+              )}
+            </span>
           </button>
         ))}
       </div>
