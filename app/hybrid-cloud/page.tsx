@@ -25,13 +25,13 @@ export default function HybridCloudPage() {
       <section className="bg-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">Not Everything Belongs in the Cloud</h2>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             For many Canadian organizations, particularly those in regulated industries like healthcare, finance, and government, a full cloud migration isn't the right answer. Hybrid cloud gives you the flexibility to run sensitive workloads on-premise while leveraging cloud for scalability, backup, and productivity tools.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Audcomp's hybrid cloud architects work with your team to evaluate each workload, understand your compliance requirements, and build a strategy that makes sense, technically and financially.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto">
             The result is a unified environment where on-premise and cloud systems work together, managed by Audcomp as a single, coherent infrastructure.
           </p>
         </div>
