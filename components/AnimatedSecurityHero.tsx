@@ -73,17 +73,17 @@ export default function AnimatedSecurityHero() {
             </span>
           </motion.div>
 
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.1] mb-8 text-white">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-none mb-8 text-white">
             Protect What <br className="hidden sm:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-blue-400 to-primary">Matters Most</span>
+            Matters Most
           </h1>
-          <p className="text-xl sm:text-2xl leading-relaxed mb-12 max-w-3xl mx-auto text-gray-300 font-light">
-            Multi-layered security<span className="text-white font-medium">endpoint protection</span>, <span className="text-white font-medium">SOC & MDR</span>, <span className="text-white font-medium">penetration testing</span>, and <span className="text-white font-medium">24/7 monitoring</span>, so your business stays resilient.
+          <p className="text-xl leading-relaxed mb-10 max-w-2xl mx-auto text-gray-400">
+            Multi-layered security, <span className="text-white font-medium">endpoint protection</span>, <span className="text-white font-medium">SOC & MDR</span>, <span className="text-white font-medium">penetration testing</span>, and <span className="text-white font-medium">24/7 monitoring</span>, so your business stays resilient.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="bg-primary text-white font-bold text-lg px-10 py-5 rounded-full hover:brightness-110 hover:scale-105 transition-all shadow-[0_0_30px_rgba(var(--primary),0.4)]"
+              className="bg-primary text-white font-semibold px-8 py-4 rounded-full hover:brightness-110 hover:scale-105 transition-all shadow-[0_0_30px_rgba(var(--primary),0.4)]"
             >
               Get a Security Assessment
             </Link>

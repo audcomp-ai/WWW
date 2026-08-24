@@ -15,37 +15,37 @@ const subServices = [
     title: "Endpoint Protection (AGS)",
     description: "Advanced threat detection, real-time monitoring, Office Protection, and Email Protection under Audcomp Guarded Services.",
     href: "/end-point-protection",
-    category: "Security",
+    category: "Prevention",
   },
   {
     title: "SOC & MDR",
     description: "24/7 Security Operations Centre with managed detection and response, incident response, and threat hunting.",
     href: "/security-operations-centre-and-mdr",
-    category: "Security",
+    category: "Monitoring",
   },
   {
     title: "Penetration Testing",
     description: "Manual and automated penetration testing with 4 tests per year and 48-hour reporting turnaround.",
     href: "/penetration-testing-and-security-audits",
-    category: "Security",
+    category: "Validation",
   },
   {
     title: "Managed Firewall",
     description: "24/7 firewall monitoring, maintenance, rule management, and threat intelligence integration.",
     href: "/managed-firewall",
-    category: "Security",
+    category: "Perimeter",
   },
   {
     title: "Security Awareness Training",
     description: "Phishing resistance training led by cybersecurity professionals, your last line of defense.",
     href: "/security-awareness-training",
-    category: "Security",
+    category: "Human Risk",
   },
   {
     title: "Dark Web Monitoring",
     description: "Proactive dark web threat intelligence to detect stolen credentials before attackers can use them. From $99/mo.",
     href: "/dark-web-monitoring",
-    category: "Security",
+    category: "Threat Intelligence",
   },
 ];
 
