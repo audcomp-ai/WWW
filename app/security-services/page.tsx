@@ -101,12 +101,12 @@ export default function SecurityServicesPage() {
               // DBIR 2025 SMB Snapshot p6 and p13 (Fig 6, n=645); its SMB cut is <1,000 employees.
               {
                 stat: "88%",
-                desc: "of breaches at organizations under 1,000 employees involve ransomware — versus 39% at large ones",
+                desc: "of breaches at organizations under 1,000 employees involve ransomware, versus 39% at large ones",
               },
               // IBM/Ponemon 2026, Canada cut. Reported in CAD, so labelled as such.
               {
                 stat: "CA$7.11M",
-                desc: "average cost of a data breach in Canada — the highest since the study began",
+                desc: "average cost of a data breach in Canada, the highest since the study began",
               },
               // IBM/Ponemon 2026, Canada cut. Breach lifecycle = time to identify plus contain.
               {

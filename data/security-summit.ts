@@ -76,7 +76,7 @@ export const summitVendors = [
 
 export const cooQuote = {
   quote:
-    "Cyber criminals are now using AI to attack businesses faster, cheaper and at greater scale than ever before. The good news is that the businesses that stay protected aren't the ones with the biggest budgets — they're the ones with the right layers of defence in place before an attack begins. At Audcomp's Modern Cyber Security event, you'll hear from experts on how to evolve your strategy and simplify your defences for the threats of today and tomorrow.",
+    "Cyber criminals are now using AI to attack businesses faster, cheaper and at greater scale than ever before. The good news is that the businesses that stay protected aren't the ones with the biggest budgets. They're the ones with the right layers of defence in place before an attack begins. At Audcomp's Modern Cyber Security event, you'll hear from experts on how to evolve your strategy and simplify your defences for the threats of today and tomorrow.",
   author: "Jon Binkosky",
   title: "COO, Audcomp",
 };

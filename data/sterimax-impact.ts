@@ -40,10 +40,10 @@ export const heroCopy = {
 
 export const pitchCopy = {
   headline:
-    "Six agents carry the regulatory load — your 200 people stay on judgement, not paperwork.",
+    "Six agents carry the regulatory load. Your 200 people stay on judgement, not paperwork.",
   sub: "SteriMax goes from FDR compliance that depends on someone remembering, to compliance that is simply handled.",
   today: [
-    "One person remembers the reporting window — and they're on vacation next week.",
+    "One person remembers the reporting window, and they're on vacation next week.",
     "Shortage reports get drafted from scratch, on deadline, by the people least able to spare the time.",
     "100+ SKUs are watched by exception, which means by whoever happens to notice.",
     "Submission prep eats days that speed to market cannot afford.",
@@ -84,7 +84,7 @@ export const workedExample = {
   totalWithoutHours: 30,
   totalWithSeconds: 231,
   steps: [
-    { label: "Detect the surge", note: "Someone notices the order pattern on a weekly review — or doesn't.", withoutHours: 8, withSeconds: 2 },
+    { label: "Detect the surge", note: "Someone notices the order pattern on a weekly review, or doesn't.", withoutHours: 8, withSeconds: 2 },
     { label: "Confirm against inventory", note: "Cross-check ERP positions and days of cover for the SKU.", withoutHours: 4, withSeconds: 6 },
     { label: "Locate the prevention plan", note: "Find the current shortage-prevention plan and safety-stock target.", withoutHours: 2, withSeconds: 3 },
     { label: "Draft the filing", note: "Populate every mandatory field and queue it for RA sign-off.", withoutHours: 16, withSeconds: 220 },

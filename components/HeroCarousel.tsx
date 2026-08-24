@@ -301,7 +301,7 @@ export default function HeroCarousel() {
                       recolouring to sit on navy. */}
                   <img
                     src="/audcomp-logo.png"
-                    alt="Audcomp — Information Technology Solutions"
+                    alt="Audcomp Information Technology Solutions"
                     className="relative w-full h-auto drop-shadow-[0_8px_32px_rgba(0,0,0,0.45)]"
                   />
 

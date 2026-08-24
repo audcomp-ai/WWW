@@ -125,14 +125,14 @@ export const osAuditLog: AuditEntry[] = [
     agentId: "claire",
     action: "Answered employee question",
     detail: "Deviation handling, veterinary line · sources cited",
-    review: "Answer cited — no review required",
+    review: "Answer cited, no review required",
   },
   {
     time: "15:12",
     agentId: "wilfred",
     action: "Rebalanced model routing",
     detail: "Projected monthly spend reduced 14%",
-    review: "Automatic — within policy",
+    review: "Automatic, within policy",
   },
   {
     time: "14:35",

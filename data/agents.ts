@@ -26,7 +26,7 @@ export type Agent = {
 export const workforce: Agent[] = [
   {
     id: 'quinn', name: 'Quinn', role: 'AI Bookkeeper', domain: 'Finance', icon: 'fa-file-invoice-dollar', image: '/images/agents/quinn.png', tier: 'senior',
-    desc: 'Reconciliations, payroll runs, and tax filings with a clean monthly close — every cycle, without you chasing it.',
+    desc: 'Reconciliations, payroll runs, and tax filings with a clean monthly close. Every cycle, without you chasing it.',
     title: 'QuickBooks Bookkeeper',
     tagline: 'Reconciles bank feeds, categorizes expenses, matches invoices to payments, and ensures your books are flawlessly closed every single week.',
     stats: [{ value: '$1,200/mo', label: 'vs $65K/yr human' }, { value: '48 hrs', label: 'to start' }, { value: 'Zero', label: 'reconciliation errors' }],
@@ -43,9 +43,9 @@ export const workforce: Agent[] = [
       { title: 'Anomaly detection', desc: 'Flags duplicate charges or unusual vendor spikes for your review.' },
       { title: 'Accounts payable', desc: 'Captures invoices from email and uploads, codes them to your chart of accounts, and schedules payment within terms.' },
       { title: 'Payroll', desc: 'Runs CRA-compliant pay cycles, T4/T4A prep, and source deduction remittances on schedule.' },
-      { title: 'GST/HST & PST filings', desc: 'Calculates, prepares, and submits sales tax returns federally and provincially — never miss a deadline.' },
-      { title: 'Monthly close', desc: 'Reconciliations, accruals, and depreciation entries — done by the first Friday of every month.' },
-      { title: 'Audit trail', desc: 'Every entry logged in QuickBooks with reasoning and source document — exportable, immutable, audit-ready.' },
+      { title: 'GST/HST & PST filings', desc: 'Calculates, prepares, and submits sales tax returns federally and provincially. Never miss a deadline.' },
+      { title: 'Monthly close', desc: 'Reconciliations, accruals, and depreciation entries, done by the first Friday of every month.' },
+      { title: 'Audit trail', desc: 'Every entry logged in QuickBooks with reasoning and source document. Exportable, immutable, audit-ready.' },
     ],
     timeTable: [
       { task: 'Month-end close', human: '16h', agent: '15 min', saved: '15.75h' },
@@ -58,10 +58,10 @@ export const workforce: Agent[] = [
     id: 'sam', name: 'Sam', role: 'AI SDR', domain: 'Sales', icon: 'fa-bullhorn', image: '/images/agents/sam.png', tier: 'senior',
     desc: 'Books meetings on autopilot, qualifies inbound leads, and runs personalized outreach across email, LinkedIn, and your CRM.',
     title: 'Sales Development Rep',
-    tagline: "Sources high-fit prospects, runs personalized outreach at scale, and books qualified meetings on your reps' calendars — without the burnout.",
+    tagline: "Sources high-fit prospects, runs personalized outreach at scale, and books qualified meetings on your reps' calendars, without the burnout.",
     stats: [{ value: '$1,997/mo', label: 'vs $85K/yr human' }, { value: '48 hrs', label: 'to start' }, { value: '500+ leads/wk', label: 'contacted' }],
     about: [
-      'Sam handles the top of the funnel end-to-end. He sources prospects from Apollo, Clay, and LinkedIn Sales Navigator, enriches them, writes personalized first-touch emails, runs multi-step follow-up cadences, and books meetings — then logs everything in HubSpot, Pipedrive, or Salesforce so your AEs walk into qualified calls.',
+      'Sam handles the top of the funnel end-to-end. He sources prospects from Apollo, Clay, and LinkedIn Sales Navigator, enriches them, writes personalized first-touch emails, runs multi-step follow-up cadences, and books meetings, then logs everything in HubSpot, Pipedrive, or Salesforce so your AEs walk into qualified calls.',
       'Sam respects unsubscribes, pauses on out-of-office, never double-touches the same person, and stays inside CASL and CAN-SPAM compliance automatically.',
     ],
     capabilities: [
@@ -84,19 +84,19 @@ export const workforce: Agent[] = [
   },
   {
     id: 'claire', name: 'Claire', role: 'AI Content Marketer', domain: 'Marketing', icon: 'fa-pen-nib', image: '/images/agents/claire.png', tier: 'senior',
-    desc: 'Writes and ranks your blog, repurposes long-form into social, runs newsletters, and drives inbound — no content team required.',
+    desc: 'Writes and ranks your blog, repurposes long-form into social, runs newsletters, and drives inbound. No content team required.',
     title: 'Content Marketing Specialist',
-    tagline: 'Writes ranking SEO blog posts, opens-getting newsletters, and landing-page copy that converts — in your brand voice.',
+    tagline: 'Writes ranking SEO blog posts, opens-getting newsletters, and landing-page copy that converts, in your brand voice.',
     stats: [{ value: '$1,497/mo', label: 'vs $94K/yr human' }, { value: '48 hrs', label: 'to start' }, { value: '30+ hrs/wk', label: 'typical time saved' }],
     about: [
-      'Claire is a senior-level content marketer trained on B2B SaaS, MSP, legal, healthcare, and financial verticals. She studies your existing content to mirror your brand voice, runs keyword research before writing, and produces drafts that read like a human wrote them — because the structure, tone, and examples are calibrated to your audience.',
+      'Claire is a senior-level content marketer trained on B2B SaaS, MSP, legal, healthcare, and financial verticals. She studies your existing content to mirror your brand voice, runs keyword research before writing, and produces drafts that read like a human wrote them, because the structure, tone, and examples are calibrated to your audience.',
       'Connect Google Search Console, Ahrefs, and your CMS, and Claire ships a full editorial calendar, briefs, and finished posts. Every piece is reviewed against an internal eval suite for hallucinations, brand voice match, and SEO compliance before it lands in your draft folder.',
     ],
     capabilities: [
       { title: 'SEO blog posts', desc: '1,500–2,500 word, keyword-researched, in your voice with internal links and meta tags.' },
       { title: 'Newsletters', desc: 'Weekly or biweekly, with curated highlights and original commentary.' },
       { title: 'LinkedIn threads', desc: 'Multi-post threads optimized for the LinkedIn algorithm.' },
-      { title: 'Landing-page copy', desc: 'Hero, features, social proof, FAQ, CTA — all in one brief.' },
+      { title: 'Landing-page copy', desc: 'Hero, features, social proof, FAQ, CTA. All in one brief.' },
       { title: 'Content briefs', desc: 'For human writers when you need them, with H-tags and source links.' },
       { title: 'Repurposing', desc: 'Turn one blog into 5 social posts, a newsletter, and a video script.' },
       { title: 'Keyword research', desc: 'Clusters, intent mapping, and gap analysis from GSC and Ahrefs.' },
@@ -112,20 +112,20 @@ export const workforce: Agent[] = [
   },
   {
     id: 'olivia', name: 'Olivia', role: 'AI Executive Assistant', domain: 'Operations', icon: 'fa-calendar-check', image: '/images/agents/olivia.png', tier: 'senior',
-    desc: 'Triages your inbox, manages complex calendars, books travel, and preps meeting briefs — so you walk in already prepared.',
+    desc: 'Triages your inbox, manages complex calendars, books travel, and preps meeting briefs, so you walk in already prepared.',
     title: 'Executive Assistant',
     tagline: 'Triages your inbox, books your meetings, drafts replies in your voice, and protects your deep-work blocks. Operates 24/7.',
     stats: [{ value: '$997/mo', label: 'vs $78K/yr human' }, { value: '48 hrs', label: 'to start' }, { value: '2+ hrs/day', label: 'back on inbox alone' }],
     about: [
       'Olivia connects to Microsoft 365 or Google Workspace and immediately takes over the rote work of running your day. She learns your priorities (who matters, what you say yes to, what you delegate), drafts replies in your voice, and surfaces only the items that need you.',
-      'Every action she takes is logged and reversible. You stay in control — she just removes the friction.',
+      'Every action she takes is logged and reversible. You stay in control. She just removes the friction.',
     ],
     capabilities: [
       { title: 'Inbox triage', desc: 'Sorts into priority / action-needed / FYI / archive with one-tap controls.' },
       { title: 'Draft replies', desc: 'In your voice for routine emails. You approve in one click.' },
       { title: 'Calendar mgmt', desc: 'Protects deep-work blocks, resolves conflicts, sets buffers.' },
       { title: 'Meeting scheduling', desc: 'Coordinates internal + external attendees across time zones.' },
-      { title: 'Travel booking', desc: 'Flights, hotels, ground transport — within your policy.' },
+      { title: 'Travel booking', desc: 'Flights, hotels, ground transport. Within your policy.' },
       { title: 'Expense reports', desc: 'Auto-generated from receipts and credit-card feeds.' },
       { title: 'Pre-meeting briefs', desc: 'Attendees, last interaction, key talking points.' },
       { title: 'Agendas + summaries', desc: 'Drafted before, recapped after every meeting.' },
@@ -142,14 +142,14 @@ export const workforce: Agent[] = [
     id: 'david', name: 'David', role: 'AI Paralegal', domain: 'Legal', icon: 'fa-scale-balanced', image: '/images/agents/david.png', tier: 'senior',
     desc: 'Reviews contracts against your playbook, flags compliance risks, drafts standard documents, and prepares matter summaries.',
     title: 'Paralegal / Compliance Analyst',
-    tagline: 'Reviews contracts at speed, flags risky clauses, drafts standard agreements, and pulls compliance summaries — every action audit-logged.',
+    tagline: 'Reviews contracts at speed, flags risky clauses, drafts standard agreements, and pulls compliance summaries. Every action audit-logged.',
     stats: [{ value: '$1,997/mo', label: 'vs $91K/yr human' }, { value: '48 hrs', label: 'to start' }, { value: '20+ contracts/wk', label: 'reviewed' }],
     about: [
       'David is trained on Canadian law including PIPEDA, Quebec Law 25, provincial employment standards, and common commercial templates. He reviews contracts in minutes, produces redlines and plain-language summaries, drafts standard agreements from your templates, and maintains an audit log of every clause flagged with reasoning.',
-      'For regulated industries, David runs in Sovereign mode — dedicated Canadian Azure tenant, customer-managed encryption keys, 7-year immutable audit retention.',
+      'For regulated industries, David runs in Sovereign mode: dedicated Canadian Azure tenant, customer-managed encryption keys, 7-year immutable audit retention.',
     ],
     capabilities: [
-      { title: 'Contract review', desc: 'NDAs, MSAs, vendor, employment — redline + plain-language summary.' },
+      { title: 'Contract review', desc: 'NDAs, MSAs, vendor, employment. Redline + plain-language summary.' },
       { title: 'Risk flagging', desc: 'Uncapped liability, IP assignment, exclusivity, auto-renewal traps.' },
       { title: 'Drafting', desc: 'Standard agreements from your templates with party-specific fields.' },
       { title: 'Version compare', desc: 'Surfaces material changes between contract versions.' },
@@ -168,7 +168,7 @@ export const workforce: Agent[] = [
   },
   {
     id: 'maya', name: 'Maya', role: 'AI Receptionist', domain: 'Front Desk', icon: 'fa-headset', image: '/images/agents/maya.png', tier: 'senior',
-    desc: 'Answers every call 24/7, routes inquiries, books appointments, and captures lead details straight into your CRM — no missed calls.',
+    desc: 'Answers every call 24/7, routes inquiries, books appointments, and captures lead details straight into your CRM. No missed calls.',
     title: 'Virtual Receptionist',
     tagline: 'Answers every call and chat in <2 rings, 24/7. Qualifies inquiries, books appointments, and never lets a lead drop.',
     stats: [{ value: '$497/mo', label: 'vs $62K/yr human' }, { value: '24/7', label: 'availability' }, { value: '0%', label: 'missed calls' }],
@@ -196,13 +196,13 @@ export const workforce: Agent[] = [
   },
   {
     id: 'theo', name: 'Theo', role: 'AI Support Lead', domain: 'Community & Support', icon: 'fa-comments', image: '/images/agents/theo.png', tier: 'senior',
-    desc: 'Resolves support tickets, engages your community, moderates Slack and Discord, and escalates the edge cases — a full CX team in one seat.',
+    desc: 'Resolves support tickets, engages your community, moderates Slack and Discord, and escalates the edge cases. A full CX team in one seat.',
     title: 'Community & Support Manager',
-    tagline: 'Monitors your community across every channel, replies to common questions, escalates the rest, and tracks sentiment — so you stop refreshing tabs.',
+    tagline: 'Monitors your community across every channel, replies to common questions, escalates the rest, and tracks sentiment, so you stop refreshing tabs.',
     stats: [{ value: '$1,497/mo', label: 'vs $75K/yr human' }, { value: '24/7', label: 'monitoring' }, { value: '<5 min', label: 'response time' }],
     about: [
       'Theo plugs into Slack, Discord, LinkedIn, your support inbox, and your help desk. He answers common questions from your knowledge base, flags anything ambiguous for human review, posts welcome messages and weekly digests, and tracks sentiment over time.',
-      "He never makes things up — when he doesn't know, he says so and escalates. Every reply is logged, exportable, and reviewable.",
+      "He never makes things up. When he doesn't know, he says so and escalates. Every reply is logged, exportable, and reviewable.",
     ],
     capabilities: [
       { title: 'Multi-channel monitoring', desc: 'Slack, Discord, LinkedIn comments, support inbox.' },
@@ -232,7 +232,7 @@ export const juniors: Agent[] = [
     tagline: "Posts in your communities on a steady weekly cadence, mines research for fresh angles, and rotates insight, story, tip, and mindset formats so your presence never goes quiet.",
     stats: [{ value: '$497/mo', label: 'vs $45K/yr human' }, { value: '48 hrs', label: 'to start' }, { value: '5x', label: 'posts per week' }],
     about: [
-      "Sage plugs into your Slack workspaces, Discord servers, and Circle or Skool communities, pulling approved talking points from a shared Notion content library before drafting each post. It works from a four-format rotation — insight, story, tip, and mindset — so the feed stays varied instead of repetitive, and queues everything for your review before anything goes live.",
+      "Sage plugs into your Slack workspaces, Discord servers, and Circle or Skool communities, pulling approved talking points from a shared Notion content library before drafting each post. It works from a four-format rotation of insight, story, tip, and mindset, so the feed stays varied instead of repetitive, and queues everything for your review before anything goes live.",
       "Sage never DMs members, makes promises, or speaks on pricing without an approved snippet, and it tags any post touching sensitive topics for human sign-off. Every draft lands in a Slack approval channel with the source it was built from, so you always know where a take came from.",
     ],
     capabilities: [
@@ -285,7 +285,7 @@ export const juniors: Agent[] = [
     stats: [{ value: '$497/mo', label: 'vs $45K/yr human' }, { value: '3', label: 'platforms covered' }, { value: '48 hrs', label: 'to start' }],
     about: [
       "Jace drafts platform-native posts for LinkedIn, X, and Facebook, reshaping a single idea to fit each channel's length and tone, then schedules everything through Buffer or your native schedulers on the cadence you set. It pulls source material from your Notion calendar and Scout's research so every queued post traces back to something approved.",
-      "Jace monitors basic engagement — likes, comments, and reach — and flags comments that need a human reply rather than answering on its own. It never posts outside the approved queue or DMs anyone, keeping you in control of anything that carries your name.",
+      "Jace monitors basic engagement (likes, comments, and reach) and flags comments that need a human reply rather than answering on its own. It never posts outside the approved queue or DMs anyone, keeping you in control of anything that carries your name.",
     ],
     capabilities: [
       { title: 'Multi-platform drafts', desc: "Adapts one idea into native posts for LinkedIn, X, and Facebook in the right format each." },
@@ -470,7 +470,7 @@ export const realtorPack: Agent[] = [
     tagline: "Posts new listings and sold announcements, builds weekly market updates, and schedules branded content automatically.",
     stats: [{ value: '$997/mo', label: 'vs $55K/yr human' }, { value: '48 hrs', label: 'to start' }, { value: '7x', label: 'posts per week' }],
     about: [
-      "Lena turns your listing data into branded social posts — just-listed, open house, and just-sold announcements — formatted natively for Instagram, Facebook, and LinkedIn and scheduled through Buffer on a steady cadence. Every week it assembles a local market update from area stats so your feed mixes promotion with genuine value.",
+      "Lena turns your listing data into branded social posts (just-listed, open house, and just-sold announcements) formatted natively for Instagram, Facebook, and LinkedIn and scheduled through Buffer on a steady cadence. Every week it assembles a local market update from area stats so your feed mixes promotion with genuine value.",
       "Lena posts only from your approved branded templates and listing data, never invents a sale or a statistic, and queues everything for your review before it goes live. It keeps your handles consistent and your presence active without you opening an app.",
     ],
     capabilities: [

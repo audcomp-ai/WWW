@@ -40,7 +40,7 @@ export const orchestrator: SteriMaxAgent = {
   rosterDesc: "Hires, manages & reports on the whole team",
   capabilities: [
     { title: "Hires", desc: "The right agent for each workflow, matched to the job rather than forced to fit." },
-    { title: "Wires", desc: "Into your stack — ERP, quality, and regulatory systems, not a parallel tool." },
+    { title: "Wires", desc: "Into your stack: ERP, quality, and regulatory systems, not a parallel tool." },
     { title: "24/7", desc: "Monitors agent health continuously and rebalances model routing to control spend." },
     { title: "Reports", desc: "ROI reported monthly, with every agent's output and cost attributed." },
   ],
@@ -69,7 +69,7 @@ export const sterimaxAgents: SteriMaxAgent[] = [
     headline: "Never miss a reporting window.",
     headlineAccent: "a reporting window.",
     blurb:
-      "David watches the shortage landscape and your inventory continuously, and drafts the mandatory filings before the clock runs out — so FDR compliance stops depending on someone remembering.",
+      "David watches the shortage landscape and your inventory continuously, and drafts the mandatory filings before the clock runs out, so FDR compliance stops depending on someone remembering.",
     rosterDesc: "Monitors shortages, auto-drafts FDR reports",
     capabilities: [
       { title: "Monitors continuously", desc: "Drug Shortages Canada, Health Canada notices, and your inventory positions across 100+ SKUs." },
@@ -101,7 +101,7 @@ export const sterimaxAgents: SteriMaxAgent[] = [
     headline: "See the shortage before it happens.",
     headlineAccent: "before it happens.",
     blurb:
-      "Sam turns shortage response into shortage prevention — modelling demand and supply risk across every SKU so planning decisions are made weeks earlier.",
+      "Sam turns shortage response into shortage prevention, modelling demand and supply risk across every SKU so planning decisions are made weeks earlier.",
     rosterDesc: "Predicts shortages across 100+ SKUs",
     capabilities: [
       { title: "Forecasts demand", desc: "Sales history, seasonality, and channel mix modelled per SKU across the full portfolio." },
@@ -110,7 +110,7 @@ export const sterimaxAgents: SteriMaxAgent[] = [
       { title: "Cues importation", desc: "Surfaces candidates for exceptional-importation planning before supply is critical." },
     ],
     wiresInto: ["ERP & sales history", "supplier lead times", "Drug Shortages Canada", "S&OP reporting"],
-    guardrail: "Proactive, not reactive — the forecast refreshes daily and escalates only what changed.",
+    guardrail: "Proactive, not reactive. The forecast refreshes daily and escalates only what changed.",
     surface: "light",
     liveScript: [
       "Refreshing 30-day supply risk · 104 SKUs scored",
@@ -229,7 +229,7 @@ export const sterimaxAgents: SteriMaxAgent[] = [
     capabilities: [
       { title: "Unifies the data", desc: "Product, regulatory, and customer records reconciled across the pharma, device, and veterinary verticals." },
       { title: "Answers employees", desc: "Staff questions resolved from source documents, with citations back to the original SOP." },
-      { title: "Surfaces SOPs", desc: "The current, approved procedure served in context — not the copy on someone's desktop." },
+      { title: "Surfaces SOPs", desc: "The current, approved procedure served in context, not the copy on someone's desktop." },
       { title: "Retains the integration", desc: "Post-Andone decisions, mappings, and exceptions captured as institutional memory." },
     ],
     wiresInto: ["SharePoint & document stores", "ERP master data", "SOP library", "Andone systems"],
