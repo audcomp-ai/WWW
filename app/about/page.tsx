@@ -169,10 +169,7 @@ export default function AboutPage() {
           <StaggeredSection className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <StaggeredItem>
               <div className="bg-white rounded-2xl border border-slate-200 p-8 h-full">
-                <div className="w-10 h-10 bg-[#0071e3]/10 rounded-xl flex items-center justify-center mb-5">
-                  <svg className="w-5 h-5 text-[#0071e3]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11.42 15.17l-5.04-3a1 1 0 01-.42-.81V5a1 1 0 011-1h10.08a1 1 0 011 1v6.36a1 1 0 01-.42.81l-5.04 3a1 1 0 01-1.16 0z" /></svg>
-                </div>
-                <h3 className="text-lg font-bold text-[#0a2540] mb-3">Bespoke Solutions</h3>
+                <h3 className="text-lg font-semibold text-[#0a2540] mb-3">Bespoke Solutions</h3>
                 <p className="text-slate-500 text-sm leading-relaxed">
                   Audcomp recognizes that no two clients or projects are alike. All of our IT services and solutions are created, executed, and maintained with your unique challenges in mind. We even customize the Audcomp team of specialists and technicians that you work with.
                 </p>
@@ -181,10 +178,7 @@ export default function AboutPage() {
 
             <StaggeredItem>
               <div className="bg-white rounded-2xl border border-slate-200 p-8 h-full">
-                <div className="w-10 h-10 bg-[#0071e3]/10 rounded-xl flex items-center justify-center mb-5">
-                  <svg className="w-5 h-5 text-[#0071e3]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                </div>
-                <h3 className="text-lg font-bold text-[#0a2540] mb-3">People First</h3>
+                <h3 className="text-lg font-semibold text-[#0a2540] mb-3">People First</h3>
                 <p className="text-slate-500 text-sm leading-relaxed">
                   We invest heavily into our staff because our people are our power. We continuously connect our team to resources and opportunities that deepen their expertise. When our people are supported they are more nimble, satisfied, and able to deliver the highest level of service.
                 </p>
@@ -193,10 +187,7 @@ export default function AboutPage() {
 
             <StaggeredItem>
               <div className="bg-white rounded-2xl border border-slate-200 p-8 h-full">
-                <div className="w-10 h-10 bg-[#0071e3]/10 rounded-xl flex items-center justify-center mb-5">
-                  <svg className="w-5 h-5 text-[#0071e3]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
-                </div>
-                <h3 className="text-lg font-bold text-[#0a2540] mb-3">Collaboration</h3>
+                <h3 className="text-lg font-semibold text-[#0a2540] mb-3">Collaboration</h3>
                 <p className="text-slate-500 text-sm leading-relaxed">
                   Navigating the complex and ever-evolving landscape of information technology can be challenging, even if you are an expert. Whether you require a professional staffing solution, complementary services to support your existing team, or IT consulting, Audcomp has you covered.
                 </p>
@@ -205,10 +196,7 @@ export default function AboutPage() {
 
             <StaggeredItem>
               <div className="bg-white rounded-2xl border border-slate-200 p-8 h-full">
-                <div className="w-10 h-10 bg-[#0071e3]/10 rounded-xl flex items-center justify-center mb-5">
-                  <svg className="w-5 h-5 text-[#0071e3]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-                </div>
-                <h3 className="text-lg font-bold text-[#0a2540] mb-3">Partner Agnostic</h3>
+                <h3 className="text-lg font-semibold text-[#0a2540] mb-3">Partner Agnostic</h3>
                 <p className="text-slate-500 text-sm leading-relaxed">
                   Our extensive roster of top-tier IT partners lets your business tap a broad range of proven technologies through a single point of contact. We are equally committed to all of our partners and strategically match their strong capabilities and competencies to your business needs.
                 </p>
