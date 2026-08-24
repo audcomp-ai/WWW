@@ -11,6 +11,13 @@ export const summit = {
   rsvpHref:
     "mailto:sales@audcomp.com?subject=RSVP%3A%20Modern%20Cyber%20Security%20Summit%20%E2%80%94%20September%2022%2C%202026",
   detailHref: "/events/security-summit",
+  calendarHref: "/events/security-summit/calendar.ics",
+  // Machine-readable times for the calendar file, in UTC so no VTIMEZONE block
+  // is needed. September 22 is EDT in Toronto (UTC-4), so the 10:30am
+  // registration above is 14:30Z and the 2pm finish is 18:00Z. If the schedule
+  // string changes, these change with it.
+  startUtc: "20260922T143000Z",
+  endUtc: "20260922T180000Z",
 };
 
 export const agenda = [

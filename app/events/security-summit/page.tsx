@@ -255,6 +255,18 @@ export default function SecuritySummitPage() {
             >
               sales@audcomp.com
             </a>
+            {/* download forces a save rather than the browser trying to render
+                the calendar file inline. */}
+            <a
+              href={summit.calendarHref}
+              download
+              className="inline-flex items-center justify-center gap-2 border border-white/25 text-white/75 hover:text-white hover:border-white/50 font-medium px-8 py-3.5 rounded-full transition-all duration-200 text-sm"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3M3 11h18M5 5h14a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z" />
+              </svg>
+              Add to Calendar
+            </a>
             <a
               href="tel:9053041775"
               className="border border-white/25 text-white/75 hover:text-white hover:border-white/50 font-medium px-8 py-3.5 rounded-full transition-all duration-200 text-sm"

@@ -15,25 +15,25 @@ const subServices = [
     title: "Virtual CIO (vCIO)",
     description: "Your strategic IT partner, expert guidance and tailored IT strategies to optimize technology investments, enhance cybersecurity, and stay competitive.",
     href: "/virtual-cio",
-    category: "Professional",
+    category: "IT Leadership",
   },
   {
     title: "IT Consulting & Design",
     description: "Specialized insights and customized strategies to optimize your investments in technology and strengthen your cybersecurity.",
     href: "/consulting-design",
-    category: "Professional",
+    category: "Architecture",
   },
   {
     title: "Implementation & Migration",
     description: "Your bridge to an efficient IT transformation, handling the complex process of implementing and migrating your IT systems with minimal disruption.",
     href: "/implementation-migration",
-    category: "Professional",
+    category: "Delivery",
   },
   {
     title: "Structured Cabling",
     description: "The backbone of your network infrastructure, we design and implement structured cabling systems that support your evolving technology needs.",
     href: "/structured-cabling",
-    category: "Professional",
+    category: "Infrastructure",
   },
 ];
 
