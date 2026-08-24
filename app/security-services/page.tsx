@@ -95,9 +95,24 @@ export default function SecurityServicesPage() {
           <h2 className="text-3xl font-bold text-white mb-12">The Threat Landscape is Real</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
             {[
-              { stat: "43%", desc: "of cyberattacks target small and medium-sized businesses" },
-              { stat: "$4.5M", desc: "average cost of a data breach in Canada" },
-              { stat: "60%", desc: "of SMBs close within 6 months of a major cyberattack" },
+              // Every figure here is quoted from a named annual report, with the citation
+              // shown on the page. Refresh when the new editions land — DBIR each April,
+              // IBM each July — and replace the number rather than letting it age.
+              // DBIR 2025 SMB Snapshot p6 and p13 (Fig 6, n=645); its SMB cut is <1,000 employees.
+              {
+                stat: "88%",
+                desc: "of breaches at organizations under 1,000 employees involve ransomware — versus 39% at large ones",
+              },
+              // IBM/Ponemon 2026, Canada cut. Reported in CAD, so labelled as such.
+              {
+                stat: "CA$7.11M",
+                desc: "average cost of a data breach in Canada — the highest since the study began",
+              },
+              // IBM/Ponemon 2026, Canada cut. Breach lifecycle = time to identify plus contain.
+              {
+                stat: "205 days",
+                desc: "average time for a Canadian organization to identify and contain a breach",
+              },
             ].map((item) => (
               <div key={item.stat} className="bg-primary/20 rounded-xl p-8 border border-primary/30">
                 <p className="text-4xl font-bold text-white mb-3">{item.stat}</p>
@@ -105,6 +120,27 @@ export default function SecurityServicesPage() {
               </div>
             ))}
           </div>
+          <p className="text-gray-500 text-xs mt-8 leading-relaxed">
+            Sources:{" "}
+            <a
+              href="https://www.verizon.com/business/resources/reports/dbir/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-[#06b6d4] transition-colors"
+            >
+              Verizon 2025 Data Breach Investigations Report, SMB Snapshot
+            </a>
+            {"; "}
+            <a
+              href="https://www.ibm.com/reports/data-breach"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-[#06b6d4] transition-colors"
+            >
+              IBM Cost of a Data Breach Report 2026
+            </a>
+            , Canada, research by Ponemon Institute.
+          </p>
         </div>
       </section>
 
