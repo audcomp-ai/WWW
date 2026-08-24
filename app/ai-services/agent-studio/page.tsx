@@ -23,7 +23,7 @@ function AgentCard({ a, keySuffix }: { a: Agent; keySuffix: string }) {
     <Link
       href={`/ai-services/agent-studio/${a.id}`}
       key={`${a.id}-${keySuffix}`}
-      className="group relative w-72 shrink-0 rounded-[2rem] overflow-hidden border border-white/10 bg-white/5 hover:border-[#0071e3]/40 transition-colors duration-500 block"
+      className="group relative w-72 shrink-0 rounded-[2rem] overflow-hidden border border-slate-200 bg-[#0a2540] hover:border-[#0071e3]/40 transition-colors duration-500 block"
     >
       <div className="relative aspect-[4/5] overflow-hidden">
         <img
@@ -62,8 +62,8 @@ function Marquee({ agents }: { agents: Agent[] }) {
           <AgentCard key={`${a.id}-m${i}`} a={a} keySuffix={`m${i}`} />
         ))}
       </div>
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#071e3d] to-transparent z-10" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#071e3d] to-transparent z-10" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white to-transparent z-10" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white to-transparent z-10" />
     </div>
   );
 }
@@ -82,7 +82,7 @@ function FeaturedAgent({
   works?: React.ReactNode;
 }) {
   return (
-    <div className="bg-white/[0.06] border border-white/10 backdrop-blur-sm rounded-[3rem] overflow-hidden shadow-2xl grid lg:grid-cols-2 mb-12">
+    <div className="bg-[#0a2540] border border-[#0a2540] rounded-[3rem] overflow-hidden shadow-2xl grid lg:grid-cols-2 mb-12">
       <div className="p-8 lg:p-12 flex flex-col justify-center order-2 lg:order-1">
         <span className="inline-flex items-center gap-2 text-[10px] font-semibold uppercase tracking-widest text-[#06b6d4] mb-5">
           <i className="fas fa-star" /> {tag}
@@ -169,22 +169,23 @@ export default function AgentStudioPage() {
         </div>
       </header>
 
-      <div className="max-w-5xl mx-auto px-6 relative z-10 pt-24">
+      <SectionAngle from="#071e3d" to="#ffffff" flip={true} height={64} />
 
-        {/* ── THE DIGITAL WORKFORCE ── */}
-        <section id="workforce" className="mb-32">
+      {/* ── THE DIGITAL WORKFORCE ── */}
+      <section id="workforce" className="bg-white py-24 lg:py-32">
+        <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-14">
-            <span className="text-[10px] font-semibold uppercase tracking-widest text-[#06b6d4] mb-6 block">Meet the Digital Workforce</span>
-            <h2 className="text-4xl lg:text-6xl font-bold tracking-tight text-gradient-studio mb-6 leading-tight">
-              A full team of agents.<br /><span className="italic">One orchestrator.</span>
+            <span className="text-[10px] font-semibold uppercase tracking-widest text-[#0071e3] mb-6 block">Meet the Digital Workforce</span>
+            <h2 className="text-4xl lg:text-6xl font-bold tracking-tight text-[#0a2540] mb-6 leading-tight">
+              A full team of agents.<br />One orchestrator.
             </h2>
-            <p className="text-slate-400 text-lg lg:text-xl font-medium max-w-3xl mx-auto leading-relaxed">
+            <p className="text-slate-600 text-lg lg:text-xl font-medium max-w-3xl mx-auto leading-relaxed">
               Pre-trained specialists for the work you&apos;d otherwise hire for, each one deployable into your stack, hired and managed by Wilfred, and on duty around the clock.
             </p>
           </div>
 
           {/* Wilfred Conductor */}
-          <div className="bg-white/[0.06] border border-white/10 backdrop-blur-sm rounded-[3rem] overflow-hidden shadow-2xl p-8 lg:p-12 mb-16 relative">
+          <div className="bg-[#0a2540] border border-[#0a2540] rounded-[3rem] overflow-hidden shadow-2xl p-8 lg:p-12 mb-16 relative">
             <div className="absolute -top-24 -right-24 w-72 h-72 rounded-full opacity-20 pointer-events-none" style={{ background: "radial-gradient(ellipse, #0071e3 0%, transparent 70%)" }} />
             <div className="relative grid lg:grid-cols-2 gap-10 items-center">
               <div>
@@ -193,7 +194,7 @@ export default function AgentStudioPage() {
                   <span className="text-[10px] font-bold text-[#06b6d4] uppercase tracking-widest">The Orchestrator · Always On</span>
                 </div>
                 <h3 className="text-3xl lg:text-5xl font-bold text-white tracking-tight mb-2">
-                  Meet <span className="text-[#06b6d4] italic">Wilfred.</span>
+                  Meet Wilfred.
                 </h3>
                 <p className="text-[#06b6d4] text-sm font-bold uppercase tracking-widest mb-5">Your AI Workforce Orchestrator</p>
                 <p className="text-slate-400 text-base lg:text-lg font-medium leading-relaxed mb-8">
@@ -272,10 +273,10 @@ export default function AgentStudioPage() {
           <Marquee agents={workforce} />
 
           {/* Custom specialist CTA */}
-          <div className="mt-12 bg-white/[0.04] border border-dashed border-white/15 rounded-3xl p-8 lg:p-10 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+          <div className="mt-12 bg-slate-50 border border-dashed border-slate-300 rounded-3xl p-8 lg:p-10 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
             <div>
-              <h3 className="text-xl font-bold text-white mb-2 tracking-tight">Need a role that isn&apos;t here?</h3>
-              <p className="text-slate-400 text-sm font-medium leading-relaxed max-w-xl">
+              <h3 className="text-xl font-bold text-[#0a2540] mb-2 tracking-tight">Need a role that isn&apos;t here?</h3>
+              <p className="text-slate-600 text-sm font-medium leading-relaxed max-w-xl">
                 Describe the job and Wilfred spins up a new specialist against your spec, wired into your stack and ready to work.
               </p>
             </div>
@@ -283,7 +284,11 @@ export default function AgentStudioPage() {
               Request a custom specialist <i className="fas fa-arrow-right text-[10px]" />
             </Link>
           </div>
-        </section>
+        </div>
+      </section>
+      <SectionAngle from="#ffffff" to="#071e3d" flip={false} height={64} />
+
+      <div className="max-w-5xl mx-auto px-6 relative z-10 pt-24">
 
         {/* ── WHO HIRES WILFRED ── */}
         <section className="mb-32">
@@ -291,7 +296,7 @@ export default function AgentStudioPage() {
             <span className="text-[10px] font-semibold uppercase tracking-widest text-[#06b6d4] mb-6 block">Who hires Wilfred</span>
             <h2 className="text-4xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-tight">
               If you have work that needs doing and a hire you can&apos;t justify yet,{" "}
-              <span className="italic">Wilfred fills that gap.</span>
+              Wilfred fills that gap.
             </h2>
             <p className="text-slate-400 text-lg lg:text-xl font-medium leading-relaxed">
               Four kinds of Canadian SMB owners are quietly running themselves into the ground because they can&apos;t find, afford, or justify the next hire. If any of these sound like your week, we should talk.
@@ -367,7 +372,7 @@ export default function AgentStudioPage() {
               <span className="text-sm">🍁</span> The Canadian Wedge
             </span>
             <h2 className="text-4xl lg:text-6xl font-bold tracking-tight text-[#0a2540] mb-6 leading-tight">
-              Canadian conductor.<br /><span className="text-[#0071e3] italic">Canadian team. Canadian rules.</span>
+              Canadian conductor.<br />Canadian team. Canadian rules.
             </h2>
             <p className="text-slate-600 text-lg lg:text-xl font-medium leading-relaxed">
               Every other AI staffing platform routes your data through US servers. For regulated Canadian businesses, legal, healthcare, financial, dental, government, education, that&apos;s a non-starter. Wilfred is the only AI workforce conductor built end-to-end on Canadian soil.
@@ -413,7 +418,7 @@ export default function AgentStudioPage() {
             <div className="relative">
               <span className="text-[10px] font-semibold uppercase tracking-widest text-[#06b6d4] mb-6 block">Ready when you are</span>
               <h2 className="text-4xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-tight">
-                Tell Wilfred what you need.<br /><span className="italic text-[#06b6d4]">He&apos;ll build the team.</span>
+                Tell Wilfred what you need.<br />He&apos;ll build the team.
               </h2>
               <p className="text-slate-300 text-lg font-medium max-w-2xl mx-auto mb-10">
                 Book a free assessment and we&apos;ll map the right specialists to your work, deployed, supervised, and Canadian-hosted, ready in 48 hours.
@@ -438,7 +443,7 @@ export default function AgentStudioPage() {
           <div className="text-center mb-16">
             <span className="text-[10px] font-semibold uppercase tracking-widest text-[#06b6d4] mb-4 block">Agent Questions</span>
             <h2 className="text-5xl lg:text-7xl font-bold tracking-tight text-white">
-              Frequently <span className="italic text-[#06b6d4]">Asked.</span>
+              Frequently Asked.
             </h2>
           </div>
           <div className="space-y-4">
