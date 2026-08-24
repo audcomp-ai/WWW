@@ -171,48 +171,7 @@ export default function Home() {
         </div>
       </section>
 
-      <SectionAngle from="#071e3d" to="#ffffff" flip={true} height={64} />
-
-      {/* Case Study Callout — white, big image feature */}
-      <section className="bg-white py-24 px-4">
-        <AnimatedSection>
-          <div className="max-w-6xl mx-auto">
-            <div className="relative rounded-3xl overflow-hidden min-h-[420px] flex items-end" style={{ boxShadow: "0 20px 60px rgba(7,30,61,0.12)" }}>
-              {/* Background image */}
-              <img
-                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1400&h=700&auto=format&fit=crop&q=80"
-                alt="Healthcare Cybersecurity"
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-              {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#071e3d]/92 via-[#071e3d]/70 to-[#071e3d]/20" />
-              {/* Content */}
-              <div className="relative z-10 p-10 sm:p-14 max-w-2xl">
-                <span className="inline-flex items-center gap-2 bg-[#06b6d4]/20 border border-[#06b6d4]/40 text-[#06b6d4] text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
-                  Case Study
-                </span>
-                <h3 className="text-3xl sm:text-4xl font-bold text-white mb-5 tracking-tight leading-tight">
-                  Healthcare Cybersecurity Recovery
-                </h3>
-                <p className="text-white/65 leading-relaxed text-base mb-8 max-w-md">
-                  A public-sector healthcare organization hit by a cyberattack in 2024 was fully operational within two weeks, critical services restored within two business days, thanks to Audcomp&apos;s rapid incident response.
-                </p>
-                <Link
-                  href="/case-study"
-                  className="inline-flex items-center gap-2 bg-white text-[#0a2540] font-semibold px-7 py-3 rounded-full transition-all duration-200 text-sm hover:bg-[#f0f7ff] hover:shadow-lg"
-                >
-                  Read the Case Study
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </AnimatedSection>
-      </section>
-
-      <SectionAngle from="#ffffff" to="#f0f7ff" flip={false} height={64} />
+      <SectionAngle from="#071e3d" to="#f0f7ff" flip={false} height={64} />
 
       {/* Latest Insights — light blue */}
       <section className="bg-[#f0f7ff] py-24 px-4">
