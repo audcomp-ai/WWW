@@ -4,7 +4,7 @@ import { Calendar, Clock, Mic, Check, ArrowRight } from "lucide-react";
 import CountUp from "@/components/CountUp";
 import PartnerLogo from "@/components/PartnerLogo";
 import { SectionAngle } from "@/components/SectionAngle";
-import RsvpLink from "./RsvpLink";
+import RsvpLink from "@/components/events/RsvpLink";
 import { AnimatedSection, StaggeredSection, StaggeredItem } from "@/components/AnimatedSection";
 import {
   summit,
