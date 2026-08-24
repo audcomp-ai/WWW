@@ -71,7 +71,7 @@ export const reasonsToAttend = [
 export const summitVendors = [
   { name: "Audcomp", slug: undefined, domain: "audcomp.com", category: "Host" },
   { name: "Field Effect", slug: undefined, domain: "fieldeffect.com", category: "Security Specialists" },
-  { name: "Hornetsecurity", slug: undefined, domain: "hornetsecurity.com", category: "Security Specialists" },
+  { name: "Hornetsecurity", slug: undefined, logo: "/logos/hornetsecurity-mark.webp", category: "Security Specialists" },
 ];
 
 export const cooQuote = {
