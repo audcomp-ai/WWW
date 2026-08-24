@@ -53,10 +53,10 @@ export default function ProfessionalServicesPage() {
       <section className="bg-background py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-foreground mb-6">Consider Audcomp an Extension of Your Team</h2>
-          <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+          <p className="text-muted-foreground text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Our on-demand system engineers have years of experience, without the cost of hiring them full-time. We work alongside your team to pinpoint the real challenges, then recommend and implement the right solution for your needs and budget.
           </p>
-          <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+          <p className="text-muted-foreground text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Audcomp&apos;s Professional Services practice brings over 40 years of experience to every engagement. Whether the project is small or large, or an ongoing relationship, Audcomp delivers with the same professionalism and accountability that defines everything we do.
           </p>
         </div>

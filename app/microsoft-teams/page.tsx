@@ -25,13 +25,13 @@ export default function MicrosoftTeamsPage() {
       <section className="bg-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">Teams, Done Right</h2>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Microsoft Teams has become the hub for modern workplace collaboration, but a poorly configured Teams environment leads to chaos, not clarity. Audcomp's Teams specialists deploy and configure Teams with your organization structure, governance policies, and workflow in mind.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             From initial tenant configuration and channel architecture through SharePoint integration, meeting room systems, and Teams Phone, Audcomp handles every layer of your Teams environment.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto">
             We also provide end-user training to ensure your team actually adopts Teams effectively, because technology only delivers value when people use it.
           </p>
         </div>

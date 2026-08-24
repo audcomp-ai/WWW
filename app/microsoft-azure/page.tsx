@@ -25,10 +25,10 @@ export default function MicrosoftAzurePage() {
       <section className="bg-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">Enterprise Cloud, Canadian Values</h2>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Microsoft Azure gives Canadian businesses enterprise-grade cloud infrastructure, virtual machines, databases, networking, security, and more, on demand and at scale. Audcomp helps you navigate Azure's breadth of services to build exactly the environment your business needs.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             From initial cloud readiness assessments through architecture design, migration, and ongoing management, Audcomp is your Azure partner at every step. We configure Canadian Azure regions to ensure your data stays in Canada.
           </p>
         </div>

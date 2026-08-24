@@ -89,13 +89,13 @@ export default function CaseStudyPage() {
             </span>
           </div>
           <h2 className="text-3xl font-bold text-foreground mb-6">Background</h2>
-          <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+          <p className="text-muted-foreground text-lg leading-relaxed text-justify hyphens-auto mb-6">
             In 2024, a public-sector healthcare organization that had partnered with Audcomp for over a decade suffered a sophisticated cyberattack. The attack crippled internal operations, blocked access to critical patient systems, and threatened to paralyze the organization indefinitely.
           </p>
-          <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+          <p className="text-muted-foreground text-lg leading-relaxed text-justify hyphens-auto mb-6">
             With patient care at risk and regulatory obligations looming, the organization turned to Audcomp for immediate incident response. What followed was a rapid, methodical recovery that became a model for cyber resilience in Canadian healthcare.
           </p>
-          <p className="text-muted-foreground text-lg leading-relaxed">
+          <p className="text-muted-foreground text-lg leading-relaxed text-justify hyphens-auto">
             Because Audcomp had been the organization's primary IT provider for over a decade, our technicians had deep familiarity with the environment, which proved critical in compressing the recovery timeline from weeks to days.
           </p>
         </div>

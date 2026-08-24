@@ -26,13 +26,13 @@ export default function ManagedFirewallPage() {
       <section className="bg-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">Your Firewall Needs More Than Configuration</h2>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             A firewall that was configured three years ago and hasn't been reviewed since is not a security control, it's a false sense of security. Firewall rules accumulate, threat landscapes evolve, and firmware vulnerabilities emerge. Active management is essential.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Audcomp's Managed Firewall service takes complete ownership of your network perimeter security. Our technicians monitor your firewall continuously, respond to alerts, update rules, apply firmware patches, and integrate real-time threat intelligence to keep your perimeter defenses current.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto">
             We work with leading firewall platforms including Fortinet FortiGate, Cisco, SonicWall, and others, keeping your protection strong and current regardless of your existing investment.
           </p>
         </div>

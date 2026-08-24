@@ -25,13 +25,13 @@ export default function VirtualCIOPage() {
       <section className="bg-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">Strategic IT Partnership</h2>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Stop guessing on technology spend. A Virtual CIO keeps every IT investment aligned to your business goals, so you avoid costly missteps and always have a clear roadmap for growth. Most SMBs and mid-market organizations can&apos;t justify a full-time CIO, but they still need that strategic guidance. Audcomp&apos;s Virtual CIO service fills the gap.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Your Audcomp vCIO becomes a trusted member of your leadership team, attending quarterly or semi-annual business reviews, understanding your goals, and translating them into an IT strategy and roadmap that supports growth, resilience, and efficiency.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto">
             Unlike a standard account manager, your vCIO has genuine technical depth and business acumen. They bridge the gap between your business leadership and your IT environment, ensuring technology investments deliver real value.
           </p>
         </div>

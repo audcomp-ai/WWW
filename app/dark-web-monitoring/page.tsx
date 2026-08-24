@@ -33,13 +33,13 @@ export default function DarkWebMonitoringPage() {
           </div>
 
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">The Dark Web Threat Is Real</h2>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Billions of stolen credentials circulate on dark web forums and marketplaces, harvested from data breaches at third-party services your employees use. A password reused from a personal account can grant an attacker access to your corporate systems without triggering a single alert.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Audcomp's Dark Web Monitoring service continuously scans dark web sources, forums, marketplaces, paste sites, and criminal databases, for credentials and sensitive data associated with your organization's domains and email addresses.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto">
             When we find a match, you're immediately notified so the affected credentials can be changed before an attacker attempts to use them. Prevention instead of reaction.
           </p>
         </div>

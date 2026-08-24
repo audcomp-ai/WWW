@@ -25,13 +25,13 @@ export default function ImplementationMigrationPage() {
       <section className="bg-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">Execution You Can Rely On</h2>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             The gap between a great technology plan and a successful deployment is execution, and that&apos;s where most projects stall. Audcomp&apos;s implementation team has delivered complex IT projects across healthcare, government, manufacturing, and enterprise, with a track record of on-time, on-budget delivery and minimal disruption to operations.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             From server and storage deployments to cloud migrations, WiFi redesigns, and full data center transformations, Audcomp brings structured project management, deep technical expertise, and a commitment to minimizing disruption to your operations.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto">
             Every project includes detailed planning, risk assessment, testing protocols, and post-implementation support, ensuring your new environment is stable before Audcomp steps back.
           </p>
         </div>

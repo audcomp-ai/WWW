@@ -25,13 +25,13 @@ export default function StructuredCablingPage() {
       <section className="bg-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">The Foundation of Your Network</h2>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Even the most sophisticated network equipment performs poorly on a poorly designed cabling infrastructure. Structured cabling done right means consistent performance, easy troubleshooting, room for growth, and a clean, documented installation that any technician can understand.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Audcomp's cabling team designs and installs structured cabling systems for offices, multi-floor facilities, data centers, and industrial environments. Every installation follows industry standards (TIA-568) and is fully documented and tested before handover.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto">
             Whether you're cabling a new office, upgrading an aging Cat5e plant to Cat6A, or designing a data center patch room, Audcomp delivers a clean, reliable, documented result.
           </p>
         </div>

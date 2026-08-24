@@ -28,13 +28,13 @@ export default function EndpointProtectionPage() {
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">
             Audcomp Guarded Services (AGS)
           </h2>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             When ransomware or a zero-day attack lands on a device, the real cost is downtime, locked files, halted operations, and days spent rebuilding. AGS, Audcomp Guarded Services, is Audcomp&apos;s branded endpoint security platform, built to stop that at the source. Using next-generation antivirus and behavioral AI, it detects and contains threats that signature-based antivirus tools miss.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Every device in your organization, laptops, desktops, servers, is continuously monitored for suspicious behavior. When a threat is detected, AGS contains it automatically and alerts Audcomp&apos;s security team for investigation and remediation, 24/7.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto">
             AGS is deployed and managed by Audcomp&apos;s Canadian security team, so you get enterprise-grade endpoint protection without adding headcount or managing it internally.
           </p>
         </div>

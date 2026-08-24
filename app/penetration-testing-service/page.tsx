@@ -26,10 +26,10 @@ export default function PenetrationTestingServicePage() {
       <section className="bg-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">Continuous Security Validation</h2>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             A single annual penetration test doesn't reflect the reality of today's threat landscape, your environment changes constantly, and so do attacker techniques. Audcomp's penetration testing service provides continuous security validation with up to 4 tests per year, ensuring your defenses remain effective as your environment evolves.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Our SaaS-based testing platform combines automated scanning with manual exploitation techniques, delivering depth that automated tools alone cannot achieve. Every test is led by a certified penetration tester who understands both the technical and business context of your environment.
           </p>
         </div>

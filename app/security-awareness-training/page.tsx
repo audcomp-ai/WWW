@@ -26,13 +26,13 @@ export default function SecurityAwarenessTrainingPage() {
       <section className="bg-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">The Human Firewall</h2>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Over 90% of successful cyberattacks begin with a phishing email. No amount of technical security controls can fully compensate for an employee who clicks a malicious link or provides credentials to a spoofed website. Security awareness training is the single most effective control against social engineering attacks.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Audcomp's Security Awareness Training program is led by experienced cybersecurity professionals, not a software platform with automated videos. Our training is relevant, engaging, and tailored to the threats your organization actually faces.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto">
             We combine instructor-led sessions with simulated phishing campaigns, micro-learning content, and regular testing to build lasting security habits across your organization, with click rates tracked over the course of the program.
           </p>
         </div>

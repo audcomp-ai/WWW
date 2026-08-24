@@ -59,13 +59,13 @@ export default function OurStoryPage() {
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">
             A Partner Born from Principle
           </h2>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             In 1986, Gary Sohal founded Audcomp with a conviction that would define the company for generations: businesses deserve a technology partner they can genuinely trust. Not a vendor who disappears after the sale. Not a helpdesk that reads from a script. A partner.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             That philosophy turned a small startup into the largest Managed Service Provider in the Hamilton and Ancaster region. Today, Audcomp is recognized as a top-25 CDN Solutions Provider, a designation earned through results, not marketing.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto">
             Through every technological shift, from on-premise servers to the cloud, from basic networking to AI, Audcomp's north star has remained the same: help clients operate confidently and efficiently, with technology that works the way their business needs it to. Every technician is based in Canada.
           </p>
         </div>

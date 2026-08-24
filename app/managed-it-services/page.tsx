@@ -73,10 +73,10 @@ export default function ManagedITServicesPage() {
       <section className="bg-background py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-foreground mb-6">Your IT. Fully Managed. Fully Canadian.</h2>
-          <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+          <p className="text-muted-foreground text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Our Managed IT Services allow you to store your data, secure your network, and optimize your IT, while reducing your costs, maximizing your uptime, and increasing your productivity. Our team of technicians in Canada monitors your environment around the clock, resolving issues before they become outages.
           </p>
-          <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+          <p className="text-muted-foreground text-lg leading-relaxed text-justify hyphens-auto mb-6">
             From end-user support and network management to disaster recovery and hardware procurement, Audcomp provides a complete managed IT program tailored to your size, industry, and budget. We serve SMBs, enterprise organizations, municipalities, universities, healthcare providers, and school boards across Hamilton, Burlington, Oakville, London, Niagara, and beyond.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-10">

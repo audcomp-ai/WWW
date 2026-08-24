@@ -25,10 +25,10 @@ export default function ITProcurementPage() {
       <section className="bg-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">Strategic Procurement. Trusted Partners.</h2>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Pay less, wait less, and reach support that actually answers. Audcomp&apos;s direct partnerships with the world&apos;s leading technology manufacturers, built over 40 years, give clients enterprise pricing, expedited shipping, and manufacturer support channels unavailable through retail purchasing.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto">
             Our procurement team works closely with your team to identify the right solutions for your environment, budget, and growth plans. We don't upsell. We recommend what fits.
           </p>
         </div>

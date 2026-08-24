@@ -28,13 +28,13 @@ export default function SOCMDRPage() {
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">
             A Full Security Team, Without the Overhead
           </h2>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Building and staffing an internal Security Operations Centre requires specialized talent, expensive tooling, and 24/7 coverage, resources most Canadian organizations simply don't have. Audcomp's SOC gives you all of that on a managed basis.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Our Managed Detection and Response (MDR) service continuously monitors your environment for threats, across endpoints, networks, cloud, and email. When a threat is detected, our analysts investigate, contain, and remediate, around the clock, every day of the year.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto">
             This isn&apos;t theory. In 2024, Audcomp recovered a public-sector healthcare organization from an active cyberattack, restoring critical services within two business days and returning it to full operation within two weeks. That real-world incident response experience informs how we monitor, what we look for, and how fast we act.
           </p>
         </div>

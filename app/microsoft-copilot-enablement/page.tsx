@@ -25,13 +25,13 @@ export default function MicrosoftCopilotPage() {
       <section className="bg-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">Microsoft Copilot, Done Right</h2>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Microsoft Copilot brings AI capabilities directly into the tools your team already uses, Word, Excel, PowerPoint, Teams, Outlook, and more. But getting value from it requires more than just purchasing a license. Proper configuration, security settings, and user adoption are essential.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Audcomp's Microsoft Copilot Enablement program guides your organization through every stage, from readiness assessment through deployment, training, and ongoing optimization. We ensure Copilot is configured securely, your data is protected, and your team knows how to use it effectively.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto">
             As a Microsoft partner with deep Microsoft 365 and Azure expertise, and a team of technicians in Canada, Audcomp integrates Copilot into your existing environment with minimal disruption and measurable results.
           </p>
         </div>

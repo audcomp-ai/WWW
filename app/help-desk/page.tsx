@@ -25,10 +25,10 @@ export default function HelpDeskPage() {
       <section className="bg-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">Support When You Need It Most</h2>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Audcomp&apos;s Help Desk is staffed by certified Canadian IT professionals available 24 hours a day, 7 days a week. Whether your team needs help with a software issue at 2pm or a network problem at 2am, we&apos;re one call away.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto">
             Our Help Desk doesn't read from scripts. Our technicians diagnose, solve, and document, efficiently and thoroughly. From routine password resets to complex malware removal, every request is treated with urgency and expertise.
           </p>
         </div>

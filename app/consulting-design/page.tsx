@@ -25,13 +25,13 @@ export default function ConsultingDesignPage() {
       <section className="bg-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">Clarity Before Commitment</h2>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             A technology decision made without proper assessment can cost you for years, the wrong platform, a misaligned architecture, or a security gap that surfaces at the worst possible time. Audcomp&apos;s IT Consulting and Design service gives you the clarity to commit budget and resources with confidence.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Our consultants conduct comprehensive technical assessments of your existing environment, identify risks and inefficiencies, and design solutions that align with your business objectives, budget, and growth trajectory.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto">
             Whether you're planning a network refresh, evaluating a cloud migration, or simply trying to understand the state of your IT environment, Audcomp's consulting team delivers the answers you need.
           </p>
         </div>

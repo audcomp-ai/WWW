@@ -25,10 +25,10 @@ export default function Office365Page() {
       <section className="bg-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">More Than Just Email</h2>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Microsoft 365 is the backbone of modern business productivity. Audcomp helps you get its full value, from Exchange Online and SharePoint to Teams, OneDrive, and the full suite of Microsoft apps, with proper configuration, security hardening, and ongoing management.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto">
             Whether you're migrating from an on-premise Exchange server, moving from Google Workspace, or deploying Microsoft 365 for the first time, Audcomp's migration team ensures zero-downtime transitions with no data loss.
           </p>
         </div>

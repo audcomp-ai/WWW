@@ -25,13 +25,13 @@ export default function DaaSPage() {
       <section className="bg-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">Eliminate Hardware Complexity</h2>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Device as a Service (DaaS) from Audcomp replaces the traditional hardware procurement and management model with a simple, scalable subscription. Instead of capital expenditure on hardware followed by years of internal management, DaaS puts Audcomp in charge of the full device lifecycle on your behalf.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Every device arrives configured, secured, and ready to deploy. When a team member leaves, their device is recovered, wiped, and redeployed. When a device fails, it's replaced, with minimal disruption and no surprise costs.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto">
             DaaS works for organizations of all sizes. Whether you're onboarding five new employees or standing up a new office, Audcomp's DaaS program scales with you.
           </p>
         </div>

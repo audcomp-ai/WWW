@@ -34,13 +34,13 @@ export default function ManagedITSupportPage() {
       <section className="bg-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">IT Support That Never Sleeps</h2>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Audcomp's Managed IT Support program provides the full spectrum of day-to-day IT management your business needs. Our technicians become an extension of your team, deeply familiar with your environment, your users, and your business goals.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Unlike break-fix providers that only show up once something is already broken, Audcomp works ahead of problems. We monitor your infrastructure continuously, resolve potential issues before they escalate, and keep your systems patched and optimized.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto">
             Every Audcomp technician is based in Canada. Your data, your support calls, and your account management never leave Canadian hands.
           </p>
         </div>

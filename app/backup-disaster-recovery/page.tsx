@@ -27,13 +27,13 @@ export default function BackupDisasterRecoveryPage() {
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">
             ABS, Audcomp Backup Services
           </h2>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Audcomp Backup Services (ABS) provides enterprise-grade, cloud-based backup and disaster recovery for businesses of all sizes. Whether you need to recover from a ransomware attack, hardware failure, or accidental deletion, ABS restores your data up to 5x faster than traditional solutions.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Our AES-256 encryption protects your data both in transit and at rest. Continuous automated backups run in the background without impacting performance, and our flexible retention policies keep your data for up to 7 years to meet compliance requirements.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto">
             All ABS data is stored in Canadian data centers. Your data never crosses the border.
           </p>
         </div>

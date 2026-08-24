@@ -25,10 +25,10 @@ export default function Office365BackupPage() {
       <section className="bg-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">Your Microsoft 365 Data Is Not Backed Up</h2>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Many organizations assume Microsoft backs up their Microsoft 365 data. They don't, not in the way most businesses need. Microsoft's shared responsibility model places data protection squarely in your court. Accidental deletion, ransomware, or a departed employee can result in permanent data loss if you don't have independent backup in place.
           </p>
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
+          <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Audcomp's Office 365 Backup solution protects your Exchange Online, SharePoint, OneDrive, and Teams data with AES-256 encryption, continuous automated backups, and recovery that's up to 5x faster than standard restore methods.
           </p>
         </div>
