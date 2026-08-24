@@ -97,7 +97,7 @@ export default async function LocalItSupportPage({ params }: Props) {
               Local Accountability.<br />National Scale.
             </h2>
             <p className="text-slate-500 text-lg leading-relaxed mb-6">
-              Unlike global providers that route your support tickets overseas, Audcomp gives {cityName} businesses the best of both worlds: the resources of a Top 25 CDN Solutions Provider, powered by a Canadian engineering team.
+              Unlike global providers that route your support tickets overseas, Audcomp gives {cityName} businesses the best of both worlds: the resources of a Top 25 CDN Solutions Provider, powered by technicians in Canada.
             </p>
             <p className="text-slate-500 text-lg leading-relaxed">
               When your network goes down, you need a partner who understands your business environment and can respond immediately. Our local presence ensures you get the rapid, accountable support your operations demand.
