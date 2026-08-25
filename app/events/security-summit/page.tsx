@@ -4,7 +4,6 @@ import { Calendar, Clock, Mic, Check, ArrowRight } from "lucide-react";
 import CountUp from "@/components/CountUp";
 import PartnerLogo from "@/components/PartnerLogo";
 import { SectionAngle } from "@/components/SectionAngle";
-import RsvpLink from "@/components/events/RsvpLink";
 import { AnimatedSection, StaggeredSection, StaggeredItem } from "@/components/AnimatedSection";
 import {
   summit,
@@ -69,14 +68,15 @@ export default function SecuritySummitPage() {
               in the RSVP section 84% of the way down a 4,700px page, so anyone
               deciding at the top never saw it. */}
           <div className="flex flex-col sm:flex-row items-center gap-4">
-            <RsvpLink
+            <a
               href={summit.rsvpHref}
-              calendarHref={summit.calendarHref}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#0071e3] hover:bg-[#0077ed] text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(0,113,227,0.3)] hover:shadow-[0_0_30px_rgba(0,113,227,0.5)] hover:-translate-y-1"
             >
               RSVP Today
               <ArrowRight className="w-4 h-4" />
-            </RsvpLink>
+            </a>
             <a
               href={summit.calendarHref}
               download
@@ -261,16 +261,22 @@ export default function SecuritySummitPage() {
             {summit.date} · {summit.schedule}
           </p>
           <p className="text-white/55 text-lg mb-12 leading-relaxed max-w-xl mx-auto">
-            Contact your dedicated Account Manager today to reserve your seat.
+            Reserve your seat online, or contact your dedicated Account Manager
+            at{" "}
+            <a href={summit.mailtoHref} className="text-[#38bdf8] hover:underline">
+              sales@audcomp.com
+            </a>
+            .
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <RsvpLink
+            <a
               href={summit.rsvpHref}
-              calendarHref={summit.calendarHref}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-[#0071e3] hover:bg-[#0077ed] text-white font-medium px-8 py-3.5 rounded-full transition-colors duration-200 text-sm"
             >
-              sales@audcomp.com
-            </RsvpLink>
+              Register Online
+            </a>
             {/* download forces a save rather than the browser trying to render
                 the calendar file inline. */}
             <a

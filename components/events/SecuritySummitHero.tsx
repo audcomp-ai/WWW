@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Calendar, Clock, Mic, ArrowRight } from "lucide-react";
 import { summit, agenda } from "@/data/security-summit";
-import RsvpLink from "./RsvpLink";
 
 // Rendered statically, like components/Hero.tsx. This is above-the-fold content,
 // so it must not be gated behind a JS entrance animation — the global
@@ -48,16 +47,18 @@ export default function SecuritySummitHero() {
             </p>
 
             <div className="flex flex-wrap gap-4 mb-10">
-              {/* Same behaviour as the detail page: RSVP opens the mail draft
-                  and hands over the calendar file in the same click. */}
-              <RsvpLink
+              {/* Registration lives on RSVPify, so this leaves the site. New
+                  tab, because the summit page is what someone comes back to
+                  once the form is submitted. */}
+              <a
                 href={summit.rsvpHref}
-                calendarHref={summit.calendarHref}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-[#0071e3] hover:bg-[#0077ed] text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(0,113,227,0.3)] hover:shadow-[0_0_30px_rgba(0,113,227,0.5)] hover:-translate-y-1 flex items-center gap-2"
               >
                 RSVP Today
                 <ArrowRight className="w-4 h-4" />
-              </RsvpLink>
+              </a>
               <a
                 href={summit.calendarHref}
                 download
@@ -129,7 +130,7 @@ export default function SecuritySummitHero() {
               </p>
               <p className="text-white/55 text-xs mt-3">
                 Contact your dedicated Account Manager to RSVP, or email{" "}
-                <a href={summit.rsvpHref} className="text-[#38bdf8] hover:underline">
+                <a href={summit.mailtoHref} className="text-[#38bdf8] hover:underline">
                   sales@audcomp.com
                 </a>
               </p>

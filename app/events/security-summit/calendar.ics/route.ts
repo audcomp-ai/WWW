@@ -36,7 +36,7 @@ export const dynamic = "force-static";
 
 export function GET() {
   const name = `${summit.title} Summit`;
-  const description = `${summit.tagline}. ${summit.schedule}. RSVP with your Audcomp account manager at sales@audcomp.com or 905-304-1775.`;
+  const description = `${summit.tagline}. ${summit.schedule}. RSVP at ${summit.rsvpHref}, or with your Audcomp account manager at sales@audcomp.com or 905-304-1775.`;
 
   const lines = [
     "BEGIN:VCALENDAR",

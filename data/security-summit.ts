@@ -8,7 +8,11 @@ export const summit = {
   dateShort: "Sept 22, 2026",
   schedule: "10:30am Reg. · Keynote 11am · Ends 2pm",
   speakerCount: 4,
-  rsvpHref:
+  // Registration is handled by RSVPify, not by us — the buttons hand off to it.
+  rsvpHref: "https://audcompsecuritysummit2026.rsvpify.com",
+  // Still offered alongside it, for anyone who would rather write to their
+  // Account Manager than fill in a form.
+  mailtoHref:
     "mailto:sales@audcomp.com?subject=RSVP%3A%20Modern%20Cyber%20Security%20Summit%20%E2%80%94%20September%2022%2C%202026",
   detailHref: "/events/security-summit",
   calendarHref: "/events/security-summit/calendar.ics",
