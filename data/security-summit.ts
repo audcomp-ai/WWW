@@ -8,6 +8,9 @@ export const summit = {
   dateShort: "Sept 22, 2026",
   schedule: "10:30am Reg. · Keynote 11am · Ends 2pm",
   speakerCount: 4,
+  // "Golf and Country Club" is how the other four event pages write it, so it
+  // stays that way here rather than switching to an ampersand.
+  venue: "Hamilton Golf and Country Club, Ancaster",
   // Registration is handled by RSVPify, not by us — the buttons hand off to it.
   rsvpHref: "https://audcompsecuritysummit2026.rsvpify.com",
   // Still offered alongside it, for anyone who would rather write to their

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Calendar, Clock, Mic, Check, ArrowRight } from "lucide-react";
+import { Calendar, Clock, Mic, MapPin, Check, ArrowRight } from "lucide-react";
 import CountUp from "@/components/CountUp";
 import PartnerLogo from "@/components/PartnerLogo";
 import { SectionAngle } from "@/components/SectionAngle";
@@ -61,6 +61,9 @@ export default function SecuritySummitPage() {
             </span>
             <span className="inline-flex items-center gap-2">
               <Mic className="w-4 h-4 text-[#06b6d4]" /> {summit.speakerCount} speakers
+            </span>
+            <span className="inline-flex items-center gap-2">
+              <MapPin className="w-4 h-4 text-[#06b6d4]" /> {summit.venue}
             </span>
           </div>
 
