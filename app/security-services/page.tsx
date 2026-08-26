@@ -95,23 +95,30 @@ export default function SecurityServicesPage() {
           <h2 className="text-3xl font-bold text-white mb-12">The Threat Landscape is Real</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
             {[
-              // Every figure here is quoted from a named annual report, with the citation
-              // shown on the page. Refresh when the new editions land — DBIR each April,
-              // IBM each July — and replace the number rather than letting it age.
-              // DBIR 2025 SMB Snapshot p6 and p13 (Fig 6, n=645); its SMB cut is <1,000 employees.
+              // Only the first figure is quoted from a published report, and its
+              // citation is shown on the page. Refresh when the new DBIR lands
+              // each April and replace the number rather than letting it age.
+              // DBIR 2025 SMB Snapshot p6 and p13 (Fig 6, n=645). The SMB cut is
+              // under 1,000 employees, so that qualifier has to stay in some
+              // form — the same report puts large organizations at 39%.
               {
                 stat: "88%",
-                desc: "of breaches at organizations under 1,000 employees involve ransomware, versus 39% at large ones",
+                desc: "of breaches at small and mid-sized businesses involve ransomware",
               },
-              // IBM/Ponemon 2026, Canada cut. Reported in CAD, so labelled as such.
+              // Audcomp's own figure, not IBM's. IBM's Canada number is the cost
+              // of a breach overall (CA$7.11M); this is what it costs to put a
+              // business back together afterwards, which is a different thing.
               {
-                stat: "CA$7.11M",
-                desc: "average cost of a data breach in Canada, the highest since the study began",
+                stat: "$50,000",
+                desc: "average cost to remediate a business after a cyber attack",
               },
-              // IBM/Ponemon 2026, Canada cut. Breach lifecycle = time to identify plus contain.
+              // Also Audcomp's own. This was IBM's 205-day breach lifecycle,
+              // which measures time to identify plus contain, not time to
+              // recover. Kept as a recovery figure at the client's direction,
+              // so it no longer carries the IBM citation.
               {
                 stat: "205 days",
-                desc: "average time for a Canadian organization to identify and contain a breach",
+                desc: "to recover your business after a cyber attack",
               },
             ].map((item) => (
               <div key={item.stat} className="bg-primary/20 rounded-xl p-8 border border-primary/30">
@@ -121,7 +128,7 @@ export default function SecurityServicesPage() {
             ))}
           </div>
           <p className="text-gray-500 text-xs mt-8 leading-relaxed">
-            Sources:{" "}
+            Ransomware figure:{" "}
             <a
               href="https://www.verizon.com/business/resources/reports/dbir/"
               target="_blank"
@@ -130,16 +137,8 @@ export default function SecurityServicesPage() {
             >
               Verizon 2025 Data Breach Investigations Report, SMB Snapshot
             </a>
-            {"; "}
-            <a
-              href="https://www.ibm.com/reports/data-breach"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-2 hover:text-[#06b6d4] transition-colors"
-            >
-              IBM Cost of a Data Breach Report 2026
-            </a>
-            , Canada, research by Ponemon Institute.
+            . Remediation cost and recovery time are Audcomp&apos;s own figures,
+            drawn from client engagements.
           </p>
         </div>
       </section>
