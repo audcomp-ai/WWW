@@ -76,6 +76,10 @@ const EDGE_VIGNETTE =
   "absolute inset-0 " +
   "bg-[radial-gradient(ellipse_88%_82%_at_50%_50%,transparent_48%,rgba(7,30,61,0.88)_100%)]";
 
+// How long each slide holds before the carousel moves on. The 0.7s crossfade
+// runs inside this, so the still time is shorter than the number reads.
+const SLIDE_MS = 3000;
+
 // Category links per row on the brand slide; the rest centre on line two.
 const BRAND_ROW_BREAK = 4;
 
@@ -124,7 +128,7 @@ export default function HeroCarousel() {
   const startInterval = () => {
     intervalRef.current = setInterval(() => {
       setActive((prev) => (prev + 1) % slides.length);
-    }, 5000);
+    }, SLIDE_MS);
   };
 
   const clearCurrentInterval = () => {
