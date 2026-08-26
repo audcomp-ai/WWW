@@ -66,7 +66,7 @@ export default function EventsPage() {
               </div>
               <p className="text-xs font-semibold text-[#0071e3] uppercase tracking-widest">Upcoming</p>
             </div>
-            <h2 className="text-4xl font-bold text-[#0a2540] tracking-tight">
+            <h2 className="text-3xl font-bold text-foreground">
               Virtual Events & Webinars
             </h2>
           </AnimatedSection>

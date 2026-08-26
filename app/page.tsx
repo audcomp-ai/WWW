@@ -132,7 +132,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <AnimatedSection className="text-center mb-16">
             <p className="text-xs font-semibold text-[#06b6d4] uppercase tracking-widest mb-4">Our Services</p>
-            <h2 className="text-4xl sm:text-5xl font-bold text-[#0a2540] mb-5 tracking-tight">
+            <h2 className="text-3xl font-bold text-foreground mb-5">
               Comprehensive IT Solutions
             </h2>
             <p className="text-slate-500 text-lg max-w-2xl mx-auto leading-relaxed">
@@ -156,7 +156,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <AnimatedSection className="text-center mb-16">
             <p className="text-xs font-semibold text-[#06b6d4] uppercase tracking-widest mb-4">Client Stories</p>
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-5 tracking-tight">
+            <h2 className="text-3xl font-bold text-white mb-5">
               What Our Clients Say
             </h2>
             <p className="text-white/45 text-base">

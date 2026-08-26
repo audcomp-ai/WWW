@@ -166,7 +166,7 @@ export default function IndustriesPage() {
       <section className="bg-[#f0f7ff] py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <AnimatedSection className="text-center mb-14">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#0a2540] tracking-tight">
+            <h2 className="text-3xl font-bold text-foreground">
               Six Sectors. One Canadian IT Partner.
             </h2>
             <p className="text-slate-500 mt-4 max-w-xl mx-auto">
@@ -234,7 +234,7 @@ export default function IndustriesPage() {
                   <p className="text-xs font-semibold text-[#06b6d4] uppercase tracking-widest mb-3">
                     {ind.label}
                   </p>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-[#0a2540] tracking-tight leading-tight mb-4">
+                  <h2 className="text-3xl font-bold text-foreground leading-tight mb-4">
                     {ind.tagline}
                   </h2>
                   <p className="text-slate-500 leading-relaxed mb-6 text-[15px]">

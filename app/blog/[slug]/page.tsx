@@ -65,7 +65,7 @@ export default async function BlogPostPage({
           <h1 className="text-4xl sm:text-5xl font-bold text-white tracking-tight mb-6 leading-tight">
             {post.title}
           </h1>
-          <p className="text-white/55 text-lg leading-relaxed">{post.excerpt}</p>
+          <p className="text-white/55 text-lg leading-relaxed text-justify hyphens-auto">{post.excerpt}</p>
         </div>
       </section>
 
@@ -83,11 +83,11 @@ export default async function BlogPostPage({
             />
           </div>
 
-          <p className="text-slate-600 text-lg leading-relaxed mb-10">{post.intro}</p>
+          <p className="text-slate-600 text-lg leading-relaxed text-justify hyphens-auto mb-10">{post.intro}</p>
 
           {post.sections.map((section) => (
             <section key={section.heading} className="mb-10">
-              <h2 className="text-2xl font-bold text-[#0a2540] tracking-tight mb-4">
+              <h2 className="text-3xl font-bold text-foreground mb-4">
                 {section.heading}
               </h2>
               {section.paras.map((para, i) => (

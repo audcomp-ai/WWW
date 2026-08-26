@@ -45,7 +45,7 @@ export default function MeetTheMoment2024Page() {
           <p className="text-xs font-semibold text-[#06b6d4] uppercase tracking-widest mb-4">
             From the Room
           </p>
-          <h2 className="text-4xl sm:text-5xl font-bold text-[#0a2540] mb-5 tracking-tight">
+          <h2 className="text-3xl font-bold text-foreground mb-5">
             Moments from 2024
           </h2>
           <p className="text-slate-500 text-lg max-w-2xl mx-auto leading-relaxed">

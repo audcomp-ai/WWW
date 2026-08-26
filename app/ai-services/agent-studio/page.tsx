@@ -176,7 +176,7 @@ export default function AgentStudioPage() {
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-14">
             <span className="text-[10px] font-semibold uppercase tracking-widest text-[#0071e3] mb-6 block">Meet the Digital Workforce</span>
-            <h2 className="text-4xl lg:text-6xl font-bold tracking-tight text-[#0a2540] mb-6 leading-tight">
+            <h2 className="text-3xl font-bold text-foreground mb-6 leading-tight">
               A full team of agents.<br />One orchestrator.
             </h2>
             <p className="text-slate-600 text-lg lg:text-xl font-medium max-w-3xl mx-auto leading-relaxed">
@@ -294,7 +294,7 @@ export default function AgentStudioPage() {
         <section className="mb-32">
           <div className="text-center mb-16 max-w-4xl mx-auto">
             <span className="text-[10px] font-semibold uppercase tracking-widest text-[#06b6d4] mb-6 block">Who hires Wilfred</span>
-            <h2 className="text-4xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-tight">
+            <h2 className="text-3xl font-bold text-white mb-6 leading-tight">
               If you have work that needs doing and a hire you can&apos;t justify yet,{" "}
               Wilfred fills that gap.
             </h2>
@@ -371,7 +371,7 @@ export default function AgentStudioPage() {
             <span className="inline-flex items-center gap-2 text-[10px] font-semibold uppercase tracking-widest text-[#0071e3] mb-6">
               <span className="text-sm">🍁</span> The Canadian Wedge
             </span>
-            <h2 className="text-4xl lg:text-6xl font-bold tracking-tight text-[#0a2540] mb-6 leading-tight">
+            <h2 className="text-3xl font-bold text-foreground mb-6 leading-tight">
               Canadian conductor.<br />Canadian team. Canadian rules.
             </h2>
             <p className="text-slate-600 text-lg lg:text-xl font-medium leading-relaxed">
@@ -417,7 +417,7 @@ export default function AgentStudioPage() {
             <div className="absolute -bottom-24 -left-24 w-72 h-72 rounded-full opacity-20 pointer-events-none" style={{ background: "radial-gradient(ellipse, #0071e3 0%, transparent 70%)" }} />
             <div className="relative">
               <span className="text-[10px] font-semibold uppercase tracking-widest text-[#06b6d4] mb-6 block">Ready when you are</span>
-              <h2 className="text-4xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-tight">
+              <h2 className="text-3xl font-bold text-white mb-6 leading-tight">
                 Tell Wilfred what you need.<br />He&apos;ll build the team.
               </h2>
               <p className="text-slate-300 text-lg font-medium max-w-2xl mx-auto mb-10">
@@ -442,7 +442,7 @@ export default function AgentStudioPage() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <span className="text-[10px] font-semibold uppercase tracking-widest text-[#06b6d4] mb-4 block">Agent Questions</span>
-            <h2 className="text-5xl lg:text-7xl font-bold tracking-tight text-white">
+            <h2 className="text-3xl font-bold text-white">
               Frequently Asked.
             </h2>
           </div>

@@ -56,7 +56,7 @@ export default function OurStoryPage() {
       {/* Founder Section */}
       <section className="bg-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">
+          <h2 className="text-3xl font-bold text-foreground mb-6">
             A Partner Born from Principle
           </h2>
           <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
@@ -76,7 +76,7 @@ export default function OurStoryPage() {
       {/* Timeline */}
       <section className="bg-[#e8f0fe] py-20 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-12 text-center">
+          <h2 className="text-3xl font-bold text-foreground mb-12 text-center">
             Our Journey
           </h2>
           <div className="relative">
@@ -103,7 +103,7 @@ export default function OurStoryPage() {
       {/* Values */}
       <section className="bg-white py-20 px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-12 text-center">
+          <h2 className="text-3xl font-bold text-foreground mb-12 text-center">
             What We Stand For
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

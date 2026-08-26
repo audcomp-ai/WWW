@@ -56,13 +56,13 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto">
           <AnimatedSection>
             <p className="text-xs font-semibold text-[#0071e3] uppercase tracking-widest mb-5">Our Mission</p>
-            <h2 className="text-4xl sm:text-5xl font-bold text-[#0a2540] mb-8 tracking-tight leading-tight">
+            <h2 className="text-3xl font-bold text-foreground mb-8 leading-tight">
               More Than IT Support.<br />A True Business Partner.
             </h2>
-            <p className="text-slate-500 text-lg leading-relaxed mb-6">
+            <p className="text-slate-500 text-lg leading-relaxed text-justify hyphens-auto mb-6">
               Our mission is to help businesses operate confidently and more efficiently by providing tailored IT services. Our team of dedicated professionals is committed to developing and implementing reliable, cost-effective services for businesses of all sizes, no matter the scope of the need.
             </p>
-            <p className="text-slate-500 text-lg leading-relaxed">
+            <p className="text-slate-500 text-lg leading-relaxed text-justify hyphens-auto">
               We are more than a service provider. We are your partner. That philosophy has guided every client relationship since Gary Sohal founded Audcomp in 1986.
             </p>
           </AnimatedSection>
@@ -77,7 +77,7 @@ export default function AboutPage() {
         <div className="max-w-3xl mx-auto">
           <AnimatedSection delay={0}>
             <p className="text-xs font-semibold text-[#06b6d4] uppercase tracking-widest mb-5">Our Story</p>
-            <h2 className="text-4xl font-bold text-white mb-6 tracking-tight leading-tight">
+            <h2 className="text-3xl font-bold text-white mb-6 leading-tight">
               From Startup to the Region&apos;s Largest MSP
             </h2>
             <p className="text-white/55 leading-relaxed mb-4 text-base">
@@ -136,7 +136,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <AnimatedSection delay={0}>
               <p className="text-xs font-semibold text-[#0071e3] uppercase tracking-widest mb-5">Our Philosophy</p>
-              <h2 className="text-3xl font-bold text-[#0a2540] mb-6 tracking-tight leading-tight">
+              <h2 className="text-3xl font-bold text-foreground mb-6 leading-tight">
                 Guided by Our Roots
               </h2>
               <p className="text-slate-500 text-base leading-relaxed mb-4">
@@ -146,7 +146,7 @@ export default function AboutPage() {
 
             <AnimatedSection delay={0.1}>
               <p className="text-xs font-semibold text-[#0071e3] uppercase tracking-widest mb-5">The Audcomp Promise</p>
-              <h2 className="text-3xl font-bold text-[#0a2540] mb-6 tracking-tight leading-tight">
+              <h2 className="text-3xl font-bold text-foreground mb-6 leading-tight">
                 Your Goals Are Our Goals
               </h2>
               <p className="text-slate-500 text-base leading-relaxed">
@@ -164,7 +164,7 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto">
           <AnimatedSection className="text-center mb-16">
             <p className="text-xs font-semibold text-[#0071e3] uppercase tracking-widest mb-4">Our Values</p>
-            <h2 className="text-4xl sm:text-5xl font-bold text-[#0a2540] mb-5 tracking-tight">
+            <h2 className="text-3xl font-bold text-foreground mb-5">
               What We Stand For
             </h2>
           </AnimatedSection>

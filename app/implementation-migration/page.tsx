@@ -24,7 +24,7 @@ export default function ImplementationMigrationPage() {
 
       <section className="bg-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">Execution You Can Rely On</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-6">Execution You Can Rely On</h2>
           <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             The gap between a great technology plan and a successful deployment is execution, and that&apos;s where most projects stall. Audcomp&apos;s implementation team has delivered complex IT projects across healthcare, government, manufacturing, and enterprise, with a track record of on-time, on-budget delivery and minimal disruption to operations.
           </p>
@@ -41,7 +41,7 @@ export default function ImplementationMigrationPage() {
 
       <section className="bg-gray-50 py-20 px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-12 text-center">Implementation Services</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-12 text-center">Implementation Services</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
               { title: "Server & Storage Deployment", desc: "Physical and virtual server deployment, storage area network configuration, and hypervisor setup." },

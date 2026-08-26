@@ -25,7 +25,7 @@ export default function ManagedFirewallPage() {
 
       <section className="bg-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">Your Firewall Needs More Than Configuration</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-6">Your Firewall Needs More Than Configuration</h2>
           <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             A firewall that was configured three years ago and hasn't been reviewed since is not a security control, it's a false sense of security. Firewall rules accumulate, threat landscapes evolve, and firmware vulnerabilities emerge. Active management is essential.
           </p>
@@ -42,7 +42,7 @@ export default function ManagedFirewallPage() {
 
       <section className="bg-gray-50 py-20 px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-12 text-center">Managed Firewall Services</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-12 text-center">Managed Firewall Services</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { title: "24/7 Monitoring", desc: "Continuous monitoring of firewall logs, alerts, and traffic anomalies with immediate escalation." },

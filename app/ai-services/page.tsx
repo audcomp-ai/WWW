@@ -91,16 +91,16 @@ export default function AIServicesPage() {
         <div className="max-w-4xl mx-auto">
           <AnimatedSection>
             <p className="text-xs font-semibold text-[#0071e3] uppercase tracking-widest mb-5">Why Audcomp for AI</p>
-            <h2 className="text-4xl sm:text-5xl font-bold text-[#0a2540] mb-8 tracking-tight leading-tight">
+            <h2 className="text-3xl font-bold text-foreground mb-8 leading-tight">
               AI That Actually Works<br />for Your Business
             </h2>
-            <p className="text-slate-500 text-lg leading-relaxed mb-6">
+            <p className="text-slate-500 text-lg leading-relaxed text-justify hyphens-auto mb-6">
               Most AI projects stall because they start with the technology instead of the business problem. Audcomp helps Canadian organizations pinpoint where AI genuinely cuts cost, saves staff hours, or wins new work, then implements it securely, without the hype.
             </p>
-            <p className="text-slate-500 text-lg leading-relaxed mb-6">
+            <p className="text-slate-500 text-lg leading-relaxed text-justify hyphens-auto mb-6">
               Whether you&apos;re beginning with Microsoft Copilot in your existing Microsoft 365 environment, deploying custom AI agents for workflow automation, or building the data governance foundation for responsible AI adoption, Audcomp provides the strategy, implementation, and ongoing support to make it work.
             </p>
-            <p className="text-slate-500 text-lg leading-relaxed">
+            <p className="text-slate-500 text-lg leading-relaxed text-justify hyphens-auto">
               We take a security-first approach to every AI engagement, ensuring your data, your privacy, and your compliance obligations are protected as you embrace new technologies.
             </p>
           </AnimatedSection>
@@ -114,7 +114,7 @@ export default function AIServicesPage() {
         <div className="max-w-6xl mx-auto">
           <AnimatedSection className="text-center mb-14">
             <p className="text-xs font-semibold text-[#06b6d4] uppercase tracking-widest mb-4">Services</p>
-            <h2 className="text-4xl font-bold text-white mb-4 tracking-tight">A Complete AI Journey</h2>
+            <h2 className="text-3xl font-bold text-white mb-4">A Complete AI Journey</h2>
             <p className="text-white/50 text-base max-w-2xl mx-auto">
               From readiness through deployment and governance, Audcomp covers the full AI lifecycle.
             </p>
@@ -148,7 +148,7 @@ export default function AIServicesPage() {
                 <span className="inline-flex items-center gap-2 bg-[#06b6d4]/20 border border-[#06b6d4]/40 text-[#06b6d4] text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full mb-6 w-fit">
                   New · Agent Studio
                 </span>
-                <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tighter mb-5 leading-tight">
+                <h2 className="text-3xl font-bold text-white mb-5 leading-tight">
                   Deploy an AI workforce in<br />weeks, not months.
                 </h2>
                 <p className="text-white/65 leading-relaxed text-base mb-8 max-w-md">
@@ -193,7 +193,7 @@ export default function AIServicesPage() {
                 <span className="inline-flex items-center gap-2 bg-[#06b6d4]/20 border border-[#06b6d4]/40 text-[#06b6d4] text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full mb-6 w-fit">
                   Embedded AI Engineers
                 </span>
-                <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tighter mb-5 leading-tight">
+                <h2 className="text-3xl font-bold text-white mb-5 leading-tight">
                   An engineer who<br />builds inside your team.
                 </h2>
                 <p className="text-white/65 leading-relaxed text-base mb-8 max-w-md">
@@ -234,10 +234,10 @@ export default function AIServicesPage() {
             <p className="text-xs font-semibold text-[#06b6d4] uppercase tracking-widest mb-4">AI Agents</p>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
               <div>
-                <h2 className="text-4xl sm:text-5xl font-bold text-white mb-5 tracking-tight leading-tight">
+                <h2 className="text-3xl font-bold text-white mb-5 leading-tight">
                   IT-Specific Agents<br />for Your Team
                 </h2>
-                <p className="text-white/55 text-lg leading-relaxed">
+                <p className="text-white/55 text-lg leading-relaxed text-justify hyphens-auto">
                   Purpose-built agents for IT environments, scoped to your Microsoft 365 infrastructure, connected to your data sources, and governed by your security policies.
                 </p>
               </div>
@@ -274,7 +274,7 @@ export default function AIServicesPage() {
         <div className="max-w-6xl mx-auto">
           <AnimatedSection className="text-center mb-16">
             <p className="text-xs font-semibold text-[#06b6d4] uppercase tracking-widest mb-4">How It Works</p>
-            <h2 className="text-4xl font-bold text-white mb-4 tracking-tight">Agent Deployment Process</h2>
+            <h2 className="text-3xl font-bold text-white mb-4">Agent Deployment Process</h2>
             <p className="text-white/45 text-base max-w-xl mx-auto">
               A structured, security-first process from discovery to full rollout.
             </p>
@@ -300,10 +300,10 @@ export default function AIServicesPage() {
         <div className="max-w-5xl mx-auto">
           <AnimatedSection className="mb-12">
             <p className="text-xs font-semibold text-[#0071e3] uppercase tracking-widest mb-4">AI Consulting</p>
-            <h2 className="text-4xl font-bold text-[#0a2540] mb-6 tracking-tight">
+            <h2 className="text-3xl font-bold text-foreground mb-6">
               Start with Strategy
             </h2>
-            <p className="text-slate-500 text-lg leading-relaxed max-w-3xl">
+            <p className="text-slate-500 text-lg leading-relaxed text-justify hyphens-auto max-w-3xl">
               Before deploying AI tools, organizations need to understand where AI can genuinely add value, and where it introduces risk. Audcomp&apos;s AI Consulting service helps you answer both questions.
             </p>
           </AnimatedSection>
@@ -332,8 +332,8 @@ export default function AIServicesPage() {
         <div className="max-w-5xl mx-auto">
           <AnimatedSection className="mb-12">
             <p className="text-xs font-semibold text-[#06b6d4] uppercase tracking-widest mb-4">Data Governance</p>
-            <h2 className="text-4xl font-bold text-white mb-6 tracking-tight">AI Business Readiness &amp; Data Governance</h2>
-            <p className="text-white/50 text-lg leading-relaxed max-w-3xl">
+            <h2 className="text-3xl font-bold text-white mb-6">AI Business Readiness &amp; Data Governance</h2>
+            <p className="text-white/50 text-lg leading-relaxed text-justify hyphens-auto max-w-3xl">
               AI is only as good as the data it&apos;s built on. Audcomp&apos;s data governance framework ensures your AI initiatives are compliant, auditable, and built on a trustworthy data foundation.
             </p>
           </AnimatedSection>

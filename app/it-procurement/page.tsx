@@ -24,7 +24,7 @@ export default function ITProcurementPage() {
 
       <section className="bg-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">Strategic Procurement. Trusted Partners.</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-6">Strategic Procurement. Trusted Partners.</h2>
           <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Pay less, wait less, and reach support that actually answers. Audcomp&apos;s direct partnerships with the world&apos;s leading technology manufacturers, built over 40 years, give clients enterprise pricing, expedited shipping, and manufacturer support channels unavailable through retail purchasing.
           </p>
@@ -38,7 +38,7 @@ export default function ITProcurementPage() {
 
       <section className="bg-gray-50 py-20 px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-12 text-center">What We Procure</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-12 text-center">What We Procure</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { title: "Servers & Storage", desc: "Rack-mount, tower, and blade servers from leading manufacturers, plus SAN/NAS storage solutions." },
@@ -62,7 +62,7 @@ export default function ITProcurementPage() {
       {/* Try & Buy */}
       <section className="bg-[#e8f0fe] py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl font-bold text-[#1a1a2e] mb-4">Our &quot;Try and Buy&quot; Demo Program</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-4">Our &quot;Try and Buy&quot; Demo Program</h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             Evaluate hardware in your own environment before you commit. Our exclusive Try and Buy program lets you test servers, networking equipment, and workstations with your actual workloads, eliminating guesswork from every procurement decision.
           </p>

@@ -26,7 +26,7 @@ export default function PenetrationTestingPage() {
 
       <section className="bg-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">Test Your Defenses Before Attackers Do</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-6">Test Your Defenses Before Attackers Do</h2>
           <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             The vulnerabilities that cause breaches are the ones no one knew were there. Penetration testing simulates real-world cyberattacks against your environment to surface those weaknesses before an attacker does, turning unknown risk into a prioritized fix list. Unlike vulnerability scans that only flag known issues, Audcomp&apos;s penetration testing combines automated tooling with manual testing by experienced security professionals.
           </p>
@@ -51,7 +51,7 @@ export default function PenetrationTestingPage() {
 
       <section className="bg-gray-50 py-20 px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-12 text-center">Testing Scope & Approach</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-12 text-center">Testing Scope & Approach</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
               { title: "External Network Testing", desc: "Simulated attacks against your internet-facing infrastructure, web apps, email, VPN, and exposed services." },

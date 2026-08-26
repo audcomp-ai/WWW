@@ -25,7 +25,7 @@ export default function SecurityAwarenessTrainingPage() {
 
       <section className="bg-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">The Human Firewall</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-6">The Human Firewall</h2>
           <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Over 90% of successful cyberattacks begin with a phishing email. No amount of technical security controls can fully compensate for an employee who clicks a malicious link or provides credentials to a spoofed website. Security awareness training is the single most effective control against social engineering attacks.
           </p>
@@ -42,7 +42,7 @@ export default function SecurityAwarenessTrainingPage() {
 
       <section className="bg-gray-50 py-20 px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-12 text-center">Program Components</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-12 text-center">Program Components</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
               { title: "Instructor-Led Training", desc: "Live training sessions led by Audcomp's cybersecurity professionals, practical, relevant, and engaging." },

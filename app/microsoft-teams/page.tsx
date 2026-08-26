@@ -24,7 +24,7 @@ export default function MicrosoftTeamsPage() {
 
       <section className="bg-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">Teams, Done Right</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-6">Teams, Done Right</h2>
           <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Microsoft Teams has become the hub for modern workplace collaboration, but a poorly configured Teams environment leads to chaos, not clarity. Audcomp's Teams specialists deploy and configure Teams with your organization structure, governance policies, and workflow in mind.
           </p>
@@ -41,7 +41,7 @@ export default function MicrosoftTeamsPage() {
 
       <section className="bg-gray-50 py-20 px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-12 text-center">Teams Services</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-12 text-center">Teams Services</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
               { title: "Teams Deployment", desc: "Tenant configuration, team and channel creation, and governance policy setup." },

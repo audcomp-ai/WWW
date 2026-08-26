@@ -129,23 +129,23 @@ export default function ForwardDeployedEngineersPage() {
             <p className="text-xs font-semibold text-[#06b6d4] uppercase tracking-widest mb-5">
               Embedded AI Engineers
             </p>
-            <h2 className="text-4xl sm:text-5xl font-bold text-[#0a2540] mb-8 tracking-tight leading-tight">
+            <h2 className="text-3xl font-bold text-foreground mb-8 leading-tight">
               Engineering capacity,<br />embedded in your team
             </h2>
-            <p className="text-slate-500 text-lg leading-relaxed mb-6">
+            <p className="text-slate-500 text-lg leading-relaxed text-justify hyphens-auto mb-6">
               Most technical work stalls for the same reason: the people who
               understand the business problem aren&apos;t the people who can build
               the fix, and the gap between them is filled with requirement
               documents, scoping calls, and change requests.
             </p>
-            <p className="text-slate-500 text-lg leading-relaxed mb-6">
+            <p className="text-slate-500 text-lg leading-relaxed text-justify hyphens-auto mb-6">
               An embedded engineer closes that gap by removing it. An
               Audcomp engineer works inside your business, sitting with the
               people doing the work, seeing the friction first-hand, and building
               against it directly. The person who understands the problem is the
               person shipping the solution.
             </p>
-            <p className="text-slate-500 text-lg leading-relaxed">
+            <p className="text-slate-500 text-lg leading-relaxed text-justify hyphens-auto">
               It is the model that gets used when a project genuinely has to land:
               short feedback loops, working software early, and an engineer who is
               accountable for the outcome rather than the specification.
@@ -167,7 +167,7 @@ export default function ForwardDeployedEngineersPage() {
             <p className="text-xs font-semibold text-[#06b6d4] uppercase tracking-widest mb-4">
               How It Works
             </p>
-            <h2 className="text-4xl font-bold text-white mb-4 tracking-tight">
+            <h2 className="text-3xl font-bold text-white mb-4">
               The Engagement
             </h2>
             <p className="text-white/45 text-base max-w-xl mx-auto">
@@ -198,10 +198,10 @@ export default function ForwardDeployedEngineersPage() {
             <p className="text-xs font-semibold text-[#0071e3] uppercase tracking-widest mb-4">
               Capabilities
             </p>
-            <h2 className="text-4xl font-bold text-[#0a2540] tracking-tight mb-5">
+            <h2 className="text-3xl font-bold text-foreground mb-5">
               What Your Engineer Builds
             </h2>
-            <p className="text-slate-500 text-lg leading-relaxed max-w-3xl">
+            <p className="text-slate-500 text-lg leading-relaxed text-justify hyphens-auto max-w-3xl">
               The work is scoped to whatever is costing your team the most time.
               In practice, engagements tend to land in these areas.
             </p>
@@ -228,7 +228,7 @@ export default function ForwardDeployedEngineersPage() {
             <p className="text-xs font-semibold text-[#0071e3] uppercase tracking-widest mb-4">
               Who It&apos;s For
             </p>
-            <h2 className="text-4xl font-bold text-[#0a2540] tracking-tight">
+            <h2 className="text-3xl font-bold text-foreground">
               If any of these sound like your quarter
             </h2>
           </AnimatedSection>
@@ -256,7 +256,7 @@ export default function ForwardDeployedEngineersPage() {
             <p className="text-xs font-semibold text-[#06b6d4] uppercase tracking-widest mb-4">
               Why Audcomp
             </p>
-            <h2 className="text-4xl font-bold text-[#0a2540] tracking-tight">
+            <h2 className="text-3xl font-bold text-foreground">
               Embedded, But Not On Their Own
             </h2>
           </AnimatedSection>

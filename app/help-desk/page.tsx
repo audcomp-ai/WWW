@@ -24,7 +24,7 @@ export default function HelpDeskPage() {
 
       <section className="bg-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">Support When You Need It Most</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-6">Support When You Need It Most</h2>
           <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Audcomp&apos;s Help Desk is staffed by certified Canadian IT professionals available 24 hours a day, 7 days a week. Whether your team needs help with a software issue at 2pm or a network problem at 2am, we&apos;re one call away.
           </p>
@@ -38,7 +38,7 @@ export default function HelpDeskPage() {
 
       <section className="bg-gray-50 py-20 px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-12 text-center">Help Desk Capabilities</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-12 text-center">Help Desk Capabilities</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
               { title: "Multi-Channel Support", desc: "Reach us by phone, email, or our support portal, whichever works best for your team." },

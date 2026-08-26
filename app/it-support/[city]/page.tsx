@@ -70,7 +70,7 @@ export default async function LocalItSupportPage({ params }: Props) {
         <div className="max-w-6xl mx-auto">
           <AnimatedSection className="text-center mb-16">
             <p className="text-xs font-semibold text-[#06b6d4] uppercase tracking-widest mb-4">Our Services</p>
-            <h2 className="text-4xl sm:text-5xl font-bold text-[#0a2540] mb-5 tracking-tight">
+            <h2 className="text-3xl font-bold text-foreground mb-5">
               Enterprise IT for {cityName}
             </h2>
             <p className="text-slate-500 text-lg max-w-2xl mx-auto leading-relaxed">
@@ -93,13 +93,13 @@ export default async function LocalItSupportPage({ params }: Props) {
         <div className="max-w-4xl mx-auto">
           <AnimatedSection>
             <p className="text-xs font-semibold text-[#0071e3] uppercase tracking-widest mb-5">Why Choose Audcomp</p>
-            <h2 className="text-4xl font-bold text-[#0a2540] mb-8 tracking-tight leading-tight">
+            <h2 className="text-3xl font-bold text-foreground mb-8 leading-tight">
               Local Accountability.<br />National Scale.
             </h2>
-            <p className="text-slate-500 text-lg leading-relaxed mb-6">
+            <p className="text-slate-500 text-lg leading-relaxed text-justify hyphens-auto mb-6">
               Unlike global providers that route your support tickets overseas, Audcomp gives {cityName} businesses the best of both worlds: the resources of a Top 25 CDN Solutions Provider, powered by technicians in Canada.
             </p>
-            <p className="text-slate-500 text-lg leading-relaxed">
+            <p className="text-slate-500 text-lg leading-relaxed text-justify hyphens-auto">
               When your network goes down, you need a partner who understands your business environment and can respond immediately. Our local presence ensures you get the rapid, accountable support your operations demand.
             </p>
           </AnimatedSection>

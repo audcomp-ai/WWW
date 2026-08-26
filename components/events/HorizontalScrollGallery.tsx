@@ -88,7 +88,7 @@ export default function HorizontalScrollGallery() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
             <p className="text-xs font-semibold text-[#06b6d4] uppercase tracking-widest mb-4">Event Archive</p>
-            <h2 className="text-4xl font-bold text-[#0a2540] tracking-tight">Past Events</h2>
+            <h2 className="text-3xl font-bold text-foreground">Past Events</h2>
           </div>
           <p className="text-slate-500 max-w-md text-sm md:text-right">
             Browse highlights, recordings, and recaps from our previous conferences and technical workshops.

@@ -33,7 +33,7 @@ export default function ManagedITSupportPage() {
 
       <section className="bg-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">IT Support That Never Sleeps</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-6">IT Support That Never Sleeps</h2>
           <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Audcomp's Managed IT Support program provides the full spectrum of day-to-day IT management your business needs. Our technicians become an extension of your team, deeply familiar with your environment, your users, and your business goals.
           </p>
@@ -50,7 +50,7 @@ export default function ManagedITSupportPage() {
 
       <section className="bg-gray-50 py-20 px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-12 text-center">What's Included</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-12 text-center">What's Included</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((f) => (
               <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6">

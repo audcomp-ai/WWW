@@ -24,7 +24,7 @@ export default function MicrosoftCopilotPage() {
 
       <section className="bg-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">Microsoft Copilot, Done Right</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-6">Microsoft Copilot, Done Right</h2>
           <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Microsoft Copilot brings AI capabilities directly into the tools your team already uses, Word, Excel, PowerPoint, Teams, Outlook, and more. But getting value from it requires more than just purchasing a license. Proper configuration, security settings, and user adoption are essential.
           </p>
@@ -41,7 +41,7 @@ export default function MicrosoftCopilotPage() {
 
       <section className="bg-gray-50 py-20 px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-12 text-center">The Audcomp Copilot Journey</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-12 text-center">The Audcomp Copilot Journey</h2>
           <div className="flex flex-col gap-6">
             {[
               {
@@ -93,7 +93,7 @@ export default function MicrosoftCopilotPage() {
 
       <section className="bg-[#e8f0fe] py-16 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#1a1a2e] mb-8 text-center">What Copilot Can Do for Your Team</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-8 text-center">What Copilot Can Do for Your Team</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
               { app: "Word", desc: "Draft, summarize, and rewrite documents in seconds." },

@@ -58,10 +58,10 @@ export default function PartnersPage() {
         <div className="max-w-4xl mx-auto">
           <AnimatedSection>
             <p className="text-xs font-semibold text-[#0071e3] uppercase tracking-widest mb-5">Our Partners</p>
-            <h2 className="text-4xl sm:text-5xl font-bold text-[#0a2540] mb-8 tracking-tight leading-tight">
+            <h2 className="text-3xl font-bold text-foreground mb-8 leading-tight">
               Enterprise Technology,<br />Canadian Expertise
             </h2>
-            <p className="text-slate-500 text-lg leading-relaxed">
+            <p className="text-slate-500 text-lg leading-relaxed text-justify hyphens-auto">
               Audcomp is a certified partner of technology manufacturers across hardware, software, networking, security, and cloud. These relationships give our clients access to enterprise pricing, expedited support channels, and the latest solutions as they emerge. Our procurement team works directly with manufacturer representatives to ensure you get the right technology at the best value.
             </p>
           </AnimatedSection>
@@ -73,7 +73,7 @@ export default function PartnersPage() {
         <div className="max-w-5xl mx-auto">
           <AnimatedSection className="text-center mb-16">
             <p className="text-xs font-semibold text-[#06b6d4] uppercase tracking-widest mb-4">Partnership Benefits</p>
-            <h2 className="text-4xl font-bold text-[#0a2540] tracking-tight">
+            <h2 className="text-3xl font-bold text-foreground">
               What Our Partnerships Mean for You
             </h2>
           </AnimatedSection>

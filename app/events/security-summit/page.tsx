@@ -86,7 +86,7 @@ export default function SecuritySummitPage() {
             <p className="text-xs font-semibold text-[#06b6d4] uppercase tracking-widest mb-4">
               The Threat Landscape
             </p>
-            <h2 className="text-4xl font-bold text-[#0a2540] tracking-tight mb-6">
+            <h2 className="text-3xl font-bold text-foreground mb-6">
               Cybercrime has entered a new era
             </h2>
             <p className="text-slate-500 leading-relaxed mb-4">
@@ -135,7 +135,7 @@ export default function SecuritySummitPage() {
             <p className="text-xs font-semibold text-[#06b6d4] uppercase tracking-widest mb-4">
               Reasons to Attend
             </p>
-            <h2 className="text-4xl font-bold text-[#0a2540] tracking-tight">
+            <h2 className="text-3xl font-bold text-foreground">
               What you&apos;ll take away
             </h2>
           </AnimatedSection>
@@ -207,7 +207,7 @@ export default function SecuritySummitPage() {
             <p className="text-xs font-semibold text-[#06b6d4] uppercase tracking-widest mb-4">
               Featuring Security Specialists From
             </p>
-            <h2 className="text-4xl font-bold text-[#0a2540] tracking-tight">
+            <h2 className="text-3xl font-bold text-foreground">
               Who you&apos;ll hear from
             </h2>
           </AnimatedSection>
@@ -244,7 +244,7 @@ export default function SecuritySummitPage() {
           <p className="text-xs font-semibold text-[#06b6d4] uppercase tracking-widest mb-5">
             Save the Date
           </p>
-          <h2 className="text-5xl sm:text-6xl font-bold tracking-tight mb-6 text-gradient-dark">
+          <h2 className="text-3xl font-bold text-foreground mb-6 text-gradient-dark">
             RSVP Today
           </h2>
           <p className="text-white/55 text-lg mb-4 leading-relaxed max-w-xl mx-auto">

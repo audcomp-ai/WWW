@@ -32,7 +32,7 @@ export default function DarkWebMonitoringPage() {
             </div>
           </div>
 
-          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">The Dark Web Threat Is Real</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-6">The Dark Web Threat Is Real</h2>
           <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             Billions of stolen credentials circulate on dark web forums and marketplaces, harvested from data breaches at third-party services your employees use. A password reused from a personal account can grant an attacker access to your corporate systems without triggering a single alert.
           </p>
@@ -49,7 +49,7 @@ export default function DarkWebMonitoringPage() {
 
       <section className="bg-gray-50 py-20 px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-12 text-center">What We Monitor</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-12 text-center">What We Monitor</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { title: "Email Credentials", desc: "Stolen email and password combinations associated with your corporate domains." },
@@ -72,7 +72,7 @@ export default function DarkWebMonitoringPage() {
 
       <section className="bg-[#1a1a2e] py-16 px-4 text-center">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-2xl font-bold text-white mb-4">Starting at $99/month</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">Starting at $99/month</h2>
           <p className="text-gray-400 mb-8">
             Continuous dark web intelligence for your organization, one of the most cost-effective security investments you can make.
           </p>

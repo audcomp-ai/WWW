@@ -36,7 +36,7 @@ export default function ContactPage() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Contact Info */}
           <div className="lg:col-span-1">
-            <h2 className="text-2xl font-bold text-foreground mb-8">Contact Information</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-8">Contact Information</h2>
 
             <div className="flex flex-col gap-6">
               <div>
@@ -67,7 +67,7 @@ export default function ContactPage() {
 
           {/* Form */}
           <div className="lg:col-span-2 bg-card rounded-2xl border border-border shadow-sm p-8">
-            <h2 className="text-2xl font-bold text-foreground mb-6">Send Us a Message</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-6">Send Us a Message</h2>
             <form className="flex flex-col gap-5">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>

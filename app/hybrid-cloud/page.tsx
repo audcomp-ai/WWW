@@ -24,7 +24,7 @@ export default function HybridCloudPage() {
 
       <section className="bg-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6">Not Everything Belongs in the Cloud</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-6">Not Everything Belongs in the Cloud</h2>
           <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
             For many Canadian organizations, particularly those in regulated industries like healthcare, finance, and government, a full cloud migration isn't the right answer. Hybrid cloud gives you the flexibility to run sensitive workloads on-premise while leveraging cloud for scalability, backup, and productivity tools.
           </p>
@@ -41,7 +41,7 @@ export default function HybridCloudPage() {
 
       <section className="bg-gray-50 py-20 px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-12 text-center">Hybrid Cloud Services</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-12 text-center">Hybrid Cloud Services</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
               { title: "Hybrid Cloud Strategy", desc: "Workload assessment and strategy design to determine what stays on-premise and what moves to the cloud." },

@@ -42,7 +42,7 @@ export function BlogCards({
 }: BlogCardsProps) {
   return (
     <div className={cn("flex flex-col items-center w-full", className)}>
-      <h2 className="text-3xl sm:text-4xl font-bold text-[#0a2540] tracking-tight">{title}</h2>
+      <h2 className="text-3xl font-bold text-foreground">{title}</h2>
       <p className="text-sm text-slate-500 mt-3 max-w-lg text-center leading-relaxed">{subtitle}</p>
 
       <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-8 w-full">

@@ -116,7 +116,7 @@ export default function ClientAiAgentsPage() {
           style={{ opacity: text2Opacity, y: text2Y, scale: text2Scale }}
         >
           <div className="text-center">
-            <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-4 drop-shadow-2xl">
+            <h2 className="text-3xl font-bold text-foreground mb-4 drop-shadow-2xl">
               Zero downtime.
             </h2>
             <p className="text-xl md:text-3xl text-gray-300 font-light max-w-3xl mx-auto drop-shadow-lg">
@@ -131,7 +131,7 @@ export default function ClientAiAgentsPage() {
           style={{ opacity: text3Opacity, y: text3Y, scale: text3Scale }}
         >
           <div className="text-center">
-            <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-4 drop-shadow-2xl">
+            <h2 className="text-3xl font-bold text-foreground mb-4 drop-shadow-2xl">
               Meet your team.
             </h2>
             <p className="text-xl md:text-3xl text-gray-300 font-light max-w-3xl mx-auto drop-shadow-lg">
@@ -145,7 +145,7 @@ export default function ClientAiAgentsPage() {
       <section className="relative z-10 bg-black py-32 px-4 border-t border-white/10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-24">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">The Agents</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-6">The Agents</h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               Highly specialized, infinitely scalable. Each agent is designed to solve complex IT challenges autonomously.
             </p>
@@ -191,7 +191,7 @@ export default function ClientAiAgentsPage() {
       {/* 3. Immersive CTA */}
       <section className="bg-black py-32 px-4 border-t border-white/10">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-6xl font-bold mb-8">Ready to deploy?</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-8">Ready to deploy?</h2>
           <p className="text-xl text-gray-400 mb-12">
             Our AI integration team will audit your readiness and help you launch your first agent in weeks.
           </p>

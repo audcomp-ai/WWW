@@ -275,7 +275,7 @@ export function NewsCards({
          className="mb-8"
          variants={shouldAnimate ? headerVariants : {}}
        >
-         <h2 className="text-4xl font-bold mb-2">{title}</h2>
+         <h2 className="text-3xl font-bold mb-2">{title}</h2>
          <p className="text-muted-foreground text-lg">{subtitle}</p>
          
          {/* Simple Border Lines */}

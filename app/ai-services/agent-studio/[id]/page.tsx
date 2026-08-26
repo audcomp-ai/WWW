@@ -126,7 +126,7 @@ export default async function AgentDetailPage({ params }: { params: Promise<{ id
           <section className="mb-24">
             <div className="text-center mb-14">
               <span className="text-[10px] font-semibold uppercase tracking-widest text-[#06b6d4] mb-6 block">Capabilities</span>
-              <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
+              <h2 className="text-3xl font-bold text-white leading-tight">
                 What <span className="text-[#06b6d4] italic">{agent.name}</span> can do.
               </h2>
             </div>
@@ -149,7 +149,7 @@ export default async function AgentDetailPage({ params }: { params: Promise<{ id
           <section className="mb-24">
             <div className="text-center mb-14">
               <span className="text-[10px] font-semibold uppercase tracking-widest text-[#06b6d4] mb-6 block">Time saved</span>
-              <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
+              <h2 className="text-3xl font-bold text-white leading-tight">
                 Hours <span className="text-[#06b6d4] italic">{agent.name} gives back.</span>
               </h2>
             </div>
@@ -202,7 +202,7 @@ export default async function AgentDetailPage({ params }: { params: Promise<{ id
         <section className="bg-white/[0.06] border border-white/10 backdrop-blur-sm rounded-[3rem] overflow-hidden shadow-2xl p-10 lg:p-16 text-center relative">
           <div className="absolute -bottom-24 -right-24 w-72 h-72 rounded-full opacity-20 pointer-events-none" style={{ background: "radial-gradient(ellipse, #0071e3 0%, transparent 70%)" }} />
           <div className="relative">
-            <h2 className="text-3xl lg:text-5xl font-bold tracking-tight text-white mb-6 leading-tight">
+            <h2 className="text-3xl font-bold text-white mb-6 leading-tight">
               Put {agent.name} to work.
             </h2>
             <p className="text-slate-400 text-lg font-medium max-w-2xl mx-auto mb-10">

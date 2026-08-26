@@ -35,7 +35,7 @@ export default function CareersPage() {
       <section className="bg-white py-20 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-[#1a1a2e] mb-4">Why Audcomp?</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-4">Why Audcomp?</h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
               With 40+ years in business and a team that genuinely cares, Audcomp is a place to build a lasting IT career in Ontario.
             </p>
@@ -56,7 +56,7 @@ export default function CareersPage() {
       {/* Open Positions */}
       <section id="openings" className="bg-gray-50 py-20 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#1a1a2e] mb-6 text-center">Open Positions</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-6 text-center">Open Positions</h2>
           <p className="text-gray-600 text-center mb-12">
             We hire for character and train for skill. If you don&apos;t see your exact role below, we&apos;d still love to hear from you.
           </p>
@@ -118,7 +118,7 @@ export default function CareersPage() {
       {/* General Application */}
       <section className="bg-[#1a1a2e] py-16 px-4">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl font-bold text-white mb-4">Don&apos;t See Your Role?</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">Don&apos;t See Your Role?</h2>
           <p className="text-gray-400 mb-8">
             Send us your resume anyway. We&apos;re always open to meeting talented IT professionals who share our values.
           </p>
