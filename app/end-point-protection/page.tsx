@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Hero from "@/components/Hero";
 import CTABanner from "@/components/CTABanner";
 import { SectionAngle } from "@/components/SectionAngle";
@@ -44,21 +45,40 @@ export default function EndpointProtectionPage() {
 
       <section className="bg-gray-50 py-20 px-4">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-foreground mb-12 text-center">AGS Protection Layers</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-12 text-center">Cyber Security Services</h2>
+          {/* The six services from the Cyber Security menu, with the wording
+              copied from their cards on /security-services so the two lists
+              cannot drift. Each links to its own page, except this one: you
+              are already on it. */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
-              { title: "Endpoint Threat Detection", desc: "Next-generation AV with behavioral AI detects fileless malware, ransomware, and zero-day threats in real time." },
-              { title: "Real-Time Monitoring", desc: "Continuous endpoint visibility with automated alerting and escalation to Audcomp's security team." },
-              { title: "Email Protection", desc: "Advanced email filtering, phishing detection, link scanning, and attachment sandboxing integrated with Microsoft 365." },
-              { title: "Office Protection", desc: "Macro and script execution controls, document sandboxing, and exploit prevention for Microsoft Office." },
-              { title: "Automated Response", desc: "Threats are contained automatically, isolating infected endpoints to prevent lateral movement." },
-              { title: "Security Reporting", desc: "Regular security reports and dashboards keep you informed on your organization's threat exposure." },
-            ].map((f) => (
-              <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6">
-                <h3 className="font-semibold text-foreground mb-2">{f.title}</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
-              </div>
-            ))}
+              { title: "Endpoint Protection (AGS)", desc: "Advanced threat detection, real-time monitoring, Office Protection, and Email Protection under Audcomp Guarded Services.", href: "/end-point-protection" },
+              { title: "SOC & MDR", desc: "24/7 Security Operations Centre with managed detection and response, incident response, and threat hunting.", href: "/security-operations-centre-and-mdr" },
+              { title: "Penetration Testing", desc: "Manual and automated penetration testing with 4 tests per year and 48-hour reporting turnaround.", href: "/penetration-testing-and-security-audits" },
+              { title: "Managed Firewall", desc: "24/7 firewall monitoring, maintenance, rule management, and threat intelligence integration.", href: "/managed-firewall" },
+              { title: "Security Awareness Training", desc: "Phishing resistance training led by cybersecurity professionals, your last line of defense.", href: "/security-awareness-training" },
+              { title: "Dark Web Monitoring", desc: "Proactive dark web threat intelligence to detect stolen credentials before attackers can use them. From $99/mo.", href: "/dark-web-monitoring" },
+            ].map((f) => {
+              const body = (
+                <>
+                  <h3 className="font-semibold text-foreground mb-2">{f.title}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
+                </>
+              );
+              return f.href === "/end-point-protection" ? (
+                <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6">
+                  {body}
+                </div>
+              ) : (
+                <Link
+                  key={f.title}
+                  href={f.href}
+                  className="block bg-white rounded-xl border border-gray-200 p-6 transition-colors hover:border-[#0071e3]"
+                >
+                  {body}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
