@@ -29,7 +29,7 @@ export default function ImplementationMigrationPage() {
             The gap between a great technology plan and a successful deployment is execution, and that&apos;s where most projects stall. Audcomp&apos;s implementation team has delivered complex IT projects across healthcare, government, manufacturing, and enterprise, with a track record of on-time, on-budget delivery and minimal disruption to operations.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
-            From server and storage deployments to cloud migrations, WiFi redesigns, and full data center transformations, Audcomp brings structured project management, deep technical expertise, and a commitment to minimizing disruption to your operations.
+            Whether it is deploying a single laptop or moving your business to the cloud, managing one endpoint or thousands, Audcomp brings structured project management and a commitment to minimizing disruption to your operations.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto">
             Every project includes detailed planning, risk assessment, testing protocols, and post-implementation support, ensuring your new environment is stable before Audcomp steps back.
