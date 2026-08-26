@@ -59,14 +59,6 @@ export default function SecuritySummitHero() {
                 RSVP Today
                 <ArrowRight className="w-4 h-4" />
               </a>
-              <a
-                href={summit.calendarHref}
-                download
-                className="inline-flex items-center gap-2 border border-white/20 text-white/80 hover:text-white hover:bg-white/5 font-semibold px-8 py-4 rounded-full transition-all duration-300"
-              >
-                <Calendar className="w-4 h-4" />
-                Add to Calendar
-              </a>
               <Link
                 href={summit.detailHref}
                 className="border border-white/20 text-white/80 hover:text-white hover:bg-white/5 font-semibold px-8 py-4 rounded-full transition-all duration-300"
