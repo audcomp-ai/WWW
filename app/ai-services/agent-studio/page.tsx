@@ -155,7 +155,7 @@ export default function AgentStudioPage() {
             <span className="text-xs font-bold text-white uppercase tracking-widest">Architecture Suite</span>
           </div>
           <h1 className="text-6xl lg:text-8xl font-bold tracking-tight text-white mb-6 max-w-4xl leading-[0.95]">
-            Agent <span className="italic">Studio.</span>
+            Agent Studio
           </h1>
           <p className="text-slate-300 text-lg lg:text-2xl font-medium max-w-2xl mb-8 leading-relaxed">
             Design, deploy, and orchestrate a full team of production-ready AI agents for your organization.
