@@ -27,7 +27,7 @@ export default function DarkWebMonitoringPage() {
         <div className="max-w-4xl mx-auto">
           <div className="bg-[#e8f0fe] border border-blue-200 rounded-xl p-6 mb-10">
             <div>
-              <p className="font-semibold text-[#1a1a2e] mb-1">Starting at just $99/month</p>
+              <p className="font-semibold text-foreground mb-1">Starting at just $99/month</p>
               <p className="text-gray-600 text-sm">Dark web monitoring for your organization's domains, emails, and credentials, one of the highest-ROI security controls available.</p>
             </div>
           </div>
@@ -60,7 +60,7 @@ export default function DarkWebMonitoringPage() {
               { title: "Domain Mentions", desc: "Mentions of your domain on criminal forums that may indicate targeted threat activity." },
             ].map((f) => (
               <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6">
-                <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
+                <h3 className="font-semibold text-foreground mb-2">{f.title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
               </div>
             ))}

@@ -80,7 +80,7 @@ export default function MicrosoftCopilotPage() {
                   {s.step}
                 </div>
                 <div>
-                  <h3 className="font-semibold text-[#1a1a2e] mb-2">{s.title}</h3>
+                  <h3 className="font-semibold text-foreground mb-2">{s.title}</h3>
                   <p className="text-sm text-gray-600 leading-relaxed">{s.desc}</p>
                 </div>
               </div>

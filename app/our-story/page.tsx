@@ -88,7 +88,7 @@ export default function OurStoryPage() {
                     {m.year}
                   </div>
                   <div className="bg-white rounded-xl p-6 border border-blue-100 shadow-sm flex-1">
-                    <h3 className="text-lg font-semibold text-[#1a1a2e] mb-2">{m.title}</h3>
+                    <h3 className="text-lg font-semibold text-foreground mb-2">{m.title}</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">{m.description}</p>
                   </div>
                 </div>
@@ -134,7 +134,7 @@ export default function OurStoryPage() {
               },
             ].map((v) => (
               <div key={v.title} className="text-center p-6">
-                <h3 className="text-lg font-semibold text-[#1a1a2e] mb-2">{v.title}</h3>
+                <h3 className="text-lg font-semibold text-foreground mb-2">{v.title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{v.desc}</p>
               </div>
             ))}

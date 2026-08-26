@@ -52,7 +52,7 @@ export default function StructuredCablingPage() {
               { title: "As-Built Documentation", desc: "Detailed as-built drawings and cable schedules so your network is fully documented for the future." },
             ].map((f) => (
               <div key={f.title} className="bg-white rounded-xl border border-gray-200 p-6">
-                <h3 className="font-semibold text-[#1a1a2e] mb-2">{f.title}</h3>
+                <h3 className="font-semibold text-foreground mb-2">{f.title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{f.desc}</p>
               </div>
             ))}

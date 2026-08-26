@@ -43,7 +43,7 @@ export default function CareersPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {benefits.map((b) => (
               <div key={b.title} className="bg-[#e8f0fe] rounded-xl p-6">
-                <h3 className="font-semibold text-[#1a1a2e] mb-2">{b.title}</h3>
+                <h3 className="font-semibold text-foreground mb-2">{b.title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{b.desc}</p>
               </div>
             ))}
@@ -94,7 +94,7 @@ export default function CareersPage() {
             >
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <div>
-                  <h3 className="text-lg font-semibold text-[#1a1a2e]">{role.title}</h3>
+                  <h3 className="text-lg font-semibold text-foreground">{role.title}</h3>
                   <div className="flex gap-3 mt-1">
                     <span className="text-xs bg-[#e8f0fe] text-[#0056a8] px-2 py-1 rounded font-medium">{role.type}</span>
                     <span className="text-xs text-gray-500">{role.location}</span>
