@@ -21,7 +21,6 @@ const stats = [
 
 const leadership = [
   { name: "Gary Sohal", role: "Founder", photo: "/images/gary-sohal.jpg" },
-  { name: "Jon Binkosky", role: "Chief Operating Officer", photo: "/images/jon-binkosky.jpg" },
 ];
 
 export default function AboutPage() {
@@ -102,7 +101,11 @@ export default function AboutPage() {
         {/* Leadership — portraits in a row with the name beneath, rather than a
             single founder card beside the copy. */}
         <AnimatedSection delay={0.1}>
-          <div className="max-w-3xl mx-auto mt-20 grid grid-cols-1 sm:grid-cols-2 gap-10">
+          <div
+            className={`mx-auto mt-20 grid grid-cols-1 gap-10 ${
+              leadership.length > 1 ? "max-w-3xl sm:grid-cols-2" : "max-w-[280px]"
+            }`}
+          >
             {leadership.map((person) => (
               <div key={person.name} className="text-center">
                 {/* Circular rather than a rectangle: the source headshots are
