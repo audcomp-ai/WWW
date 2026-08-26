@@ -5,6 +5,16 @@ import Link from "next/link";
 import { SHOW_BRAND_SLIDE } from "@/lib/hero-events";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 
+// How long each slide holds before the carousel moves on. The 0.7s crossfade
+// runs inside this, so the still time is shorter than the number reads.
+const SLIDE_MS = 3000;
+
+// Agent_intro-web runs 5.042s. At the shared 3s hold you saw three seconds of
+// it and, because it loops on its own clock, a different three seconds each
+// time round. This slide holds for the whole thing instead, with a little over
+// the end so the last frame is not clipped by the crossfade out.
+const VIDEO_SLIDE_MS = 5200;
+
 const slides = [
   {
     id: 1,
@@ -43,6 +53,7 @@ const slides = [
     cta2Text: "Learn More",
     cta2Href: "/ai-services",
     bg: "video",
+    hold: VIDEO_SLIDE_MS,
   },
   {
     id: 4,
@@ -75,10 +86,6 @@ const TEXT_BED =
 const EDGE_VIGNETTE =
   "absolute inset-0 " +
   "bg-[radial-gradient(ellipse_88%_82%_at_50%_50%,transparent_48%,rgba(7,30,61,0.88)_100%)]";
-
-// How long each slide holds before the carousel moves on. The 0.7s crossfade
-// runs inside this, so the still time is shorter than the number reads.
-const SLIDE_MS = 3000;
 
 // Category links per row on the brand slide; the rest centre on line two.
 const BRAND_ROW_BREAK = 4;
@@ -123,25 +130,27 @@ const badgeVariants: Variants = {
 export default function HeroCarousel() {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
-  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-
-  const startInterval = () => {
-    intervalRef.current = setInterval(() => {
-      setActive((prev) => (prev + 1) % slides.length);
-    }, SLIDE_MS);
-  };
-
-  const clearCurrentInterval = () => {
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-      intervalRef.current = null;
-    }
-  };
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    if (!paused) startInterval();
-    return () => clearCurrentInterval();
-  }, [paused]);
+    if (paused) return;
+    const wait = slides[active].hold ?? SLIDE_MS;
+    const id = setTimeout(
+      () => setActive((prev) => (prev + 1) % slides.length),
+      wait,
+    );
+    return () => clearTimeout(id);
+  }, [active, paused]);
+
+  // The video keeps its own clock whether or not its slide is showing, so
+  // without this you join it wherever it happens to be rather than at the
+  // start. play() can be refused, and there is nothing useful to do about it.
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || slides[active].bg !== "video") return;
+    video.currentTime = 0;
+    video.play().catch(() => {});
+  }, [active]);
 
   // Left and right arrows move between slides once the hero has focus.
   useEffect(() => {
@@ -151,8 +160,6 @@ export default function HeroCarousel() {
         const delta = e.key === "ArrowLeft" ? -1 : 1;
         return (prev + delta + slides.length) % slides.length;
       });
-      clearCurrentInterval();
-      if (!paused) startInterval();
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
@@ -165,18 +172,12 @@ export default function HeroCarousel() {
       const index = slides.findIndex((s) => s.type === "brand");
       if (index < 0) return;
       setActive(index);
-      clearCurrentInterval();
-      if (!paused) startInterval();
     };
     window.addEventListener(SHOW_BRAND_SLIDE, toBrandSlide);
     return () => window.removeEventListener(SHOW_BRAND_SLIDE, toBrandSlide);
   }, [paused]);
 
-  const goToSlide = (index: number) => {
-    setActive(index);
-    clearCurrentInterval();
-    if (!paused) startInterval();
-  };
+  const goToSlide = (index: number) => setActive(index);
 
   // Wraps both ways, so back from the first slide lands on the last.
   const step = (delta: number) =>
@@ -188,7 +189,7 @@ export default function HeroCarousel() {
     <div
       className="relative overflow-hidden"
       style={{ height: "92vh", minHeight: "600px" }}
-      onMouseEnter={() => { setPaused(true); clearCurrentInterval(); }}
+      onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
       {/* ── Background: datacenter photo ── */}
@@ -211,6 +212,7 @@ export default function HeroCarousel() {
         className={`absolute inset-0 transition-opacity duration-1000 ${slide.bg === "video" ? "opacity-100" : "opacity-0"}`}
       >
         <video
+          ref={videoRef}
           className="absolute inset-0 w-full h-full object-cover"
           autoPlay muted loop playsInline preload="auto"
         >
