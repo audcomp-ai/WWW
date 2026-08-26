@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 };
 
 const stats = [
-  { value: "1986", label: "Year Founded" },
-  { value: "40+", label: "Years of Excellence" },
+  { value: "40+", label: "Years of IT Expertise" },
+  { value: "100+", label: "Industries Served" },
   { value: "Top 25", label: "CDN Solutions Provider" },
   { value: "In Canada", label: "Technicians & Data Centres" },
 ];
@@ -81,7 +81,7 @@ export default function AboutPage() {
               From Startup to the Region&apos;s Largest MSP
             </h2>
             <p className="text-white/55 leading-relaxed mb-4 text-base">
-              Founded in 1986 by Gary Sohal, Audcomp started with a simple belief: businesses deserve technology that works and a partner they can trust. Over nearly four decades, that belief has driven us to become a leading MSP serving Hamilton, Burlington, Oakville, London, Niagara, and beyond.
+              Founded in 1986 by Gary Sohal, Audcomp started with a simple belief: businesses deserve technology that works and a partner they can trust. Over 40 years, that belief has driven us to become a leading MSP serving Hamilton, Burlington, Oakville, London, Niagara, and beyond.
             </p>
             <p className="text-white/40 leading-relaxed mb-8 text-base">
               Today, Audcomp proudly ranks in the top 25 of CDN&apos;s Top 100 Solutions Providers, a distinction we&apos;ve earned for more than 10 consecutive years. Our team of technicians in Canada operates out of Canadian data centers, delivering enterprise-grade IT with local accountability.
