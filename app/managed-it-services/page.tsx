@@ -15,7 +15,7 @@ const subServices = [
     title: "Managed IT Support",
     description: "End-user support, network, infrastructure, core application, data protection, and cyber security, with 24/7 coverage and technicians in Canada.",
     href: "/managed-it-support",
-    category: "End-User Support",
+    category: "Day-to-Day IT",
   },
   // Endpoint Protection and Microsoft Office 365 are filed under Cyber
   // Security and Cloud Solutions in the nav, not here. They appear on this
