@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ContactForm from "@/components/ContactForm";
 import Hero from "@/components/Hero";
 import { SectionAngle } from "@/components/SectionAngle";
 
@@ -68,103 +69,7 @@ export default function ContactPage() {
           {/* Form */}
           <div className="lg:col-span-2 bg-card rounded-2xl border border-border shadow-sm p-8">
             <h2 className="text-3xl font-bold text-foreground mb-6">Send Us a Message</h2>
-            <form className="flex flex-col gap-5">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-1" htmlFor="name">
-                    Full Name <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    required
-                    className="w-full border border-border rounded-md px-4 py-2.5 text-sm bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                    placeholder="Jane Smith"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-1" htmlFor="email">
-                    Email Address <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    className="w-full border border-border rounded-md px-4 py-2.5 text-sm bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                    placeholder="jane@company.com"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-1" htmlFor="company">
-                    Company Name
-                  </label>
-                  <input
-                    id="company"
-                    name="company"
-                    type="text"
-                    className="w-full border border-border rounded-md px-4 py-2.5 text-sm bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                    placeholder="Acme Corp"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-1" htmlFor="phone">
-                    Phone Number
-                  </label>
-                  <input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    className="w-full border border-border rounded-md px-4 py-2.5 text-sm bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                    placeholder="905-555-0100"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-foreground mb-1" htmlFor="service">
-                  Service Interest
-                </label>
-                <select
-                  id="service"
-                  name="service"
-                  className="w-full border border-border rounded-md px-4 py-2.5 text-sm text-foreground bg-background focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                >
-                  <option value="">Select a service...</option>
-                  {services.map((s) => (
-                    <option key={s} value={s}>{s}</option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-foreground mb-1" htmlFor="message">
-                  Message <span className="text-red-500">*</span>
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  rows={5}
-                  className="w-full border border-border rounded-md px-4 py-2.5 text-sm bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
-                  placeholder="Tell us about your IT environment, current challenges, or what you're looking for..."
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full bg-primary text-white font-semibold py-3 rounded-full hover:brightness-110 transition-all shadow-lg text-sm"
-              >
-                Send Message
-              </button>
-              <p className="text-xs text-muted-foreground text-center">
-                We typically respond within one business day.
-              </p>
-            </form>
+            <ContactForm services={services} />
           </div>
         </div>
       </section>
