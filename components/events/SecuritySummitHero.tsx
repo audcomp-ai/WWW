@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Calendar, Clock, Mic, ArrowRight } from "lucide-react";
+import { Calendar, Clock, Mic, MapPin, ArrowRight } from "lucide-react";
 import { summit, agenda } from "@/data/security-summit";
 
 // Rendered statically, like components/Hero.tsx. This is above-the-fold content,
@@ -59,14 +59,6 @@ export default function SecuritySummitHero() {
                 RSVP Today
                 <ArrowRight className="w-4 h-4" />
               </a>
-              <a
-                href={summit.calendarHref}
-                download
-                className="inline-flex items-center gap-2 border border-white/20 text-white/80 hover:text-white hover:bg-white/5 font-semibold px-8 py-4 rounded-full transition-all duration-300"
-              >
-                <Calendar className="w-4 h-4" />
-                Add to Calendar
-              </a>
               <Link
                 href={summit.detailHref}
                 className="border border-white/20 text-white/80 hover:text-white hover:bg-white/5 font-semibold px-8 py-4 rounded-full transition-all duration-300"
@@ -101,6 +93,15 @@ export default function SecuritySummitHero() {
                 <div>
                   <p className="text-xs text-white/40 uppercase tracking-wider font-semibold">Speakers</p>
                   <p className="font-medium">{summit.speakerCount} security experts</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 text-white/80">
+                <div className="w-10 h-10 rounded-full bg-white/[0.05] flex items-center justify-center border border-white/[0.1] shrink-0">
+                  <MapPin className="w-4 h-4 text-[#06b6d4]" />
+                </div>
+                <div>
+                  <p className="text-xs text-white/40 uppercase tracking-wider font-semibold">Location</p>
+                  <p className="font-medium">{summit.venue}</p>
                 </div>
               </div>
             </div>

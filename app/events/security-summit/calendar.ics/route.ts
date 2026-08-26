@@ -53,6 +53,7 @@ export function GET() {
     `DTSTART:${summit.startUtc}`,
     `DTEND:${summit.endUtc}`,
     `SUMMARY:${escapeText(name)}`,
+    `LOCATION:${escapeText(summit.venue)}`,
     `DESCRIPTION:${escapeText(description)}`,
     `URL:https://dev.audcomp.ai${summit.detailHref}`,
     "ORGANIZER;CN=Audcomp:mailto:sales@audcomp.com",
