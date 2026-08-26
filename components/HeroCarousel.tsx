@@ -59,6 +59,23 @@ const slides = [
   },
 ];
 
+// Slides 2-4 lay their photo or video under navy rather than the 55-85% flat
+// black they used to carry, which is what made them read as grey mud next to
+// the brand slide. Two layers do the work: a bed dense enough to carry the
+// copy, and a vignette so the edges meet the section below.
+//
+// The bed is wide and shallow on phones, where the copy runs nearly edge to
+// edge over whatever the image happens to be doing, and tightens to an ellipse
+// on larger screens where the text column is narrow and centred.
+const TEXT_BED =
+  "absolute inset-0 " +
+  "bg-[radial-gradient(ellipse_150%_46%_at_50%_47%,rgba(7,30,61,0.93)_0%,rgba(7,30,61,0.74)_54%,transparent_88%)] " +
+  "sm:bg-[radial-gradient(ellipse_60%_52%_at_50%_46%,rgba(7,30,61,0.74)_0%,rgba(7,30,61,0.44)_56%,transparent_82%)]";
+
+const EDGE_VIGNETTE =
+  "absolute inset-0 " +
+  "bg-[radial-gradient(ellipse_88%_82%_at_50%_50%,transparent_48%,rgba(7,30,61,0.88)_100%)]";
+
 // Category links per row on the brand slide; the rest centre on line two.
 const BRAND_ROW_BREAK = 4;
 
@@ -180,7 +197,9 @@ export default function HeroCarousel() {
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/80" />
+        <div className="absolute inset-0 bg-[#071e3d]/24" />
+        <div className={TEXT_BED} />
+        <div className={EDGE_VIGNETTE} />
       </div>
 
       {/* ── Background: AI workforce video ── */}
@@ -194,7 +213,9 @@ export default function HeroCarousel() {
           <source src="https://aiaudit.audcomp.ai/Videos/Agent_intro-web.webm" type="video/webm" />
           <source src="https://aiaudit.audcomp.ai/Videos/Agent_intro-web.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/60 to-black/85" />
+        <div className="absolute inset-0 bg-[#071e3d]/28" />
+        <div className={TEXT_BED} />
+        <div className={EDGE_VIGNETTE} />
       </div>
 
       {/* ── Background: cyber ── */}
@@ -205,7 +226,9 @@ export default function HeroCarousel() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/images/cyber_security_hero.png')" }}
         />
-        <div className="absolute inset-0 bg-[#080c14]/85 backdrop-blur-[1px]" />
+        <div className="absolute inset-0 bg-[#071e3d]/16" />
+        <div className={TEXT_BED} />
+        <div className={EDGE_VIGNETTE} />
         {slide.bg === "cyber" && (
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
             {[...Array(10)].map((_, i) => (
@@ -405,7 +428,7 @@ export default function HeroCarousel() {
                 animate="center"
                 exit="exit"
                 transition={{ delay: 0.08 }}
-                className="text-lg md:text-xl text-white/50 max-w-2xl mx-auto leading-relaxed mb-10"
+                className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto leading-relaxed mb-10"
               >
                 {slide.subheadline}
               </motion.p>
