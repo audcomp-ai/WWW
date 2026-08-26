@@ -18,7 +18,6 @@ const serviceCategories: {
     href: "/managed-it-services",
     desc: "Day-to-day IT operations, support, and hardware, run by our team.",
     items: [
-      { label: "Managed IT Services", href: "/managed-it-services" },
       { label: "Managed IT Support", href: "/managed-it-support" },
       { label: "Help Desk", href: "/help-desk" },
       { label: "Backup & Disaster Recovery", href: "/backup-disaster-recovery" },
@@ -31,7 +30,6 @@ const serviceCategories: {
     href: "/cloud-solutions",
     desc: "Microsoft 365, Azure, and hybrid cloud, migrated and managed.",
     items: [
-      { label: "Cloud Solutions", href: "/cloud-solutions" },
       { label: "Microsoft Office 365", href: "/microsoft-office-365" },
       { label: "Microsoft Azure", href: "/microsoft-azure" },
       { label: "Hybrid Cloud", href: "/hybrid-cloud" },
@@ -44,7 +42,6 @@ const serviceCategories: {
     href: "/security-services",
     desc: "Layered defence from endpoint to perimeter, monitored around the clock.",
     items: [
-      { label: "Security Services", href: "/security-services" },
       { label: "Endpoint Protection", href: "/end-point-protection" },
       { label: "SOC & MDR", href: "/security-operations-centre-and-mdr" },
       { label: "Penetration Testing", href: "/penetration-testing-and-security-audits" },
@@ -58,7 +55,6 @@ const serviceCategories: {
     href: "/professional-services",
     desc: "Strategy, design, and implementation for projects that have to land.",
     items: [
-      { label: "Professional Services", href: "/professional-services" },
       { label: "Virtual CIO", href: "/virtual-cio" },
       { label: "Consulting & Design", href: "/consulting-design" },
       { label: "Implementation & Migration", href: "/implementation-migration" },
@@ -70,7 +66,6 @@ const serviceCategories: {
     href: "/ai-services",
     desc: "Copilot enablement, custom agents, AI roadmap, and data governance.",
     items: [
-      { label: "AI Services", href: "/ai-services" },
       { label: "Agent Studio", href: "/ai-services/agent-studio" },
       { label: "Embedded AI Engineers", href: "/forward-deployed-engineers" },
       { label: "Microsoft Copilot Enablement", href: "/microsoft-copilot-enablement" },
@@ -409,9 +404,13 @@ export default function Nav() {
             <div className="pl-3 flex flex-col gap-3">
               {serviceCategories.map((cat) => (
                 <div key={cat.label}>
-                  <p className="text-[11px] font-semibold text-[#06b6d4] uppercase tracking-widest mb-1">
+                  <Link
+                    href={cat.href}
+                    className="block text-[11px] font-semibold text-[#06b6d4] uppercase tracking-widest mb-1"
+                    onClick={() => setMobileOpen(false)}
+                  >
                     {cat.label}
-                  </p>
+                  </Link>
                   {cat.items.map((item) => (
                     <Link
                       key={item.href}
