@@ -40,7 +40,7 @@ function AgentCard({ a, keySuffix }: { a: Agent; keySuffix: string }) {
           <i className={`fas ${a.icon} text-[#06b6d4] text-sm`} />
         </span>
         <div className="absolute bottom-0 left-0 right-0 p-6">
-          <h3 className="text-2xl font-bold text-white tracking-tight">{a.name}</h3>
+          <h3 className="font-semibold text-white">{a.name}</h3>
           <p className="text-[#06b6d4] text-sm font-bold">{a.role}</p>
         </div>
       </div>
@@ -87,7 +87,7 @@ function FeaturedAgent({
         <span className="inline-flex items-center gap-2 text-[10px] font-semibold uppercase tracking-widest text-[#06b6d4] mb-5">
           <i className="fas fa-star" /> {tag}
         </span>
-        <h3 className="text-4xl lg:text-5xl font-bold text-white tracking-tight mb-1">{a.name}</h3>
+        <h3 className="text-3xl font-bold text-white mb-1">{a.name}</h3>
         <p className="text-[#06b6d4] text-sm font-bold uppercase tracking-widest mb-5">{a.role}</p>
         <p className="text-slate-400 text-base lg:text-lg font-medium leading-relaxed mb-8">{blurb}</p>
         {works}
@@ -193,7 +193,7 @@ export default function AgentStudioPage() {
                   <span className="w-2 h-2 rounded-full bg-[#0071e3] animate-pulse" />
                   <span className="text-[10px] font-bold text-[#06b6d4] uppercase tracking-widest">The Orchestrator · Always On</span>
                 </div>
-                <h3 className="text-3xl lg:text-5xl font-bold text-white tracking-tight mb-2">
+                <h3 className="text-3xl font-bold text-white mb-2">
                   Meet Wilfred.
                 </h3>
                 <p className="text-[#06b6d4] text-sm font-bold uppercase tracking-widest mb-5">Your AI Workforce Orchestrator</p>
@@ -275,7 +275,7 @@ export default function AgentStudioPage() {
           {/* Custom specialist CTA */}
           <div className="mt-12 bg-slate-50 border border-dashed border-slate-300 rounded-3xl p-8 lg:p-10 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
             <div>
-              <h3 className="text-xl font-bold text-[#0a2540] mb-2 tracking-tight">Need a role that isn&apos;t here?</h3>
+              <h3 className="font-semibold text-foreground mb-2">Need a role that isn&apos;t here?</h3>
               <p className="text-slate-600 text-sm font-medium leading-relaxed max-w-xl">
                 Describe the job and Wilfred spins up a new specialist against your spec, wired into your stack and ready to work.
               </p>
@@ -338,7 +338,7 @@ export default function AgentStudioPage() {
                 <span className="inline-flex items-center gap-2 text-[10px] font-semibold uppercase tracking-widest text-[#06b6d4] mb-5">
                   <i className={`fas ${p.icon}`} /> {p.segment}
                 </span>
-                <h3 className="text-2xl lg:text-3xl font-bold text-white tracking-tight mb-6 leading-snug">{p.headline}</h3>
+                <h3 className="font-semibold text-white mb-6 leading-snug">{p.headline}</h3>
                 <p className="text-slate-400 text-sm lg:text-base font-medium leading-relaxed mb-4">
                   <span className="text-white font-bold">The pain: </span>{p.pain}
                 </p>
