@@ -2,13 +2,15 @@
 // no action and no handler, so submitting it did a GET to /contact and the
 // visitor's details ended up in their own URL bar and nowhere else.
 
-// Resend's REST API rather than its SDK: one fetch, no new dependency in a
-// repo other people are working in, and nothing to keep up to date.
-const RESEND_ENDPOINT = "https://api.resend.com/emails";
+// Sent through Microsoft Graph from Audcomp's own tenant rather than a
+// third-party mail service: no new vendor holding enquiry data, and no DNS
+// change to let someone else send as audcomp.com. Plain fetch, so there is no
+// SDK in the dependency tree to keep current.
+
+const LOGIN_HOST = "https://login.microsoftonline.com";
+const GRAPH_HOST = "https://graph.microsoft.com";
 
 const TO = process.env.CONTACT_TO_EMAIL || "sales@audcomp.com";
-// Must be on a domain verified in Resend, or the send is rejected.
-const FROM = process.env.CONTACT_FROM_EMAIL || "website@audcomp.com";
 
 // Caps so a single submission cannot post a novel. Generous for real enquiries.
 const LIMITS = { name: 120, email: 200, company: 160, phone: 40, service: 120, message: 5000 };
@@ -27,6 +29,39 @@ function clean(value: unknown, field: Field) {
 // Deliberately loose: the aim is to catch typos and reject anything that could
 // not be an address, not to adjudicate RFC 5322.
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+// Graph tokens last about an hour. Holding one for the life of the serverless
+// instance saves an auth round trip per enquiry; a cold start just fetches a
+// new one. Sixty seconds of headroom so a token cannot expire mid-send.
+let cachedToken: { value: string; expiresAt: number } | null = null;
+
+async function getToken(tenant: string, clientId: string, secret: string) {
+  if (cachedToken && cachedToken.expiresAt > Date.now()) return cachedToken.value;
+
+  const res = await fetch(`${LOGIN_HOST}/${encodeURIComponent(tenant)}/oauth2/v2.0/token`, {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({
+      client_id: clientId,
+      client_secret: secret,
+      scope: `${GRAPH_HOST}/.default`,
+      grant_type: "client_credentials",
+    }),
+  });
+
+  if (!res.ok) {
+    // The body carries the reason (wrong secret, consent not granted) but can
+    // also echo the client id, so it stays out of anything the visitor sees.
+    throw new Error(`token request failed: ${res.status} ${await res.text()}`);
+  }
+
+  const body = (await res.json()) as { access_token: string; expires_in: number };
+  cachedToken = {
+    value: body.access_token,
+    expiresAt: Date.now() + (body.expires_in - 60) * 1000,
+  };
+  return cachedToken.value;
+}
 
 export async function POST(request: Request) {
   let body: Record<string, unknown>;
@@ -54,11 +89,15 @@ export async function POST(request: Request) {
     return Response.json({ error: "That email address does not look right." }, { status: 400 });
   }
 
-  const key = process.env.RESEND_API_KEY;
-  if (!key) {
+  const tenant = process.env.M365_TENANT_ID;
+  const clientId = process.env.M365_CLIENT_ID;
+  const secret = process.env.M365_CLIENT_SECRET;
+  const sender = process.env.M365_SENDER_EMAIL;
+
+  if (!tenant || !clientId || !secret || !sender) {
     // Better a visible failure with a phone number than a form that appears to
     // work and quietly loses the enquiry, which is what used to happen here.
-    console.error("[contact] RESEND_API_KEY is not set; cannot send.");
+    console.error("[contact] Microsoft 365 credentials are not configured; cannot send.");
     return Response.json(
       { error: "Our contact form is temporarily unavailable. Please call 905-304-1775 or email sales@audcomp.com." },
       { status: 503 },
@@ -73,36 +112,41 @@ export async function POST(request: Request) {
     service ? `Service: ${service}` : null,
     "",
     message,
-  ].filter((l) => l !== null);
+  ].filter((line) => line !== null);
+
+  const unavailable = Response.json(
+    { error: "We could not send your message. Please call 905-304-1775 or email sales@audcomp.com." },
+    { status: 502 },
+  );
 
   try {
-    const res = await fetch(RESEND_ENDPOINT, {
+    const token = await getToken(tenant, clientId, secret);
+
+    const res = await fetch(`${GRAPH_HOST}/v1.0/users/${encodeURIComponent(sender)}/sendMail`, {
       method: "POST",
-      headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
+      headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
       body: JSON.stringify({
-        from: `Audcomp Website <${FROM}>`,
-        to: [TO],
-        // Replying in the mail client goes to the enquirer, not to the site.
-        reply_to: email,
-        subject: `Website enquiry from ${name}${company ? ` (${company})` : ""}`,
-        text: lines.join("\n"),
+        message: {
+          subject: `Website enquiry from ${name}${company ? ` (${company})` : ""}`,
+          body: { contentType: "Text", content: lines.join("\n") },
+          toRecipients: [{ emailAddress: { address: TO } }],
+          // Replying in Outlook goes to the enquirer, not to the site mailbox.
+          replyTo: [{ emailAddress: { address: email } }],
+        },
+        // Keep a copy in the sending mailbox, so there is a record of what went
+        // out even if the enquiry never gets answered.
+        saveToSentItems: true,
       }),
     });
 
+    // sendMail answers 202 Accepted with an empty body when it works.
     if (!res.ok) {
-      // Log the provider's reason for us; tell the visitor something useful.
-      console.error("[contact] Resend rejected the send:", res.status, await res.text());
-      return Response.json(
-        { error: "We could not send your message. Please call 905-304-1775 or email sales@audcomp.com." },
-        { status: 502 },
-      );
+      console.error("[contact] Graph rejected the send:", res.status, await res.text());
+      return unavailable;
     }
   } catch (err) {
     console.error("[contact] Send failed:", err);
-    return Response.json(
-      { error: "We could not send your message. Please call 905-304-1775 or email sales@audcomp.com." },
-      { status: 502 },
-    );
+    return unavailable;
   }
 
   return Response.json({ ok: true });
