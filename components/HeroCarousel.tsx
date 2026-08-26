@@ -321,7 +321,7 @@ export default function HeroCarousel() {
                   initial={{ opacity: 0, scale: 1.035, y: 10 }}
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   exit={{ opacity: 0, y: -12, transition: { duration: 0.4 } }}
-                  transition={{ duration: 1.05, ease: [0.25, 0.46, 0.45, 0.94] }}
+                  transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
                   className="relative w-[min(78vw,700px)]"
                 >
                   {/* The mark is a transparent grayscale PNG, so it needs no
@@ -348,7 +348,7 @@ export default function HeroCarousel() {
                     }}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 0.5 }}
+                    transition={{ delay: 0.3 }}
                   >
                     {/* Once per slide entry, not looped. The content block is
                         keyed on the active index, so it replays each time the
@@ -357,7 +357,7 @@ export default function HeroCarousel() {
                       className="absolute inset-y-0 w-1/3 bg-[linear-gradient(100deg,transparent,rgba(56,189,248,0.9),rgba(255,255,255,0.95),transparent)]"
                       initial={{ left: "-40%" }}
                       animate={{ left: "115%" }}
-                      transition={{ duration: 1.4, delay: 0.55, ease: [0.4, 0, 0.2, 1] }}
+                      transition={{ duration: 1.4, delay: 0.35, ease: [0.4, 0, 0.2, 1] }}
                     />
                   </motion.div>
                 </motion.div>
@@ -369,7 +369,7 @@ export default function HeroCarousel() {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, transition: { duration: 0.25 } }}
-                      transition={{ duration: 0.5, delay: 0.75 + i * 0.08, ease: "easeOut" }}
+                      transition={{ duration: 0.4, delay: 0.25 + i * 0.05, ease: "easeOut" }}
                     >
                       <Link
                         href={link.href}
