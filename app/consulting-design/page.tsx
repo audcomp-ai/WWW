@@ -29,7 +29,7 @@ export default function ConsultingDesignPage() {
             A technology decision made without proper assessment can cost you for years, the wrong platform, a misaligned architecture, or a security gap that surfaces at the worst possible time. Audcomp&apos;s IT Consulting and Design service gives you the clarity to commit budget and resources with confidence.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
-            Our consultants conduct comprehensive technical assessments of your existing environment, identify risks and inefficiencies, and design solutions that align with your business objectives, budget, and growth trajectory.
+            Our vCIOs, pre-sales engineers, and technical account managers conduct comprehensive technical assessments of your existing environment, identify risks and inefficiencies, and design solutions that align with your business objectives, budget, and growth trajectory.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto">
             Whether you're planning a network refresh, evaluating a cloud migration, or simply trying to understand the state of your IT environment, Audcomp's consulting team delivers the answers you need.
