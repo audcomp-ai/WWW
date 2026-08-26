@@ -15,13 +15,18 @@ const subServices = [
     title: "Managed IT Support",
     description: "End-user support, network, infrastructure, core application, data protection, and cyber security, with 24/7 coverage and technicians in Canada.",
     href: "/managed-it-support",
-    category: "Operations",
+    category: "End-User Support",
   },
+  // Endpoint Protection and Microsoft Office 365 are filed under Cyber
+  // Security and Cloud Solutions in the nav, not here. They appear on this
+  // page because managed clients take them alongside the rest, and each
+  // description is copied from the card on its own hub page so the two cannot
+  // drift apart.
   {
-    title: "Help Desk",
-    description: "Audcomp's Help Desk Support is available 24/7, offering expert assistance through our advanced ticketing system, accessible via email, phone, or on-site support.",
-    href: "/help-desk",
-    category: "User Support",
+    title: "Endpoint Protection (AGS)",
+    description: "Advanced threat detection, real-time monitoring, Office Protection, and Email Protection under Audcomp Guarded Services.",
+    href: "/end-point-protection",
+    category: "Cyber Security",
   },
   {
     title: "Backup & Disaster Recovery",
@@ -30,27 +35,22 @@ const subServices = [
     category: "Continuity",
   },
   {
-    title: "Device as a Service (DaaS)",
-    description: "A subscription-based solution that makes IT costs predictable and improves user experience, scalable as your team grows.",
-    href: "/daas",
-    category: "Devices",
-  },
-  {
     title: "IT Procurement",
     description: "Tier 1 and Tier 2 manufacturer partnerships, competitive pricing, and our exclusive Try & Buy demo program.",
     href: "/it-procurement",
     category: "Sourcing",
   },
-  // Not a sixth Managed IT service in the nav's sense — that category is this
-  // page plus the five above. It is here because managed clients take it
-  // alongside them. Still filed under Cyber Security in the nav and on
-  // /security-services, where the wording below is copied from so the two
-  // descriptions cannot drift.
   {
-    title: "Endpoint Protection (AGS)",
-    description: "Advanced threat detection, real-time monitoring, Office Protection, and Email Protection under Audcomp Guarded Services.",
-    href: "/end-point-protection",
-    category: "Security",
+    title: "Microsoft Office 365",
+    description: "Explore the efficiency of Microsoft Office 365 solutions for cloud-based productivity, email, Teams, SharePoint, and beyond.",
+    href: "/microsoft-office-365",
+    category: "Productivity",
+  },
+  {
+    title: "Device as a Service (DaaS)",
+    description: "A subscription-based solution that makes IT costs predictable and improves user experience, scalable as your team grows.",
+    href: "/daas",
+    category: "Devices",
   },
 ];
 
