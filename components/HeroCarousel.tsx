@@ -15,6 +15,10 @@ const SLIDE_MS = 3000;
 // the end so the last frame is not clipped by the crossfade out.
 const VIDEO_SLIDE_MS = 5200;
 
+// The brand slide carries a logo and five links rather than a headline and a
+// paragraph, so it is read in less time than the two that follow it.
+const BRAND_SLIDE_MS = 2200;
+
 const slides = [
   {
     id: 1,
@@ -27,6 +31,7 @@ const slides = [
     cta2Text: "",
     cta2Href: "",
     bg: "brand",
+    hold: BRAND_SLIDE_MS,
   },
   {
     id: 2,
