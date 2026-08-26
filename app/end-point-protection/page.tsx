@@ -52,7 +52,7 @@ export default function EndpointProtectionPage() {
               are already on it. */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
-              { title: "Endpoint Protection (AGS)", desc: "Advanced threat detection, real-time monitoring, Office Protection, and Email Protection under Audcomp Guarded Services.", href: "/end-point-protection" },
+              { title: "Endpoint Protection", desc: "Advanced threat detection, real-time monitoring, Office Protection, and Email Protection under Audcomp Guarded Services.", href: "/end-point-protection" },
               { title: "SOC & MDR", desc: "24/7 Security Operations Centre with managed detection and response, incident response, and threat hunting.", href: "/security-operations-centre-and-mdr" },
               { title: "Penetration Testing", desc: "Manual and automated penetration testing with 4 tests per year and 48-hour reporting turnaround.", href: "/penetration-testing-and-security-audits" },
               { title: "Managed Firewall", desc: "24/7 firewall monitoring, maintenance, rule management, and threat intelligence integration.", href: "/managed-firewall" },
