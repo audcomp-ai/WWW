@@ -114,11 +114,11 @@ export default function Home() {
               <p className="text-xs text-white/40 mt-2 uppercase tracking-widest">Industries</p>
             </div>
             <div>
-              <p className="text-4xl font-bold text-white tracking-tight"><CountUp end={12000} suffix="+" /></p>
+              <p className="text-4xl font-bold text-white tracking-tight"><CountUp end={13574} suffix="+" /></p>
               <p className="text-xs text-white/40 mt-2 uppercase tracking-widest">Endpoints Managed</p>
             </div>
             <div>
-              <p className="text-4xl font-bold text-white tracking-tight"><CountUp end={6500} suffix="+" /></p>
+              <p className="text-4xl font-bold text-white tracking-tight"><CountUp end={8600} suffix="+" /></p>
               <p className="text-xs text-white/40 mt-2 uppercase tracking-widest">Endpoints Protected</p>
             </div>
           </div>
