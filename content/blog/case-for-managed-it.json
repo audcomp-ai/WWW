@@ -1,0 +1,27 @@
+{
+  "slug": "case-for-managed-it",
+  "title": "The Case for Managed IT: Why In-House Alone Falls Short",
+  "category": "Managed IT",
+  "image": "/images/managed_it_hero.png",
+  "publishedAt": "2026-06-04",
+  "excerpt": "A single internal IT person is a single point of failure, and the role has quietly grown to need several specialisms at once.",
+  "intro": "In-house IT knows your environment and your people, which is genuinely valuable. The difficulty is that the job now spans networking, cloud, security operations, and compliance, and one person cannot hold all of it.",
+  "sections": [
+    {
+      "heading": "The coverage problem",
+      "paras": [
+        "Holidays, illness, and departures leave gaps that do not coordinate themselves with incidents. Around-the-clock monitoring is difficult to provide with a team that also has to sleep."
+      ]
+    },
+    {
+      "heading": "The better arrangement",
+      "paras": [
+        "The strongest setups are not either-or. Internal staff keep the relationships and the institutional knowledge; a managed provider supplies depth, coverage, and the tooling it would not make sense to buy for one site."
+      ]
+    }
+  ],
+  "cta": {
+    "label": "See Managed IT Services",
+    "href": "/managed-it-services"
+  }
+}

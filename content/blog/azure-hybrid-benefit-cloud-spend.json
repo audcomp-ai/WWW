@@ -1,0 +1,27 @@
+{
+  "slug": "azure-hybrid-benefit-cloud-spend",
+  "title": "Optimizing Your Cloud Spend with Azure Hybrid Benefit",
+  "category": "Cloud Solutions",
+  "image": "/images/cloud_solutions_hero.png",
+  "publishedAt": "2026-06-18",
+  "excerpt": "Most Azure bills contain licences you have already paid for once. Hybrid Benefit is how you stop paying twice.",
+  "intro": "Cloud cost conversations usually start with resizing virtual machines. The larger saving is often sitting in licensing you already own.",
+  "sections": [
+    {
+      "heading": "What it covers",
+      "paras": [
+        "Organizations with Windows Server or SQL Server licences under Software Assurance can apply those licences to Azure workloads instead of paying the pay-as-you-go rate that bundles the licence in."
+      ]
+    },
+    {
+      "heading": "Why it goes unclaimed",
+      "paras": [
+        "It has to be applied per resource, and it is easy to miss on machines created after the initial migration. A periodic review of which workloads have it enabled tends to find some that do not."
+      ]
+    }
+  ],
+  "cta": {
+    "label": "See Microsoft Azure",
+    "href": "/microsoft-azure"
+  }
+}

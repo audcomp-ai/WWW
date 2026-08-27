@@ -1,0 +1,35 @@
+{
+  "slug": "stored-in-canada-contract-term",
+  "title": "“Stored in Canada” Should Be a Contract Term, Not a Badge",
+  "category": "Cloud Solutions",
+  "image": "/images/blog/stored-in-canada-contract-term.jpg",
+  "publishedAt": "2026-08-12",
+  "excerpt": "Plenty of vendors say your data stays in Canada. Far fewer will write down which region, who holds the encryption keys, and where the backups replicate.",
+  "intro": "Data residency has become a marketing line, which makes it easy to stop asking questions once you hear it. For regulated organizations, the phrase is only worth what the contract says it is.",
+  "sections": [
+    {
+      "heading": "Four questions worth asking",
+      "paras": [
+        "Which specific region does the primary workload run in? “Canada” is not a region; Canada Central and Canada East are. A vendor who cannot name one is describing an intention, not an architecture.",
+        "Where do backups and disaster recovery copies replicate to? Primary storage frequently sits in Canada while the secondary copy quietly lands elsewhere. Ask for both."
+      ]
+    },
+    {
+      "heading": "Keys and access",
+      "paras": [
+        "Who holds the encryption keys, and can staff outside Canada access the data for support purposes? A Canadian-hosted service administered by a support team elsewhere may still create a disclosure obligation you need to understand.",
+        "This is not hypothetical for healthcare, municipal, and education clients, where the question comes up in procurement and has to be answered in writing."
+      ]
+    },
+    {
+      "heading": "Get it in the agreement",
+      "paras": [
+        "If residency matters to your organization, it belongs in the contract alongside uptime and support response, not in a logo on a website. A vendor who means it will put it there without much argument."
+      ]
+    }
+  ],
+  "cta": {
+    "label": "Talk to us about residency",
+    "href": "/contact"
+  }
+}

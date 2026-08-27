@@ -1,0 +1,27 @@
+{
+  "slug": "what-is-a-virtual-cio",
+  "title": "What is a Virtual CIO, and Does Your Business Need One?",
+  "category": "Professional Services",
+  "image": "/images/professional_services_hero.png",
+  "publishedAt": "2026-05-06",
+  "excerpt": "A vCIO answers the questions that sit above day-to-day support: what to invest in, in what order, and why.",
+  "intro": "Plenty of organizations have competent IT support and no IT strategy. The gap shows up as reactive spending, renewals that arrive as surprises, and projects chosen by whoever asked most recently.",
+  "sections": [
+    {
+      "heading": "What the role covers",
+      "paras": [
+        "Budget planning across a multi-year horizon, a technology roadmap tied to business plans rather than product cycles, vendor and renewal management, and risk reporting in terms a board can act on."
+      ]
+    },
+    {
+      "heading": "When it makes sense",
+      "paras": [
+        "When technology decisions have started carrying real financial or regulatory weight, but the organization is not large enough to justify a full-time executive hire. Fractional gets you the judgement without the salary."
+      ]
+    }
+  ],
+  "cta": {
+    "label": "See Virtual CIO",
+    "href": "/virtual-cio"
+  }
+}

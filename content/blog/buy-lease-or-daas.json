@@ -1,0 +1,35 @@
+{
+  "slug": "buy-lease-or-daas",
+  "title": "Buy, Lease, or Device as a Service: Comparing a Four-Year Refresh",
+  "category": "Managed IT",
+  "image": "/images/blog/buy-lease-or-daas.jpg",
+  "publishedAt": "2026-08-01",
+  "excerpt": "The sticker price of a laptop is the smallest part of what it costs you over four years. Comparing models on purchase price alone hides most of the difference.",
+  "intro": "Hardware decisions are usually made on capital cost, because that is the number on the quote. Over a refresh cycle, the costs that matter most are the ones that arrive after the box is opened.",
+  "sections": [
+    {
+      "heading": "What the quote leaves out",
+      "paras": [
+        "Imaging and deployment, warranty administration, the spare pool you keep for failures, and the labour of decommissioning and disposing of machines securely at end of life. These land in different budgets, which is precisely why they rarely get compared.",
+        "There is also the cost of aging hardware in year four: slower machines, more support tickets, and staff working around problems rather than reporting them."
+      ]
+    },
+    {
+      "heading": "Where each model fits",
+      "paras": [
+        "Buying suits organizations with stable headcount, capital available, and internal capacity to manage the lifecycle. Leasing shifts the capital cost but leaves the operational work with you.",
+        "Device as a Service bundles hardware, deployment, support, and refresh into a predictable monthly figure per seat. It suits organizations whose headcount moves, or who would rather not run a spare pool."
+      ]
+    },
+    {
+      "heading": "Compare over the cycle",
+      "paras": [
+        "Whichever way you go, compare four years of total cost per seat rather than one purchase price. That is the only comparison that reflects what you actually spend."
+      ]
+    }
+  ],
+  "cta": {
+    "label": "See Device as a Service",
+    "href": "/daas"
+  }
+}

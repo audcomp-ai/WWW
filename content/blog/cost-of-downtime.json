@@ -1,0 +1,35 @@
+{
+  "slug": "cost-of-downtime",
+  "title": "What an Hour of Downtime Actually Costs",
+  "category": "Managed IT",
+  "image": "/images/blog/cost-of-downtime.jpg",
+  "publishedAt": "2026-08-07",
+  "excerpt": "Downtime is usually priced as lost revenue, which understates it. The bigger numbers are idle payroll and the work that has to be redone afterwards.",
+  "intro": "Ask most business owners what an outage costs and they will estimate lost sales. That is the smallest line in the calculation, and the one most likely to recover on its own once systems come back.",
+  "sections": [
+    {
+      "heading": "The arithmetic nobody runs",
+      "paras": [
+        "Start with idle payroll: staff who cannot work, multiplied by their fully loaded hourly cost, multiplied by the length of the outage. For a business of any size this is usually the largest single component, and it is entirely knowable in advance.",
+        "Add recovery labour, which is rarely just the length of the outage. Systems come back in an order, data gets reconciled, and someone spends the evening confirming nothing was lost."
+      ]
+    },
+    {
+      "heading": "The costs that arrive later",
+      "paras": [
+        "Deferred work does not disappear; it lands on top of next week. Missed commitments carry a reputational cost that does not show up on any invoice but shapes the next renewal conversation.",
+        "For regulated organizations, an outage that touches personal data can also start a reporting clock, which turns a technical problem into a compliance one."
+      ]
+    },
+    {
+      "heading": "Run the number for your own business",
+      "paras": [
+        "Take your headcount, your average loaded hourly cost, and a realistic outage length based on your last incident. The result is the budget you are implicitly setting aside every year by not investing in monitoring and recovery."
+      ]
+    }
+  ],
+  "cta": {
+    "label": "See Managed IT Services",
+    "href": "/managed-it-services"
+  }
+}
