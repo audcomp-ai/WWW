@@ -132,3 +132,11 @@ h1, h2, h3, h4, h5, h6 {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* A hero video is decoration, so drop it when less motion is asked for. The
+   poster painted on the section underneath takes over. */
+@media (prefers-reduced-motion: reduce) {
+  .hero-video {
+    display: none;
+  }
+}

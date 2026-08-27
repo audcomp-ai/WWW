@@ -81,7 +81,9 @@ export default function AIServicesPage() {
         subtitle="Practical AI for Canadian businesses, from Microsoft Copilot to custom AI agents that automate the work your team does every day."
         ctaText="Start Your AI Assessment"
         ctaHref="/contact"
-        backgroundImage="/images/ai_services_hero.png"
+        backgroundImage="/images/ai-services-hero.webp"
+        backgroundVideoWebm="https://aiaudit.audcomp.ai/Videos/Agent_intro-web.webm"
+        backgroundVideo="https://aiaudit.audcomp.ai/Videos/Agent_intro-web.mp4"
       />
 
       <SectionAngle from="#071e3d" to="#ffffff" flip={false} height={64} />

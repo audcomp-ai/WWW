@@ -11,6 +11,10 @@ interface HeroProps {
   /** @deprecated use variant instead */
   bgColor?: "blue" | "dark" | "light";
   backgroundImage?: string;
+  /** mp4 played muted and looping behind the hero. backgroundImage is its poster. */
+  backgroundVideo?: string;
+  /** optional webm, offered first because it is usually the smaller file */
+  backgroundVideoWebm?: string;
 }
 
 export default function Hero({
@@ -23,6 +27,8 @@ export default function Hero({
   variant,
   bgColor,
   backgroundImage,
+  backgroundVideo,
+  backgroundVideoWebm,
 }: HeroProps) {
   // Resolve variant: new `variant` prop takes priority, then fall back to legacy `bgColor`
   const resolved: "dark" | "light" =
@@ -34,15 +40,41 @@ export default function Hero({
       ? "light"
       : "dark"; // blue and dark both map to dark navy
 
-  const isDark = resolved === "dark" || !!backgroundImage;
+  const hasMedia = !!backgroundImage || !!backgroundVideo;
+  const isDark = resolved === "dark" || hasMedia;
 
   return (
     <section
-      className={`relative ${!backgroundImage && isDark ? "bg-[#181E2C]" : !backgroundImage ? "bg-white" : ""} py-32 md:py-40 px-4`}
+      className={`relative overflow-hidden ${!hasMedia && isDark ? "bg-[#181E2C]" : !hasMedia ? "bg-white" : ""} py-32 md:py-40 px-4`}
       style={backgroundImage ? { backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' } : undefined}
     >
-      {backgroundImage && (
-        <div className="absolute inset-0 bg-[#181E2C]/80 z-0"></div>
+      {backgroundVideo && (
+        // Decoration: the headline already carries the meaning, so it is hidden
+        // from assistive tech. globals.css drops it under prefers-reduced-motion
+        // and the poster underneath takes over.
+        <video
+          className="hero-video absolute inset-0 w-full h-full object-cover z-0"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster={backgroundImage}
+          aria-hidden="true"
+        >
+          {backgroundVideoWebm && <source src={backgroundVideoWebm} type="video/webm" />}
+          <source src={backgroundVideo} type="video/mp4" />
+        </video>
+      )}
+      {hasMedia && (
+        // A still takes one flat scrim. Footage takes a lighter one plus the
+        // same radial bed the home carousel uses, because a bright frame can
+        // drift under the subtitle and a flat scrim dark enough to fix that
+        // would flatten the whole shot.
+        <div className={`absolute inset-0 z-0 ${backgroundVideo ? "bg-[#071e3d]/45" : "bg-[#181E2C]/80"}`}></div>
+      )}
+      {backgroundVideo && (
+        <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_150%_46%_at_50%_50%,rgba(7,30,61,0.93)_0%,rgba(7,30,61,0.74)_54%,transparent_88%)] sm:bg-[radial-gradient(ellipse_75%_58%_at_50%_50%,rgba(7,30,61,0.86)_0%,rgba(7,30,61,0.58)_56%,transparent_86%)]"></div>
       )}
       <div className="relative max-w-6xl mx-auto text-center z-10">
         <h1
