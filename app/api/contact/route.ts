@@ -93,6 +93,11 @@ export async function POST(request: Request) {
   const clientId = process.env.M365_CLIENT_ID;
   const secret = process.env.M365_CLIENT_SECRET;
   const sender = process.env.M365_SENDER_EMAIL;
+  // Graph has to address a user or shared mailbox — sendMail does not exist on a
+  // group. Setting from separately lets the mail still appear to come from a
+  // group address like ai@audcomp.com, which needs SendAs on that group granted
+  // to the sending mailbox. Optional: without it the sending mailbox is the From.
+  const fromAddress = process.env.M365_FROM_EMAIL || sender;
 
   if (!tenant || !clientId || !secret || !sender) {
     // Better a visible failure with a phone number than a form that appears to
@@ -129,6 +134,7 @@ export async function POST(request: Request) {
         message: {
           subject: `Website enquiry from ${name}${company ? ` (${company})` : ""}`,
           body: { contentType: "Text", content: lines.join("\n") },
+          from: { emailAddress: { address: fromAddress } },
           toRecipients: [{ emailAddress: { address: TO } }],
           // Replying in Outlook goes to the enquirer, not to the site mailbox.
           replyTo: [{ emailAddress: { address: email } }],
