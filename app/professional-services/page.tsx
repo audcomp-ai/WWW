@@ -33,7 +33,7 @@ const subServices = [
     title: "Structured Cabling",
     description: "The backbone of your network infrastructure, we design and implement structured cabling systems that support your evolving technology needs.",
     href: "/structured-cabling",
-    category: "Infrastructure",
+    category: "Network",
   },
 ];
 
