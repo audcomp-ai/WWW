@@ -91,7 +91,7 @@ const differentiators = [
   },
   {
     title: "Canadian, end to end",
-    desc: "engineers in Canada and Canadian-hosted infrastructure, built for PIPEDA and provincial privacy obligations from the start.",
+    desc: "Engineers in Canada and Canadian-hosted infrastructure, built for PIPEDA and provincial privacy obligations from the start.",
   },
   {
     title: "Backed by a full MSP",

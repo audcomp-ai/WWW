@@ -89,7 +89,7 @@ export default function DarkWebMonitoringPage() {
 
       <CTABanner
         title="Find Out What's Already Out There"
-        subtitle="Contact Audcomp for a free dark web scan of your domain, you may be surprised what we find."
+        subtitle="Contact Audcomp for a free dark web scan of your domain. You may be surprised what we find."
       />
     </>
   );

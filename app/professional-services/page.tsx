@@ -54,7 +54,7 @@ export default function ProfessionalServicesPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-foreground mb-6">Consider Audcomp an Extension of Your Team</h2>
           <p className="text-muted-foreground text-lg leading-relaxed text-justify hyphens-auto mb-6">
-            With nearly 40 years of experience supporting Canadian businesses, Audcomp provides access to a team of skilled IT professionals without the cost of building and maintaining an in-house department. We work alongside your team to understand your challenges, then design, implement, and support technology solutions that align with your business goals and budget.
+            With over 40 years of experience supporting Canadian businesses, Audcomp provides access to a team of skilled IT professionals without the cost of building and maintaining an in-house department. We work alongside your team to understand your challenges, then design, implement, and support technology solutions that align with your business goals and budget.
           </p>
         </div>
       </section>

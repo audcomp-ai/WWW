@@ -5,7 +5,7 @@ import CTABanner from "@/components/CTABanner";
 import { SectionAngle } from "@/components/SectionAngle";
 
 export const metadata: Metadata = {
-  title: "Endpoint Protection (AGS) | Audcomp Guarded Services",
+  title: "Endpoint Protection | Audcomp Guarded Services",
   description:
     "Audcomp Guarded Services (AGS) delivers advanced endpoint threat detection, real-time monitoring, Office Protection, and Email Protection for Canadian businesses.",
 };

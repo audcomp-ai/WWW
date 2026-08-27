@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 const subServices = [
   {
-    title: "Endpoint Protection (AGS)",
+    title: "Endpoint Protection",
     description: "Advanced threat detection, real-time monitoring, Office Protection, and Email Protection under Audcomp Guarded Services.",
     href: "/end-point-protection",
     category: "Prevention",
