@@ -50,7 +50,7 @@ export default async function AgentDetailPage({ params }: { params: Promise<{ id
         <span className="w-2 h-2 rounded-full bg-[#06b6d4] animate-pulse" /> {badge}
       </span>
       <h1 className="text-5xl lg:text-6xl font-bold text-white tracking-tight mb-2">
-        Meet <span className="text-[#06b6d4] italic">{agent.name}.</span>
+        Meet <span className="text-[#06b6d4]">{agent.name}</span>
       </h1>
       <p className="text-[#06b6d4] text-sm font-bold uppercase tracking-widest mb-6">{agent.title || agent.role}</p>
       <p className="text-slate-300 text-lg font-medium leading-relaxed mb-8">{tagline}</p>
@@ -127,7 +127,7 @@ export default async function AgentDetailPage({ params }: { params: Promise<{ id
             <div className="text-center mb-14">
               <span className="text-[10px] font-semibold uppercase tracking-widest text-[#06b6d4] mb-6 block">Capabilities</span>
               <h2 className="text-3xl font-bold text-white leading-tight">
-                What <span className="text-[#06b6d4] italic">{agent.name}</span> can do.
+                What <span className="text-[#06b6d4]">{agent.name}</span> can do
               </h2>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -150,7 +150,7 @@ export default async function AgentDetailPage({ params }: { params: Promise<{ id
             <div className="text-center mb-14">
               <span className="text-[10px] font-semibold uppercase tracking-widest text-[#06b6d4] mb-6 block">Time saved</span>
               <h2 className="text-3xl font-bold text-white leading-tight">
-                Hours <span className="text-[#06b6d4] italic">{agent.name} gives back.</span>
+                Hours <span className="text-[#06b6d4]">{agent.name} gives back</span>
               </h2>
             </div>
             <div className="bg-white/[0.06] border border-white/10 backdrop-blur-sm rounded-[2.5rem] overflow-hidden max-w-4xl mx-auto">

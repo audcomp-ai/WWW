@@ -23,7 +23,7 @@ const subServices = [
   // description is copied from the card on its own hub page so the two cannot
   // drift apart.
   {
-    title: "Endpoint Protection (AGS)",
+    title: "Endpoint Protection",
     description: "Advanced threat detection, real-time monitoring, Office Protection, and Email Protection under Audcomp Guarded Services.",
     href: "/end-point-protection",
     category: "Cyber Security",

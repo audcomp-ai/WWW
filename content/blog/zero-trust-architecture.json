@@ -1,0 +1,27 @@
+{
+  "slug": "zero-trust-architecture",
+  "title": "Zero Trust Architecture: No Longer Just for Enterprise",
+  "category": "Cyber Security",
+  "image": "/images/cyber_security_hero.png",
+  "publishedAt": "2026-07-08",
+  "excerpt": "Zero trust is less a product than a default: verify every request, regardless of where it comes from.",
+  "intro": "The traditional model trusted anything inside the network perimeter. Remote work and cloud services removed the perimeter, which left the trust assumption without anything to stand on.",
+  "sections": [
+    {
+      "heading": "The working definition",
+      "paras": [
+        "Every request is authenticated and authorised on its own merits, whether it originates in the office or a coffee shop. Access is granted narrowly and reviewed rather than assumed from network location."
+      ]
+    },
+    {
+      "heading": "Where smaller organizations start",
+      "paras": [
+        "Multi-factor authentication everywhere, conditional access based on device health, and least-privilege access reviews cover most of the practical benefit. None of these require an enterprise budget, and each one closes a path that attackers use routinely."
+      ]
+    }
+  ],
+  "cta": {
+    "label": "See Security Services",
+    "href": "/security-services"
+  }
+}

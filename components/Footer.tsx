@@ -145,7 +145,7 @@ export default function Footer() {
 
         <div className="mt-16 pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/25">
-            &copy; 2024 Audcomp. All rights reserved.
+            &copy; {new Date().getFullYear()} Audcomp. All rights reserved.
           </p>
           <div className="flex gap-6">
             {[

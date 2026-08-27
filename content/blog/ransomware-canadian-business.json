@@ -1,0 +1,28 @@
+{
+  "slug": "ransomware-canadian-business",
+  "title": "Ransomware: What Every Canadian Business Needs to Know",
+  "category": "Cyber Security",
+  "image": "/images/cyber_security_hero.png",
+  "publishedAt": "2026-05-20",
+  "excerpt": "Modern ransomware steals data before encrypting it, which means paying for a decryption key no longer ends the incident.",
+  "intro": "The defining change in ransomware is that encryption is now the second step. Attackers take a copy of the data first, which turns every incident into a disclosure problem as well as an availability one.",
+  "sections": [
+    {
+      "heading": "Why backups alone stopped being enough",
+      "paras": [
+        "Restoring from backup solves the encryption. It does nothing about the copy the attacker already has, which is what the extortion is now based on. Backups remain essential and are no longer sufficient on their own."
+      ]
+    },
+    {
+      "heading": "What reduces the odds",
+      "paras": [
+        "Most intrusions still begin with a phished credential or an unpatched internet-facing service. Multi-factor authentication, disciplined patching, and monitoring that notices unusual data movement address the majority of real-world entry points.",
+        "Backups should be tested and held where an attacker with domain access cannot reach them."
+      ]
+    }
+  ],
+  "cta": {
+    "label": "See SOC & MDR",
+    "href": "/security-operations-centre-and-mdr"
+  }
+}

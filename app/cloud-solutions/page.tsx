@@ -73,7 +73,7 @@ export default function CloudSolutionsPage() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-foreground mb-6">Cloud Without Compromise</h2>
           <p className="text-muted-foreground text-lg leading-relaxed text-justify hyphens-auto mb-6">
-            Moving to the cloud is one of the most impactful decisions a business can make, but only when done right. Audcomp's cloud team combines deep Microsoft partnership expertise with nearly four decades of infrastructure knowledge to plan, migrate, and manage cloud environments that actually perform.
+            Moving to the cloud is one of the most impactful decisions a business can make, but only when done right. Audcomp's cloud team combines Microsoft partnership expertise with over 40 years of infrastructure knowledge to plan, migrate, and manage cloud environments that actually perform.
           </p>
           <p className="text-muted-foreground text-lg leading-relaxed text-justify hyphens-auto">
             Whether you're adopting Microsoft 365 for the first time, migrating workloads to Azure, or architecting a hybrid cloud strategy, Audcomp provides the strategy, execution, and ongoing management you need, with all data remaining in Canadian data centers.

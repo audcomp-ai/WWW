@@ -16,8 +16,13 @@ export const metadata: Metadata = {
 // cards; the rest sit in the scrolling strip below them.
 const FEATURED_COUNT = 6;
 
+// More Reading is a horizontal strip, so it is a browse aid rather than a
+// complete index. Left uncapped it would grow to hundreds of cards on one
+// sideways scroll, each with its own image. /blog/archive is the full list.
+const STRIP_COUNT = 12;
+
 const featuredPosts = postsByNewest.slice(0, FEATURED_COUNT).map(toCard);
-const archivePosts = postsByNewest.slice(FEATURED_COUNT);
+const archivePosts = postsByNewest.slice(FEATURED_COUNT, FEATURED_COUNT + STRIP_COUNT);
 
 
 export default function BlogPage() {
@@ -56,9 +61,19 @@ export default function BlogPage() {
       {archivePosts.length > 0 && (
         <section className="bg-white pb-24 px-4">
           <div className="max-w-6xl mx-auto">
-            <p className="text-xs font-semibold text-[#06b6d4] uppercase tracking-widest mb-6">
-              More Reading
-            </p>
+            <div className="flex items-baseline justify-between mb-6">
+              <p className="text-xs font-semibold text-[#06b6d4] uppercase tracking-widest">
+                More Reading
+              </p>
+              {/* The archive is the complete index: useful at twelve posts and
+                  necessary at two hundred, so it is always offered. */}
+              <Link
+                href="/blog/archive"
+                className="text-xs font-semibold text-slate-500 hover:text-[#0071e3] transition-colors"
+              >
+                {`View all ${postsByNewest.length} posts \u2192`}
+              </Link>
+            </div>
             {/* snap-x keeps a card aligned to the left edge after a flick on
                 touch; overflow-x-auto keeps the page itself from scrolling. */}
             <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 -mx-4 px-4">

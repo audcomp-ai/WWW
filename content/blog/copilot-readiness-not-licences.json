@@ -1,0 +1,34 @@
+{
+  "slug": "copilot-readiness-not-licences",
+  "title": "Copilot Rollouts Stall on Readiness, Not Licences",
+  "category": "AI Services",
+  "image": "/images/blog/copilot-readiness-not-licences.jpg",
+  "publishedAt": "2026-08-05",
+  "excerpt": "Buying the licences is the easy part. What determines whether Copilot is useful is the state of your permissions and your documents.",
+  "intro": "Copilot answers questions using what a user can already see. That single fact explains most disappointing pilots, and most of the uncomfortable surprises.",
+  "sections": [
+    {
+      "heading": "Permissions become visible",
+      "paras": [
+        "In most tenants, files have accumulated broad sharing over years. Nobody notices, because nobody browses SharePoint looking for documents they were accidentally given access to. Copilot browses on their behalf.",
+        "The result is that oversharing which was theoretically discoverable becomes practically discoverable. Reviewing site permissions and sharing links before rollout is not optional housekeeping; it is the rollout."
+      ]
+    },
+    {
+      "heading": "Stale content produces stale answers",
+      "paras": [
+        "If three versions of a policy exist and two are outdated, Copilot will cheerfully cite whichever it finds. Archiving superseded documents does more for answer quality than any amount of prompt training."
+      ]
+    },
+    {
+      "heading": "Sequence the rollout",
+      "paras": [
+        "Assess the tenant, remediate sharing and retention, pilot with one team that has a defined use case, then expand. Teams that skip to the last step tend to conclude the tool does not work, when what did not work was the ground it was standing on."
+      ]
+    }
+  ],
+  "cta": {
+    "label": "See Copilot Enablement",
+    "href": "/microsoft-copilot-enablement"
+  }
+}

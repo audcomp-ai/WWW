@@ -1,0 +1,36 @@
+{
+  "slug": "microsoft-365-backup-gap",
+  "title": "Your Microsoft 365 Data Isn't Backed Up. Here's What Microsoft Actually Covers.",
+  "category": "Cyber Security",
+  "image": "/images/blog/microsoft-365-backup-gap.jpg",
+  "publishedAt": "2026-08-13",
+  "excerpt": "Microsoft keeps the service running. Keeping your data recoverable is your side of the agreement, and most organizations find that out at the worst possible moment.",
+  "intro": "Most organizations assume that because their email and files live in Microsoft 365, they are backed up. Microsoft's own shared responsibility model says otherwise, and the gap only becomes visible when someone needs a file back.",
+  "sections": [
+    {
+      "heading": "What Microsoft is responsible for",
+      "paras": [
+        "Microsoft guarantees the availability of the service: the infrastructure, the uptime, the replication between their own data centres. If a disk fails in an Azure region, that is Microsoft's problem and they solve it well.",
+        "What Microsoft does not guarantee is the state of your data over time. Retention policies and recycle bins are short-lived by design, measured in days rather than years, and they are not built to reconstruct a mailbox or a SharePoint library months after something went wrong."
+      ]
+    },
+    {
+      "heading": "Where the gap actually bites",
+      "paras": [
+        "Three situations account for most of the data loss we are asked to recover from. An employee deletes a folder and nobody notices for a quarter. A departing staff member's mailbox is removed to reclaim the licence, then needed for a legal request. Ransomware encrypts a synced OneDrive, and the encrypted versions replicate to the cloud copy.",
+        "In each case the service was working exactly as designed. That is the point: availability and recoverability are different problems."
+      ]
+    },
+    {
+      "heading": "What to put in place",
+      "paras": [
+        "Independent backup means a copy of your Microsoft 365 data held outside Microsoft's control, on its own retention schedule, restorable at the item level. Ask three questions of any solution: how far back can it restore, how granular is that restore, and where does the copy physically live.",
+        "For organizations with Canadian data residency obligations, that third question matters as much as the first two."
+      ]
+    }
+  ],
+  "cta": {
+    "label": "See Office 365 Backup",
+    "href": "/office-365-backup"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "slug": "microsoft-copilot-modern-workspace",
+  "title": "How Microsoft Copilot is Changing the Modern Workspace",
+  "category": "AI Services",
+  "image": "/images/blog_copilot.png",
+  "publishedAt": "2026-07-22",
+  "excerpt": "Copilot is most useful in the small, repeated tasks that fill a working day rather than the dramatic ones it gets demonstrated with.",
+  "intro": "The demonstrations show a full report generated from a prompt. The real value shows up somewhere less impressive: the meeting nobody had time to write up, the thread nobody wants to read back through.",
+  "sections": [
+    {
+      "heading": "Where teams see it first",
+      "paras": [
+        "Summarising a long email thread before replying, catching up on a meeting you missed, and turning rough notes into a first draft are the uses that survive past the novelty period. They are small individually and add up across a week."
+      ]
+    },
+    {
+      "heading": "What it does not replace",
+      "paras": [
+        "Copilot works from what is already written down. It does not know the context that lives in someone's head, and it does not know which of two conflicting documents is current. Judgement stays where it was."
+      ]
+    }
+  ],
+  "cta": {
+    "label": "See Copilot Enablement",
+    "href": "/microsoft-copilot-enablement"
+  }
+}
