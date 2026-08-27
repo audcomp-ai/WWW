@@ -14,7 +14,7 @@ export default function EndpointProtectionPage() {
   return (
     <>
       <Hero
-        title="Stop Threats Before They Spread Across Your Devices"
+        title="Every Endpoint Watched, Every Threat Contained"
         subtitle="Audcomp Cyber Security Services contains ransomware and zero-day attacks the moment they hit a device, so one infected laptop never becomes a company-wide outage. Deployed and managed by our SOC/MDR team."
         ctaText="Get Protected"
         ctaHref="/contact"
