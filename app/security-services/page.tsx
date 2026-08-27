@@ -143,7 +143,64 @@ export default function SecurityServicesPage() {
         </div>
       </section>
 
-      <SectionAngle from="#181E2C" to="#071e3d" flip={true} height={64} />
+      <SectionAngle from="#181E2C" to="#ffffff" flip={true} height={64} />
+
+      {/* Security platforms — white */}
+      <section className="bg-white py-20 px-4">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-xs font-semibold text-[#06b6d4] uppercase tracking-widest mb-4 text-center">
+            What we deploy
+          </p>
+          <h2 className="text-3xl font-bold text-foreground mb-4 text-center">The Platforms Behind the Service</h2>
+          <p className="text-slate-600 text-base leading-relaxed mb-12 text-center max-w-2xl mx-auto">
+            We are not tied to one vendor. Each layer runs on the tool that does that job best, deployed and
+            managed by our Canadian security team.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {[
+              {
+                name: "Bitdefender",
+                logo: "/logos/bitdefender.svg",
+                // Heights are derived from each mark's measured ink box and coverage
+                // so the three carry the same optical weight. A shared height would
+                // let the Bitdefender wordmark dominate and shrink the Field Effect
+                // glyph to nothing. See tasks/lessons.md.
+                height: 26,
+                role: "Endpoint protection",
+                desc: "Next-generation antivirus and behavioural AI on every laptop, desktop, and server.",
+              },
+              {
+                name: "Hornetsecurity",
+                logo: "/logos/hornetsecurity-mark.webp",
+                height: 43,
+                role: "Email and Microsoft 365",
+                desc: "Email filtering, Office Protection, and backup for the tenant your business runs on.",
+              },
+              {
+                name: "Field Effect",
+                logo: "/logos/field-effect.svg",
+                height: 65,
+                role: "Detection and response",
+                desc: "Canadian-built threat detection feeding the analysts in our Security Operations Centre.",
+              },
+            ].map((v) => (
+              <div
+                key={v.name}
+                className="rounded-2xl border border-[#dde8f5] bg-white p-8 flex flex-col items-center text-center shadow-sm"
+              >
+                <div className="h-[72px] flex items-center justify-center mb-6">
+                  <img src={v.logo} alt={v.name} style={{ height: v.height }} className="w-auto" />
+                </div>
+                <p className="text-[10px] font-semibold text-[#06b6d4] uppercase tracking-widest mb-2">{v.role}</p>
+                <p className="font-semibold text-foreground mb-3">{v.name}</p>
+                <p className="text-slate-600 text-sm leading-relaxed">{v.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <SectionAngle from="#ffffff" to="#071e3d" flip={false} height={64} />
 
       <CTABanner
         title="Is Your Organization Prepared?"
