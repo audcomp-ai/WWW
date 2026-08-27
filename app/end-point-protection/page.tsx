@@ -5,9 +5,9 @@ import CTABanner from "@/components/CTABanner";
 import { SectionAngle } from "@/components/SectionAngle";
 
 export const metadata: Metadata = {
-  title: "Endpoint Protection (AGS) | Audcomp Guarded Services",
+  title: "Endpoint Protection | Audcomp Cyber Security Services",
   description:
-    "Audcomp Guarded Services (AGS) delivers advanced endpoint threat detection, real-time monitoring, Office Protection, and Email Protection for Canadian businesses.",
+    "Audcomp Cyber Security Services delivers advanced endpoint threat detection, real-time monitoring, Office Protection, and Email Protection for Canadian businesses.",
 };
 
 export default function EndpointProtectionPage() {
@@ -15,7 +15,7 @@ export default function EndpointProtectionPage() {
     <>
       <Hero
         title="Stop Threats Before They Spread Across Your Devices"
-        subtitle="AGS, Audcomp Guarded Services, contains ransomware and zero-day attacks the moment they hit a device, so one infected laptop never becomes a company-wide outage. Deployed and managed by Audcomp&apos;s Canadian security team."
+        subtitle="Audcomp Cyber Security Services contains ransomware and zero-day attacks the moment they hit a device, so one infected laptop never becomes a company-wide outage. Deployed and managed by Audcomp&apos;s Canadian security team."
         ctaText="Get Protected"
         ctaHref="/contact"
         bgColor="dark"
@@ -27,16 +27,16 @@ export default function EndpointProtectionPage() {
       <section className="bg-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-foreground mb-6">
-            Audcomp Guarded Services (AGS)
+            Audcomp Cyber Security Services
           </h2>
           <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
-            When ransomware or a zero-day attack lands on a device, the real cost is downtime, locked files, halted operations, and days spent rebuilding. AGS, Audcomp Guarded Services, is Audcomp&apos;s branded endpoint security platform, built to stop that at the source. Using next-generation antivirus and behavioral AI, it detects and contains threats that signature-based antivirus tools miss.
+            When ransomware or a zero-day attack lands on a device, the real cost is downtime, locked files, halted operations, and days spent rebuilding. Audcomp Cyber Security Services is Audcomp&apos;s branded endpoint security platform, built to stop that at the source. Using next-generation antivirus and behavioral AI, it detects and contains threats that signature-based antivirus tools miss.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto mb-6">
-            Every device in your organization, laptops, desktops, servers, is continuously monitored for suspicious behavior. When a threat is detected, AGS contains it automatically and alerts Audcomp&apos;s security team for investigation and remediation, 24/7.
+            Every device in your organization, laptops, desktops, servers, is continuously monitored for suspicious behavior. When a threat is detected, the platform contains it automatically and alerts Audcomp&apos;s security team for investigation and remediation, 24/7.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto">
-            AGS is deployed and managed by Audcomp&apos;s Canadian security team, so you get enterprise-grade endpoint protection without adding headcount or managing it internally.
+            It is deployed and managed by Audcomp&apos;s Canadian security team, so you get enterprise-grade endpoint protection without adding headcount or managing it internally.
           </p>
         </div>
       </section>
@@ -52,7 +52,7 @@ export default function EndpointProtectionPage() {
               are already on it. */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
-              { title: "Endpoint Protection", desc: "Advanced threat detection, real-time monitoring, Office Protection, and Email Protection under Audcomp Guarded Services.", href: "/end-point-protection" },
+              { title: "Endpoint Protection", desc: "Advanced threat detection, real-time monitoring, Office Protection, and Email Protection under Audcomp Cyber Security Services.", href: "/end-point-protection" },
               { title: "SOC & MDR", desc: "24/7 Security Operations Centre with managed detection and response, incident response, and threat hunting.", href: "/security-operations-centre-and-mdr" },
               { title: "Penetration Testing", desc: "Manual and automated penetration testing with 4 tests per year and 48-hour reporting turnaround.", href: "/penetration-testing-and-security-audits" },
               { title: "Managed Firewall", desc: "24/7 firewall monitoring, maintenance, rule management, and threat intelligence integration.", href: "/managed-firewall" },
@@ -87,7 +87,7 @@ export default function EndpointProtectionPage() {
 
       <CTABanner
         title="Protect Every Endpoint in Your Organization"
-        subtitle="Get a free endpoint security assessment from Audcomp and deploy AGS across your environment, typically active within 24 hours."
+        subtitle="Get a free endpoint security assessment from Audcomp and deploy it across your environment, typically active within 24 hours."
       />
     </>
   );
