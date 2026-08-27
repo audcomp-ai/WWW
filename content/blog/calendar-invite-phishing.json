@@ -1,0 +1,55 @@
+{
+  "slug": "calendar-invite-phishing",
+  "title": "Your staff expect calendar invites, and attackers know it",
+  "category": "Cyber Security",
+  "image": "/images/blog/calendar-invite-phishing.jpg",
+  "publishedAt": "2026-08-27",
+  "excerpt": "Phishing emails now hide inside calendar invites. They look like internal HR or IT reminders, bypass most filters, and stay in calendars even after the original email is deleted.",
+  "intro": "Most owners and managers think of phishing as a suspicious email with a bad link. That used to be enough. But attackers have moved on. They now send calendar invites that look like internal HR policy updates, benefits reminders, or IT compliance notices. Your team opens them without a second thought because everyone gets calendar notifications every day. And because the malicious content sits inside the calendar file, not the email body, many security tools miss it entirely.",
+  "sections": [
+    {
+      "heading": "Why calendar files work so well",
+      "paras": [
+        "According to Barracuda researchers writing on August 6, 2026, employees now use calendars for deadlines, reminders, training requirements, compliance activities, and corporate announcements. A non-meeting calendar invitation looks completely normal.",
+        "Calendar invites offer attackers several advantages. Organizations trust them. Employees send and receive meeting requests and reminders every day. Security tools have historically focused more on email bodies and attachments than calendar content. And calendar invites are often added automatically to the user's calendar with little or no interaction, and often persist even if the original email is deleted or quarantined.",
+        "Mobile devices handle calendar notifications frequently, which reduces visibility for some desktop security controls. That means your staff may click a link on their phone, outside the protections you have on workstations."
+      ]
+    },
+    {
+      "heading": "What a calendar phishing attack looks like",
+      "paras": [
+        "Legitimate business processes in HR, finance, IT, and security already use calendar entries for non-meeting tasks. Policy acknowledgment deadlines, employee handbook reviews, benefits enrollment windows, and compliance training reminders all arrive as calendar invites.",
+        "A typical attack starts with a simple email containing a calendar invite file. The email itself may contain little information beyond a subject line referencing HR policy updates, employee handbook reviews, benefits enrollment, compliance notifications, or payroll or administrative actions.",
+        "When the recipient opens the invite, the calendar application displays content embedded within the event itself. This content may include corporate branding, instructions, images, or QR codes that appear legitimate. These usually take the victim to a fake sign-in page controlled by the attackers. Barracuda notes this process is often managed through an adversary-in-the-middle phishing platform.",
+        "If the user enters their credentials and completes multifactor authentication, the attackers can capture the username, password, and authentication session data and use it to access the account."
+      ]
+    },
+    {
+      "heading": "Why calendar files hide phishing so well",
+      "paras": [
+        "The iCalendar file format was designed to allow scheduling information to move between Outlook, Google Calendar, Apple Calendar, and other platforms. To support this, calendar files contain event titles, descriptions, organizer details, locations, attachments, URLs, and custom metadata fields.",
+        "These features are useful for legitimate scheduling, but they also provide numerous opportunities for abuse. Attackers can place phishing content inside event descriptions, embed links in location fields, include malicious attachments, or use HTML-formatted content to create convincing internal-looking communications.",
+        "Because this content resides inside calendar metadata rather than the email body, some security controls may not inspect it as thoroughly. The use of QR codes also helps attackers bypass traditional link detection. Instead of presenting a visible URL, the destination is embedded inside an image. Security tools may not automatically decode QR content, users cannot easily inspect the destination before visiting it, and mobile devices often access links outside monitored desktop environments."
+      ]
+    },
+    {
+      "heading": "What you can do",
+      "paras": [
+        "Barracuda researchers recommend treating calendar invites as active content and inspecting calendar files with the same scrutiny applied to traditional attachments. This includes parsing calendar metadata fields, analyzing embedded links and attachments, inspecting HTML-rendered content, and decoding QR codes.",
+        "If a malicious calendar file is detected, incident response needs to remove both the delivery message and the associated calendar entry from affected mailboxes. Otherwise the phishing content stays in the calendar even after the email is gone.",
+        "Strengthen identity security. Recommended measures include implementing phishing-resistant multifactor authentication, conditional access policies, session monitoring and rapid revocation capabilities, as well as measures to detect suspicious sign-in behaviour and token misuse.",
+        "Finally, improve user awareness. Users should understand that calendar invites can be malicious, be wary about QR codes in calendar events, and verify any unexpected HR, payroll, or policy notifications. Users should be particularly careful when they see non-meeting content, such as policy documents, being shared as a calendar file."
+      ]
+    }
+  ],
+  "cta": {
+    "label": "See security services",
+    "href": "/security-services"
+  },
+  "sources": [
+    {
+      "title": "Barracuda Blog",
+      "url": "https://blog.barracuda.com/2026/08/06/calendar-invite-phishing-ics-files"
+    }
+  ]
+}
