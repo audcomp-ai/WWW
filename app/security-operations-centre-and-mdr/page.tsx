@@ -14,7 +14,7 @@ export default function SOCMDRPage() {
     <>
       <Hero
         title="Threats Detected and Shut Down, 24/7"
-        subtitle="When an attack hits at 3 a.m., Audcomp&apos;s Security Operations Centre is already watching, detecting, investigating, and containing threats before they disrupt your business. Backed by Audcomp&apos;s Canadian security team."
+        subtitle="When an attack hits at 3 a.m., Audcomp&apos;s Security Operations Centre is already watching, detecting, investigating, and containing threats before they disrupt your business. Backed by our SOC/MDR team."
         ctaText="Talk to Our Security Team"
         ctaHref="/contact"
         bgColor="dark"

@@ -154,7 +154,7 @@ export default function SecurityServicesPage() {
           <h2 className="text-3xl font-bold text-foreground mb-4 text-center">The Platforms Behind the Service</h2>
           <p className="text-slate-600 text-base leading-relaxed mb-12 text-center max-w-2xl mx-auto">
             We are not tied to one vendor. Each layer runs on the tool that does that job best, deployed and
-            managed by our Canadian security team.
+            managed by our SOC/MDR team.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {[

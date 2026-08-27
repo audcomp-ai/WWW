@@ -15,7 +15,7 @@ export default function EndpointProtectionPage() {
     <>
       <Hero
         title="Stop Threats Before They Spread Across Your Devices"
-        subtitle="Audcomp Cyber Security Services contains ransomware and zero-day attacks the moment they hit a device, so one infected laptop never becomes a company-wide outage. Deployed and managed by Audcomp&apos;s Canadian security team."
+        subtitle="Audcomp Cyber Security Services contains ransomware and zero-day attacks the moment they hit a device, so one infected laptop never becomes a company-wide outage. Deployed and managed by our SOC/MDR team."
         ctaText="Get Protected"
         ctaHref="/contact"
         bgColor="dark"
@@ -36,7 +36,7 @@ export default function EndpointProtectionPage() {
             Every device in your organization, laptops, desktops, servers, is continuously monitored for suspicious behavior. When a threat is detected, the platform contains it automatically and alerts Audcomp&apos;s security team for investigation and remediation, 24/7.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed text-justify hyphens-auto">
-            It is deployed and managed by Audcomp&apos;s Canadian security team, so you get enterprise-grade endpoint protection without adding headcount or managing it internally.
+            It is deployed and managed by our SOC/MDR team, so you get enterprise-grade endpoint protection without adding headcount or managing it internally.
           </p>
         </div>
       </section>
