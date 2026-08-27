@@ -63,7 +63,38 @@ async function getToken(tenant: string, clientId: string, secret: string) {
   return cachedToken.value;
 }
 
+// A crude per-IP limit. Serverless instances do not share memory, so this is a
+// speed bump rather than a guarantee: it stops a single client hammering one
+// warm instance, and does nothing about a distributed flood. Worth having
+// anyway — without it the endpoint will mail sales@ as fast as it is called.
+const WINDOW_MS = 10 * 60 * 1000;
+const MAX_PER_WINDOW = 5;
+const hits = new Map<string, number[]>();
+
+function rateLimited(ip: string): boolean {
+  const now = Date.now();
+  const recent = (hits.get(ip) ?? []).filter((t) => now - t < WINDOW_MS);
+  recent.push(now);
+  hits.set(ip, recent);
+  // Bound the map so a long-lived instance cannot grow it without limit.
+  if (hits.size > 5000) {
+    for (const [key, times] of hits) {
+      if (times.every((t) => now - t >= WINDOW_MS)) hits.delete(key);
+    }
+  }
+  return recent.length > MAX_PER_WINDOW;
+}
+
 export async function POST(request: Request) {
+  // Vercel sets x-forwarded-for; the first entry is the client.
+  const ip = (request.headers.get("x-forwarded-for") ?? "unknown").split(",")[0].trim();
+  if (rateLimited(ip)) {
+    return Response.json(
+      { error: "Too many messages from this connection. Please call 905-304-1775." },
+      { status: 429 },
+    );
+  }
+
   let body: Record<string, unknown>;
   try {
     body = await request.json();
