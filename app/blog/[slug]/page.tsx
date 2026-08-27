@@ -98,6 +98,32 @@ export default async function BlogPostPage({
             </section>
           ))}
 
+          {/* Where the post was written from. A post drafted by an agent has to
+              cite its sources, which is what makes the no-invented-statistics
+              rule checkable rather than aspirational. Older posts predate the
+              field and simply do not render the block. */}
+          {post.sources && post.sources.length > 0 && (
+            <section className="mb-10 border-t border-slate-200 pt-6">
+              <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">
+                Sources
+              </h2>
+              <ul className="flex flex-col gap-1.5">
+                {post.sources.map((source) => (
+                  <li key={source.url}>
+                    <a
+                      href={source.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-slate-500 underline underline-offset-2 hover:text-[#0071e3] transition-colors"
+                    >
+                      {source.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
           <Link
             href={post.cta.href}
             className="inline-flex items-center gap-2 bg-[#0071e3] text-white font-semibold px-7 py-3.5 rounded-full text-sm hover:bg-[#0077ed] transition-colors"
