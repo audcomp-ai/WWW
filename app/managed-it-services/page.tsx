@@ -24,7 +24,7 @@ const subServices = [
   // drift apart.
   {
     title: "Endpoint Protection",
-    description: "Advanced threat detection, real-time monitoring, Office Protection, and Email Protection under Audcomp Guarded Services.",
+    description: "Advanced threat detection, real-time monitoring, Office Protection, and Email Protection under Audcomp Cyber Security Services.",
     href: "/end-point-protection",
     category: "Cyber Security",
   },
