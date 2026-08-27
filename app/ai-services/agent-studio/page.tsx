@@ -148,16 +148,16 @@ export default function AgentStudioPage() {
           <source src="/agent-hero.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-[#071e3d]/70 via-[#071e3d]/30 to-[#071e3d]" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#071e3d]/85 via-[#071e3d]/20 to-transparent" />
-        <div className="relative z-10 h-full max-w-7xl mx-auto px-6 lg:px-12 flex flex-col justify-end pb-20 lg:pb-28">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_72%,rgba(7,30,61,0.82)_0%,rgba(7,30,61,0.45)_55%,transparent_85%)]" />
+        <div className="relative z-10 h-full max-w-7xl mx-auto px-6 lg:px-12 flex flex-col items-center text-center justify-end pb-20 lg:pb-28">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full mb-6 w-fit backdrop-blur">
             <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#0071e3] text-white uppercase tracking-widest">Studio Workspace</span>
             <span className="text-xs font-bold text-white uppercase tracking-widest">Architecture Suite</span>
           </div>
-          <h1 className="text-6xl lg:text-8xl font-bold tracking-tight text-white mb-6 max-w-4xl leading-[0.95]">
+          <h1 className="text-6xl lg:text-8xl font-bold tracking-tight text-white mb-6 max-w-4xl mx-auto leading-[0.95]">
             Agent Studio
           </h1>
-          <p className="text-slate-300 text-lg lg:text-2xl font-medium max-w-2xl mb-8 leading-relaxed">
+          <p className="text-slate-300 text-lg lg:text-2xl font-medium max-w-2xl mx-auto mb-8 leading-relaxed">
             Design, deploy, and orchestrate a full team of production-ready AI agents for your organization.
           </p>
           <a href="#workforce" className="inline-flex items-center gap-3 text-white text-xs font-bold uppercase tracking-widest w-fit group">
